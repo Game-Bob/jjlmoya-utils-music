@@ -1,0 +1,1302 @@
+---
+import type { KnownLocale } from '../../types';
+import type { FrequencyNoteConverterUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as FrequencyNoteConverterUI;
+const noteOptions = (t.noteOptions ?? 'C,C#,D,D#,E,F,F#,G,G#,A,A#,B').split('|');
+---
+
+<div
+  class="fnc-root"
+  id="fnc-root"
+  data-note-names={t.noteNames ?? 'C,C#,D,D#,E,F,F#,G,G#,A,A#,B'}
+  data-unit-hz-exact={t.unitHzExact ?? 'exact Hz'}
+  data-tuned={t.tuned ?? 'Tuned'}
+  data-sharp={t.sharp ?? 'sharp'}
+  data-flat={t.flat ?? 'flat'}
+  data-piano-octave={t.pianoOctave ?? 'Oct'}
+  data-copy-feedback={t.copyFeedback ?? 'Copied!'}
+  data-history-load-aria={t.historyLoadAria ?? 'Load %s Hz'}
+>
+  <div class="fnc__mode-switcher" role="group">
+    <button class="fnc__mode-btn fnc__mode-btn--active" id="btn-hz-to-note">{t.btnHzToNote}</button>
+    <button class="fnc__mode-btn" id="btn-note-to-hz">{t.btnNoteToHz}</button>
+  </div>
+
+  <div class="fnc__calibration-bar">
+    <div class="fnc__cal-main">
+      <span class="fnc__cal-label">{t.labelRef}</span>
+      <div class="fnc__cal-presets">
+        <button class="fnc__cal-preset fnc__cal-preset--active" data-ref="440">440 Hz</button>
+        <button class="fnc__cal-preset" data-ref="432">432 Hz</button>
+        <button class="fnc__cal-preset" data-ref="444">444 Hz</button>
+      </div>
+      <input
+        type="number"
+        id="ref-input"
+        class="fnc__cal-custom"
+        value="440"
+        min="400"
+        max="480"
+        step="0.5"
+        aria-label={t.ariaRefCustom}
+      />
+      <span class="fnc__cal-unit">Hz</span>
+    </div>
+    <p class="fnc__cal-info" set:html={t.calInfo} />
+  </div>
+
+  <div class="fnc__main-panel" id="panel-hz-to-note">
+    <div class="fnc__input-zone">
+      <label for="hz-input" class="fnc__input-label">{t.labelFrequency}</label>
+      <div class="fnc__input-row">
+        <input
+          type="number"
+          id="hz-input"
+          class="fnc__big-input"
+          value="440"
+          min="16"
+          max="20000"
+          step="0.01"
+          inputmode="decimal"
+          aria-label={t.ariaFreqInput}
+        />
+        <span class="fnc__big-unit">Hz</span>
+        <button class="fnc__play-btn" id="play-btn-hz" aria-label={t.ariaPlay}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="fnc__result-hero" aria-live="polite">
+      <div class="fnc__note-name" id="hz-result-note">A4</div>
+      <div class="fnc__note-freq" id="hz-result-exact">440.00 Hz</div>
+      <button class="fnc__copy-hero" id="copy-note-name" data-value="A4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        {t.copyNoteName}
+      </button>
+    </div>
+
+    <div class="fnc__tuner">
+      <div class="fnc__tuner-track">
+        <div class="fnc__tuner-center-mark"></div>
+        <div class="fnc__tuner-needle" id="tuner-needle"></div>
+      </div>
+      <div class="fnc__tuner-labels">
+        <span>-50</span><span>-25</span>
+        <span class="fnc__tuner-label-center">0</span>
+        <span>+25</span><span>+50</span>
+      </div>
+      <div class="fnc__cents-value" id="cents-display">0.0 cents</div>
+    </div>
+
+    <div class="fnc__harmonics">
+      <div class="fnc__harmonic-card">
+        <span class="fnc__harmonic-label">{t.labelOctaveDown}</span>
+        <span class="fnc__harmonic-value" id="harmonic-down-val">220.00 Hz</span>
+        <button class="fnc__copy-small" data-copy-target="harmonic-down-val">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+      <div class="fnc__harmonic-card fnc__harmonic-card--main">
+        <span class="fnc__harmonic-label">{t.labelInputFreq}</span>
+        <span class="fnc__harmonic-value" id="harmonic-main-val">440.00 Hz</span>
+        <button class="fnc__copy-small" data-copy-target="harmonic-main-val">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+      <div class="fnc__harmonic-card">
+        <span class="fnc__harmonic-label">{t.labelOctaveUp}</span>
+        <span class="fnc__harmonic-value" id="harmonic-up-val">880.00 Hz</span>
+        <button class="fnc__copy-small" data-copy-target="harmonic-up-val">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="fnc__main-panel fnc__main-panel--hidden" id="panel-note-to-hz">
+    <div class="fnc__note-selector">
+      <label class="fnc__select-label" for="note-text-input">{t.labelNoteInput}</label>
+      <input
+        type="text"
+        id="note-text-input"
+        class="fnc__text-input"
+        placeholder={t.placeholderNote}
+      />
+      <div class="fnc__note-dropdowns">
+        <div class="fnc__select-group">
+          <label class="fnc__select-label" for="note-select">{t.labelSetNote}</label>
+          <select id="note-select" class="fnc__select">
+            {noteOptions.map((opt, i) => <option value={String(i)}>{opt}</option>)}
+          </select>
+        </div>
+        <div class="fnc__select-group">
+          <label class="fnc__select-label" for="octave-select">{t.labelSetOctave}</label>
+          <select id="octave-select" class="fnc__select">
+            {[0,1,2,3,4,5,6,7,8].map((o) => <option value={String(o)} selected={o === 4}>{o}</option>)}
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="fnc__result-hero" aria-live="polite">
+      <div class="fnc__note-name" id="note-result-hz">440.00</div>
+      <div class="fnc__note-freq">Hz</div>
+      <button class="fnc__copy-hero" id="copy-hz-value" data-value="440.00">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        {t.copyHz}
+      </button>
+    </div>
+
+    <div class="fnc__harmonics">
+      <div class="fnc__harmonic-card">
+        <span class="fnc__harmonic-label">{t.labelOctaveDown}</span>
+        <span class="fnc__harmonic-value" id="n2h-harmonic-down">220.00 Hz</span>
+        <button class="fnc__copy-small" data-copy-target="n2h-harmonic-down">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+      <div class="fnc__harmonic-card fnc__harmonic-card--main">
+        <span class="fnc__harmonic-label">{t.labelSelectedNote}</span>
+        <span class="fnc__harmonic-value" id="n2h-harmonic-main">440.00 Hz</span>
+        <button class="fnc__copy-small" data-copy-target="n2h-harmonic-main">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+      <div class="fnc__harmonic-card">
+        <span class="fnc__harmonic-label">{t.labelOctaveUp}</span>
+        <span class="fnc__harmonic-value" id="n2h-harmonic-up">880.00 Hz</span>
+        <button class="fnc__copy-small" data-copy-target="n2h-harmonic-up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="fnc__play-row">
+      <button class="fnc__play-full-btn" id="play-btn-note">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        {t.btnListenNote}
+      </button>
+    </div>
+  </div>
+
+  <div class="fnc__piano-section">
+    <div class="fnc__piano-label">{t.pianoLabel}</div>
+    <div class="fnc__piano" id="piano" role="group" aria-label={t.pianoAria}></div>
+  </div>
+
+  <div class="fnc__history-section">
+    <div class="fnc__history-header">
+      <span class="fnc__history-title">{t.historyTitle}</span>
+      <button class="fnc__history-clear" id="clear-history">{t.historyClear}</button>
+    </div>
+    <ul class="fnc__history-list" id="history-list" role="list"></ul>
+    <div class="fnc__history-empty" id="history-empty">{t.historyEmpty}</div>
+  </div>
+</div>
+
+<style>
+  .fnc-root {
+    --fnc-bg: #faf5ff;
+    --fnc-bg-panel: #f3e8ff;
+    --fnc-bg-input: #fff;
+    --fnc-bg-input-focus: #fdf4ff;
+    --fnc-bg-piano: #ede9fe;
+    --fnc-text: #1e0a2e;
+    --fnc-text-muted: rgba(30, 10, 46, 0.55);
+    --fnc-text-dim: rgba(30, 10, 46, 0.35);
+    --fnc-text-key: rgba(0, 0, 0, 0.4);
+    --fnc-border: rgba(0, 0, 0, 0.08);
+    --fnc-border-faint: rgba(0, 0, 0, 0.05);
+    --fnc-purple: #c026d3;
+    --fnc-violet: #7c3aed;
+    --fnc-fuchsia: #d946ef;
+    --fnc-cyan: #06b6d4;
+    --fnc-green: #10b981;
+    --fnc-amber: #f59e0b;
+    --fnc-border-purple: rgba(192, 38, 211, 0.3);
+    --fnc-border-purple-h: rgba(192, 38, 211, 0.5);
+    --fnc-border-cyan: rgba(6, 182, 212, 0.25);
+    --fnc-glow-purple: rgba(192, 38, 211, 0.08);
+    --fnc-mode-inactive: rgba(30, 10, 46, 0.45);
+    --fnc-white-key: linear-gradient(180deg, #e8e8f0 0%, #fff 100%);
+    --fnc-white-key-hover: linear-gradient(180deg, #d8b4fe 0%, #ede9fe 100%);
+    --fnc-white-key-active: linear-gradient(180deg, #c026d3 0%, #e879f9 100%);
+    --fnc-black-key: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
+    --fnc-black-key-hover: linear-gradient(180deg, #4c1d95 0%, #2e1065 100%);
+    --fnc-black-key-active: linear-gradient(180deg, #c026d3 0%, #7c3aed 100%);
+    --fnc-tuner-track: linear-gradient(90deg, #93c5fd 0%, #10b981 48%, #10b981 52%, #f9a8d4 100%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding: 2.5rem;
+    background: var(--fnc-bg);
+    border-radius: 28px;
+    border: 1.5px solid var(--fnc-border-purple);
+    color: var(--fnc-text);
+    max-width: 860px;
+    margin: 2rem auto;
+    box-shadow: 0 0 60px var(--fnc-glow-purple), inset 0 0 40px var(--fnc-glow-purple);
+    transition: box-shadow 0.4s ease;
+  }
+
+  :global(.theme-dark) .fnc-root {
+    --fnc-bg: #090912;
+    --fnc-bg-panel: #0f0f1e;
+    --fnc-bg-input: #0f0f1e;
+    --fnc-bg-input-focus: #140b1e;
+    --fnc-bg-piano: #06060e;
+    --fnc-text: #f0f0ff;
+    --fnc-text-muted: rgba(240, 240, 255, 0.45);
+    --fnc-text-dim: rgba(240, 240, 255, 0.3);
+    --fnc-text-key: rgba(0, 0, 0, 0.35);
+    --fnc-border: rgba(255, 255, 255, 0.06);
+    --fnc-border-faint: rgba(255, 255, 255, 0.04);
+    --fnc-fuchsia: #e879f9;
+    --fnc-border-purple: rgba(192, 38, 211, 0.3);
+    --fnc-border-purple-h: rgba(192, 38, 211, 0.5);
+    --fnc-border-cyan: rgba(6, 182, 212, 0.15);
+    --fnc-glow-purple: rgba(192, 38, 211, 0.06);
+    --fnc-mode-inactive: rgba(240, 240, 255, 0.45);
+    --fnc-tuner-track: linear-gradient(90deg, #1e3a5f 0%, #10b981 48%, #10b981 52%, #5c1a40 100%);
+  }
+</style>
+
+<style is:global>
+  .fnc__mode-switcher {
+    display: flex;
+    background: var(--fnc-bg-panel);
+    border-radius: 14px;
+    padding: 5px;
+    gap: 5px;
+    border: 1px solid var(--fnc-border);
+    align-self: center;
+  }
+
+  .fnc__mode-btn {
+    flex: 1;
+    padding: 0.65rem 1.75rem;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--fnc-mode-inactive);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .fnc__mode-btn--active {
+    background: linear-gradient(135deg, var(--fnc-purple), var(--fnc-violet));
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(192, 38, 211, 0.4);
+  }
+
+  .fnc__mode-btn:not(.fnc__mode-btn--active):hover {
+    color: var(--fnc-fuchsia);
+    background: rgba(192, 38, 211, 0.08);
+  }
+
+  .fnc__calibration-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: var(--fnc-bg-panel);
+    padding: 1.1rem 1.4rem;
+    border-radius: 18px;
+    border: 1px solid var(--fnc-border-cyan);
+  }
+
+  .fnc__cal-main {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .fnc__cal-info {
+    font-size: 0.78rem;
+    color: var(--fnc-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .fnc__cal-info strong { color: var(--fnc-cyan); }
+
+  .fnc__cal-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fnc-cyan);
+    white-space: nowrap;
+  }
+
+  .fnc__cal-presets { display: flex; gap: 0.5rem; }
+
+  .fnc__cal-preset {
+    background: transparent;
+    border: 1px solid var(--fnc-border-cyan);
+    color: var(--fnc-text-muted);
+    padding: 0.35rem 0.85rem;
+    border-radius: 99px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .fnc__cal-preset--active {
+    background: rgba(6, 182, 212, 0.15);
+    border-color: var(--fnc-cyan);
+    color: var(--fnc-cyan);
+  }
+
+  .fnc__cal-preset:not(.fnc__cal-preset--active):hover {
+    border-color: var(--fnc-cyan);
+    color: var(--fnc-cyan);
+  }
+
+  .fnc__cal-custom {
+    width: 80px;
+    background: var(--fnc-bg);
+    border: 1px solid var(--fnc-border);
+    border-radius: 8px;
+    padding: 0.3rem 0.6rem;
+    color: var(--fnc-text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .fnc__cal-custom:focus {
+    outline: none;
+    border-color: var(--fnc-cyan);
+  }
+
+  .fnc__cal-unit {
+    font-size: 0.78rem;
+    color: var(--fnc-text-dim);
+    font-weight: 600;
+  }
+
+  .fnc__main-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .fnc__main-panel--hidden { display: none; }
+
+  .fnc__input-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fnc__input-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fnc-purple);
+  }
+
+  .fnc__input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .fnc__big-input {
+    flex: 1;
+    background: var(--fnc-bg-input);
+    border: 2px solid var(--fnc-border-purple);
+    border-radius: 14px;
+    padding: 1.1rem 1.4rem;
+    color: var(--fnc-text);
+    font-size: 2rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+  }
+
+  .fnc__big-input::-webkit-outer-spin-button,
+  .fnc__big-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  .fnc__big-input:focus {
+    outline: none;
+    border-color: var(--fnc-purple);
+    background: var(--fnc-bg-input-focus);
+    box-shadow: 0 0 0 4px rgba(192, 38, 211, 0.12);
+  }
+
+  .fnc__big-unit {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--fnc-text-dim);
+  }
+
+  .fnc__play-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--fnc-purple), var(--fnc-violet));
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(192, 38, 211, 0.4);
+  }
+
+  .fnc__play-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(192, 38, 211, 0.55); }
+  .fnc__play-btn:active { transform: scale(0.95); }
+
+  .fnc__result-hero {
+    text-align: center;
+    padding: 2rem;
+    background: var(--fnc-bg-panel);
+    border-radius: 20px;
+    border: 1px solid var(--fnc-border-purple);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .fnc__note-name {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--fnc-fuchsia);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgba(192, 38, 211, 0.4);
+  }
+
+  .fnc__note-freq {
+    font-size: 0.95rem;
+    color: var(--fnc-text-muted);
+    font-weight: 500;
+  }
+
+  .fnc__copy-hero {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(192, 38, 211, 0.1);
+    border: 1px solid var(--fnc-border-purple);
+    color: var(--fnc-fuchsia);
+    padding: 0.5rem 1.2rem;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .fnc__copy-hero:hover { background: rgba(192, 38, 211, 0.2); transform: translateY(-1px); }
+
+  .fnc__copy-hero--done {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--fnc-green);
+    color: var(--fnc-green);
+  }
+
+  .fnc__tuner {
+    background: var(--fnc-bg-panel);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--fnc-border);
+  }
+
+  .fnc__tuner-track {
+    position: relative;
+    height: 8px;
+    background: var(--fnc-tuner-track);
+    border-radius: 99px;
+    margin-bottom: 0.5rem;
+  }
+
+  .fnc__tuner-center-mark {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 1px;
+  }
+
+  .fnc__tuner-needle {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+    background: var(--fnc-purple);
+    transform: translateX(-50%);
+    transition: left 0.15s ease, background 0.2s;
+    box-shadow: 0 0 8px rgba(192, 38, 211, 0.8);
+  }
+
+  .fnc__tuner-needle--perfect { background: var(--fnc-green); box-shadow: 0 0 12px rgba(16, 185, 129, 0.9); }
+  .fnc__tuner-needle--sharp { background: var(--fnc-amber); box-shadow: 0 0 8px rgba(245, 158, 11, 0.8); }
+  .fnc__tuner-needle--flat { background: var(--fnc-cyan); box-shadow: 0 0 8px rgba(6, 182, 212, 0.8); }
+
+  .fnc__tuner-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: var(--fnc-text-dim);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 0.35rem;
+  }
+
+  .fnc__tuner-label-center { color: var(--fnc-green); }
+
+  .fnc__cents-value {
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--fnc-text-muted);
+    margin-top: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .fnc__harmonics {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .fnc__harmonic-card {
+    background: var(--fnc-bg-panel);
+    border-radius: 14px;
+    padding: 1rem;
+    border: 1px solid var(--fnc-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .fnc__harmonic-card--main { border-color: var(--fnc-border-purple); }
+
+  .fnc__harmonic-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fnc-text-dim);
+  }
+
+  .fnc__harmonic-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--fnc-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fnc__copy-small {
+    background: transparent;
+    border: 1px solid var(--fnc-border);
+    color: var(--fnc-text-dim);
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .fnc__copy-small:hover {
+    border-color: var(--fnc-purple);
+    color: var(--fnc-fuchsia);
+    background: rgba(192, 38, 211, 0.1);
+  }
+
+  .fnc__copy-small--done {
+    border-color: var(--fnc-green);
+    color: var(--fnc-green);
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .fnc__note-selector {
+    background: var(--fnc-bg-panel);
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid var(--fnc-border-purple);
+  }
+
+  .fnc__note-dropdowns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .fnc__select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fnc__select-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fnc-purple);
+  }
+
+  .fnc__select {
+    background: var(--fnc-bg);
+    border: 1.5px solid var(--fnc-border-purple);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    color: var(--fnc-text);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.2s;
+  }
+
+  .fnc__select:focus { outline: none; border-color: var(--fnc-purple); box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.12); }
+
+  .fnc__text-input {
+    width: 100%;
+    background: var(--fnc-bg);
+    border: 2px solid var(--fnc-border-purple);
+    border-radius: 12px;
+    padding: 1rem;
+    color: var(--fnc-text);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+    box-sizing: border-box;
+  }
+
+  .fnc__text-input:focus {
+    outline: none;
+    border-color: var(--fnc-purple);
+    box-shadow: 0 0 0 4px rgba(192, 38, 211, 0.15);
+  }
+
+  .fnc__play-row { display: flex; justify-content: center; }
+
+  .fnc__play-full-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, var(--fnc-purple), var(--fnc-violet));
+    border: none;
+    border-radius: 99px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(192, 38, 211, 0.4);
+  }
+
+  .fnc__play-full-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192, 38, 211, 0.55); }
+  .fnc__play-full-btn:active { transform: translateY(0); }
+
+  .fnc__piano-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .fnc__piano-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fnc-text-dim);
+    text-align: center;
+  }
+
+  .fnc__piano {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: var(--fnc-bg-piano);
+    border-radius: 16px;
+    padding: 1.25rem 1rem 0.5rem;
+    border: 1px solid var(--fnc-border-faint);
+    overflow-x: auto;
+    touch-action: none;
+  }
+
+  .fnc__piano-octave {
+    display: flex;
+    position: relative;
+  }
+
+  .fnc__piano-octave-label {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--fnc-text-dim);
+    white-space: nowrap;
+    letter-spacing: 0.06em;
+  }
+
+  .fnc__key {
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.12s, transform 0.08s, box-shadow 0.12s;
+    flex-shrink: 0;
+  }
+
+  .fnc__key--white {
+    width: 36px;
+    height: 120px;
+    background: var(--fnc-white-key);
+    border-radius: 0 0 6px 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 0 1px;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 8px;
+  }
+
+  .fnc__key--white:hover { background: var(--fnc-white-key-hover); }
+  .fnc__key--white.fnc__key--active { background: var(--fnc-white-key-active); box-shadow: 0 0 16px rgba(192, 38, 211, 0.7); transform: translateY(2px); }
+
+  .fnc__key--black {
+    position: absolute;
+    right: -13px;
+    top: 0;
+    width: 24px;
+    height: 74px;
+    background: var(--fnc-black-key);
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(192, 38, 211, 0.2);
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .fnc__key--black:hover { background: var(--fnc-black-key-hover); }
+  .fnc__key--black.fnc__key--active { background: var(--fnc-black-key-active); box-shadow: 0 0 14px rgba(192, 38, 211, 0.8); }
+
+  .fnc__key-label {
+    font-size: 0.52rem;
+    font-weight: 700;
+    color: var(--fnc-text-key);
+    letter-spacing: 0.04em;
+    pointer-events: none;
+  }
+
+  .fnc__history-section {
+    background: var(--fnc-bg-panel);
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid var(--fnc-border);
+  }
+
+  .fnc__history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+  }
+
+  .fnc__history-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fnc-text-dim);
+  }
+
+  .fnc__history-clear {
+    background: transparent;
+    border: 1px solid var(--fnc-border);
+    color: var(--fnc-text-dim);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .fnc__history-clear:hover { border-color: var(--fnc-border-purple-h); color: var(--fnc-fuchsia); }
+
+  .fnc__history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fnc__history-item { display: contents; }
+
+  .fnc__history-recall {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--fnc-border-faint);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: inherit;
+  }
+
+  .fnc__history-recall:hover { background: rgba(192, 38, 211, 0.08); border-color: var(--fnc-border-purple); }
+
+  .fnc__history-hz {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--fnc-text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fnc__history-note {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--fnc-fuchsia);
+  }
+
+  .fnc__history-empty {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--fnc-text-dim);
+    padding: 0.75rem 0;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .fnc__harmonics { grid-template-columns: 1fr; }
+    .fnc__harmonic-card { flex-direction: row; justify-content: space-between; text-align: left; }
+    .fnc__key--white { width: 28px; height: 90px; }
+    .fnc__key--black { width: 18px; height: 56px; right: -10px; }
+    .fnc__cal-presets { flex-wrap: wrap; }
+  }
+
+  @media (max-width: 480px) {
+    .fnc__mode-btn { padding: 0.55rem 1rem; font-size: 0.82rem; }
+    .fnc__note-name { font-size: 2.5rem; }
+    .fnc__piano { padding: 1rem 0.5rem 0.25rem; }
+    .fnc__key--white { width: 24px; height: 80px; }
+    .fnc__key--black { width: 16px; height: 50px; right: -8px; }
+    .fnc__note-dropdowns { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const root = document.getElementById('fnc-root') as HTMLElement;
+  const ds = root?.dataset ?? {};
+  const NOTE_NAMES = (ds.noteNames ?? 'C,C#,D,D#,E,F,F#,G,G#,A,A#,B').split(',');
+  const UNIT_HZ_EXACT = ds.unitHzExact ?? 'exact Hz';
+  const TUNED = ds.tuned ?? 'Tuned';
+  const SHARP = ds.sharp ?? 'sharp';
+  const FLAT = ds.flat ?? 'flat';
+  const PIANO_OCTAVE = ds.pianoOctave ?? 'Oct';
+  const COPY_FEEDBACK = ds.copyFeedback ?? 'Copied!';
+  const HISTORY_LOAD_ARIA = ds.historyLoadAria ?? 'Load %s Hz';
+
+  let audioCtx: AudioContext | null = null;
+  let activeOscillator: OscillatorNode | null = null;
+  let activeGain: GainNode | null = null;
+  let currentMode: 'hz' | 'note' = 'hz';
+  let referenceA4 = 440;
+  let history: Array<{ hz: string; note: string }> = [];
+
+  function getAudioContext(): AudioContext {
+    if (!audioCtx) audioCtx = new AudioContext();
+    return audioCtx;
+  }
+
+  function playTone(frequency: number): void {
+    const ctx = getAudioContext();
+    if (activeOscillator) { activeOscillator.stop(); activeOscillator = null; }
+    activeGain = ctx.createGain();
+    activeGain.gain.setValueAtTime(0, ctx.currentTime);
+    activeGain.gain.linearRampToValueAtTime(0.4, ctx.currentTime + 0.01);
+    activeGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 2);
+    activeGain.connect(ctx.destination);
+    activeOscillator = ctx.createOscillator();
+    activeOscillator.type = 'sine';
+    activeOscillator.frequency.setValueAtTime(frequency, ctx.currentTime);
+    activeOscillator.connect(activeGain);
+    activeOscillator.start(ctx.currentTime);
+    activeOscillator.stop(ctx.currentTime + 2);
+  }
+
+  function hzToMidi(hz: number): number { return 12 * Math.log2(hz / referenceA4) + 69; }
+  function midiToHz(midi: number): number { return referenceA4 * Math.pow(2, (midi - 69) / 12); }
+  function midiToNoteName(midi: number): string {
+    const idx = ((Math.round(midi) % 12) + 12) % 12;
+    return NOTE_NAMES[idx] + (Math.floor(Math.round(midi) / 12) - 1);
+  }
+  function noteIndexAndOctaveToMidi(noteIndex: number, octave: number): number {
+    return (octave + 1) * 12 + noteIndex;
+  }
+
+  function setElText(id: string, text: string): void {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function setHzHarmonics(hz: number, downId: string, mainId: string, upId: string): void {
+    setElText(downId, `${(hz / 2).toFixed(2)} Hz`);
+    setElText(mainId, `${hz.toFixed(2)} Hz`);
+    setElText(upId, `${(hz * 2).toFixed(2)} Hz`);
+  }
+
+  function getNeedleClass(cents: number): string {
+    if (Math.abs(cents) < 5) return 'fnc__tuner-needle--perfect';
+    return cents > 0 ? 'fnc__tuner-needle--sharp' : 'fnc__tuner-needle--flat';
+  }
+
+  function getCentsLabel(cents: number): string {
+    const abs = Math.abs(cents);
+    if (abs < 5) return TUNED;
+    const sign = cents > 0 ? '+' : '';
+    const suffix = cents > 0 ? SHARP : FLAT;
+    return `${sign}${cents.toFixed(1)} cents (${suffix})`;
+  }
+
+  function updateTuner(cents: number): void {
+    const needle = document.getElementById('tuner-needle');
+    const display = document.getElementById('cents-display');
+    if (!needle || !display) return;
+    const pct = Math.max(-50, Math.min(50, cents));
+    needle.style.left = `${50 + (pct / 50) * 47}%`;
+    ['fnc__tuner-needle--perfect', 'fnc__tuner-needle--sharp', 'fnc__tuner-needle--flat']
+      .forEach((c) => needle.classList.remove(c));
+    needle.classList.add(getNeedleClass(cents));
+    display.textContent = getCentsLabel(cents);
+  }
+
+  function addToHistory(hz: string, note: string): void {
+    if (history.find((h) => h.hz === hz)) return;
+    history.unshift({ hz, note });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function renderHistory(): void {
+    const list = document.getElementById('history-list');
+    const empty = document.getElementById('history-empty');
+    if (!list || !empty) return;
+    if (history.length === 0) {
+      list.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    list.innerHTML = history
+      .map(
+        (h) =>
+          `<li class="fnc__history-item" role="listitem"><button class="fnc__history-recall" data-hz="${h.hz}" aria-label="${HISTORY_LOAD_ARIA.replace('%s', h.hz)}"><span class="fnc__history-hz">${h.hz} Hz</span><span class="fnc__history-note">${h.note}</span></button></li>`,
+      )
+      .join('');
+    list.querySelectorAll('.fnc__history-recall').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const hz = btn.getAttribute('data-hz');
+        if (!hz) return;
+        const inp = document.getElementById('hz-input') as HTMLInputElement | null;
+        if (inp) { inp.value = hz; updateHzToNote(); }
+        if (currentMode !== 'hz') switchMode('hz');
+      });
+    });
+  }
+
+  function updateHzToNote(): void {
+    const hzInput = document.getElementById('hz-input') as HTMLInputElement | null;
+    if (!hzInput) return;
+    let hz = parseFloat(hzInput.value);
+    if (isNaN(hz) || hz <= 0) hz = 440;
+    hz = Math.max(16, Math.min(20000, hz));
+    const midi = hzToMidi(hz);
+    const roundedMidi = Math.round(midi);
+    const cents = (midi - roundedMidi) * 100;
+    const noteName = midiToNoteName(roundedMidi);
+    const exactHz = midiToHz(roundedMidi);
+    setElText('hz-result-note', noteName);
+    setElText('hz-result-exact', `${exactHz.toFixed(2)} ${UNIT_HZ_EXACT}`);
+    const copyBtn = document.getElementById('copy-note-name');
+    if (copyBtn) copyBtn.setAttribute('data-value', noteName);
+    setHzHarmonics(hz, 'harmonic-down-val', 'harmonic-main-val', 'harmonic-up-val');
+    updateTuner(cents);
+    updatePianoHighlight(((roundedMidi % 12) + 12) % 12);
+    addToHistory(hz.toFixed(2), noteName);
+  }
+
+  function updateNoteToHz(fromInput = false): void {
+    const noteSelect = document.getElementById('note-select') as HTMLSelectElement | null;
+    const octaveSelect = document.getElementById('octave-select') as HTMLSelectElement | null;
+    const noteTextInput = document.getElementById('note-text-input') as HTMLInputElement | null;
+    if (!noteSelect || !octaveSelect || !noteTextInput) return;
+    const noteIndex = parseInt(noteSelect.value);
+    const octave = parseInt(octaveSelect.value);
+    if (!fromInput) noteTextInput.value = (NOTE_NAMES[noteIndex] ?? '') + octave;
+    const hz = midiToHz(noteIndexAndOctaveToMidi(noteIndex, octave));
+    setElText('note-result-hz', hz.toFixed(2));
+    const copyBtn = document.getElementById('copy-hz-value');
+    if (copyBtn) copyBtn.setAttribute('data-value', hz.toFixed(2));
+    setHzHarmonics(hz, 'n2h-harmonic-down', 'n2h-harmonic-main', 'n2h-harmonic-up');
+    updatePianoHighlight(noteIndex);
+  }
+
+  function applyModifier(noteIndex: number, modifier: string | undefined): number {
+    if (!modifier) return noteIndex;
+    const mod = modifier.toUpperCase();
+    if (mod === '#' || mod === 'SHARP') return (noteIndex + 1) % 12;
+    if (mod === 'B' || mod === 'FLAT') return (noteIndex - 1 + 12) % 12;
+    return noteIndex;
+  }
+
+  function parseNoteInput(input: string): { noteIndex: number; octave: number } | null {
+    const clean = input.trim().toUpperCase();
+    if (!clean) return null;
+    const match = clean.match(/^([A-G]|DO|RE|MI|FA|SOL|LA|SI)(#|B|SHARP|FLAT)?(\d)?$/i);
+    if (!match) return null;
+    const enNotes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    const esNotes = ['DO', 'DO#', 'RE', 'RE#', 'MI', 'FA', 'FA#', 'SOL', 'SOL#', 'LA', 'LA#', 'SI'];
+    const noteStr = match[1] ?? '';
+    let idx = enNotes.indexOf(noteStr);
+    if (idx === -1) idx = esNotes.indexOf(noteStr);
+    if (idx === -1) return null;
+    const octave = match[3] ? parseInt(match[3]) : 4;
+    return { noteIndex: applyModifier(idx, match[2]), octave };
+  }
+
+  function switchMode(mode: 'hz' | 'note'): void {
+    currentMode = mode;
+    const panelHz = document.getElementById('panel-hz-to-note');
+    const panelNote = document.getElementById('panel-note-to-hz');
+    const btnHz = document.getElementById('btn-hz-to-note');
+    const btnNote = document.getElementById('btn-note-to-hz');
+    if (!panelHz || !panelNote || !btnHz || !btnNote) return;
+    if (mode === 'hz') {
+      panelHz.classList.remove('fnc__main-panel--hidden');
+      panelNote.classList.add('fnc__main-panel--hidden');
+      btnHz.classList.add('fnc__mode-btn--active');
+      btnNote.classList.remove('fnc__mode-btn--active');
+    } else {
+      panelNote.classList.remove('fnc__main-panel--hidden');
+      panelHz.classList.add('fnc__main-panel--hidden');
+      btnNote.classList.add('fnc__mode-btn--active');
+      btnHz.classList.remove('fnc__mode-btn--active');
+    }
+  }
+
+  function updatePianoHighlight(noteIndex: number): void {
+    document.querySelectorAll('.fnc__key--active').forEach((k) => k.classList.remove('fnc__key--active'));
+    document.querySelectorAll(`[data-note="${noteIndex}"]`).forEach((k) => k.classList.add('fnc__key--active'));
+  }
+
+  function buildWhiteKey(noteIdx: number, oct: number, bIdx: number): HTMLButtonElement {
+    const wKey = document.createElement('button');
+    wKey.className = 'fnc__key fnc__key--white';
+    wKey.setAttribute('data-note', String(noteIdx));
+    wKey.setAttribute('data-octave', String(oct));
+    wKey.setAttribute('aria-label', `${NOTE_NAMES[noteIdx] ?? ''}${oct}`);
+    const label = document.createElement('span');
+    label.className = 'fnc__key-label';
+    label.textContent = (NOTE_NAMES[noteIdx] ?? '').replace('#', '');
+    wKey.appendChild(label);
+    if (bIdx !== -1) {
+      const bKey = document.createElement('button');
+      bKey.className = 'fnc__key fnc__key--black';
+      bKey.setAttribute('data-note', String(bIdx));
+      bKey.setAttribute('data-octave', String(oct));
+      bKey.setAttribute('aria-label', `${NOTE_NAMES[bIdx] ?? ''}${oct}`);
+      wKey.appendChild(bKey);
+    }
+    return wKey;
+  }
+
+  function buildOctave(oct: number): HTMLDivElement {
+    const wrap = document.createElement('div');
+    wrap.className = 'fnc__piano-octave';
+    wrap.setAttribute('data-octave', String(oct));
+    const whitePattern = [0, 2, 4, 5, 7, 9, 11];
+    const blackPattern = [1, 3, -1, 6, 8, 10, -1];
+    whitePattern.forEach((noteIdx, pos) => {
+      wrap.appendChild(buildWhiteKey(noteIdx, oct, blackPattern[pos] ?? -1));
+    });
+    const octLabel = document.createElement('div');
+    octLabel.className = 'fnc__piano-octave-label';
+    octLabel.textContent = `${PIANO_OCTAVE} ${oct}`;
+    wrap.appendChild(octLabel);
+    return wrap;
+  }
+
+  function handlePianoClick(e: Event): void {
+    const target = (e.target as HTMLElement).closest('[data-note]') as HTMLElement | null;
+    if (!target) return;
+    const noteIdx = parseInt(target.getAttribute('data-note') ?? '0');
+    const oct = parseInt(target.getAttribute('data-octave') ?? '4');
+    const hz = midiToHz(noteIndexAndOctaveToMidi(noteIdx, oct));
+    playTone(hz);
+    const hzInput = document.getElementById('hz-input') as HTMLInputElement | null;
+    if (hzInput) { hzInput.value = hz.toFixed(2); updateHzToNote(); }
+    if (currentMode !== 'hz') switchMode('hz');
+  }
+
+  function buildPiano(): void {
+    const piano = document.getElementById('piano');
+    if (!piano) return;
+    piano.innerHTML = '';
+    for (let oct = 3; oct <= 5; oct++) piano.appendChild(buildOctave(oct));
+    piano.addEventListener('click', handlePianoClick);
+  }
+
+  function copyText(text: string, btn: HTMLElement): void {
+    const orig = btn.innerHTML;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.classList.add('fnc__copy-small--done');
+      btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+      setTimeout(() => { btn.classList.remove('fnc__copy-small--done'); btn.innerHTML = orig; }, 2000);
+    });
+  }
+
+  function setupHeroCopy(id: string): void {
+    document.getElementById(id)?.addEventListener('click', (e) => {
+      const btn = e.currentTarget as HTMLElement;
+      const orig = btn.innerHTML;
+      const val = btn.getAttribute('data-value') ?? '';
+      navigator.clipboard.writeText(val).then(() => {
+        btn.classList.add('fnc__copy-hero--done');
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> ${COPY_FEEDBACK}`;
+        setTimeout(() => { btn.classList.remove('fnc__copy-hero--done'); btn.innerHTML = orig; }, 2000);
+      });
+    });
+  }
+
+  function setupCopyHandlers(): void {
+    setupHeroCopy('copy-note-name');
+    setupHeroCopy('copy-hz-value');
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.fnc__copy-small') as HTMLElement | null;
+      if (!btn) return;
+      const targetId = btn.getAttribute('data-copy-target');
+      if (!targetId) return;
+      const el = document.getElementById(targetId);
+      if (!el) return;
+      copyText(el.textContent?.replace(' Hz', '').trim() ?? '', btn);
+    });
+  }
+
+  function setupModeHandlers(): void {
+    document.getElementById('btn-hz-to-note')?.addEventListener('click', () => switchMode('hz'));
+    document.getElementById('btn-note-to-hz')?.addEventListener('click', () => switchMode('note'));
+  }
+
+  function setupPlayHandlers(): void {
+    document.getElementById('play-btn-hz')?.addEventListener('click', () => {
+      const inp = document.getElementById('hz-input') as HTMLInputElement | null;
+      if (!inp) return;
+      const hz = parseFloat(inp.value);
+      if (!isNaN(hz) && hz > 0) playTone(hz);
+    });
+    document.getElementById('play-btn-note')?.addEventListener('click', () => {
+      const ns = document.getElementById('note-select') as HTMLSelectElement | null;
+      const os = document.getElementById('octave-select') as HTMLSelectElement | null;
+      if (!ns || !os) return;
+      playTone(midiToHz(noteIndexAndOctaveToMidi(parseInt(ns.value), parseInt(os.value))));
+    });
+  }
+
+  function setupCalibrationHandlers(): void {
+    document.getElementById('ref-input')?.addEventListener('input', (e) => {
+      const val = parseFloat((e.target as HTMLInputElement).value);
+      if (isNaN(val) || val <= 300 || val >= 600) return;
+      referenceA4 = val;
+      document.querySelectorAll('.fnc__cal-preset').forEach((p) => p.classList.remove('fnc__cal-preset--active'));
+      if (currentMode === 'hz') updateHzToNote();
+      else updateNoteToHz();
+    });
+    document.querySelectorAll('.fnc__cal-preset').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const ref = parseFloat(btn.getAttribute('data-ref') ?? '440');
+        referenceA4 = ref;
+        const refInput = document.getElementById('ref-input') as HTMLInputElement | null;
+        if (refInput) refInput.value = String(ref);
+        document.querySelectorAll('.fnc__cal-preset').forEach((p) => p.classList.remove('fnc__cal-preset--active'));
+        btn.classList.add('fnc__cal-preset--active');
+        if (currentMode === 'hz') updateHzToNote();
+        else updateNoteToHz();
+      });
+    });
+  }
+
+  function setupInputHandlers(): void {
+    document.getElementById('hz-input')?.addEventListener('input', updateHzToNote);
+    document.getElementById('note-select')?.addEventListener('change', () => updateNoteToHz());
+    document.getElementById('octave-select')?.addEventListener('change', () => updateNoteToHz());
+    document.getElementById('note-text-input')?.addEventListener('input', (e) => {
+      const val = (e.target as HTMLInputElement).value;
+      const parsed = parseNoteInput(val);
+      if (!parsed) return;
+      const ns = document.getElementById('note-select') as HTMLSelectElement | null;
+      const os = document.getElementById('octave-select') as HTMLSelectElement | null;
+      if (!ns || !os) return;
+      ns.value = String(parsed.noteIndex);
+      os.value = String(parsed.octave);
+      updateNoteToHz(true);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    buildPiano();
+    updateHzToNote();
+    updateNoteToHz();
+    renderHistory();
+    setupInputHandlers();
+    setupModeHandlers();
+    setupPlayHandlers();
+    setupCalibrationHandlers();
+    setupCopyHandlers();
+    document.getElementById('clear-history')?.addEventListener('click', () => {
+      history = [];
+      renderHistory();
+    });
+  });
+</script>

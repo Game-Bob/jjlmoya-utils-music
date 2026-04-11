@@ -1,0 +1,804 @@
+---
+import type { KnownLocale } from '../../types';
+import type { MusicNoteEquivalencyUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const t = (Astro.props.ui ?? {}) as MusicNoteEquivalencyUI;
+---
+
+<div
+  class="mne"
+  id="mne-root"
+  data-copy-done={t.copyDone ?? 'Copied!'}
+  data-copy-label-note={t.copyLabelNote ?? 'Note'}
+  data-copy-label-german={t.copyLabelGerman ?? 'German System'}
+  data-copy-label-freq={t.copyLabelFreq ?? 'Frequency'}
+  data-copy-label-ansi={t.copyLabelAnsi ?? 'Scientific Octave'}
+  data-copy-label-url={t.copyLabelUrl ?? 'URL'}
+  data-na-label={t.naLabel ?? 'N/A'}
+>
+  <header class="mne__header">
+    <h2 id="mne-note-display">{t.initialTitle ?? 'Select a note on the piano'}</h2>
+    <div class="mne__octave-selector">
+      <span class="mne__octave-label">{t.octaveLabel ?? 'Scientific Octave:'}</span>
+      <div class="mne__octave-buttons" id="mne-octave-btns">
+        {
+          [0, 1, 2, 3, 4, 5, 6, 7, 8].map((o) => (
+            <button class={`mne__octave-btn ${o === 4 ? 'active' : ''}`} data-octave={o}>
+              {o}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </header>
+
+  <div class="mne__piano-container">
+    <div class="mne__piano" id="mne-piano">
+      {
+        [3, 4].map((oct) => (
+          <div class="mne__octave-group" data-octave={oct}>
+            <div class="mne__key mne__key--white" data-note="0" data-octave={oct}><span>C</span></div>
+            <div class="mne__key mne__key--black" data-note="1" data-octave={oct}><span>C#</span></div>
+            <div class="mne__key mne__key--white" data-note="2" data-octave={oct}><span>D</span></div>
+            <div class="mne__key mne__key--black" data-note="3" data-octave={oct}><span>D#</span></div>
+            <div class="mne__key mne__key--white" data-note="4" data-octave={oct}><span>E</span></div>
+            <div class="mne__key mne__key--white" data-note="5" data-octave={oct}><span>F</span></div>
+            <div class="mne__key mne__key--black" data-note="6" data-octave={oct}><span>F#</span></div>
+            <div class="mne__key mne__key--white" data-note="7" data-octave={oct}><span>G</span></div>
+            <div class="mne__key mne__key--black" data-note="8" data-octave={oct}><span>G#</span></div>
+            <div class="mne__key mne__key--white" data-note="9" data-octave={oct}><span>A</span></div>
+            <div class="mne__key mne__key--black" data-note="10" data-octave={oct}><span>A#</span></div>
+            <div class="mne__key mne__key--white" data-note="11" data-octave={oct}><span>B</span></div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="mne__info-grid">
+    <div class="mne__info-card">
+      <div class="mne__card-title">{t.systemsTitle ?? 'Naming Systems'}</div>
+      <div class="mne__system-row">
+        <span class="mne__system-label">{t.systemLatino ?? 'Latin (Solfège)'}</span>
+        <span class="mne__system-value" id="mne-val-latino">-</span>
+      </div>
+      <div class="mne__system-row">
+        <span class="mne__system-label">{t.systemAnglo ?? 'Anglo-Saxon (Modern)'}</span>
+        <span class="mne__system-value" id="mne-val-anglo">-</span>
+      </div>
+      <div class="mne__system-row">
+        <span class="mne__system-label">{t.systemGerman ?? 'Germanic (German)'}</span>
+        <span class="mne__system-value" id="mne-val-german">-</span>
+      </div>
+    </div>
+
+    <div class="mne__info-card">
+      <div class="mne__card-title">{t.sciNotationTitle ?? 'Scientific Notation'}</div>
+      <div class="mne__system-row">
+        <span class="mne__system-label">{t.systemAnsi ?? 'International (ANSI)'}</span>
+        <span class="mne__system-value mne__val-highlight" id="mne-val-ansi">-</span>
+      </div>
+      <div class="mne__system-row">
+        <span class="mne__system-label">{t.systemFranco ?? 'Franco-Belgian'}</span>
+        <span class="mne__system-value" id="mne-val-franco">-</span>
+      </div>
+      <div class="mne__system-row">
+        <span class="mne__system-label">{t.systemEnharmonic ?? 'Useful Enharmonic'}</span>
+        <span class="mne__system-value" id="mne-val-enharmonic">-</span>
+      </div>
+    </div>
+
+    <div class="mne__info-card">
+      <div class="mne__card-title">{t.techTitle ?? 'Technical Data & Waves'}</div>
+      <div class="mne__visualizer-container">
+        <canvas id="mne-visualizer"></canvas>
+      </div>
+      <div class="mne__frequency-display">
+        <span class="mne__freq-val" id="mne-val-frequency">0.00</span>
+        <span class="mne__hz-unit">Hz</span>
+      </div>
+      <div class="mne__actions">
+        <button class="mne__btn mne__btn--play" id="mne-btn-play">{t.btnPlay ?? 'Listen'}</button>
+        <button class="mne__btn mne__btn--copy" id="mne-btn-copy">{t.btnCopy ?? 'Copy Info'}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mne {
+    --mne-primary: #8b5cf6;
+    --mne-primary-rgb: 139, 92, 246;
+    --mne-secondary: #d946ef;
+    --mne-accent: #f59e0b;
+    --mne-bg-card: rgba(255, 255, 255, 0.8);
+    --mne-border-card: rgba(139, 92, 246, 0.2);
+    --mne-text-main: #1e293b;
+    --mne-text-muted: #64748b;
+    --mne-glass-bg: rgba(255, 255, 255, 0.5);
+    --mne-glass-border: rgba(139, 92, 246, 0.1);
+    --mne-piano-bg: #18181b;
+
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: var(--mne-bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--mne-border-card);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    color: var(--mne-text-main);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  :global(.theme-dark) .mne {
+    --mne-bg-card: rgba(15, 23, 42, 0.8);
+    --mne-border-card: rgba(139, 92, 246, 0.3);
+    --mne-text-main: #f8fafc;
+    --mne-text-muted: #94a3b8;
+    --mne-glass-bg: rgba(30, 41, 59, 0.5);
+    --mne-glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  .mne__header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #mne-note-display {
+    font-size: 2.5rem;
+    font-weight: 950;
+    background: linear-gradient(135deg, var(--mne-primary), var(--mne-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+
+  .mne__piano-container {
+    overflow-x: auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mne__piano {
+    display: flex;
+    position: relative;
+    background: var(--mne-piano-bg);
+    padding: 0.75rem;
+    border-radius: 1rem;
+    user-select: none;
+  }
+
+  .mne__key {
+    cursor: pointer;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .mne__key--white {
+    width: 44px;
+    height: 180px;
+    background: linear-gradient(to bottom, #fff 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 0 0 6px 6px;
+    margin: 0 1px;
+    z-index: 1;
+    color: #94a3b8;
+  }
+
+  .mne__key--black {
+    width: 32px;
+    height: 110px;
+    background: linear-gradient(to bottom, #334155 0%, #0f172a 100%);
+    border: 1px solid #000;
+    border-radius: 0 0 4px 4px;
+    margin-left: -16px;
+    margin-right: -16px;
+    z-index: 2;
+    color: #475569;
+  }
+
+  .mne__key:hover {
+    transform: translateY(4px);
+    filter: brightness(0.95);
+  }
+
+  .mne__key--white.active {
+    background: var(--mne-primary);
+    color: white;
+    border-color: var(--mne-primary);
+  }
+
+  .mne__key--black.active {
+    background: var(--mne-secondary);
+    color: white;
+    border-color: var(--mne-secondary);
+  }
+
+  .mne__octave-group {
+    display: flex;
+    position: relative;
+  }
+
+  .mne__info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .mne__info-card {
+    background: var(--mne-glass-bg);
+    border: 1px solid var(--mne-glass-border);
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: transform 0.2s;
+  }
+
+  .mne__info-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .mne__card-title {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mne-primary);
+    border-bottom: 1px solid var(--mne-glass-border);
+    padding-bottom: 0.5rem;
+  }
+
+  .mne__system-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mne__system-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--mne-text-muted);
+  }
+
+  .mne__system-value {
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--mne-text-main);
+  }
+
+  .mne__val-highlight {
+    color: var(--mne-primary);
+  }
+
+  .mne__octave-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .mne__octave-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--mne-text-muted);
+  }
+
+  .mne__octave-buttons {
+    display: flex;
+    gap: 0.35rem;
+    background: var(--mne-glass-bg);
+    padding: 0.4rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--mne-glass-border);
+  }
+
+  .mne__octave-btn {
+    background: transparent;
+    border: none;
+    color: var(--mne-text-muted);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 800;
+    transition: all 0.2s;
+  }
+
+  .mne__octave-btn:hover {
+    background: rgba(var(--mne-primary-rgb), 0.1);
+    color: var(--mne-primary);
+  }
+
+  .mne__octave-btn.active {
+    background: var(--mne-primary);
+    color: white;
+  }
+
+  .mne__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .mne__btn {
+    flex: 1;
+    padding: 0.85rem;
+    border-radius: 1rem;
+    border: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mne__btn--play {
+    background: linear-gradient(135deg, var(--mne-primary), var(--mne-secondary));
+    color: white;
+  }
+
+  .mne__btn--copy {
+    background: var(--mne-glass-bg);
+    color: var(--mne-text-main);
+    border: 1px solid var(--mne-glass-border);
+  }
+
+  .mne__btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.1);
+  }
+
+  .mne__frequency-display {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .mne__freq-val {
+    font-size: 3.5rem;
+    font-weight: 950;
+    letter-spacing: -2px;
+    color: var(--mne-primary);
+  }
+
+  .mne__hz-unit {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--mne-text-muted);
+  }
+
+  .mne__visualizer-container {
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--mne-glass-border);
+  }
+
+  :global(.theme-dark) .mne__visualizer-container {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  #mne-visualizer {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .mne {
+      padding: 1.5rem;
+      margin: 1rem;
+      border-radius: 1.5rem;
+    }
+
+    #mne-note-display {
+      font-size: 1.75rem;
+    }
+
+    .mne__key--white {
+      width: 36px;
+      height: 140px;
+    }
+
+    .mne__key--black {
+      width: 24px;
+      height: 90px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    .mne__freq-val {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mne {
+      padding: 1rem;
+      margin: 0;
+      border-radius: 1rem;
+      gap: 1.5rem;
+    }
+
+    #mne-note-display {
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+
+    .mne__octave-selector {
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .mne__octave-label {
+      font-size: 0.7rem;
+    }
+
+    .mne__octave-buttons {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    .mne__octave-btn {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .mne__piano-container {
+      padding: 0.5rem 0;
+    }
+
+    .mne__piano {
+      padding: 0.5rem;
+    }
+
+    .mne__key--white {
+      width: 22px;
+      height: 110px;
+      padding-bottom: 0.5rem;
+      font-size: 0.55rem;
+    }
+
+    .mne__key--black {
+      width: 14px;
+      height: 68px;
+      margin-left: -7px;
+      margin-right: -7px;
+      font-size: 0.45rem;
+      padding-bottom: 0.35rem;
+    }
+
+    .mne__info-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .mne__info-card {
+      padding: 1.25rem;
+      gap: 1rem;
+      border-radius: 1rem;
+    }
+
+    .mne__info-card:hover {
+      transform: none;
+    }
+
+    .mne__system-label {
+      font-size: 0.8rem;
+    }
+
+    .mne__system-value {
+      font-size: 1rem;
+    }
+
+    .mne__freq-val {
+      font-size: 2rem;
+      letter-spacing: -1px;
+    }
+
+    .mne__hz-unit {
+      font-size: 1rem;
+    }
+
+    .mne__btn {
+      padding: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .mne__visualizer-container {
+      height: 60px;
+    }
+  }
+</style>
+
+<script>
+  interface Note {
+    index: number;
+    lat: string;
+    ang: string;
+    ger: string;
+    enhLat: string;
+    enhAng: string;
+  }
+
+  const NOTE_DATA: Note[] = [
+    { index: 0, lat: 'Do', ang: 'C', ger: 'C', enhLat: '', enhAng: '' },
+    { index: 1, lat: 'Do#', ang: 'C#', ger: 'C#', enhLat: 'Reb', enhAng: 'Db' },
+    { index: 2, lat: 'Re', ang: 'D', ger: 'D', enhLat: '', enhAng: '' },
+    { index: 3, lat: 'Re#', ang: 'D#', ger: 'D#', enhLat: 'Mib', enhAng: 'Eb' },
+    { index: 4, lat: 'Mi', ang: 'E', ger: 'E', enhLat: '', enhAng: '' },
+    { index: 5, lat: 'Fa', ang: 'F', ger: 'F', enhLat: '', enhAng: '' },
+    { index: 6, lat: 'Fa#', ang: 'F#', ger: 'F#', enhLat: 'Solb', enhAng: 'Gb' },
+    { index: 7, lat: 'Sol', ang: 'G', ger: 'G', enhLat: '', enhAng: '' },
+    { index: 8, lat: 'Sol#', ang: 'G#', ger: 'G#', enhLat: 'Lab', enhAng: 'Ab' },
+    { index: 9, lat: 'La', ang: 'A', ger: 'A', enhLat: '', enhAng: '' },
+    { index: 10, lat: 'La#', ang: 'A#', ger: 'B', enhLat: 'Sib', enhAng: 'Bb' },
+    { index: 11, lat: 'Si', ang: 'B', ger: 'H', enhLat: '', enhAng: '' },
+  ];
+
+  let currentNote = 9;
+  let currentOctave = 4;
+  let audioCtx: AudioContext | null = null;
+  let analyser: AnalyserNode | null = null;
+  let dataArray: Uint8Array<ArrayBuffer> | null = null;
+  let animationId: number | null = null;
+
+  const root = document.getElementById('mne-root') as HTMLElement;
+  const ds = root?.dataset ?? {};
+
+  const els = {
+    piano: document.getElementById('mne-piano') as HTMLElement,
+    octaveBtns: document.getElementById('mne-octave-btns') as HTMLElement,
+    title: document.getElementById('mne-note-display') as HTMLElement,
+    valLatino: document.getElementById('mne-val-latino') as HTMLElement,
+    valAnglo: document.getElementById('mne-val-anglo') as HTMLElement,
+    valGerman: document.getElementById('mne-val-german') as HTMLElement,
+    valAnsi: document.getElementById('mne-val-ansi') as HTMLElement,
+    valFranco: document.getElementById('mne-val-franco') as HTMLElement,
+    valEnharmonic: document.getElementById('mne-val-enharmonic') as HTMLElement,
+    valFrequency: document.getElementById('mne-val-frequency') as HTMLElement,
+    btnPlay: document.getElementById('mne-btn-play') as HTMLElement,
+    btnCopy: document.getElementById('mne-btn-copy') as HTMLElement,
+    canvas: document.getElementById('mne-visualizer') as HTMLCanvasElement,
+  };
+
+  function calculateFrequency(noteIndex: number, octave: number) {
+    const n = octave * 12 + noteIndex - (4 * 12 + 9);
+    return 440 * Math.pow(2, n / 12);
+  }
+
+  function setText(el: HTMLElement | null, text: string) {
+    if (el) el.textContent = text;
+  }
+
+  function updateURL() {
+    const noteName = (NOTE_DATA[currentNote]?.ang ?? '') + currentOctave;
+    const url = new URL(window.location.href);
+    url.searchParams.set('nota', noteName);
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  function updateActiveKeys() {
+    document.querySelectorAll<HTMLElement>('.mne__key').forEach((k) => {
+      const kn = parseInt(k.dataset.note ?? '0');
+      const ko = parseInt(k.dataset.octave ?? '0');
+      k.classList.toggle('active', kn === currentNote && ko === currentOctave);
+    });
+    document.querySelectorAll<HTMLElement>('.mne__octave-btn').forEach((b) => {
+      b.classList.toggle('active', parseInt(b.dataset.octave ?? '0') === currentOctave);
+    });
+  }
+
+  function updateNamingCards(data: Note) {
+    setText(els.title, `${data.lat} ${currentOctave} / ${data.ang}${currentOctave}`);
+    setText(els.valLatino, data.lat);
+    setText(els.valAnglo, data.ang);
+    setText(els.valGerman, data.ger);
+    setText(els.valAnsi, `${data.ang}${currentOctave}`);
+    setText(els.valFranco, `Do${currentOctave - 1} (${data.lat})`);
+    const naLabel = ds.naLabel ?? 'N/A';
+    setText(els.valEnharmonic, data.enhLat ? `${data.enhLat} / ${data.enhAng}` : naLabel);
+  }
+
+  function updateUI() {
+    const data = NOTE_DATA[currentNote];
+    if (!data) return;
+    updateNamingCards(data);
+    setText(els.valFrequency, calculateFrequency(currentNote, currentOctave).toFixed(2));
+    updateActiveKeys();
+    updateURL();
+  }
+
+  function drawVisualizerPath(ctx: CanvasRenderingContext2D, width: number, height: number) {
+    if (!analyser || !dataArray) return;
+    analyser.getByteTimeDomainData(dataArray);
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#8b5cf6';
+    ctx.beginPath();
+    const sliceWidth = (width * 1.0) / analyser.frequencyBinCount;
+    let x = 0;
+    for (let i = 0; i < analyser.frequencyBinCount; i++) {
+      const v = (dataArray[i] ?? 128) / 128.0;
+      const y = (v * height) / 2;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+      x += sliceWidth;
+    }
+    ctx.lineTo(width, height / 2);
+    ctx.stroke();
+  }
+
+  function drawVisualizer() {
+    if (!els.canvas || !analyser || !dataArray) return;
+    const ctx = els.canvas.getContext('2d');
+    if (!ctx) return;
+    const width = (els.canvas.width = els.canvas.clientWidth);
+    const height = (els.canvas.height = 100);
+    if (animationId) cancelAnimationFrame(animationId);
+    animationId = requestAnimationFrame(drawVisualizer);
+    drawVisualizerPath(ctx, width, height);
+  }
+
+  function initAudio() {
+    if (audioCtx) return;
+    const AudioCtxClass =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    audioCtx = new AudioCtxClass();
+    analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 2048;
+    analyser.connect(audioCtx.destination);
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
+    drawVisualizer();
+  }
+
+  function playNote(noteIndex: number, octave: number, duration: number = 0.5) {
+    initAudio();
+    if (!audioCtx || !analyser) return;
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    const freq = calculateFrequency(noteIndex, octave);
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + 0.05);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+    oscillator.connect(gainNode);
+    gainNode.connect(analyser);
+    oscillator.start();
+    oscillator.stop(audioCtx.currentTime + duration);
+  }
+
+  const copyLabels = {
+    note: ds.copyLabelNote ?? 'Note',
+    german: ds.copyLabelGerman ?? 'German System',
+    freq: ds.copyLabelFreq ?? 'Frequency',
+    ansi: ds.copyLabelAnsi ?? 'Scientific Octave',
+    url: ds.copyLabelUrl ?? 'URL',
+  };
+
+  function buildCopyText(data: Note): string {
+    const freqText = els.valFrequency ? els.valFrequency.textContent : '';
+    const ansiText = els.valAnsi ? els.valAnsi.textContent : '';
+    return [
+      `${copyLabels.note}: ${data.lat} (${data.ang})`,
+      `${copyLabels.german}: ${data.ger}`,
+      `${copyLabels.freq}: ${freqText ?? ''} Hz`,
+      `${copyLabels.ansi}: ${ansiText ?? ''}`,
+      `${copyLabels.url}: ${window.location.href}`,
+    ].join('\n');
+  }
+
+  function flashCopyBtn(btn: HTMLElement) {
+    const originalText = btn.textContent ?? '';
+    btn.textContent = ds.copyDone ?? 'Copied!';
+    setTimeout(() => {
+      btn.textContent = originalText;
+    }, 2000);
+  }
+
+  if (els.piano) {
+    els.piano.addEventListener('mousedown', (e) => {
+      const key = (e.target as HTMLElement).closest('.mne__key') as HTMLElement;
+      if (key) {
+        currentNote = parseInt(key.dataset.note ?? '0');
+        currentOctave = parseInt(key.dataset.octave ?? '4');
+        updateUI();
+        playNote(currentNote, currentOctave, 1);
+      }
+    });
+
+    els.piano.addEventListener(
+      'touchstart',
+      (e) => {
+        e.preventDefault();
+        const touches = e.changedTouches;
+        for (let i = 0; i < touches.length; i++) {
+          const touch = touches[i];
+          if (!touch) continue;
+          const element = document.elementFromPoint(touch.clientX, touch.clientY);
+          const key = element?.closest('.mne__key') as HTMLElement;
+          if (key) {
+            currentNote = parseInt(key.dataset.note ?? '0');
+            currentOctave = parseInt(key.dataset.octave ?? '4');
+            updateUI();
+            playNote(currentNote, currentOctave, 1);
+          }
+        }
+      },
+      { passive: false },
+    );
+  }
+
+  if (els.octaveBtns) {
+    els.octaveBtns.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.mne__octave-btn') as HTMLElement;
+      if (btn) {
+        currentOctave = parseInt(btn.dataset.octave ?? '4');
+        updateUI();
+      }
+    });
+  }
+
+  if (els.btnPlay) {
+    els.btnPlay.addEventListener('click', () => {
+      playNote(currentNote, currentOctave, 1.5);
+    });
+  }
+
+  if (els.btnCopy) {
+    els.btnCopy.addEventListener('click', () => {
+      const data = NOTE_DATA[currentNote];
+      if (!data) return;
+      navigator.clipboard.writeText(buildCopyText(data));
+      flashCopyBtn(els.btnCopy);
+    });
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const notaParam = params.get('nota');
+  if (notaParam) {
+    const match = notaParam.match(/^([A-G]#?)([0-8])$/i);
+    if (match) {
+      const angName = (match[1] ?? '').toUpperCase();
+      const oct = parseInt(match[2] ?? '4');
+      const noteIndex = NOTE_DATA.findIndex((n) => n.ang === angName);
+      if (noteIndex !== -1) {
+        currentNote = noteIndex;
+        currentOctave = oct;
+      }
+    }
+  }
+
+  updateUI();
+</script>

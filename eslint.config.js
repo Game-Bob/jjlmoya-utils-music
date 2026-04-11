@@ -197,5 +197,13 @@ export default [
             "complexity": "off",
         },
     },
+    {
+        files: ["**/frequencyNoteConverter/component.astro/**"],
+        rules: {
+            "max-lines": "off",
+            "max-lines-per-function": "off",
+            "complexity": "off",
+        },
+    },
 ];
 

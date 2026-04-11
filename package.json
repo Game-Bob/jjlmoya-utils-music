@@ -8,8 +8,12 @@
     ".": "./src/index.ts",
     "./data": "./src/data.ts"
   },
-  "files": ["src"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -27,11 +31,13 @@
     "major": "npm version major"
   },
   "lint-staged": {
-    "*.{ts,tsx,astro}": ["eslint --fix"]
+    "*.{ts,tsx,astro}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@iconify-json/mdi": "^1.2.3",
-    "@jjlmoya/utils-shared": "1.0.2",
+    "@jjlmoya/utils-shared": "^1.2.0",
     "astro": "^6.1.2",
     "astro-icon": "^1.1.0"
   },
@@ -52,4 +58,3 @@
     "vitest": "^4.1.2"
   }
 }
-

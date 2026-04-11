@@ -1,0 +1,35 @@
+export interface FrequencyNoteConverterUI extends Record<string, string> {
+  btnHzToNote: string;
+  btnNoteToHz: string;
+  labelRef: string;
+  ariaRefCustom: string;
+  calInfo: string;
+  labelFrequency: string;
+  ariaFreqInput: string;
+  ariaPlay: string;
+  copyNoteName: string;
+  labelOctaveDown: string;
+  labelInputFreq: string;
+  labelOctaveUp: string;
+  labelNoteInput: string;
+  placeholderNote: string;
+  labelSetNote: string;
+  labelSetOctave: string;
+  labelSelectedNote: string;
+  copyHz: string;
+  btnListenNote: string;
+  pianoLabel: string;
+  pianoAria: string;
+  historyTitle: string;
+  historyClear: string;
+  historyEmpty: string;
+  historyLoadAria: string;
+  tuned: string;
+  sharp: string;
+  flat: string;
+  unitHzExact: string;
+  noteNames: string;
+  noteOptions: string;
+  pianoOctave: string;
+  copyFeedback: string;
+}

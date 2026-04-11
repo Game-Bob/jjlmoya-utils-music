@@ -1,0 +1,37 @@
+export interface PhaseDistanceUI extends Record<string, string> {
+  labelTemp: string;
+  btnAuto: string;
+  labelSampleRate: string;
+  labelUnits: string;
+  optMetric: string;
+  optImperial: string;
+  labelDistA: string;
+  labelDistB: string;
+  labelPresets: string;
+  presetCoincident: string;
+  presetSnare: string;
+  presetAmbient: string;
+  btnInvert: string;
+  labelGain: string;
+  btnCopy: string;
+  labelDelay: string;
+  unitMs: string;
+  labelCompensation: string;
+  unitSamples: string;
+  labelPhaseStatus: string;
+  textLoading: string;
+  statusInPhase: string;
+  statusInPhaseDesc: string;
+  statusCritical: string;
+  statusCriticalDesc: string;
+  statusOffAxis: string;
+  statusOffAxisDesc: string;
+  warningCritical: string;
+  labelSoundSpeed: string;
+  labelDistDiff: string;
+  labelNullFreq: string;
+  textNone: string;
+  chartTitle: string;
+  promptSoundSpeed: string;
+  copyFeedback: string;
+}

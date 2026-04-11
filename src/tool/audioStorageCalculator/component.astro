@@ -1,0 +1,735 @@
+---
+import type { KnownLocale } from '../../types';
+import type { AudioStorageCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as AudioStorageCalculatorUI;
+---
+
+<div
+  class="asc"
+  id="asc-root"
+  data-label-duration-set={t.labelDurationSet ?? 'Configured duration: {time}'}
+  data-label-recording-possible={t.labelRecordingPossible ?? 'Recording possible with {gb} GB configured'}
+  data-label-duration={t.labelDuration ?? 'Recording Duration'}
+  data-label-space-available={t.labelSpaceAvailable ?? 'Available Space'}
+  data-toggle-label-space={t.toggleLabelSpace ?? 'Calculate how much I can record with my free space'}
+  data-toggle-label-time={t.toggleLabelTime ?? 'Back to duration calculation'}
+  data-copy-done={t.copyDone ?? 'Summary Copied!'}
+  data-summary-space={t.summarySpace ?? 'The {t} recording at {bits}-bit/{hz} in {channels} mode will take approximately {result}.'}
+  data-summary-time={t.summaryTime ?? 'With {space} GB available, you can record up to {result} of audio at {bits}-bit/{hz} {channels}.'}
+>
+  <div class="asc__config-grid">
+    <div class="asc__card asc__card--accent">
+      <span class="asc__label">{t.labelConfig}</span>
+      <div class="asc__presets">
+        <button class="asc__preset-btn" data-hz="44100" data-bits="16" data-channels="2">CD</button>
+        <button class="asc__preset-btn asc__preset-btn--active" data-hz="48000" data-bits="24" data-channels="2">Radio/Video</button>
+        <button class="asc__preset-btn" data-hz="96000" data-bits="24" data-channels="2">Studio Pro</button>
+        <button class="asc__preset-btn" data-hz="48000" data-bits="32" data-channels="1">Podcast</button>
+      </div>
+
+      <div class="asc__field">
+        <label class="asc__label" for="hz-select">{t.labelHz}</label>
+        <select id="hz-select" class="asc__select">
+          <option value="44100">{t.optHz44100}</option>
+          <option value="48000" selected>{t.optHz48000}</option>
+          <option value="88200">{t.optHz88200}</option>
+          <option value="96000">{t.optHz96000}</option>
+          <option value="192000">{t.optHz192000}</option>
+        </select>
+      </div>
+
+      <div class="asc__field">
+        <label class="asc__label" for="bits-select">{t.labelBits}</label>
+        <select id="bits-select" class="asc__select">
+          <option value="16">{t.optBits16}</option>
+          <option value="24" selected>{t.optBits24}</option>
+          <option value="32">{t.optBits32}</option>
+        </select>
+      </div>
+
+      <div class="asc__field">
+        <label class="asc__label" for="channels-select">{t.labelChannels}</label>
+        <select id="channels-select" class="asc__select">
+          <option value="1">{t.optCh1}</option>
+          <option value="2" selected>{t.optCh2}</option>
+          <option value="6">{t.optCh6}</option>
+          <option value="8">{t.optCh8}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="asc__card">
+      <span class="asc__label" id="time-input-label">{t.labelDuration}</span>
+      <div class="asc__time-inputs" id="duration-inputs">
+        <div class="asc__time-box">
+          <label class="asc__label" for="time-h">{t.labelHours}</label>
+          <input type="number" id="time-h" class="asc__input" value="1" min="0" placeholder="00" />
+        </div>
+        <div class="asc__time-box">
+          <label class="asc__label" for="time-m">{t.labelMinutes}</label>
+          <input type="number" id="time-m" class="asc__input" value="0" min="0" max="59" placeholder="00" />
+        </div>
+        <div class="asc__time-box">
+          <label class="asc__label" for="time-s">{t.labelSeconds}</label>
+          <input type="number" id="time-s" class="asc__input" value="0" min="0" max="59" placeholder="00" />
+        </div>
+      </div>
+
+      <div class="asc__field" id="space-box" style="display:none;">
+        <label class="asc__label" for="space-input">{t.labelCapacity}</label>
+        <div class="asc__space-row">
+          <input type="number" id="space-input" class="asc__input" value="1" min="0.01" step="0.1" />
+          <span class="asc__label">GB</span>
+        </div>
+      </div>
+
+      <div class="asc__card-divider"></div>
+
+      <div class="asc__mode-toggle" id="toggle-mode">
+        <div class="asc__toggle-pill"></div>
+        <span class="asc__toggle-text" id="toggle-text">{t.toggleLabelSpace}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="asc__results">
+    <div class="asc__hero">
+      <div class="asc__main-result" id="result-primary">0.00 MB</div>
+      <div class="asc__secondary-result" id="result-secondary"></div>
+    </div>
+
+    <div class="asc__card">
+      <span class="asc__label">{t.labelComparison}</span>
+      <div class="asc__comparison">
+        <table class="asc__table">
+          <thead>
+            <tr>
+              <th>{t.thFormat}</th>
+              <th>{t.thQuality}</th>
+              <th>{t.thSize}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="asc__format-tag">WAV / AIFF</span></td>
+              <td>{t.qualityWav}</td>
+              <td id="comp-wav">-</td>
+            </tr>
+            <tr>
+              <td><span class="asc__format-tag">FLAC</span></td>
+              <td>{t.qualityFlac}</td>
+              <td id="comp-flac">-</td>
+            </tr>
+            <tr>
+              <td><span class="asc__format-tag">MP3 (320kbps)</span></td>
+              <td>{t.qualityMp3High}</td>
+              <td id="comp-mp3-320">-</td>
+            </tr>
+            <tr>
+              <td><span class="asc__format-tag">MP3 (128kbps)</span></td>
+              <td>{t.qualityMp3Std}</td>
+              <td id="comp-mp3-128">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="asc__capacity">
+      <span class="asc__label">{t.labelDevices}</span>
+      <div class="asc__bars">
+        <div class="asc__bar-item">
+          <div class="asc__bar-label"><span>{t.device32}</span> <span id="bar-pct-32">0%</span></div>
+          <div class="asc__bar-track"><div class="asc__bar-fill" id="bar-fill-32"></div></div>
+        </div>
+        <div class="asc__bar-item">
+          <div class="asc__bar-label"><span>{t.device128}</span> <span id="bar-pct-128">0%</span></div>
+          <div class="asc__bar-track"><div class="asc__bar-fill" id="bar-fill-128"></div></div>
+        </div>
+        <div class="asc__bar-item">
+          <div class="asc__bar-label"><span>{t.device1tb}</span> <span id="bar-pct-1024">0%</span></div>
+          <div class="asc__bar-track"><div class="asc__bar-fill" id="bar-fill-1024"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="asc__actions">
+      <button class="asc__copy-btn" id="copy-summary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+        <span id="copy-btn-text">{t.btnCopy}</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .asc {
+    --asc-bg: #f5f3ff;
+    --asc-bg-card: rgba(255, 255, 255, 0.85);
+    --asc-bg-card-accent: linear-gradient(135deg, rgba(238, 232, 255, 0.9) 0%, rgba(245, 243, 255, 1) 100%);
+    --asc-bg-input: #fff;
+    --asc-bg-input-focus: #f5f3ff;
+    --asc-bg-hero: #ede9fe;
+    --asc-text: #1e1b4b;
+    --asc-text-muted: rgba(79, 70, 229, 0.75);
+    --asc-text-dim: rgba(30, 27, 75, 0.5);
+    --asc-indigo: #4f46e5;
+    --asc-indigo-light: #6366f1;
+    --asc-border: rgba(99, 102, 241, 0.25);
+    --asc-border-card: rgba(99, 102, 241, 0.12);
+    --asc-border-input: rgba(99, 102, 241, 0.3);
+    --asc-toggle-bg: #ddd6fe;
+    --asc-bar-track: #ede9fe;
+    --asc-preset-bg: #ede9fe;
+    --asc-preset-color: rgba(30, 27, 75, 0.7);
+    --asc-result-gradient: linear-gradient(135deg, #1e1b4b 30%, #4f46e5 100%);
+    --asc-shadow: 0 20px 50px rgba(99, 102, 241, 0.1), inset 0 0 40px rgba(255, 255, 255, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: var(--asc-bg);
+    background-image:
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(129, 140, 248, 0.1) 0, transparent 50%);
+    border-radius: 24px;
+    border: 1px solid var(--asc-border);
+    color: var(--asc-text);
+    max-width: 900px;
+    margin: 2rem auto;
+    box-shadow: var(--asc-shadow);
+  }
+
+  :global(.theme-dark) .asc {
+    --asc-bg: #1e1b4b;
+    --asc-bg-card: rgba(30, 30, 46, 0.6);
+    --asc-bg-card-accent: linear-gradient(135deg, rgba(30, 30, 46, 0.8) 0%, rgba(15, 15, 25, 0.9) 100%);
+    --asc-bg-input: #0f0f17;
+    --asc-bg-input-focus: #151525;
+    --asc-bg-hero: #151525;
+    --asc-text: #f8fafc;
+    --asc-text-muted: rgba(165, 180, 252, 0.7);
+    --asc-text-dim: rgba(248, 250, 252, 0.5);
+    --asc-indigo: #818cf8;
+    --asc-indigo-light: #a5b4fc;
+    --asc-border: rgba(165, 180, 252, 0.2);
+    --asc-border-card: rgba(255, 255, 255, 0.05);
+    --asc-border-input: rgba(255, 255, 255, 0.1);
+    --asc-toggle-bg: #27273a;
+    --asc-bar-track: #1e1e2e;
+    --asc-preset-bg: #1e1e2e;
+    --asc-preset-color: rgba(248, 250, 252, 0.6);
+    --asc-result-gradient: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
+    --asc-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 255, 255, 0.02);
+  }
+
+  .asc__config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .asc__card {
+    background: var(--asc-bg-card);
+    border: 1px solid var(--asc-border-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .asc__card--accent {
+    border-color: rgba(99, 102, 241, 0.3);
+    background: var(--asc-bg-card-accent);
+  }
+
+  .asc__label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--asc-indigo);
+    margin-bottom: 0.25rem;
+  }
+
+  .asc__presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .asc__preset-btn {
+    background: var(--asc-preset-bg);
+    border: 1.5px solid var(--asc-border-card);
+    color: var(--asc-preset-color);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .asc__preset-btn:hover {
+    border-color: var(--asc-indigo);
+    color: #fff;
+    background: rgba(129, 140, 248, 0.1);
+  }
+
+  .asc__preset-btn--active {
+    background: var(--asc-indigo);
+    color: #fff;
+    border-color: var(--asc-indigo);
+    box-shadow: 0 0 15px rgba(129, 140, 248, 0.4);
+  }
+
+  .asc__field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .asc__select {
+    width: 100%;
+    background: var(--asc-bg-input);
+    border: 1.5px solid var(--asc-border-input);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: var(--asc-text);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23818cf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+
+  .asc__select:focus {
+    outline: none;
+    border-color: var(--asc-indigo);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.1);
+  }
+
+  .asc__time-inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .asc__time-box { display: flex; flex-direction: column; gap: 0.25rem; }
+
+  .asc__input {
+    background: var(--asc-bg-input);
+    border: 1.5px solid var(--asc-border-input);
+    border-radius: 12px;
+    padding: 0.75rem;
+    color: var(--asc-text);
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  .asc__input:focus {
+    outline: none;
+    border-color: var(--asc-indigo);
+    background: var(--asc-bg-input-focus);
+  }
+
+  .asc__space-row { display: flex; gap: 0.5rem; align-items: center; }
+
+  .asc__card-divider {
+    height: 1px;
+    background: var(--asc-border-card);
+    margin: 0.25rem 0;
+  }
+
+  .asc__mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(129, 140, 248, 0.05);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .asc__mode-toggle:hover { background: rgba(129, 140, 248, 0.1); }
+
+  .asc__toggle-pill {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--asc-toggle-bg);
+    border-radius: 99px;
+    transition: background 0.3s;
+    flex-shrink: 0;
+  }
+
+  .asc__toggle-pill::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .asc__mode-toggle--active .asc__toggle-pill { background: var(--asc-indigo); }
+  .asc__mode-toggle--active .asc__toggle-pill::after { transform: translateX(18px); }
+
+  .asc__toggle-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--asc-text-dim);
+  }
+
+  .asc__results { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .asc__hero {
+    text-align: center;
+    padding: 2.5rem;
+    background: radial-gradient(circle at center, rgba(129, 140, 248, 0.15) 0%, transparent 80%), var(--asc-bg-hero);
+    border-radius: 20px;
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    overflow: hidden;
+  }
+
+  .asc__main-result {
+    font-size: 3.5rem;
+    font-weight: 950;
+    line-height: 1;
+    background: var(--asc-result-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3));
+    margin-bottom: 0.5rem;
+  }
+
+  .asc__secondary-result {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--asc-text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .asc__comparison { overflow-x: auto; }
+
+  .asc__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .asc__table th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--asc-indigo);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--asc-border-card);
+  }
+
+  .asc__table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-weight: 600;
+  }
+
+  .asc__format-tag {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .asc__capacity { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .asc__bars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .asc__bar-item { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .asc__bar-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--asc-text-dim);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .asc__bar-track {
+    height: 8px;
+    background: var(--asc-bar-track);
+    border-radius: 99px;
+    overflow: hidden;
+    border: 1px solid var(--asc-border-card);
+  }
+
+  .asc__bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #818cf8);
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+  }
+
+  .asc__bar-fill--warning {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  }
+
+  .asc__bar-fill--danger {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+  }
+
+  .asc__actions { display: flex; justify-content: center; margin-top: 1rem; }
+
+  .asc__copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(129, 140, 248, 0.15);
+    border: 1.5px solid rgba(129, 140, 248, 0.35);
+    color: var(--asc-indigo-light);
+    padding: 0.85rem 2rem;
+    border-radius: 99px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .asc__copy-btn:hover {
+    background: var(--asc-indigo);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(129, 140, 248, 0.3);
+  }
+
+  .asc__copy-btn--done {
+    background: #10b981;
+    border-color: #10b981;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .asc { padding: 1.25rem; gap: 1.5rem; }
+    .asc__main-result { font-size: 2.5rem; }
+    .asc__hero { padding: 1.75rem 1rem; }
+    .asc__bars { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const root = document.getElementById('asc-root') as HTMLElement;
+  const ds = root?.dataset ?? {};
+
+  const LABEL_DURATION_SET = ds.labelDurationSet ?? 'Configured duration: {time}';
+  const LABEL_RECORDING_POSSIBLE = ds.labelRecordingPossible ?? 'Recording possible with {gb} GB configured';
+  const LABEL_DURATION = ds.labelDuration ?? 'Recording Duration';
+  const LABEL_SPACE_AVAILABLE = ds.labelSpaceAvailable ?? 'Available Space';
+  const TOGGLE_LABEL_SPACE = ds.toggleLabelSpace ?? 'Calculate how much I can record with my free space';
+  const TOGGLE_LABEL_TIME = ds.toggleLabelTime ?? 'Back to duration calculation';
+  const COPY_DONE = ds.copyDone ?? 'Summary Copied!';
+  const SUMMARY_SPACE = ds.summarySpace ?? 'The {t} recording at {bits}-bit/{hz} in {channels} mode will take approximately {result}.';
+  const SUMMARY_TIME = ds.summaryTime ?? 'With {space} GB available, you can record up to {result} of audio at {bits}-bit/{hz} {channels}.';
+
+  let calculationMode = 'space';
+
+  function formatSize(bytes: number): string {
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+    if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+    return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+  }
+
+  function formatTime(seconds: number): string {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = Math.floor(seconds % 60);
+    return `${h}h ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
+  }
+
+  function getSelectVal(id: string): number {
+    return parseInt((document.getElementById(id) as HTMLSelectElement).value);
+  }
+
+  function calculate(): void {
+    const hz = getSelectVal('hz-select');
+    const bits = getSelectVal('bits-select');
+    const channels = getSelectVal('channels-select');
+    const resPrimary = document.getElementById('result-primary');
+    const resSecondary = document.getElementById('result-secondary');
+    if (!resPrimary || !resSecondary) return;
+
+    const bytesPerSecond = (hz * bits * channels) / 8;
+
+    if (calculationMode === 'space') {
+      const h = parseInt((document.getElementById('time-h') as HTMLInputElement).value) || 0;
+      const m = parseInt((document.getElementById('time-m') as HTMLInputElement).value) || 0;
+      const s = parseInt((document.getElementById('time-s') as HTMLInputElement).value) || 0;
+      const totalSeconds = h * 3600 + m * 60 + s;
+      const totalBytes = bytesPerSecond * totalSeconds;
+      resPrimary.textContent = formatSize(totalBytes);
+      resSecondary.textContent = LABEL_DURATION_SET.replace('{time}', formatTime(totalSeconds));
+      updateComparison(totalBytes);
+      updateBars(totalBytes);
+    } else {
+      const availableGb = parseFloat((document.getElementById('space-input') as HTMLInputElement).value) || 0;
+      const availableBytes = availableGb * 1024 * 1024 * 1024;
+      const totalSeconds = availableBytes / bytesPerSecond;
+      resPrimary.textContent = formatTime(totalSeconds);
+      resSecondary.textContent = LABEL_RECORDING_POSSIBLE.replace('{gb}', String(availableGb));
+      updateComparison(availableBytes);
+      updateBars(availableBytes);
+    }
+  }
+
+  function updateComparison(wavBytes: number): void {
+    const wavEl = document.getElementById('comp-wav');
+    const flacEl = document.getElementById('comp-flac');
+    const mp3HiEl = document.getElementById('comp-mp3-320');
+    const mp3LoEl = document.getElementById('comp-mp3-128');
+    if (wavEl) wavEl.textContent = formatSize(wavBytes);
+    if (flacEl) flacEl.textContent = formatSize(wavBytes * 0.55) + ' (est.)';
+
+    const hz = getSelectVal('hz-select');
+    const bits = getSelectVal('bits-select');
+    const channels = getSelectVal('channels-select');
+    const bps = (hz * bits * channels) / 8;
+    const secs = wavBytes / bps;
+    if (mp3HiEl) mp3HiEl.textContent = formatSize((320000 / 8) * secs);
+    if (mp3LoEl) mp3LoEl.textContent = formatSize((128000 / 8) * secs);
+  }
+
+  function updateBars(totalBytes: number): void {
+    const devices = [
+      { id: '32', cap: 32 * 1024 * 1024 * 1024 },
+      { id: '128', cap: 128 * 1024 * 1024 * 1024 },
+      { id: '1024', cap: 1024 * 1024 * 1024 * 1024 },
+    ];
+    devices.forEach((dev) => {
+      const pct = Math.min(100, (totalBytes / dev.cap) * 100);
+      const fill = document.getElementById(`bar-fill-${dev.id}`);
+      const text = document.getElementById(`bar-pct-${dev.id}`);
+      if (!fill || !text) return;
+      fill.style.width = `${pct}%`;
+      text.textContent = `${pct.toFixed(pct < 1 ? 2 : 1)}%`;
+      fill.classList.remove('asc__bar-fill--warning', 'asc__bar-fill--danger');
+      if (pct > 90) fill.classList.add('asc__bar-fill--danger');
+      else if (pct > 70) fill.classList.add('asc__bar-fill--warning');
+    });
+  }
+
+  function setupPresets(): void {
+    document.querySelectorAll('.asc__preset-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.asc__preset-btn').forEach((p) => p.classList.remove('asc__preset-btn--active'));
+        btn.classList.add('asc__preset-btn--active');
+        (document.getElementById('hz-select') as HTMLSelectElement).value = btn.getAttribute('data-hz') ?? '48000';
+        (document.getElementById('bits-select') as HTMLSelectElement).value = btn.getAttribute('data-bits') ?? '24';
+        (document.getElementById('channels-select') as HTMLSelectElement).value = btn.getAttribute('data-channels') ?? '2';
+        calculate();
+      });
+    });
+  }
+
+  function setElDisplay(id: string, display: string): void {
+    const el = document.getElementById(id);
+    if (el) el.style.display = display;
+  }
+
+  function setElText(id: string, text: string): void {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function applyToggleUI(isSpace: boolean): void {
+    setElDisplay('duration-inputs', isSpace ? 'grid' : 'none');
+    setElDisplay('space-box', isSpace ? 'none' : 'block');
+    setElText('time-input-label', isSpace ? LABEL_DURATION : LABEL_SPACE_AVAILABLE);
+    setElText('toggle-text', isSpace ? TOGGLE_LABEL_SPACE : TOGGLE_LABEL_TIME);
+  }
+
+  function setupToggle(): void {
+    const toggle = document.getElementById('toggle-mode');
+    toggle?.addEventListener('click', () => {
+      calculationMode = calculationMode === 'space' ? 'time' : 'space';
+      toggle.classList.toggle('asc__mode-toggle--active');
+      applyToggleUI(calculationMode === 'space');
+      calculate();
+    });
+  }
+
+  function buildSummaryText(bits: string, hz: string, channels: string, primary: string): string {
+    if (calculationMode === 'space') {
+      const h = (document.getElementById('time-h') as HTMLInputElement).value;
+      const m = (document.getElementById('time-m') as HTMLInputElement).value;
+      return SUMMARY_SPACE.replace('{t}', `${h}h ${m}m`).replace('{bits}', bits)
+        .replace('{hz}', hz).replace('{channels}', channels).replace('{result}', primary);
+    }
+    const space = (document.getElementById('space-input') as HTMLInputElement).value;
+    return SUMMARY_TIME.replace('{space}', space).replace('{result}', primary)
+      .replace('{bits}', bits).replace('{hz}', hz).replace('{channels}', channels);
+  }
+
+  function flashCopyBtn(btn: HTMLElement): void {
+    const btnText = document.getElementById('copy-btn-text');
+    const originalText = btnText?.textContent ?? '';
+    btn.classList.add('asc__copy-btn--done');
+    if (btnText) btnText.textContent = COPY_DONE;
+    setTimeout(() => {
+      btn.classList.remove('asc__copy-btn--done');
+      if (btnText) btnText.textContent = originalText;
+    }, 2000);
+  }
+
+  function setupCopy(): void {
+    document.getElementById('copy-summary')?.addEventListener('click', (e) => {
+      const btn = e.currentTarget as HTMLElement;
+      const hzEl = document.getElementById('hz-select') as HTMLSelectElement;
+      const hz = hzEl.options[hzEl.selectedIndex]?.text.split(' ')[0] ?? '';
+      const bits = String(getSelectVal('bits-select'));
+      const chEl = document.getElementById('channels-select') as HTMLSelectElement;
+      const channels = chEl.options[chEl.selectedIndex]?.text.split(' ')[0] ?? '';
+      const primary = document.getElementById('result-primary')?.textContent ?? '';
+      const text = buildSummaryText(bits, hz, channels, primary);
+      navigator.clipboard.writeText(text).then(() => flashCopyBtn(btn));
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    ['hz-select', 'bits-select', 'channels-select', 'time-h', 'time-m', 'time-s', 'space-input'].forEach((id) => {
+      document.getElementById(id)?.addEventListener('input', calculate);
+    });
+    setupPresets();
+    setupToggle();
+    setupCopy();
+    calculate();
+  });
+</script>

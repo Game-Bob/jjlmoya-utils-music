@@ -1,0 +1,21 @@
+---
+import { Bibliography } from '@jjlmoya/utils-shared';
+import type { KnownLocale } from '../../types';
+import { bpmCalculator } from './index';
+
+interface Props {
+  locale: KnownLocale;
+}
+
+const { locale } = Astro.props;
+const content = await bpmCalculator.i18n[locale]?.();
+---
+
+{
+  content && (
+    <Bibliography
+      title={content.bibliographyTitle}
+      links={content.bibliography}
+    />
+  )
+}

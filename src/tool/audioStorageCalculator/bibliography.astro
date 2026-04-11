@@ -1,0 +1,14 @@
+---
+import { Bibliography } from '@jjlmoya/utils-shared';
+import { audioStorageCalculator } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await audioStorageCalculator.i18n[locale]?.();
+---
+
+{content && <Bibliography items={content.bibliography} title={content.bibliographyTitle} />}

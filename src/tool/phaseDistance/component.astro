@@ -1,0 +1,824 @@
+---
+import type { KnownLocale } from '../../types';
+import type { PhaseDistanceUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as PhaseDistanceUI;
+---
+
+<div class="phs-root" id="phs-root">
+  <div class="phs-panel">
+    <div class="phs-field">
+      <label class="phs-label" for="phs-temp">{t.labelTemp}</label>
+      <div class="phs-input-group">
+        <input type="number" id="phs-temp" class="phs-input" value="20" step="1" min="-20" max="50" />
+        <button id="phs-v-toggle" class="phs-preset-btn">{t.btnAuto}</button>
+      </div>
+    </div>
+    <div class="phs-field">
+      <label class="phs-label" for="phs-samplerate">{t.labelSampleRate}</label>
+      <select id="phs-samplerate" class="phs-select">
+        <option value="44100">44.1 kHz</option>
+        <option value="48000" selected>48 kHz</option>
+        <option value="88200">88.2 kHz</option>
+        <option value="96000">96 kHz</option>
+        <option value="192000">192 kHz</option>
+      </select>
+    </div>
+    <div class="phs-field">
+      <label class="phs-label" for="phs-unit">{t.labelUnits}</label>
+      <select id="phs-unit" class="phs-select">
+        <option value="metric">{t.optMetric}</option>
+        <option value="imperial">{t.optImperial}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="phs-panel">
+    <div class="phs-field">
+      <label class="phs-label" for="phs-distA">{t.labelDistA}</label>
+      <div class="phs-input-group">
+        <input type="number" id="phs-distA" class="phs-input" value="0.5" step="0.01" />
+        <div class="phs-fine-tune">
+          <button class="phs-tune-btn" data-input="phs-distA" data-dir="1">+</button>
+          <button class="phs-tune-btn" data-input="phs-distA" data-dir="-1">-</button>
+        </div>
+        <span class="phs-unit-label" id="phs-unitA">m</span>
+      </div>
+    </div>
+    <div class="phs-field">
+      <label class="phs-label" for="phs-distB">{t.labelDistB}</label>
+      <div class="phs-input-group">
+        <input type="number" id="phs-distB" class="phs-input" value="1.2" step="0.01" />
+        <div class="phs-fine-tune">
+          <button class="phs-tune-btn" data-input="phs-distB" data-dir="1">+</button>
+          <button class="phs-tune-btn" data-input="phs-distB" data-dir="-1">-</button>
+        </div>
+        <span class="phs-unit-label" id="phs-unitB">m</span>
+      </div>
+    </div>
+    <div class="phs-field">
+      <label class="phs-label">{t.labelPresets}</label>
+      <div class="phs-presets">
+        <button class="phs-preset-btn" data-a="0.05" data-b="0.05">{t.presetCoincident}</button>
+        <button class="phs-preset-btn" data-a="0.10" data-b="0.15">{t.presetSnare}</button>
+        <button class="phs-preset-btn" data-a="0.30" data-b="1.00">{t.presetAmbient}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="phs-actions">
+    <button id="phs-invert" class="phs-toggle">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6V18A6,6 0 0,1 6,12A6,6 0 0,1 12,6Z" />
+      </svg>
+      {t.btnInvert}
+    </button>
+    <div class="phs-slider-wrap">
+      <label class="phs-label">{t.labelGain} <span id="phs-gain-val">100%</span></label>
+      <input type="range" id="phs-gain" class="phs-slider" min="0" max="100" value="100" />
+    </div>
+    <button id="phs-copy" class="phs-copy-btn">{t.btnCopy}</button>
+  </div>
+
+  <div class="phs-results">
+    <div class="phs-result-card">
+      <span class="phs-result-label">{t.labelDelay}</span>
+      <span class="phs-result-value" id="phs-delay-ms">0.000</span>
+      <span class="phs-result-unit">{t.unitMs}</span>
+    </div>
+    <div class="phs-result-card">
+      <span class="phs-result-label">{t.labelCompensation}</span>
+      <span class="phs-result-value phs-result-cyan" id="phs-delay-samples">0</span>
+      <span class="phs-result-unit">{t.unitSamples}</span>
+    </div>
+    <div class="phs-result-card phs-result-card-accent">
+      <span class="phs-result-label">{t.labelPhaseStatus}</span>
+      <div id="phs-status" class="phs-indicator phs-ok">{t.textLoading}</div>
+      <span class="phs-result-unit" id="phs-status-desc"></span>
+    </div>
+  </div>
+
+  <div class="phs-visualizer">
+    <div id="phs-warning" class="phs-indicator phs-warning" style="display:none">{t.warningCritical}</div>
+    <canvas id="phs-canvas" class="phs-canvas"></canvas>
+  </div>
+
+  <div class="phs-details">
+    <div class="phs-stat">
+      <span class="phs-stat-label">{t.labelSoundSpeed}</span>
+      <div class="phs-stat-value" id="phs-v-sound">343.2 m/s</div>
+    </div>
+    <div class="phs-stat">
+      <span class="phs-stat-label">{t.labelDistDiff}</span>
+      <div class="phs-stat-value" id="phs-diff-dist">0.70 m</div>
+    </div>
+    <div class="phs-stat">
+      <span class="phs-stat-label">{t.labelNullFreq}</span>
+      <div class="phs-stat-value" id="phs-null-freq">--- Hz</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .phs-root {
+    --phs-orange: #ff4d00;
+    --phs-orange-hover: #e64500;
+    --phs-orange-glow: rgba(255, 77, 0, 0.08);
+    --phs-orange-glow-hover: rgba(255, 77, 0, 0.12);
+    --phs-orange-border: rgba(255, 77, 0, 0.4);
+    --phs-orange-focus: rgba(255, 77, 0, 0.12);
+    --phs-orange-shadow: rgba(255, 77, 0, 0.4);
+    --phs-cyan: #00c8d4;
+    --phs-cyan-border: rgba(0, 200, 212, 0.3);
+    --phs-cyan-glow: rgba(0, 200, 212, 0.15);
+    --phs-cyan-bg: rgba(0, 200, 212, 0.04);
+    --phs-ok: #059669;
+    --phs-bg: #fff;
+    --phs-bg-panel: #f8fafc;
+    --phs-bg-input: #f1f5f9;
+    --phs-bg-input-focus: #e2e8f0;
+    --phs-bg-btn: #f1f5f9;
+    --phs-bg-vis: #050505;
+    --phs-bg-stat: #f1f5f9;
+    --phs-slider-track: linear-gradient(90deg, #e2e8f0 0%, #cbd5e1 50%, #e2e8f0 100%);
+    --phs-text: #0f172a;
+    --phs-text-muted: rgba(15, 23, 42, 0.55);
+    --phs-text-dim: rgba(15, 23, 42, 0.45);
+    --phs-border: rgba(0, 0, 0, 0.1);
+    --phs-border-faint: rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: var(--phs-bg);
+    border-radius: 32px;
+    border: 2px solid var(--phs-orange);
+    color: var(--phs-text);
+    max-width: 1200px;
+    margin: 2rem auto;
+    box-shadow:
+      0 0 50px var(--phs-orange-glow),
+      inset 0 0 20px var(--phs-cyan-bg);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .phs-root:hover {
+    box-shadow:
+      0 0 60px var(--phs-orange-glow-hover),
+      inset 0 0 30px rgba(0, 242, 255, 0.1);
+  }
+
+  :global(.theme-dark) .phs-root {
+    --phs-cyan: #00f2ff;
+    --phs-cyan-border: rgba(0, 242, 255, 0.3);
+    --phs-cyan-glow: rgba(0, 242, 255, 0.2);
+    --phs-cyan-bg: rgba(0, 242, 255, 0.05);
+    --phs-ok: #0f8;
+    --phs-bg: #000;
+    --phs-bg-panel: #0a0a0a;
+    --phs-bg-input: #111;
+    --phs-bg-input-focus: #1a1a1a;
+    --phs-bg-btn: #111;
+    --phs-bg-vis: #020202;
+    --phs-bg-stat: #111;
+    --phs-slider-track: linear-gradient(90deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
+    --phs-text: #fff;
+    --phs-text-muted: rgba(255, 255, 255, 0.5);
+    --phs-text-dim: rgba(255, 255, 255, 0.4);
+    --phs-border: rgba(255, 255, 255, 0.1);
+    --phs-border-faint: rgba(255, 255, 255, 0.05);
+    --phs-orange-glow: rgba(255, 77, 0, 0.15);
+    --phs-orange-glow-hover: rgba(255, 77, 0, 0.2);
+  }
+
+  .phs-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    background: var(--phs-bg-panel);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--phs-orange-border);
+  }
+
+  .phs-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .phs-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--phs-orange);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .phs-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .phs-fine-tune {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .phs-tune-btn {
+    background: var(--phs-bg-input);
+    border: 1px solid var(--phs-border);
+    color: var(--phs-text);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+  }
+
+  .phs-tune-btn:hover {
+    background: var(--phs-orange);
+    border-color: var(--phs-orange);
+  }
+
+  .phs-input {
+    width: 100%;
+    background: var(--phs-bg-input);
+    border: 1px solid var(--phs-border);
+    border-radius: 12px;
+    padding: 1rem;
+    color: var(--phs-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+  }
+
+  .phs-input:focus {
+    outline: none;
+    border-color: var(--phs-orange);
+    background: var(--phs-bg-input-focus);
+    box-shadow: 0 0 0 4px var(--phs-orange-focus);
+  }
+
+  .phs-select {
+    background: var(--phs-bg-input);
+    border: 1px solid var(--phs-border);
+    border-radius: 12px;
+    padding: 1rem;
+    color: var(--phs-text);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .phs-unit-label {
+    font-size: 0.85rem;
+    color: var(--phs-text-muted);
+    white-space: nowrap;
+  }
+
+  .phs-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .phs-preset-btn {
+    background: var(--phs-bg-btn);
+    border: 1px solid var(--phs-border);
+    color: var(--phs-text);
+    padding: 0.75rem 1.25rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .phs-preset-btn:hover {
+    background: var(--phs-orange);
+    border-color: var(--phs-orange);
+  }
+
+  .phs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .phs-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    background: var(--phs-bg-btn);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--phs-border);
+    color: var(--phs-text);
+    transition: all 0.2s;
+  }
+
+  .phs-slider-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .phs-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--phs-slider-track);
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid var(--phs-border-faint);
+  }
+
+  .phs-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--phs-orange);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--phs-orange-shadow);
+  }
+
+  .phs-copy-btn {
+    background: var(--phs-orange);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .phs-copy-btn:hover {
+    background: var(--phs-orange-hover);
+    transform: translateY(-2px);
+  }
+
+  .phs-copy-btn:active {
+    transform: translateY(1px);
+  }
+
+  .phs-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .phs-result-card {
+    background: var(--phs-bg-panel);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid var(--phs-border-faint);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phs-result-card-accent {
+    border-color: var(--phs-cyan-border);
+    background: radial-gradient(circle at top right, var(--phs-cyan-bg), transparent);
+  }
+
+  .phs-result-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--phs-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .phs-result-value {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--phs-orange);
+  }
+
+  .phs-result-cyan {
+    color: var(--phs-cyan);
+  }
+
+  .phs-result-unit {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+  }
+
+  .phs-visualizer {
+    background:
+      radial-gradient(circle at center, var(--phs-cyan-bg) 0%, transparent 70%),
+      var(--phs-bg-vis);
+    border-radius: 24px;
+    padding: 1.5rem;
+    border: 1px solid var(--phs-border-faint);
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .phs-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .phs-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .phs-stat {
+    background: var(--phs-bg-stat);
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--phs-orange);
+  }
+
+  .phs-stat-label {
+    font-size: 0.65rem;
+    color: var(--phs-text-dim);
+    text-transform: uppercase;
+    font-weight: 800;
+    display: block;
+  }
+
+  .phs-stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--phs-text);
+  }
+
+  @media (max-width: 768px) {
+    .phs-root {
+      padding: 1.25rem;
+      gap: 1.25rem;
+      border-radius: 20px;
+    }
+
+    .phs-panel {
+      padding: 1.25rem;
+      grid-template-columns: 1fr;
+    }
+
+    .phs-results {
+      grid-template-columns: 1fr;
+    }
+
+    .phs-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .phs-toggle,
+    .phs-copy-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .phs-result-card {
+      padding: 1.5rem;
+    }
+
+    .phs-result-value {
+      font-size: 2.25rem;
+    }
+
+    .phs-input {
+      font-size: 1.25rem;
+      padding: 0.75rem;
+    }
+
+    .phs-visualizer {
+      height: 200px;
+      padding: 1rem;
+    }
+
+    .phs-details {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .phs-root {
+      padding: 0.75rem;
+      gap: 1rem;
+    }
+
+    .phs-result-value {
+      font-size: 1.75rem;
+    }
+
+    .phs-stat-value {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<style is:global>
+  .phs-indicator {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+  }
+
+  .phs-ok {
+    color: var(--phs-ok, #059669);
+    border-color: var(--phs-ok, #059669);
+  }
+
+  .phs-warning {
+    color: var(--phs-orange, #ff4d00);
+    border-color: var(--phs-orange, #ff4d00);
+    animation: phs-flash 1s infinite;
+  }
+
+  @keyframes phs-flash {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  .phs-toggle.phs-toggle-active {
+    border-color: #00f2ff;
+    color: #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+  }
+</style>
+
+<script define:vars={{
+  statusInPhase: t.statusInPhase,
+  statusInPhaseDesc: t.statusInPhaseDesc,
+  statusCritical: t.statusCritical,
+  statusCriticalDesc: t.statusCriticalDesc,
+  statusOffAxis: t.statusOffAxis,
+  statusOffAxisDesc: t.statusOffAxisDesc,
+  textNone: t.textNone,
+  chartTitle: t.chartTitle,
+  promptSoundSpeed: t.promptSoundSpeed,
+  copyFeedback: t.copyFeedback,
+}}>
+  const el = {
+    temp: document.getElementById('phs-temp'),
+    vToggle: document.getElementById('phs-v-toggle'),
+    samplerate: document.getElementById('phs-samplerate'),
+    unit: document.getElementById('phs-unit'),
+    distA: document.getElementById('phs-distA'),
+    distB: document.getElementById('phs-distB'),
+    unitA: document.getElementById('phs-unitA'),
+    unitB: document.getElementById('phs-unitB'),
+    delayMs: document.getElementById('phs-delay-ms'),
+    delaySamples: document.getElementById('phs-delay-samples'),
+    status: document.getElementById('phs-status'),
+    statusDesc: document.getElementById('phs-status-desc'),
+    vSound: document.getElementById('phs-v-sound'),
+    diffDist: document.getElementById('phs-diff-dist'),
+    nullFreq: document.getElementById('phs-null-freq'),
+    canvas: document.getElementById('phs-canvas'),
+    warning: document.getElementById('phs-warning'),
+    gainSlider: document.getElementById('phs-gain'),
+    gainVal: document.getElementById('phs-gain-val'),
+    copyBtn: document.getElementById('phs-copy'),
+    invertBtn: document.getElementById('phs-invert'),
+  };
+
+  const ctx = el.canvas?.getContext('2d');
+  let isInverted = false;
+  let isManualV = false;
+  let manualV = 343;
+
+  function computeSoundSpeed(temp) {
+    return isManualV ? manualV : 331.3 + 0.606 * temp;
+  }
+
+  function getDistances() {
+    const unit = el.unit.value;
+    let dA = parseFloat(el.distA.value);
+    let dB = parseFloat(el.distB.value);
+    const label = unit === 'imperial' ? 'ft' : 'm';
+    el.unitA.textContent = label;
+    el.unitB.textContent = label;
+    if (unit === 'imperial') { dA *= 0.3048; dB *= 0.3048; }
+    return { dA, dB };
+  }
+
+  function updateDistDisplay(deltaD, unit) {
+    if (unit === 'imperial') {
+      el.diffDist.textContent = `${(deltaD / 0.3048).toFixed(3)} ft`;
+    } else {
+      el.diffDist.textContent = `${deltaD.toFixed(3)} m`;
+    }
+  }
+
+  function updateStatus(dt) {
+    if (dt === 0 && !isInverted) {
+      el.status.className = 'phs-indicator phs-ok';
+      el.status.textContent = statusInPhase;
+      el.statusDesc.textContent = statusInPhaseDesc;
+      el.warning.style.display = 'none';
+      return;
+    }
+    const fNull = isInverted ? 1 / dt : 1 / (2 * dt);
+    if (fNull < 500 && dt > 0) {
+      el.status.className = 'phs-indicator phs-warning';
+      el.status.textContent = statusCritical;
+      el.statusDesc.textContent = statusCriticalDesc;
+      el.warning.style.display = 'flex';
+    } else {
+      el.status.className = 'phs-indicator phs-ok';
+      el.status.textContent = statusOffAxis;
+      el.statusDesc.textContent = statusOffAxisDesc;
+      el.warning.style.display = 'none';
+    }
+  }
+
+  function setupCanvas() {
+    if (!ctx || !el.canvas) return null;
+    const dw = el.canvas.offsetWidth;
+    const dh = el.canvas.offsetHeight;
+    if (el.canvas.width !== dw * devicePixelRatio) {
+      el.canvas.width = dw * devicePixelRatio;
+      el.canvas.height = dh * devicePixelRatio;
+    }
+    ctx.resetTransform();
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    ctx.clearRect(0, 0, dw, dh);
+    return { dw, dh };
+  }
+
+  function drawGrid(dw, dh) {
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 10; i++) {
+      const x = (dw / 10) * i;
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, dh);
+    }
+    ctx.stroke();
+  }
+
+  function drawResponse(dw, dh, dt, gain) {
+    const phaseOffset = isInverted ? Math.PI : 0;
+    ctx.beginPath();
+    ctx.strokeStyle = '#ff4d00';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    for (let x = 0; x <= dw; x++) {
+      const freq = Math.pow(10, (x / dw) * 3 + 1.301);
+      const val = Math.sqrt(1 + gain * gain + 2 * gain * Math.cos(2 * Math.PI * freq * dt + phaseOffset));
+      const y = dh - (val / 2 * (dh - 40) + 20);
+      if (x === 0) { ctx.moveTo(x, y); } else { ctx.lineTo(x, y); }
+    }
+    ctx.stroke();
+  }
+
+  function drawLabels(dw, dh) {
+    ctx.fillStyle = '#00f2ff';
+    ctx.font = 'bold 10px monospace';
+    ctx.textAlign = 'left';
+    ctx.fillText('20Hz', 5, dh - 5);
+    ctx.textAlign = 'right';
+    ctx.fillText('20kHz', dw - 5, dh - 5);
+    ctx.textAlign = 'center';
+    ctx.fillText(chartTitle, dw / 2, 15);
+  }
+
+  function drawCombFilter(dt, gain) {
+    const dims = setupCanvas();
+    if (!dims) return;
+    drawGrid(dims.dw, dims.dh);
+    drawResponse(dims.dw, dims.dh, dt, gain);
+    drawLabels(dims.dw, dims.dh);
+  }
+
+  function calculate() {
+    const temp = parseFloat(el.temp.value);
+    const sr = parseInt(el.samplerate.value);
+    const unit = el.unit.value;
+    const gain = parseInt(el.gainSlider.value) / 100;
+    const { dA, dB } = getDistances();
+    const v = computeSoundSpeed(temp);
+    const deltaD = Math.abs(dA - dB);
+    const deltaT = deltaD / v;
+    const samples = deltaT * sr;
+
+    el.delayMs.textContent = (deltaT * 1000).toFixed(3);
+    el.delaySamples.textContent = Math.round(samples).toString();
+    el.vSound.textContent = `${v.toFixed(1)} m/s`;
+    el.gainVal.textContent = `${Math.round(gain * 100)}%`;
+    updateDistDisplay(deltaD, unit);
+
+    let f1 = 0;
+    if (deltaT > 0) { f1 = isInverted ? 1 / deltaT : 1 / (2 * deltaT); }
+    el.nullFreq.textContent = f1 === 0 ? textNone : `${Math.round(f1)} Hz`;
+
+    updateStatus(deltaT);
+    drawCombFilter(deltaT, gain);
+  }
+
+  el.temp?.addEventListener('input', calculate);
+  el.samplerate?.addEventListener('change', calculate);
+  el.unit?.addEventListener('change', calculate);
+  el.distA?.addEventListener('input', calculate);
+  el.distB?.addEventListener('input', calculate);
+  el.gainSlider?.addEventListener('input', calculate);
+
+  el.invertBtn?.addEventListener('click', () => {
+    isInverted = !isInverted;
+    el.invertBtn.classList.toggle('phs-toggle-active', isInverted);
+    calculate();
+  });
+
+  el.vToggle?.addEventListener('click', () => {
+    isManualV = !isManualV;
+    if (isManualV) {
+      const val = prompt(promptSoundSpeed, '343');
+      if (val) manualV = parseFloat(val);
+      el.vToggle.textContent = `${manualV} m/s`;
+      el.vToggle.style.backgroundColor = '#ff4d00';
+    } else {
+      el.vToggle.textContent = 'Auto';
+      el.vToggle.style.backgroundColor = '';
+    }
+    calculate();
+  });
+
+  document.querySelectorAll('.phs-tune-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const inputId = btn.dataset.input;
+      const input = document.getElementById(inputId);
+      const step = el.unit.value === 'metric' ? 0.001 : 0.01;
+      input.value = (parseFloat(input.value) + parseFloat(btn.dataset.dir) * step).toFixed(3);
+      calculate();
+    });
+  });
+
+  el.copyBtn?.addEventListener('click', () => {
+    navigator.clipboard.writeText(el.delaySamples.textContent || '0');
+    const orig = el.copyBtn.textContent;
+    el.copyBtn.textContent = copyFeedback;
+    setTimeout(() => { el.copyBtn.textContent = orig; }, 2000);
+  });
+
+  document.querySelectorAll('.phs-preset-btn[data-a]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      el.distA.value = btn.dataset.a;
+      el.distB.value = btn.dataset.b;
+      calculate();
+    });
+  });
+
+  window.addEventListener('resize', calculate);
+  calculate();
+</script>

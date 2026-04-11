@@ -1,0 +1,618 @@
+---
+import type { KnownLocale } from '../../types';
+import type { BpmCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as BpmCalculatorUI;
+---
+
+<div class="bpm-root">
+  <header class="bpm-header">
+    <div class="bpm-field">
+      <label for="bpm-input" class="bpm-label">{t.labelTempo}</label>
+      <input
+        type="number"
+        id="bpm-input"
+        class="bpm-input"
+        value="120"
+        min="30"
+        max="999"
+        step="0.1"
+        aria-label={t.labelTempo}
+      />
+    </div>
+    <button id="bpm-tap-btn" class="bpm-tap-btn" title={t.btnTap}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
+      </svg>
+      {t.btnTap}
+    </button>
+  </header>
+
+  <div class="bpm-sections">
+    <section class="bpm-card">
+      <h2 class="bpm-card-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 10-6 6"/><path d="m16 10-4 4"/><path d="m12 10-2 2"/><path d="M7 21a2.82 2.82 0 0 1-4-4l14-14a2.82 2.82 0 0 1 4 4z"/></svg>
+        {t.sectionDelay}
+      </h2>
+      <div class="bpm-table-wrap">
+        <table class="bpm-table">
+          <thead>
+            <tr>
+              <th class="bpm-th">{t.colNote}</th>
+              <th class="bpm-th">{t.colMs}</th>
+              <th class="bpm-th">{t.colHz}</th>
+              <th class="bpm-th"></th>
+            </tr>
+          </thead>
+          <tbody id="bpm-simple-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bpm-card">
+      <h2 class="bpm-card-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/></svg>
+        {t.sectionDotted}
+      </h2>
+      <div class="bpm-table-wrap">
+        <table class="bpm-table">
+          <thead>
+            <tr>
+              <th class="bpm-th">{t.colNote}</th>
+              <th class="bpm-th">{t.colMs}</th>
+              <th class="bpm-th">{t.colHz}</th>
+              <th class="bpm-th"></th>
+            </tr>
+          </thead>
+          <tbody id="bpm-dotted-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bpm-card">
+      <h2 class="bpm-card-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13V5c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v8"/><path d="M3 21h18"/><path d="M7 11v10"/><path d="M11 11v10"/><path d="M15 11v10"/><path d="M19 11v10"/></svg>
+        {t.sectionTriplets}
+      </h2>
+      <div class="bpm-table-wrap">
+        <table class="bpm-table">
+          <thead>
+            <tr>
+              <th class="bpm-th">{t.colNote}</th>
+              <th class="bpm-th">{t.colMs}</th>
+              <th class="bpm-th">{t.colHz}</th>
+              <th class="bpm-th"></th>
+            </tr>
+          </thead>
+          <tbody id="bpm-triplet-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bpm-card bpm-extra-card">
+      <h2 class="bpm-card-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V6"/><path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M12 12H3"/><path d="M16 6H3"/><path d="M12 18H3"/></svg>
+        {t.sectionReverb}
+      </h2>
+      <p class="bpm-info" set:html={t.infoPreDelay} />
+      <div class="bpm-predelay-grid" id="bpm-predelay-container"></div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .bpm-root {
+    --bpm-primary: #4f46e5;
+    --bpm-primary-hover: #4338ca;
+    --bpm-primary-shadow: rgba(79, 70, 229, 0.25);
+    --bpm-primary-shadow-hover: rgba(79, 70, 229, 0.3);
+    --bpm-primary-shadow-hover-card: rgba(79, 70, 229, 0.08);
+    --bpm-tap-active: #ec4899;
+    --bpm-value: #059669;
+    --bpm-success: #10b981;
+    --bpm-bg: rgba(255, 255, 255, 0.7);
+    --bpm-bg-card: #fff;
+    --bpm-bg-input: #f8fafc;
+    --bpm-bg-hover: #f1f5f9;
+    --bpm-border: rgba(226, 232, 240, 0.8);
+    --bpm-border-card: #e2e8f0;
+    --bpm-border-th: #f1f5f9;
+    --bpm-border-td: #f8fafc;
+    --bpm-text: #1e293b;
+    --bpm-text-muted: #64748b;
+    --bpm-text-title: #475569;
+    --bpm-text-note: #334155;
+    --bpm-text-th: #94a3b8;
+    --bpm-shadow: rgba(0, 0, 0, 0.05);
+    --bpm-shadow-card: rgba(0, 0, 0, 0.02);
+    --bpm-icon-color: #4f46e5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--bpm-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid var(--bpm-border);
+    color: var(--bpm-text);
+    max-width: 1100px;
+    margin: 1rem auto;
+    box-shadow:
+      0 10px 40px var(--bpm-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  :global(.theme-dark) .bpm-root {
+    --bpm-primary: #818cf8;
+    --bpm-primary-hover: #6366f1;
+    --bpm-primary-shadow: rgba(99, 102, 241, 0.35);
+    --bpm-primary-shadow-hover: rgba(99, 102, 241, 0.45);
+    --bpm-primary-shadow-hover-card: rgba(99, 102, 241, 0.12);
+    --bpm-tap-active: #f472b6;
+    --bpm-value: #34d399;
+    --bpm-success: #34d399;
+    --bpm-bg: rgba(15, 23, 42, 0.8);
+    --bpm-bg-card: #1e293b;
+    --bpm-bg-input: #0f172a;
+    --bpm-bg-hover: #334155;
+    --bpm-border: rgba(255, 255, 255, 0.05);
+    --bpm-border-card: rgba(255, 255, 255, 0.06);
+    --bpm-border-th: rgba(255, 255, 255, 0.04);
+    --bpm-border-td: rgba(255, 255, 255, 0.03);
+    --bpm-text: #f1f5f9;
+    --bpm-text-muted: #94a3b8;
+    --bpm-text-title: #cbd5e1;
+    --bpm-text-note: #cbd5e1;
+    --bpm-text-th: #64748b;
+    --bpm-shadow: rgba(0, 0, 0, 0.3);
+    --bpm-shadow-card: rgba(0, 0, 0, 0.2);
+    --bpm-icon-color: #818cf8;
+  }
+
+  .bpm-header {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: var(--bpm-bg-card);
+    border-radius: 20px;
+    border: 1px solid var(--bpm-border-card);
+    box-shadow: 0 4px 12px var(--bpm-shadow-card);
+  }
+
+  .bpm-field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .bpm-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--bpm-text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .bpm-input {
+    width: 140px;
+    padding: 0.5rem 1rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    background: var(--bpm-bg-input);
+    border: 2px solid var(--bpm-border-card);
+    border-radius: 12px;
+    color: var(--bpm-text);
+    transition: all 0.3s ease;
+  }
+
+  .bpm-input:focus {
+    outline: none;
+    border-color: var(--bpm-primary);
+    background: var(--bpm-bg-card);
+    box-shadow: 0 0 0 4px var(--bpm-primary-shadow);
+  }
+
+  .bpm-tap-btn {
+    height: 56px;
+    min-width: 180px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--bpm-primary);
+    border: none;
+    border-radius: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px var(--bpm-primary-shadow);
+  }
+
+  .bpm-tap-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bpm-tap-btn:hover {
+    background: var(--bpm-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--bpm-primary-shadow-hover);
+  }
+
+  .bpm-tap-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px var(--bpm-primary-shadow);
+  }
+
+  .bpm-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .bpm-card {
+    background: var(--bpm-bg-card);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid var(--bpm-border-card);
+    box-shadow: 0 2px 8px var(--bpm-shadow-card);
+  }
+
+  .bpm-card-title {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bpm-text-title);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .bpm-card-title svg {
+    color: var(--bpm-icon-color);
+    width: 18px;
+    height: 18px;
+  }
+
+  .bpm-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .bpm-th {
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--bpm-text-th);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--bpm-border-th);
+  }
+
+  .bpm-extra-card {
+    grid-column: 1 / -1;
+    background: linear-gradient(to right, #f8faff, #fff9fc);
+  }
+
+  :global(.theme-dark) .bpm-extra-card {
+    background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));
+  }
+
+  .bpm-predelay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .bpm-info {
+    font-size: 0.85rem;
+    color: var(--bpm-text-muted);
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .bpm-sections {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bpm-root {
+      padding: 1rem;
+    }
+
+    .bpm-header {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .bpm-sections,
+    .bpm-predelay-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bpm-field {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .bpm-tap-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<style is:global>
+  @keyframes bpm-tap-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bpm-fade-up {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .bpm-tap-btn.bpm-tap-active {
+    background: var(--bpm-tap-active, #ec4899);
+    animation: bpm-tap-pulse 0.15s ease-out;
+  }
+
+  .bpm-row {
+    border-bottom: 1px solid var(--bpm-border-td, #f8fafc);
+  }
+
+  .bpm-td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .bpm-note-name {
+    font-size: 0.85rem;
+    color: var(--bpm-text-note, #334155);
+    font-weight: 500;
+  }
+
+  .bpm-ms-value {
+    color: var(--bpm-value, #059669);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .bpm-hz-value {
+    color: var(--bpm-text-th, #94a3b8);
+    font-size: 0.75rem;
+  }
+
+  .bpm-copy {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem;
+    color: var(--bpm-border-card, #cbd5e1);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .bpm-copy:hover {
+    background: var(--bpm-bg-hover, #f1f5f9);
+    color: var(--bpm-primary, #4f46e5);
+  }
+
+  .bpm-copy.bpm-copy-success {
+    color: var(--bpm-success, #10b981);
+  }
+
+  .bpm-copy.bpm-copy-success::after {
+    content: attr(data-copy-feedback);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bpm-success, #10b981);
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: bpm-fade-up 0.3s ease-out;
+  }
+
+  .bpm-predelay-card {
+    background: var(--bpm-bg-card, #fff);
+    padding: 1.25rem;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--bpm-border-card, #e2e8f0);
+    transition: all 0.2s;
+  }
+
+  .bpm-predelay-card:hover {
+    border-color: var(--bpm-primary, #4f46e5);
+    box-shadow: 0 4px 12px var(--bpm-primary-shadow-hover-card, rgba(79, 70, 229, 0.08));
+  }
+
+  .bpm-predelay-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bpm-predelay-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--bpm-text-muted, #64748b);
+    text-transform: uppercase;
+  }
+
+  .bpm-predelay-ms {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--bpm-value, #059669);
+  }
+</style>
+
+<script define:vars={{ ariaMs: t.copyAriaMs, ariaPreDelay: t.copyAriaPreDelay, copyFeedback: t.copyFeedback }}>
+  const bpmInput = document.getElementById('bpm-input');
+  const tapBtn = document.getElementById('bpm-tap-btn');
+  const simpleBody = document.getElementById('bpm-simple-body');
+  const dottedBody = document.getElementById('bpm-dotted-body');
+  const tripletBody = document.getElementById('bpm-triplet-body');
+  const preDelayContainer = document.getElementById('bpm-predelay-container');
+
+  let tapTimes = [];
+
+  const NOTE_SUBDIVISIONS = [
+    { name: '1/1', factor: 4 },
+    { name: '1/2', factor: 2 },
+    { name: '1/4', factor: 1 },
+    { name: '1/8', factor: 0.5 },
+    { name: '1/16', factor: 0.25 },
+    { name: '1/32', factor: 0.125 },
+    { name: '1/64', factor: 0.0625 },
+  ];
+
+  const PRE_DELAY_SUBDIVISIONS = [
+    { name: '1/64', factor: 0.0625 },
+    { name: '1/128', factor: 0.03125 },
+    { name: '1/256', factor: 0.015625 },
+  ];
+
+  const SVG_COPY = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+
+  function makeCopyBtn(value, label, feedback) {
+    return `<button class="bpm-copy" data-value="${value}" aria-label="${label}" data-copy-feedback="${feedback}">${SVG_COPY}</button>`;
+  }
+
+  function getBpm() {
+    const raw = parseFloat(bpmInput?.value ?? '120');
+    const bpm = isNaN(raw) || raw < 1 ? 120 : raw;
+    return Math.min(bpm, 999);
+  }
+
+  function createRow(name, ms, hz) {
+    const tr = document.createElement('tr');
+    tr.className = 'bpm-row';
+    tr.innerHTML = `
+      <td class="bpm-td bpm-note-name">${name}</td>
+      <td class="bpm-td bpm-ms-value">${ms.toFixed(2)}</td>
+      <td class="bpm-td bpm-hz-value">${hz.toFixed(2)}</td>
+      <td class="bpm-td">${makeCopyBtn(ms.toFixed(2), ariaMs, copyFeedback)}</td>
+    `;
+    return tr;
+  }
+
+  function updateTable(tbody, subdivisions, baseMs, modifier) {
+    tbody.innerHTML = '';
+    for (const sub of subdivisions) {
+      const ms = baseMs * sub.factor * modifier;
+      tbody.appendChild(createRow(sub.name, ms, 1000 / ms));
+    }
+  }
+
+  function updatePreDelay(baseMs) {
+    if (!preDelayContainer) return;
+    preDelayContainer.innerHTML = '';
+    for (const sub of PRE_DELAY_SUBDIVISIONS) {
+      const ms = baseMs * sub.factor;
+      const div = document.createElement('div');
+      div.className = 'bpm-predelay-card';
+      div.innerHTML = `
+        <div class="bpm-predelay-info">
+          <span class="bpm-predelay-type">${sub.name}</span>
+          <span class="bpm-predelay-ms">${ms.toFixed(2)}</span>
+        </div>
+        ${makeCopyBtn(ms.toFixed(2), ariaPreDelay, copyFeedback)}
+      `;
+      preDelayContainer.appendChild(div);
+    }
+  }
+
+  function calculateValues() {
+    const baseMs = 60000 / getBpm();
+    if (simpleBody) updateTable(simpleBody, NOTE_SUBDIVISIONS, baseMs, 1);
+    if (dottedBody) updateTable(dottedBody, NOTE_SUBDIVISIONS, baseMs, 1.5);
+    if (tripletBody) updateTable(tripletBody, NOTE_SUBDIVISIONS, baseMs, 2 / 3);
+    updatePreDelay(baseMs);
+  }
+
+  function handleTap() {
+    if (!bpmInput || !tapBtn) return;
+    const now = Date.now();
+    tapTimes.push(now);
+    if (tapTimes.length > 5) tapTimes.shift();
+
+    if (tapTimes.length > 1) {
+      const diffs = [];
+      for (let i = 1; i < tapTimes.length; i++) {
+        diffs.push(tapTimes[i] - tapTimes[i - 1]);
+      }
+      const avg = diffs.reduce((a, b) => a + b) / diffs.length;
+      bpmInput.value = (60000 / avg).toFixed(1);
+      calculateValues();
+    }
+
+    tapBtn.classList.add('bpm-tap-active');
+    setTimeout(() => tapBtn?.classList.remove('bpm-tap-active'), 100);
+  }
+
+  bpmInput?.addEventListener('input', calculateValues);
+  tapBtn?.addEventListener('click', handleTap);
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.bpm-copy');
+    if (!btn) return;
+    const val = btn.getAttribute('data-value');
+    if (!val) return;
+    navigator.clipboard.writeText(val).then(() => {
+      btn.classList.add('bpm-copy-success');
+      setTimeout(() => btn.classList.remove('bpm-copy-success'), 2000);
+    });
+  });
+
+  setInterval(() => {
+    if (tapTimes.length > 0 && Date.now() - tapTimes[tapTimes.length - 1] > 3000) {
+      tapTimes = [];
+    }
+  }, 1000);
+
+  calculateValues();
+</script>
