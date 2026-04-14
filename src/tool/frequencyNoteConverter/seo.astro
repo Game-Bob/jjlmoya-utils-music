@@ -4,10 +4,10 @@ import type { KnownLocale } from '../../types';
 import { frequencyNoteConverter } from './index';
 
 interface Props {
-  locale: KnownLocale;
+  locale?: KnownLocale;
 }
 
-const { locale } = Astro.props;
+const { locale = 'es' } = Astro.props;
 const content = await frequencyNoteConverter.i18n[locale]?.();
 ---
 
