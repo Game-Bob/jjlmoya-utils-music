@@ -11,7 +11,7 @@ const faqData = [
   {
     question: 'Hoeveel ruimte neemt één uur audio op 44.1 kHz 16-bit in beslag?',
     answer:
-      'In stereo (CD-kwaliteit) neemt één uur audio ongeveer 635 MB ongecomprimeerde schijfruimte in beslag (WAV/AIFF).',
+      'In stereo (CD kwaliteit) neemt één uur audio ongeveer 635 MB ongecomprimeerde schijfruimte in beslag (WAV/AIFF).',
   },
   {
     question: 'Waarom neemt het WAV-formaat zoveel ruimte in beslag?',
@@ -168,12 +168,12 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
       columns: 3,
       items: [
         {
-          title: 'CD-kwaliteit',
+          title: 'CD kwaliteit',
           description:
             '16-bit / 44.1 kHz. Neemt ongeveer 10.1 MB per minuut in beslag in stereo. De historische standaard van de muziekindustrie.',
         },
         {
-          title: 'Pro-opname',
+          title: 'Pro opname',
           description:
             '24-bit / 48 kHz. De standaard voor video en film. Neemt ongeveer 16.5 MB per minuut in beslag. Meer headroom voor mixen.',
         },

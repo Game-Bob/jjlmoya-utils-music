@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
 
 const slug = 'audio-speicher-rechner';
-const title = 'Audio-Speicher-Rechner: WAV, FLAC und MP3 Dateigröße';
+const title = 'Audio Speicher Rechner: WAV, FLAC und MP3 Dateigröße';
 const description =
   'Schätzen Sie den benötigten Speicherplatz für Ihre Audioaufnahmen in WAV, FLAC und MP3 basierend auf Abtastrate und Bittiefe.';
 
@@ -11,7 +11,7 @@ const faqData = [
   {
     question: 'Wie viel Platz benötigt eine Stunde Audio bei 44,1 kHz 16-Bit?',
     answer:
-      'In Stereo (CD-Qualität) belegt eine Stunde Audio etwa 635 MB unkomprimierten Speicherplatz (WAV/AIFF).',
+      'In Stereo (CD Qualität) belegt eine Stunde Audio etwa 635 MB unkomprimierten Speicherplatz (WAV/AIFF).',
   },
   {
     question: 'Warum nimmt das WAV-Format so viel Platz ein?',
@@ -91,18 +91,18 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   bibliographyTitle: 'Technische Referenzen',
   bibliography: [
     {
-      name: 'Audio-Bittiefe – Wikipedia',
-      url: 'https://de.wikipedia.org/wiki/Audio-Bittiefe',
+      name: 'Audio Bittiefe – Wikipedia',
+      url: 'https://de.wikipedia.org/wiki/Audio Bittiefe',
     },
     {
-      name: 'Abtastratenkonvertierung – Wikipedia',
+      name: 'Abtastrate – Wikipedia',
       url: 'https://de.wikipedia.org/wiki/Abtastrate',
     },
   ],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelConfig: 'Audio-Konfiguration',
+    labelConfig: 'Audio Konfiguration',
     labelHz: 'Abtastrate (kHz)',
     labelBits: 'Bittiefe',
     labelChannels: 'Kanäle',
@@ -168,12 +168,12 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
       columns: 3,
       items: [
         {
-          title: 'CD-Qualität',
+          title: 'CD Qualität',
           description:
             '16-Bit / 44,1 kHz. Belegt ca. 10,1 MB pro Minute in Stereo. Der historische Standard der Musikindustrie.',
         },
         {
-          title: 'Pro-Aufnahme',
+          title: 'Pro Aufnahme',
           description:
             '24-Bit / 48 kHz. Der Standard für Video und Film. Belegt ca. 16,5 MB per Minute. Mehr Headroom für das Mischen.',
         },

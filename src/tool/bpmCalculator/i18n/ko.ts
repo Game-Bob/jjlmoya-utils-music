@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { BpmCalculatorUI } from '../ui';
 
 const slug = 'bpm-to-ms-calculator';
-const title = '딜레이 및 리버브를 위한 BPM-밀리초 계산기';
+const title = '딜레이 및 리버브를 위한 BPM 밀리초 계산기';
 const description =
   '프로젝트 템포(BPM)를 정확한 딜레이 타임(ms)과 주파수(Hz)로 변환하세요. 딜레이, 리버브, 컴프레서를 리드미컬하고 정밀하게 설정하기 위한 필수 도구입니다.';
 

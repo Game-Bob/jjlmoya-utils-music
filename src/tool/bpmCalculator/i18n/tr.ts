@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { BpmCalculatorUI } from '../ui';
 
 const slug = 'bpm-ms-hesaplayici';
-const title = 'Delay ve Reverb için BPM - Milisaniye Hesaplayıcı';
+const title = 'Delay ve Reverb için BPM Milisaniye Hesaplayıcı';
 const description =
   'Proje temponuzu (BPM) tam gecikme sürelerine (ms) ve frekanslara (Hz) dönüştürün. Delay, reverb ve kompresörleri ritmik hassasiyetle ayarlamak için temel araç.';
 

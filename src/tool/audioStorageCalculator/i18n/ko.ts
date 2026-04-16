@@ -178,7 +178,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
             '24비트 / 48 kHz. 비디오 및 영화 표준입니다. 분당 약 16.5 MB를 차지합니다. 믹싱을 위한 헤드룸이 더 넓습니다.',
         },
         {
-          title: '고해상도(Hi-Res)',
+          title: '고해상도',
           description:
             '24비트 / 96 kHz. 마스터링에 사용됩니다. 표준 녹음 크기의 두 배인 분당 최대 33 MB까지 늘어납니다.',
         },

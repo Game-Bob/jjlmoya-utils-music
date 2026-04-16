@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FrequencyNoteConverterUI } from '../ui';
 
 const slug = 'frekans-nota-donusturucu';
-const title = 'Frekans - Müzik Notası Dönüştürücü';
+const title = 'Frekans Müzik Notası Dönüştürücü';
 const description =
   'Hertz değerlerini anında müzik notalarına dönüştürün. Herhangi bir frekansın tam notasını belirleyin, cent cinsinden sapmayı ölçün, saf tonu dinleyin ve sentezleyici ile örnekleyicileri hassasiyetle akort edin.';
 

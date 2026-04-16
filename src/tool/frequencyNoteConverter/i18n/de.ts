@@ -255,7 +255,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'tip',
-      title: 'Profi-Sampler-Trick',
+      title: 'Profi Sampler Trick',
       html: 'Wenn Sie ein Sample in einen Sampler wie Kontakt oder Decent Sampler importieren, geben Sie die Sample-Frequenz in diesen Rechner ein. Der in der Stimmanzeige angezeigte Cent-Wert nennt Ihnen exakt den <em>Fine-Tune</em>-Wert, den Sie im Sampler eingeben müssen, damit die Note perfekt gestimmt spielt.',
     },
     {

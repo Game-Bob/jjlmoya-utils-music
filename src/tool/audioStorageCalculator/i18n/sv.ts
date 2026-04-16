@@ -11,7 +11,7 @@ const faqData = [
   {
     question: 'Hur mycket utrymme tar en timmes ljud vid 44.1 kHz 16-bitars?',
     answer:
-      'I stereo (CD-kvalitet) tar en timmes ljud ungefär 635 MB okomprimerat diskutrymme (WAV/AIFF).',
+      'I stereo (CD kvalitet) tar en timmes ljud ungefär 635 MB okomprimerat diskutrymme (WAV/AIFF).',
   },
   {
     question: 'Varför tar WAV-formatet så mycket plats?',
@@ -168,12 +168,12 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
       columns: 3,
       items: [
         {
-          title: 'CD-kvalitet',
+          title: 'CD kvalitet',
           description:
             '16-bitars / 44.1 kHz. Tar ungefär 10.1 MB per minut i stereo. Musikindustrins historiska standard.',
         },
         {
-          title: 'Pro-inspelning',
+          title: 'Pro inspelning',
           description:
             '24-bitars / 48 kHz. Standarden för video och film. Tar cirka 16.5 MB per minut. Mer takhöjd (headroom) för mixning.',
         },

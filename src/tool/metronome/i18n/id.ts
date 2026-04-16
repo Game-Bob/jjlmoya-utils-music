@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { MetronomeUI } from '../ui';
 
-const slug = 'metronom';
+const slug = 'metronom-id';
 const title = 'Metronom Online: Presisi Tinggi Visual dan Audio';
 const description =
   'Metronom online gratis untuk musisi. Presisi milidetik dengan Web Audio API. Visual, audio dan Tap Tempo. Sempurna untuk latihan instrumen.';

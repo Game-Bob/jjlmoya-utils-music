@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { MusicNoteEquivalencyUI } from '../ui';
 
 const slug = 'equivalencia-notas-musicais';
-const title = 'Equivalência de Notas Musicais: Sistemas Latino, Anglo-saxão e Germânico';
+const title = 'Equivalência de Notas Musicais: Sistemas Latino Germânico e Inglês';
 const description =
   'Tradutor interativo de notas musicais entre os sistemas latino (Dó, Ré, Mi), anglo-saxão (C, D, E) e germânico (H). Inclui visualizador de piano, oitavas e frequências (Hz).';
 

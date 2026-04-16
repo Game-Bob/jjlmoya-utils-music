@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { MusicNoteEquivalencyUI } from '../ui';
 
 const slug = 'notenbezeichnungen-vergleich';
-const title = 'Musiknoten-Äquivalenz: Lateinische, Englische und Deutsche Systeme';
+const title = 'Musiknoten Äquivalenz: Lateinische, Englische und Deutsche Systeme';
 const description =
   'Interaktiver Übersetzer für Musiknoten zwischen dem lateinischen (Do, Re, Mi), angelsächsischen (C, D, E) und germanischen (H) System. Inklusive Klavier-Visualisierung, Oktaven und Frequenzen (Hz).';
 
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
   seo: [
     {
       type: 'summary',
-      title: 'Mehrsprachiger Musiknoten-Übersetzer',
+      title: 'Mehrsprachiger Musiknoten Übersetzer',
       items: [
         '<strong>3 Systeme gleichzeitig</strong>: Lateinisch, angelsächsisch und germanisch auf einen Blick.',
         '<strong>Interaktives Klavier</strong>: Klicken Sie auf eine beliebige Taste, um alle Entsprechungen zu sehen.',
