@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { MetronomeUI } from '../ui';
 
-const slug = 'metronome';
+const slug = 'le-metronome';
 const title = 'Métronome en ligne: Visuel et Sonore Haute Précision';
 const description =
   'Métronome en ligne gratuit pour musiciens. Précision à la milliseconde avec Web Audio API. Visuel, sonore et avec Tap Tempo. Idéal pour pratiquer un instrument.';
