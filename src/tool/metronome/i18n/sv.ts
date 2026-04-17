@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { MetronomeUI } from '../ui';
 
-const slug = 'metronom-sv';
+const slug = 'metronom-online-ovning';
 const title = 'Online Metronom: Hög precision, visuellt och ljud';
 const description =
   'Gratis online-metronom för musiker. Precision på millisekunden med Web Audio API. Visuellt, ljud och Tap Tempo. Perfekt för instrumentövning.';

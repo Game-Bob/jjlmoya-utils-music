@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BpmCalculatorUI } from '../ui';
 
-const slug = 'kalkulator-bpm-na-ms';
+const slug = 'kalkulator-bpm-na-milisekundy';
 const title = 'Kalkulator BPM na milisekundy dla Delay i Reverb';
 const description =
   'Konwertuj tempo swojego projektu (BPM) na dokładny czas opóźnienia (ms) i częstotliwość (Hz). Niezbędne narzędzie do ustawiania delayów, pogłosów i kompresorów z rytmiczną precyzją.';

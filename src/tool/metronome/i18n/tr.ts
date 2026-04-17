@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { MetronomeUI } from '../ui';
 
-const slug = 'metronom-tr';
+const slug = 'metronom-online-egzersiz';
 const title = 'Çevrimiçi Metronom: Yüksek Hassasiyetli Görsel ve İşitsel';
 const description =
   'Müzisyenler için ücretsiz çevrimiçi metronom. Web Audio API ile milisaniye hassasiyeti. Görsel, işitsel ve Tap Tempo. Enstrüman pratiği için mükemmel.';

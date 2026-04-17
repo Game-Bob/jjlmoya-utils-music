@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BpmCalculatorUI } from '../ui';
 
-const slug = 'kalkulator-bpm-ke-ms';
+const slug = 'kalkulator-bpm-ke-milidetik';
 const title = 'Kalkulator BPM ke Milidetik untuk Delay dan Reverb';
 const description =
   'Konversikan tempo proyek Anda (BPM) menjadi waktu delay (ms) dan frekuensi (Hz) yang akurat. Alat penting untuk mengatur delay, reverb, dan kompresor dengan presisi ritmik.';

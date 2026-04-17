@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BpmCalculatorUI } from '../ui';
 
-const slug = 'calcolatore-bpm-ms';
+const slug = 'calcolatore-bpm-millisecondi';
 const title = 'Calcolatore da BPM a Millisecondi per Delay e Riverbero';
 const description =
   'Converti il tempo del tuo progetto (BPM) in tempi di delay esatti (ms) e frequenze (Hz). Lo strumento essenziale per impostare delay, riverberi e compressori con precisione ritmica.';

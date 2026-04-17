@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { BpmCalculatorUI } from '../ui';
 
-const slug = 'kalkulyator-bpm-v-ms';
+const slug = 'kalkulyator-bpm-v-millisekundakh';
 const title = 'Калькулятор BPM в миллисекунды для дилея и реверберации';
 const description =
   'Преобразуйте темп вашего проекта (BPM) в точное время задержки (мс) и частоту (Гц). Незаменимый инструмент для настройки дилеев, ревербераторов и компрессоров с ритмической точностью.';
