@@ -1,3 +1,4 @@
+import { bpmCalculator } from './entry';
 export * from './entry';
 export const BPM_CALCULATOR_TOOL: ToolDefinition = {
   entry: bpmCalculator,

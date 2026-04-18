@@ -1,3 +1,4 @@
+import { musicNoteEquivalency } from './entry';
 export * from './entry';
 export const MUSIC_NOTE_EQUIVALENCY_TOOL: ToolDefinition = {
   entry: musicNoteEquivalency,

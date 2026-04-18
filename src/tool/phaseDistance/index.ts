@@ -1,3 +1,4 @@
+import { phaseDistance } from './entry';
 export * from './entry';
 export const PHASE_DISTANCE_TOOL: ToolDefinition = {
   entry: phaseDistance,
