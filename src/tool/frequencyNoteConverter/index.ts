@@ -1,7 +1,4 @@
 import type { MusicToolEntry, ToolDefinition } from '../../types';
-import FrequencyNoteConverterComponent from './component.astro';
-import FrequencyNoteConverterSEO from './seo.astro';
-import FrequencyNoteConverterBibliography from './bibliography.astro';
 import type { FrequencyNoteConverterUI } from './ui';
 
 export const frequencyNoteConverter: MusicToolEntry<FrequencyNoteConverterUI> = {
@@ -29,11 +26,10 @@ export const frequencyNoteConverter: MusicToolEntry<FrequencyNoteConverterUI> = 
   },
 };
 
-export { FrequencyNoteConverterComponent, FrequencyNoteConverterSEO, FrequencyNoteConverterBibliography };
 
 export const FREQUENCY_NOTE_CONVERTER_TOOL: ToolDefinition = {
   entry: frequencyNoteConverter,
-  Component: FrequencyNoteConverterComponent,
-  SEOComponent: FrequencyNoteConverterSEO,
-  BibliographyComponent: FrequencyNoteConverterBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

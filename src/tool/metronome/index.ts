@@ -1,7 +1,4 @@
 import type { MusicToolEntry, ToolDefinition } from '../../types';
-import MetronomeComponent from './component.astro';
-import MetronomeSEO from './seo.astro';
-import MetronomeBibliography from './bibliography.astro';
 import type { MetronomeUI } from './ui';
 
 export const metronome: MusicToolEntry<MetronomeUI> = {
@@ -29,11 +26,10 @@ export const metronome: MusicToolEntry<MetronomeUI> = {
   },
 };
 
-export { MetronomeComponent, MetronomeSEO, MetronomeBibliography };
 
 export const METRONOME_TOOL: ToolDefinition = {
   entry: metronome,
-  Component: MetronomeComponent,
-  SEOComponent: MetronomeSEO,
-  BibliographyComponent: MetronomeBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

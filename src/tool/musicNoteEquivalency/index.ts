@@ -1,7 +1,4 @@
 import type { MusicToolEntry, ToolDefinition } from '../../types';
-import MusicNoteEquivalencyComponent from './component.astro';
-import MusicNoteEquivalencySEO from './seo.astro';
-import MusicNoteEquivalencyBibliography from './bibliography.astro';
 import type { MusicNoteEquivalencyUI } from './ui';
 
 export const musicNoteEquivalency: MusicToolEntry<MusicNoteEquivalencyUI> = {
@@ -29,11 +26,10 @@ export const musicNoteEquivalency: MusicToolEntry<MusicNoteEquivalencyUI> = {
   },
 };
 
-export { MusicNoteEquivalencyComponent, MusicNoteEquivalencySEO, MusicNoteEquivalencyBibliography };
 
 export const MUSIC_NOTE_EQUIVALENCY_TOOL: ToolDefinition = {
   entry: musicNoteEquivalency,
-  Component: MusicNoteEquivalencyComponent,
-  SEOComponent: MusicNoteEquivalencySEO,
-  BibliographyComponent: MusicNoteEquivalencyBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

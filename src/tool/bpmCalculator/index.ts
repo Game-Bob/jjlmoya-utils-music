@@ -1,7 +1,4 @@
 import type { MusicToolEntry, ToolDefinition } from '../../types';
-import BpmCalculatorComponent from './component.astro';
-import BpmCalculatorSEO from './seo.astro';
-import BpmCalculatorBibliography from './bibliography.astro';
 import type { BpmCalculatorUI } from './ui';
 
 export const bpmCalculator: MusicToolEntry<BpmCalculatorUI> = {
@@ -29,11 +26,10 @@ export const bpmCalculator: MusicToolEntry<BpmCalculatorUI> = {
   },
 };
 
-export { BpmCalculatorComponent, BpmCalculatorSEO, BpmCalculatorBibliography };
 
 export const BPM_CALCULATOR_TOOL: ToolDefinition = {
   entry: bpmCalculator,
-  Component: BpmCalculatorComponent,
-  SEOComponent: BpmCalculatorSEO,
-  BibliographyComponent: BpmCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

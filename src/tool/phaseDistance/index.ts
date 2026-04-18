@@ -1,7 +1,4 @@
 import type { MusicToolEntry, ToolDefinition } from '../../types';
-import PhaseDistanceComponent from './component.astro';
-import PhaseDistanceSEO from './seo.astro';
-import PhaseDistanceBibliography from './bibliography.astro';
 import type { PhaseDistanceUI } from './ui';
 
 export const phaseDistance: MusicToolEntry<PhaseDistanceUI> = {
@@ -29,11 +26,10 @@ export const phaseDistance: MusicToolEntry<PhaseDistanceUI> = {
   },
 };
 
-export { PhaseDistanceComponent, PhaseDistanceSEO, PhaseDistanceBibliography };
 
 export const PHASE_DISTANCE_TOOL: ToolDefinition = {
   entry: phaseDistance,
-  Component: PhaseDistanceComponent,
-  SEOComponent: PhaseDistanceSEO,
-  BibliographyComponent: PhaseDistanceBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
