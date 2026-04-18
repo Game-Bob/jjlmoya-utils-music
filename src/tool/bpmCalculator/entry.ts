@@ -1,19 +1,17 @@
-import type { MusicCategoryEntry } from '../types';
-import { metronome } from '../tool/metronome/entry';
-import { bpmCalculator } from '../tool/bpmCalculator/entry';
-import { phaseDistance } from '../tool/phaseDistance/entry';
-import { frequencyNoteConverter } from '../tool/frequencyNoteConverter/entry';
-import { audioStorageCalculator } from '../tool/audioStorageCalculator/entry';
-import { musicNoteEquivalency } from '../tool/musicNoteEquivalency/entry';
+import type { MusicToolEntry } from '../../types';
+import type { BpmCalculatorUI } from './ui';
 
-export const musicCategory: MusicCategoryEntry = {
-  icon: 'mdi:music',
-  tools: [metronome, bpmCalculator, phaseDistance, frequencyNoteConverter, audioStorageCalculator, musicNoteEquivalency],
+export const bpmCalculator: MusicToolEntry<BpmCalculatorUI> = {
+  id: 'bpmCalculator',
+  icons: {
+    bg: 'mdi:music-note-sixteenth',
+    fg: 'mdi:timer-outline',
+  },
   i18n: {
+    de: () => import('./i18n/de').then((m) => m.content),
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),
     fr: () => import('./i18n/fr').then((m) => m.content),
-    de: () => import('./i18n/de').then((m) => m.content),
     id: () => import('./i18n/id').then((m) => m.content),
     it: () => import('./i18n/it').then((m) => m.content),
     ja: () => import('./i18n/ja').then((m) => m.content),
@@ -27,4 +25,3 @@ export const musicCategory: MusicCategoryEntry = {
     zh: () => import('./i18n/zh').then((m) => m.content),
   },
 };
-

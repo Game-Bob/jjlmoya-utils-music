@@ -1,0 +1,14 @@
+export { audioStorageCalculator } from './tool/audioStorageCalculator/entry';
+export { bpmCalculator } from './tool/bpmCalculator/entry';
+export { frequencyNoteConverter } from './tool/frequencyNoteConverter/entry';
+export { metronome } from './tool/metronome/entry';
+export { musicNoteEquivalency } from './tool/musicNoteEquivalency/entry';
+export { phaseDistance } from './tool/phaseDistance/entry';
+export { musicCategory } from './category';
+import { audioStorageCalculator } from './tool/audioStorageCalculator/entry';
+import { bpmCalculator } from './tool/bpmCalculator/entry';
+import { frequencyNoteConverter } from './tool/frequencyNoteConverter/entry';
+import { metronome } from './tool/metronome/entry';
+import { musicNoteEquivalency } from './tool/musicNoteEquivalency/entry';
+import { phaseDistance } from './tool/phaseDistance/entry';
+export const ALL_ENTRIES = [audioStorageCalculator, bpmCalculator, frequencyNoteConverter, metronome, musicNoteEquivalency, phaseDistance];
