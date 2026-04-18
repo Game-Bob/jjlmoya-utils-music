@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'musik',
+  slug: 'musikverktyg',
   title: 'Online Musikverktyg',
   description:
     'Gratis musikverktyg för musiker, producenter och entusiaster. Metronom, BPM-kalkylator, frekvensomvandlare, notsekvivalens och mer.',

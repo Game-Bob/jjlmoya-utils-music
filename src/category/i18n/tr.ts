@@ -38,7 +38,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: '<strong>Çevrimiçi metronom</strong>, eğitim veya çalışma sırasındaki her müzisyen için temel araçtır. Metronommuz, milisaniye hassasiyetini garanti etmek, sürüklenmeyi ortadan kaldırmak ve dalgalanma efektiyle görsel geri bildirim sağlamak için Web Audio API kullanır. <strong>Tap Tempo</strong> özelliği herhangi bir şarkının BPM'ini anında bulmanızı sağlar.',
+      html: '<strong>Çevrimiçi metronom</strong>, eğitim veya çalışma sırasındaki her müzisyen için temel araçtır. Metronommuz, milisaniye hassasiyetini garanti etmek, sürüklenmeyi ortadan kaldırmak ve dalgalanma efektiyle görsel geri bildirim sağlamak için Web Audio API kullanır. <strong>Tap Tempo</strong> özelliği herhangi bir şarkının BPM\'ini anında bulmanızı sağlar.',
     },
     {
       type: 'title',

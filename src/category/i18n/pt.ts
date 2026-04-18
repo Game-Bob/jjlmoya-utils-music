@@ -1,7 +1,7 @@
 import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
-  slug: 'musica',
+  slug: 'ferramentas-musicais',
   title: 'Ferramentas Musicais Online',
   description:
     'Utilitários musicais gratuitos para músicos, produtores e entusiastas. Metrônomo, calculadora BPM, conversor de frequência, equivalência de notas e mais.',

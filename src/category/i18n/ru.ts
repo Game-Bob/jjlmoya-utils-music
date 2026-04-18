@@ -2,7 +2,7 @@ import type { CategoryLocaleContent } from '../../types';
 
 export const content: CategoryLocaleContent = {
   slug: 'muzyka',
-  title: 'Онлайн-инструменты для музыки',
+  title: 'Онлайн инструменты для музыки',
   description:
     'Бесплатные музыкальные утилиты для музыкантов, продюсеров и энтузиастов. Метроном, калькулятор BPM, конвертер частот, эквивалентность нот и многое другое.',
   seo: [
