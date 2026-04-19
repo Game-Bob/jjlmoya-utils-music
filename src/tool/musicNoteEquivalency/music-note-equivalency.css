@@ -24,7 +24,7 @@
     gap: 2.5rem;
   }
 
-  :global(.theme-dark) .mne {
+  .theme-dark .mne {
     --mne-bg-card: rgba(15, 23, 42, 0.8);
     --mne-border-card: rgba(139, 92, 246, 0.3);
     --mne-text-main: #f8fafc;
@@ -289,7 +289,7 @@
     border: 1px solid var(--mne-glass-border);
   }
 
-  :global(.theme-dark) .mne__visualizer-container {
+  .theme-dark .mne__visualizer-container {
     background: rgba(255, 255, 255, 0.05);
   }
 
