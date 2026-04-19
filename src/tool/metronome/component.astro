@@ -87,59 +87,6 @@ const t = (ui ?? {}) as MetronomeUI;
 </div>
 
 
-<style is:global>
-  @keyframes mtr-ripple-anim {
-    0% {
-      transform: scale(0.8);
-      opacity: 0.8;
-    }
-    100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  .animate-ripple {
-    animation: mtr-ripple-anim 0.3s ease-out forwards;
-  }
-
-  .mtr-hidden {
-    display: none;
-  }
-
-  .mtr-dot {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: var(--mtr-dot-idle, #e2e8f0);
-    transition: background 50ms, transform 50ms;
-  }
-
-  .mtr-dot.mtr-dot-accent {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .mtr-dot.mtr-dot-active {
-    background: var(--mtr-primary, #06b6d4);
-    transform: scale(1.25);
-  }
-
-  .mtr-play-btn.mtr-playing {
-    background: var(--mtr-playing-bg, #ef4444);
-    color: #fff;
-  }
-
-  .mtr-beat-visual.mtr-beat-accent {
-    transform: scale(1.05);
-    background: var(--mtr-primary-light, #cffafe);
-  }
-
-  .mtr-tap-btn.mtr-tap-pressed {
-    transform: scale(0.95);
-    background: var(--mtr-primary-dim, rgba(6, 182, 212, 0.15));
-  }
-</style>
 
 <script>
   class Metronome {

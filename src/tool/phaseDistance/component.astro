@@ -126,50 +126,6 @@ const t = (ui ?? {}) as PhaseDistanceUI;
 </div>
 
 
-<style is:global>
-  .phs-indicator {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    border: 1px solid transparent;
-  }
-
-  .phs-ok {
-    color: var(--phs-ok, #059669);
-    border-color: var(--phs-ok, #059669);
-  }
-
-  .phs-warning {
-    color: var(--phs-orange, #ff4d00);
-    border-color: var(--phs-orange, #ff4d00);
-    animation: phs-flash 1s infinite;
-  }
-
-  @keyframes phs-flash {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.4;
-    }
-  }
-
-  .phs-toggle.phs-toggle-active {
-    border-color: #00f2ff;
-    color: #00f2ff;
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
-  }
-</style>
 
 <script define:vars={{
   statusInPhase: t.statusInPhase,
