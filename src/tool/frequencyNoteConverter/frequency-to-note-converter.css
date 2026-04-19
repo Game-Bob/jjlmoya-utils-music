@@ -1,0 +1,65 @@
+.fnc-root {
+    --fnc-bg: #faf5ff;
+    --fnc-bg-panel: #f3e8ff;
+    --fnc-bg-input: #fff;
+    --fnc-bg-input-focus: #fdf4ff;
+    --fnc-bg-piano: #ede9fe;
+    --fnc-text: #1e0a2e;
+    --fnc-text-muted: rgba(30, 10, 46, 0.55);
+    --fnc-text-dim: rgba(30, 10, 46, 0.35);
+    --fnc-text-key: rgba(0, 0, 0, 0.4);
+    --fnc-border: rgba(0, 0, 0, 0.08);
+    --fnc-border-faint: rgba(0, 0, 0, 0.05);
+    --fnc-purple: #c026d3;
+    --fnc-violet: #7c3aed;
+    --fnc-fuchsia: #d946ef;
+    --fnc-cyan: #06b6d4;
+    --fnc-green: #10b981;
+    --fnc-amber: #f59e0b;
+    --fnc-border-purple: rgba(192, 38, 211, 0.3);
+    --fnc-border-purple-h: rgba(192, 38, 211, 0.5);
+    --fnc-border-cyan: rgba(6, 182, 212, 0.25);
+    --fnc-glow-purple: rgba(192, 38, 211, 0.08);
+    --fnc-mode-inactive: rgba(30, 10, 46, 0.45);
+    --fnc-white-key: linear-gradient(180deg, #e8e8f0 0%, #fff 100%);
+    --fnc-white-key-hover: linear-gradient(180deg, #d8b4fe 0%, #ede9fe 100%);
+    --fnc-white-key-active: linear-gradient(180deg, #c026d3 0%, #e879f9 100%);
+    --fnc-black-key: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
+    --fnc-black-key-hover: linear-gradient(180deg, #4c1d95 0%, #2e1065 100%);
+    --fnc-black-key-active: linear-gradient(180deg, #c026d3 0%, #7c3aed 100%);
+    --fnc-tuner-track: linear-gradient(90deg, #93c5fd 0%, #10b981 48%, #10b981 52%, #f9a8d4 100%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding: 2.5rem;
+    background: var(--fnc-bg);
+    border-radius: 28px;
+    border: 1.5px solid var(--fnc-border-purple);
+    color: var(--fnc-text);
+    max-width: 860px;
+    margin: 2rem auto;
+    box-shadow: 0 0 60px var(--fnc-glow-purple), inset 0 0 40px var(--fnc-glow-purple);
+    transition: box-shadow 0.4s ease;
+  }
+
+  :global(.theme-dark) .fnc-root {
+    --fnc-bg: #090912;
+    --fnc-bg-panel: #0f0f1e;
+    --fnc-bg-input: #0f0f1e;
+    --fnc-bg-input-focus: #140b1e;
+    --fnc-bg-piano: #06060e;
+    --fnc-text: #f0f0ff;
+    --fnc-text-muted: rgba(240, 240, 255, 0.45);
+    --fnc-text-dim: rgba(240, 240, 255, 0.3);
+    --fnc-text-key: rgba(0, 0, 0, 0.35);
+    --fnc-border: rgba(255, 255, 255, 0.06);
+    --fnc-border-faint: rgba(255, 255, 255, 0.04);
+    --fnc-fuchsia: #e879f9;
+    --fnc-border-purple: rgba(192, 38, 211, 0.3);
+    --fnc-border-purple-h: rgba(192, 38, 211, 0.5);
+    --fnc-border-cyan: rgba(6, 182, 212, 0.15);
+    --fnc-glow-purple: rgba(192, 38, 211, 0.06);
+    --fnc-mode-inactive: rgba(240, 240, 255, 0.45);
+    --fnc-tuner-track: linear-gradient(90deg, #1e3a5f 0%, #10b981 48%, #10b981 52%, #5c1a40 100%);
+  }
