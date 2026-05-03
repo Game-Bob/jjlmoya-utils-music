@@ -11,4 +11,4 @@ const { locale = 'es' } = Astro.props;
 const content = await audioStorageCalculator.i18n[locale]?.();
 ---
 
-{content && <Bibliography items={content.bibliography} title={content.bibliographyTitle} />}
+{content && <Bibliography items={content.bibliography} />}

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Technische Referenzen',
-  bibliography: [
-    {
-      name: 'Audio Bittiefe – Wikipedia',
-      url: 'https://de.wikipedia.org/wiki/Audio Bittiefe',
-    },
-    {
-      name: 'Abtastrate – Wikipedia',
-      url: 'https://de.wikipedia.org/wiki/Abtastrate',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

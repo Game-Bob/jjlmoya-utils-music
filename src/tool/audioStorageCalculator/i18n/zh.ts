@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '技术参考',
-  bibliography: [
-    {
-      name: '音频位深度 – 维基百科',
-      url: 'https://zh.wikipedia.org/wiki/%E9%9F%B3%E9%A2%91%E4%BD%8D%E6%B7%B1%E5%BA%A6',
-    },
-    {
-      name: '采样率 – 维基百科',
-      url: 'https://zh.wikipedia.org/wiki/%E9%87%87%E6%A0%B7%E7%8E%87',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '기술 참조',
-  bibliography: [
-    {
-      name: '비트 깊이 – 위키백과',
-      url: 'https://ko.wikipedia.org/wiki/%EB%B9%84%ED%8A%B8_%EA%B9%8A%EC%9D%B4',
-    },
-    {
-      name: '샘플링 레이트 – 위키백과',
-      url: 'https://ko.wikipedia.org/wiki/%EC%83%98%ED%94%8C%EB%A7%81_%EB%A0%88%EC%9D%B4%ED%8A%B8',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

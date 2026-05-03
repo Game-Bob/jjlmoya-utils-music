@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MetronomeUI } from '../ui';
@@ -86,23 +87,8 @@ export const content: ToolLocaleContent<MetronomeUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题解答',
   faq: faqData,
-  bibliographyTitle: '技术参考',
-  bibliography: [
-    {
-      name: 'Web Audio API – MDN Web Docs',
-      url: 'https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API',
-    },
-    {
-      name: 'AudioContext – MDN Web Docs',
-      url: 'https://developer.mozilla.org/zh-CN/docs/Web/API/AudioContext',
-    },
-    {
-      name: 'A Tale of Two Clocks – Scheduling Web Audio with Precision (web.dev)',
-      url: 'https://web.dev/articles/audio-scheduling',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

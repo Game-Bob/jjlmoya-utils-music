@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { FrequencyNoteConverterUI } from '../ui';
@@ -115,19 +116,8 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题解答',
   faq: faqData,
-  bibliographyTitle: '技术参考',
-  bibliography: [
-    {
-      name: 'ISO 16:1975 — 声学 — 标准调律频率',
-      url: 'https://www.iso.org/standard/3601.html',
-    },
-    {
-      name: '声音物理学 — 音乐声学 (MIT)',
-      url: 'https://musictech.mit.edu/musical-acoustics-synthesis-and-audio-effects/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

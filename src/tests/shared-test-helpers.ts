@@ -5,43 +5,28 @@ export interface ToolExportValidationResult {
   failures: string[];
 }
 
+async function validateSingleComponent(id: string, name: string, fn: unknown, failures: string[]): Promise<void> {
+  if (typeof fn !== 'function') {
+    failures.push(`${id}: ${name} is not a function (${typeof fn})`);
+    return;
+  }
+  try {
+    const result = await (fn as () => Promise<unknown>)();
+    if (!result || typeof result !== 'object') {
+      failures.push(`${id}: ${name} import returned invalid result`);
+    }
+  } catch (error) {
+    failures.push(`${id}: Import execution error - ${error instanceof Error ? error.message : 'unknown'}`);
+  }
+}
+
 export async function validateToolExports(tools: ToolDefinition[]): Promise<ToolExportValidationResult> {
   const failures: string[] = [];
 
   for (const tool of tools) {
-    if (typeof tool.Component !== 'function') {
-      failures.push(`${tool.entry.id}: Component is not a function (${typeof tool.Component})`);
-    }
-
-    if (typeof tool.SEOComponent !== 'function') {
-      failures.push(`${tool.entry.id}: SEOComponent is not a function (${typeof tool.SEOComponent})`);
-    }
-
-    if (typeof tool.BibliographyComponent !== 'function') {
-      failures.push(`${tool.entry.id}: BibliographyComponent is not a function (${typeof tool.BibliographyComponent})`);
-    }
-
-    try {
-      const componentFn = tool.Component as () => Promise<unknown>;
-      const seoFn = tool.SEOComponent as () => Promise<unknown>;
-      const bibFn = tool.BibliographyComponent as () => Promise<unknown>;
-
-      const componentResult = await componentFn();
-      const seoResult = await seoFn();
-      const bibResult = await bibFn();
-
-      if (!componentResult || typeof componentResult !== 'object') {
-        failures.push(`${tool.entry.id}: Component import returned invalid result`);
-      }
-      if (!seoResult || typeof seoResult !== 'object') {
-        failures.push(`${tool.entry.id}: SEOComponent import returned invalid result`);
-      }
-      if (!bibResult || typeof bibResult !== 'object') {
-        failures.push(`${tool.entry.id}: BibliographyComponent import returned invalid result`);
-      }
-    } catch (error) {
-      failures.push(`${tool.entry.id}: Import execution error - ${error instanceof Error ? error.message : 'unknown'}`);
-    }
+    await validateSingleComponent(tool.entry.id, 'Component', tool.Component, failures);
+    await validateSingleComponent(tool.entry.id, 'SEOComponent', tool.SEOComponent, failures);
+    await validateSingleComponent(tool.entry.id, 'BibliographyComponent', tool.BibliographyComponent, failures);
   }
 
   return {

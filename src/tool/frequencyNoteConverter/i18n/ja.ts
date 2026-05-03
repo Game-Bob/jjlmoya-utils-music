@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { FrequencyNoteConverterUI } from '../ui';
@@ -115,19 +116,8 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '技術リファレンス',
-  bibliography: [
-    {
-      name: 'ISO 16:1975 — 音響 — 標準音高周波数',
-      url: 'https://www.iso.org/standard/3601.html',
-    },
-    {
-      name: '音の物理学 — 音楽音響（MIT）',
-      url: 'https://musictech.mit.edu/musical-acoustics-synthesis-and-audio-effects/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Referensi Teknis',
-  bibliography: [
-    {
-      name: 'Kedalaman bit audio – Wikipedia',
-      url: 'https://id.wikipedia.org/wiki/Kedalaman_bit_audio',
-    },
-    {
-      name: 'Laju sampel – Wikipedia',
-      url: 'https://id.wikipedia.org/wiki/Laju_sampel',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

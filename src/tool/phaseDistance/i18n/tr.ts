@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
@@ -96,19 +97,8 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Technical references',
-  bibliography: [
-    {
-      name: 'SOUND REINFORCEMENT HANDBOOK',
-      url: 'https://soundsfxedit.wordpress.com/wp-content/uploads/2011/12/sound-reinforcement-handbook.pdf',
-    },
-    {
-      name: 'Microphone Phase — Sound On Sound',
-      url: 'https://www.soundonsound.com/techniques/phase-demystified',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

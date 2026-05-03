@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Referências Técnicas',
-  bibliography: [
-    {
-      name: 'Resolução de áudio – Wikipédia',
-      url: 'https://pt.wikipedia.org/wiki/Resolu%C3%A7%C3%A3o_de_%C3%A1udio',
-    },
-    {
-      name: 'Taxa de amostragem – Wikipédia',
-      url: 'https://pt.wikipedia.org/wiki/Taxa_de_amostragem',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

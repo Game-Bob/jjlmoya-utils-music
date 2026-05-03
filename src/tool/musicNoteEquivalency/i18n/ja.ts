@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MusicNoteEquivalencyUI } from '../ui';
@@ -91,23 +92,8 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '技術リファレンス',
-  bibliography: [
-    {
-      name: 'ISO 16:1975 音響 — 標準音高周波数',
-      url: 'https://www.iso.org/standard/3601.html',
-    },
-    {
-      name: 'ハーバード音楽辞典 - 記譜法システム',
-      url: 'https://www.hup.harvard.edu/catalog.php?isbn=9780674011632',
-    },
-    {
-      name: '音楽音名の名称 - 音楽理論',
-      url: 'https://en.wikipedia.org/wiki/Musical_note#Note_names_and_history',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

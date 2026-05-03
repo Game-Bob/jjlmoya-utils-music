@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { FrequencyNoteConverterUI } from '../ui';
@@ -115,19 +116,8 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Références techniques',
-  bibliography: [
-    {
-      name: 'ISO 16:1975 — Acoustique — Fréquence normale de référence',
-      url: 'https://www.iso.org/standard/3601.html',
-    },
-    {
-      name: 'La physique du son — Acoustique musicale (MIT)',
-      url: 'https://musictech.mit.edu/musical-acoustics-synthesis-and-audio-effects/',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

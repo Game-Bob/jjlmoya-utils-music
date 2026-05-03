@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Referencje techniczne',
-  bibliography: [
-    {
-      name: 'Głębia bitowa – Wikipedia',
-      url: 'https://pl.wikipedia.org/wiki/G%C5%82%C4%99bia_bitowa_d%C5%BAwi%C4%99ku',
-    },
-    {
-      name: 'Próbkowanie – Wikipedia',
-      url: 'https://pl.wikipedia.org/wiki/Pr%C3%B3bkowanie',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

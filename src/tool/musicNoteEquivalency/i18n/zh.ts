@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { MusicNoteEquivalencyUI } from '../ui';
@@ -91,23 +92,8 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
   slug,
   title,
   description,
-  faqTitle: '常见问题解答',
   faq: faqData,
-  bibliographyTitle: '技术参考',
-  bibliography: [
-    {
-      name: 'ISO 16:1975 Acoustics — Standard tuning frequency',
-      url: 'https://www.iso.org/standard/3601.html',
-    },
-    {
-      name: '哈佛音乐词典 - 记谱系统',
-      url: 'https://www.hup.harvard.edu/catalog.php?isbn=9780674011632',
-    },
-    {
-      name: '乐音命名法 - 音乐理论',
-      url: 'https://en.wikipedia.org/wiki/Musical_note#Note_names_and_history',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {

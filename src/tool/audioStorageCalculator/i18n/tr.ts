@@ -1,3 +1,4 @@
+import { bibliography } from '../bibliography';
 import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Teknik Kaynaklar',
-  bibliography: [
-    {
-      name: 'Ses bit derinliği – Vikipedi',
-      url: 'https://tr.wikipedia.org/wiki/Ses_bit_derinli%C4%9Fi',
-    },
-    {
-      name: 'Örnekleme hızı – Vikipedi',
-      url: 'https://tr.wikipedia.org/wiki/%C3%96rnekleme_h%C4%B1z%C4%B1',
-    },
-  ],
+  bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
