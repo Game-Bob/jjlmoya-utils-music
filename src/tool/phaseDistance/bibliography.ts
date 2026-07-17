@@ -6,7 +6,7 @@ export const bibliography: BibliographyEntry[] = [
     url: 'https://soundsfxedit.wordpress.com/wp-content/uploads/2011/12/sound-reinforcement-handbook.pdf',
   },
   {
-    name: 'Phase Demystified — Understanding Phase Cancellation',
+    name: 'Phase Demystified - Understanding Phase Cancellation',
     url: 'https://www.soundonsound.com/techniques/phase-demystified',
   },
 ];

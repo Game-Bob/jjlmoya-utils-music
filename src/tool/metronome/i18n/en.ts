@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Metronome features',
       items: [
-        'Web Audio API engine — millisecond precision, no drift',
+        'Web Audio API engine - millisecond precision, no drift',
         'Tap Tempo: calculate BPM by tapping to the beat',
         'Configurable time signature from 1 to 12 beats with auto accent',
         'High-contrast visual indicator with ripple effect',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Italian Term', 'BPM Approx.', 'Character'],
       rows: [
-        ['Largo', '40 – 60', 'Slow and solemn'],
-        ['Andante', '76 – 108', 'Walking pace, calm'],
-        ['Allegro', '120 – 156', 'Fast, bright and joyful'],
-        ['Presto', '168 – 200', 'Very fast, frantic'],
+        ['Largo', '40 - 60', 'Slow and solemn'],
+        ['Andante', '76 - 108', 'Walking pace, calm'],
+        ['Allegro', '120 - 156', 'Fast, bright and joyful'],
+        ['Presto', '168 - 200', 'Very fast, frantic'],
       ],
     },
     {

@@ -12,10 +12,10 @@ const faqData = [
   {
     question: 'Questo metronomo è abbastanza preciso per un uso professionale?',
     answer:
-      'Sì. Utilizziamo la Web Audio API, che programma i suoni direttamente sull’orologio hardware del dispositivo. Questo evita i micro-ritardi tipici di altre applicazioni web e garantisce una precisione al millisecondo, anche durante sessioni prolungate.',
+      'Sì. Utilizziamo la Web Audio API, che programma i suoni direttamente sull\'orologio hardware del dispositivo. Questo evita i micro-ritardi tipici di altre applicazioni web e garantisce una precisione al millisecondo, anche durante sessioni prolungate.',
   },
   {
-    question: 'Cos’è il Tap Tempo e come si usa?',
+    question: 'Cos\'è il Tap Tempo e come si usa?',
     answer:
       'È una funzione che permette di calcolare i BPM picchiettando ritmicamente. Basta cliccare sul pulsante "TAP" o premere la barra spaziatrice a tempo con la musica che stai ascoltando per ottenere istantaneamente il tempo esatto.',
   },
@@ -27,7 +27,7 @@ const faqData = [
   {
     question: 'Perché non sento nulla sul mio iPhone o iPad?',
     answer:
-      'Sui dispositivi iOS, la tecnologia Web Audio rispetta l’interruttore fisico del silenzioso. Assicurati che il telefono non sia in modalità silenziosa e alza il volume dei file multimediali per sentire i clic.',
+      'Sui dispositivi iOS, la tecnologia Web Audio rispetta l\'interruttore fisico del silenzioso. Assicurati che il telefono non sia in modalità silenziosa e alza il volume dei file multimediali per sentire i clic.',
   },
 ];
 
@@ -100,14 +100,14 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     btnTap: 'TAP',
     warningTitle: 'Nessun suono?',
     warningText:
-      'Se sei su iPhone/iPad, assicurati che l’interruttore laterale del silenzioso non sia attivo. La tecnologia Web Audio rispetta la modalità silenziosa di sistema su molti dispositivi.',
+      'Se sei su iPhone/iPad, assicurati che l\'interruttore laterale del silenzioso non sia attivo. La tecnologia Web Audio rispetta la modalità silenziosa di sistema su molti dispositivi.',
   },
   seo: [
     {
       type: 'summary',
       title: 'Caratteristiche del metronomo',
       items: [
-        'Motore Web Audio API — precisione al millisecondo, nessuna deriva',
+        'Motore Web Audio API - precisione al millisecondo, nessuna deriva',
         'Tap Tempo: calcola i BPM picchiettando a tempo',
         'Tempo configurabile da 1 a 12 battiti con accento automatico',
         'Indicatore visivo ad alto contrasto con effetto ripple',
@@ -121,11 +121,11 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Benvenuto nel <strong>Metronomo Online Definitivo</strong>. Abbiamo costruito questo strumento con un unico obiettivo: <em>l’affidabilità</em>. A differenza di altri metronomi web che soffrono di "deriva" (piccoli ritardi cumulativi) a causa del carico del processore, il nostro motore sonoro è costruito direttamente sulla <strong>Web Audio API</strong>.',
+      html: 'Benvenuto nel <strong>Metronomo Online Definitivo</strong>. Abbiamo costruito questo strumento con un unico obiettivo: <em>l\'affidabilità</em>. A differenza di altri metronomi web che soffrono di "deriva" (piccoli ritardi cumulativi) a causa del carico del processore, il nostro motore sonoro è costruito direttamente sulla <strong>Web Audio API</strong>.',
     },
     {
       type: 'paragraph',
-      html: 'Ciò significa che gli impulsi sonori sono programmati in anticipo sull’orologio hardware del tuo dispositivo, garantendo una <strong>precisione millimetrica incrollabile</strong>, anche se riduci a icona la scheda o il computer è occupato.',
+      html: 'Ciò significa che gli impulsi sonori sono programmati in anticipo sull\'orologio hardware del tuo dispositivo, garantendo una <strong>precisione millimetrica incrollabile</strong>, anche se riduci a icona la scheda o il computer è occupato.',
     },
     {
       type: 'comparative',
@@ -139,7 +139,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
         {
           title: 'Smart Tap Tempo',
           description:
-            'Stai ascoltando una canzone e vuoi conoscerne la velocità? Premi il pulsante TAP o il tasto Spazio a tempo con la musica. L’algoritmo calcolerà la media esatta dei tuoi tocchi.',
+            'Stai ascoltando una canzone e vuoi conoscerne la velocità? Premi il pulsante TAP o il tasto Spazio a tempo con la musica. L\'algoritmo calcolerà la media esatta dei tuoi tocchi.',
         },
       ],
     },
@@ -172,12 +172,12 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'title',
-      text: '2. Spostamento dell’Accento',
+      text: '2. Spostamento dell\'Accento',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Usa il nostro selettore di tempo per spostare l’accento. Esercitarsi su un passaggio in 4/4 con il metronomo impostato a 3/4 significa che l’accento (il clic acuto) cade in punti diversi del tuo fraseggio, costringendoti a interiorizzare il tempo assoluto invece di fare affidamento sul battito "uno".',
+      html: 'Usa il nostro selettore di tempo per spostare l\'accento. Esercitarsi su un passaggio in 4/4 con il metronomo impostato a 3/4 significa che l\'accento (il clic acuto) cade in punti diversi del tuo fraseggio, costringendoti a interiorizzare il tempo assoluto invece di fare affidamento sul battito "uno".',
     },
     {
       type: 'title',
@@ -186,7 +186,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Una tecnica avanzata consiste nell’impostare il metronomo a metà velocità (es. 60 BPM se suoni a 120) e sentire ogni clic come i battiti 1 e 3. Ancora più difficile: sentirlo solo come i battiti deboli (off-beats). Questo sviluppa il tuo <strong>orologio interno</strong>.',
+      html: 'Una tecnica avanzata consiste nell\'impostare il metronomo a metà velocità (es. 60 BPM se suoni a 120) e sentire ogni clic come i battiti 1 e 3. Ancora più difficile: sentirlo solo come i battiti deboli (off-beats). Questo sviluppa il tuo <strong>orologio interno</strong>.',
     },
     {
       type: 'title',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Termine Italiano', 'BPM Appross.', 'Carattere'],
       rows: [
-        ['Largo', '40 – 60', 'Lento e solenne'],
-        ['Andante', '76 – 108', 'Passo d’uomo, calmo'],
-        ['Allegro', '120 – 156', 'Veloce, brillante e gioioso'],
-        ['Presto', '168 – 200', 'Molto veloce, frenetico'],
+        ['Largo', '40 - 60', 'Lento e solenne'],
+        ['Andante', '76 - 108', 'Passo d\'uomo, calmo'],
+        ['Allegro', '120 - 156', 'Veloce, brillante e gioioso'],
+        ['Presto', '168 - 200', 'Molto veloce, frenetico'],
       ],
     },
     {
@@ -214,7 +214,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Questo non è un lettore MP3 in loop. Stiamo generando onde sinusoidali pure in tempo reale. L’oscillatore principale crea un tono a <strong>1000 Hz</strong> per l’accento e a <strong>800 Hz</strong> per i battiti deboli, con un inviluppo ADSR ultra-breve per il massimo punch. Questo assicura un attacco sonoro istantaneo.',
+      html: 'Questo non è un lettore MP3 in loop. Stiamo generando onde sinusoidali pure in tempo reale. L\'oscillatore principale crea un tono a <strong>1000 Hz</strong> per l\'accento e a <strong>800 Hz</strong> per i battiti deboli, con un inviluppo ADSR ultra-breve per il massimo punch. Questo assicura un attacco sonoro istantaneo.',
     },
     {
       type: 'paragraph',
@@ -223,7 +223,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     {
       type: 'tip',
       title: 'Non senti il suono su mobile?',
-      html: 'Se sei su iPhone/iPad, assicurati che l’<strong>interruttore laterale del silenzioso</strong> non sia attivato. La tecnologia Web Audio rispetta la modalità silenziosa di sistema su molti dispositivi.',
+      html: 'Se sei su iPhone/iPad, assicurati che l\'<strong>interruttore laterale del silenzioso</strong> non sia attivato. La tecnologia Web Audio rispetta la modalità silenziosa di sistema su molti dispositivi.',
     },
   ],
 };

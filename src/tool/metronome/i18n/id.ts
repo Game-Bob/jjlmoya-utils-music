@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Fitur metronom',
       items: [
-        'Mesin Web Audio API — presisi milidetik, tanpa drift',
+        'Mesin Web Audio API - presisi milidetik, tanpa drift',
         'Tap Tempo: hitung BPM dengan mengetuk sesuai ketukan',
         'Tanda birama yang dapat dikonfigurasi dari 1 hingga 12 ketukan dengan aksen otomatis',
         'Indikator visual kontras tinggi dengan efek riak (ripple)',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Istilah Italia', 'Perkiraan BPM', 'Karakter'],
       rows: [
-        ['Largo', '40 – 60', 'Lambat dan khidmat'],
-        ['Andante', '76 – 108', 'Kecepatan jalan kaki, tenang'],
-        ['Allegro', '120 – 156', 'Cepat, cerah dan ceria'],
-        ['Presto', '168 – 200', 'Sangat cepat, hingar bingar'],
+        ['Largo', '40 - 60', 'Lambat dan khidmat'],
+        ['Andante', '76 - 108', 'Kecepatan jalan kaki, tenang'],
+        ['Allegro', '120 - 156', 'Cepat, cerah dan ceria'],
+        ['Presto', '168 - 200', 'Sangat cepat, hingar bingar'],
       ],
     },
     {

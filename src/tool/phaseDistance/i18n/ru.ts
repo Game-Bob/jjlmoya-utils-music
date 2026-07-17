@@ -3,60 +3,60 @@ import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'sche
 import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
-const slug = 'kalkulator-razdelenia-fazy';
-const title = 'Phase Distance Calculator for Microphones';
+const slug = 'kalkulyator-fazovogo-rasstoyaniya';
+const title = 'Калькулятор фазового расстояния для микрофонов';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'Рассчитайте задержку и компенсацию, необходимые для выравнивания микрофонов. Избегайте фазового вычитания и гребенчатой фильтрации с точностью до сэмпла и температурной коррекцией.';
 
 const faqData = [
   {
-    question: 'What is phase cancellation in audio?',
+    question: 'Что такое фазовое вычитание в аудио?',
     answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
+      'Это акустический феномен, возникающий, когда два сигнала от одного источника приходят в разное время. Волны интерферируют друг с другом, и если они сдвинуты на 180 градусов, они гасят друг друга, делая звук тонким и лишенным тела.',
   },
   {
-    question: 'Why does temperature affect the calculation?',
+    question: 'Почему температура влияет на расчет?',
     answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
+      'Поскольку звук распространяется по воздуху, а плотность воздуха меняется в зависимости от температуры. Чем теплее, тем быстрее распространяется звук. Точная температурная коррекция позволяет рассчитать точную задержку между разнесенными микрофонами.',
   },
   {
-    question: 'Is inverting phase the same as inverting polarity?',
+    question: 'Влечет ли за собой инверсия фазы инверсию полярности?',
     answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
+      'Технически нет, хотя эти термины часто используются как взаимозаменяемые. Полярность - это электрическое изменение (поворот на 180°), а фаза - это сдвиг во времени. Наш инструмент позволяет симулировать оба варианта для поиска наилучшей звуковой согласованности.',
   },
   {
-    question: 'What is Comb Filtering?',
+    question: 'Что такое гребенчатая фильтрация (Comb Filtering)?',
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      'Это частотная характеристика, возникающая в результате объединения сигнала с его задержанной копией. Она создает серию пиков и провалов, напоминающих зубья расчески, что кардинально меняет тембр инструмента.',
   },
   {
-    question: "What is the 3:1 rule in microphone technique?",
+    question: 'Что такое правило 3:1 в микрофонной технике?',
     answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
+      'Это метод минимизации фазовых проблем: при использовании двух микрофонов для разных источников расстояние между микрофонами должно быть как минимум в три раза больше расстояния от каждого микрофона до его источника.',
   },
   {
-    question: 'Is it better to align microphones physically or with software?',
+    question: 'Что лучше: выравнивать микрофоны физически или программно?',
     answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
+      'Хорошее физическое выравнивание во время записи всегда предпочтительнее для избежания артефактов. Однако цифровая задержка в DAW обеспечивает точность до сэмпла, которую практически невозможно достичь вручную, перемещая микрофон.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
+    name: 'Измерение расстояний',
+    text: 'Измерьте физическое расстояние от источника звука (например, малого барабана) до каждого из используемых микрофонов.',
   },
   {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
+    name: 'Настройка среды',
+    text: 'Введите температуру в помещении и частоту дискретизации вашего проекта для получения расчетов, основанных на реальных законах физики.',
   },
   {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
+    name: 'Анализ графика',
+    text: 'Посмотрите на визуализатор частотной характеристики, чтобы выявить возможные критические фазовые вычитания в слышимом диапазоне.',
   },
   {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
+    name: 'Применение компенсации',
+    text: 'Скопируйте значение задержки в миллисекундах или сэмплах и вставьте его в плагин задержки на вашем канале, чтобы идеально выровнять треки.',
   },
 ];
 
@@ -102,194 +102,194 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelTemp: 'Temperature (°C) / Sound',
-    btnAuto: 'Auto',
-    labelSampleRate: 'Sample Rate (kHz)',
-    labelUnits: 'Unit System',
-    optMetric: 'Metric (m/cm)',
-    optImperial: 'Imperial (ft/in)',
-    labelDistA: 'Microphone A Distance',
-    labelDistB: 'Microphone B Distance',
-    labelPresets: 'Quick Presets',
-    presetCoincident: 'Coincident (XY)',
-    presetSnare: 'Snare',
-    presetAmbient: 'Ambient',
-    btnInvert: 'Invert Phase (Φ)',
-    labelGain: 'Relative Gain Mic B:',
-    btnCopy: 'Copy Samples',
-    labelDelay: 'Required Delay',
-    unitMs: 'milliseconds (ms)',
-    labelCompensation: 'Compensation',
-    unitSamples: 'Samples',
-    labelPhaseStatus: 'Phase Status',
-    textLoading: 'Loading...',
-    statusInPhase: 'IN PHASE',
-    statusInPhaseDesc: 'Signals perfectly aligned.',
-    statusCritical: 'CRITICAL CANCELLATION',
-    statusCriticalDesc: 'Significant comb filtering in low/mid range.',
-    statusOffAxis: 'OFF AXIS',
-    statusOffAxisDesc: 'Slight phase shift. Texture modified.',
-    warningCritical: '(!) POSSIBLE CRITICAL CANCELLATION',
-    labelSoundSpeed: 'Speed of Sound',
-    labelDistDiff: 'Distance Difference',
-    labelNullFreq: 'First Nulls',
-    textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
-    promptSoundSpeed: 'Speed of Sound (m/s):',
-    copyFeedback: 'Copied!',
+    labelTemp: 'Температура (°C) / Звук',
+    btnAuto: 'Авто',
+    labelSampleRate: 'Частота дискретизации (кГц)',
+    labelUnits: 'Система единиц',
+    optMetric: 'Метрическая (м/см)',
+    optImperial: 'Имперская (фт/дюйм)',
+    labelDistA: 'Расстояние до микрофона A',
+    labelDistB: 'Расстояние до микрофона B',
+    labelPresets: 'Быстрые пресеты',
+    presetCoincident: 'Совпадающая (XY)',
+    presetSnare: 'Малый барабан',
+    presetAmbient: 'Эмбиент',
+    btnInvert: 'Инвертировать фазу (Φ)',
+    labelGain: 'Относительное усиление микр. B:',
+    btnCopy: 'Копировать сэмплы',
+    labelDelay: 'Требуемая задержка',
+    unitMs: 'миллисекунды (мс)',
+    labelCompensation: 'Компенсация',
+    unitSamples: 'Сэмплы',
+    labelPhaseStatus: 'Состояние фазы',
+    textLoading: 'Загрузка...',
+    statusInPhase: 'В ФАЗЕ',
+    statusInPhaseDesc: 'Сигналы идеально выровнены.',
+    statusCritical: 'КРИТИЧЕСКОЕ ВЫЧИТАНИЕ',
+    statusCriticalDesc: 'Значительная гребенчатая фильтрация в низком/среднем диапазоне.',
+    statusOffAxis: 'ВНЕ ОСИ',
+    statusOffAxisDesc: 'Небольшой фазовый сдвиг. Текстура изменена.',
+    warningCritical: '(!) ВОЗМОЖНО КРИТИЧЕСКОЕ ВЫЧИТАНИЕ',
+    labelSoundSpeed: 'Скорость звука',
+    labelDistDiff: 'Разница расстояний',
+    labelNullFreq: 'Первые провалы',
+    textNone: 'Нет',
+    chartTitle: 'ЧАСТОТНАЯ ХАРАКТЕРИСТИКА (H) - ГРЕБЕНЧАТАЯ ФИЛЬТРАЦИЯ',
+    promptSoundSpeed: 'Скорость звука (м/с):',
+    copyFeedback: 'Скопировано!',
   },
   seo: [
     {
       type: 'summary',
-      title: 'Calculator features',
+      title: 'Функции калькулятора',
       items: [
-        'Exact physical calculation with temperature adjustment for the speed of sound',
-        'Result in milliseconds and samples for DAW compensation',
-        'Canvas visualiser of comb filtering across the full audible spectrum',
-        'Microphone presets (XY coincident, snare, ambient)',
-        'Phase inversion simulation and relative gain control',
-        'Support for metric and imperial units',
+        'Точный физический расчет с учетом температурной коррекции скорости звука',
+        'Результат в миллисекундах и сэмплах для компенсации в DAW',
+        'Визуализатор гребенчатой фильтрации на холсте по всему слышимому спектру',
+        'Пресеты для микрофонов (совпадающий XY, малый барабан, эмбиент)',
+        'Симуляция инверсии фазы и регулировка относительного усиления',
+        'Поддержка метрической и имперской систем единиц',
       ],
     },
     {
       type: 'title',
-      text: 'What is phase cancellation and why does it ruin your mixes?',
+      text: 'Что такое фазовое вычитание и почему оно портит ваши миксы?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: 'В мире звукозаписи фаза является одним из наиболее важных понятий и, как ни странно, одним из самых игнорируемых новичками. Когда вы записываете источник звука, например, ударную установку или гитарный усилитель, с помощью двух или более микрофонов, расположенных на разных расстояниях, звуковые волны не достигают капсюлей одновременно. Эта разница во времени, какой бы малой она ни была, вызывает явление, известное как <strong>фазовый сдвиг</strong>.',
     },
     {
       type: 'title',
-      text: 'The Comb Filtering phenomenon',
+      text: 'Феномен гребенчатой фильтрации',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: 'Когда два идентичных сигнала объединяются с небольшой задержкой относительно друг друга, в частотной характеристике возникает серия провалов и пиков. На анализаторе спектра этот паттерн напоминает зубья расчески - отсюда и название. Этот эффект разрушительно искажает естественный тембр инструмента.',
     },
     {
       type: 'comparative',
       columns: 2,
       items: [
         {
-          title: 'Impact on Low End',
+          title: 'Влияние на низкие частоты',
           description:
-            'Phase cancellation is most devastating in the low frequencies, where the body of the sound disappears entirely.',
+            'Фазовое вычитание наиболее разрушительно в низкочастотном диапазоне, где тело звука полностью исчезает.',
         },
         {
-          title: 'Metallic Texture',
+          title: 'Металлическая текстура',
           description:
-            "Comb filtering adds an artificial coloration that sounds 'hollow' or overly processed.",
+            'Гребенчатая фильтрация добавляет искусственный окрас, который звучит пусто или слишком обработанно.',
         },
       ],
     },
     {
       type: 'title',
-      text: 'The influence of temperature on the calculation',
+      text: 'Влияние температуры на расчет',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: 'Многие звукоинженеры забывают, что воздух - это физическая среда, и его плотность меняется в зависимости от температуры. Скорость звука не является неизменной константой, при 20°C он распространяется со скоростью примерно 343 метра в секунду.',
     },
     {
       type: 'code',
       code: 'v = 331.3 + (0.606 × T)',
-      ariaLabel: 'Formula for the speed of sound as a function of temperature',
+      ariaLabel: 'Формула скорости звука в зависимости от температуры',
     },
     {
       type: 'tip',
-      title: 'Surgical Compensation',
-      html: 'A few degrees of difference can shift the cancellation points by several hertz. Using our calculator with the actual temperature of your studio guarantees perfect alignment in the DAW.',
+      title: 'Хирургическая компенсация',
+      html: 'Разница всего в несколько градусов может сдвинуть точки вычитания на несколько герц. Использование нашего калькулятора с реальной температурой вашей студии гарантирует идеальное выравнивание в DAW.',
     },
     {
       type: 'title',
-      text: 'Critical recording scenarios',
+      text: 'Критические сценарии записи',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Snare drum (Top & Bottom): Align both heads temporally to maximise punch.',
-        'Overheads and close mics: Delay the close mics to match the phase of the overhead mics.',
-        'Guitars with multiple mics: Blend a dynamic and a ribbon without losing low-mids.',
-        'Bass DI and mic: Sync the direct signal with the amp mic for a massive sound.',
+        'Малый барабан (верхний и нижний микрофоны): выровняйте оба пластика по времени, чтобы максимизировать панч.',
+        'Оверхеды и ближние микрофоны: задержите ближние микрофоны, чтобы они соответствовали фазе оверхедов.',
+        'Гитары с несколькими микрофонами: смешивайте динамический и ленточный микрофоны без потери нижней середины.',
+        'Басовый DI и микрофон с кабинета: синхронизируйте прямой сигнал с микрофоном усилителя для получения мощного звука.',
       ],
     },
     {
       type: 'title',
-      text: 'Physical Alignment vs. Digital Processing',
+      text: 'Физическое выравнивание против цифровой обработки',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Although our tool gives you the values to correct phase in your DAW after recording, we always recommend attempting the best possible physical alignment in the studio. Moving a microphone a few millimetres can be more effective than any digital processing.',
+      html: 'Хотя наш инструмент предоставляет вам значения для коррекции фазы в вашей DAW после записи, мы всегда рекомендуем стремиться к наилучшему физическому выравниванию в студии. Сдвиг микрофона на несколько миллиметров может быть более эффективным, чем любая цифровая обработка.',
     },
     {
       type: 'stats',
       items: [
-        { label: 'Speed @ 20°C', value: '343.2 m/s' },
-        { label: 'Milliseconds/cm', value: '0.029 ms' },
-        { label: 'Samples @ 48kHz', value: '1.4 per cm' },
+        { label: 'Скорость при 20°C', value: '343.2 м/с' },
+        { label: 'Миллисекунды на см', value: '0.029 мс' },
+        { label: 'Сэмплы при 48 кГц', value: '1.4 на см' },
       ],
     },
     {
       type: 'title',
-      text: 'Reference table: Distance vs. First Null',
+      text: 'Таблица соответствия: Расстояние против первого провала',
       level: 2,
     },
     {
       type: 'table',
-      headers: ['Difference (cm)', 'Delay (ms)', '1st Null (Hz)', 'Affects...'],
+      headers: ['Разница (см)', 'Задержка (мс)', '1-й провал (Гц)', 'Влияет на...'],
       rows: [
-        ['1 cm', '0.029', '17160', 'Extreme high end'],
-        ['5 cm', '0.146', '3432', 'Upper mids (Presence)'],
-        ['10 cm', '0.291', '1716', 'Mids (Presence)'],
-        ['30 cm', '0.874', '572', 'Low-mids (Body)'],
-        ['1 metre', '2.914', '172', 'Low end (Fundamental)'],
+        ['1 см', '0.029', '17160', 'Экстремальные высокие частоты'],
+        ['5 см', '0.146', '3432', 'Верхняя середина (присутствие)'],
+        ['10 см', '0.291', '1716', 'Средние частоты (присутствие)'],
+        ['30 см', '0.874', '572', 'Нижняя середина (тело звука)'],
+        ['1 метр', '2.914', '172', 'Низкие частоты (основной тон)'],
       ],
     },
     {
       type: 'title',
-      text: 'Pros and cons of correction methods',
+      text: 'Плюсы и минусы методов коррекции',
       level: 2,
     },
     {
       type: 'proscons',
       items: [
         {
-          pro: 'Physical alignment: Less degradation of the original signal.',
-          con: 'Physical alignment: Difficult to adjust with microscopic accuracy.',
+          pro: 'Физическое выравнивание: меньшая деградация исходного сигнала.',
+          con: 'Физическое выравнивание: трудно настроить с микроскопической точностью.',
         },
         {
-          pro: 'Digital correction: Absolute precision at the sample level.',
-          con: 'Digital correction: Can create pre-echo if applied incorrectly.',
+          pro: 'Цифровая коррекция: абсолютная точность на уровне сэмплов.',
+          con: 'Цифровая коррекция: может создать пре-эхо при неправильном применении.',
         },
         {
-          pro: 'Polarity inversion: Instant fix for 180° cancellations.',
-          con: 'Polarity inversion: Does not fix intermediate phase shifts.',
+          pro: 'Инверсия полярности: мгновенное решение для вычитаний в 180°.',
+          con: 'Инверсия полярности: не решает проблемы промежуточных фазовых сдвигов.',
         },
         {
-          pro: 'Time compensation: Recovers lost impact and punch.',
-          con: 'Time compensation: Requires precise measurement of each mic.',
+          pro: 'Временная компенсация: восстанавливает утерянную атаку и панч.',
+          con: 'Временная компенсация: требует точного измерения расстояния до каждого микрофона.',
         },
       ],
     },
     {
       type: 'tip',
-      title: 'How to detect phase problems by ear?',
-      html: 'Press the "Invert Phase" button (Φ). If activating it makes the sound gain body and low end, your microphones were out of phase. If the sound "disappears" or becomes thinner, they were correctly aligned.',
+      title: 'Как обнаружить проблемы с фазой на слух?',
+      html: 'Нажмите кнопку "Инвертировать фазу" (Φ). Если при ее активации звук приобретает тело и плотность на низких частотах, ваши микрофоны были не в фазе. Если звук исчезает или становится тоньше, они были выровнены правильно.',
     },
     {
       type: 'title',
-      text: 'Mono Compatibility and Stereo Perception',
+      text: 'Моносовместимость и стереовосприятие',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In stereo recordings, the phase relationship defines the stability of the sound image. If there are serious inconsistencies, the sound could disappear entirely when the mix is played back on a mono system. Our calculator helps you predict which frequencies will suffer most when the channels are summed.',
+      html: 'В стереозаписи фазовые соотношения определяют стабильность звукового образа. При серьезных несоответствиях звук может полностью исчезнуть при воспроизведении микса в монофоническом режиме. Наш калькулятор помогает предсказать, какие частоты пострадают больше всего при суммировании каналов.',
     },
   ],
 };

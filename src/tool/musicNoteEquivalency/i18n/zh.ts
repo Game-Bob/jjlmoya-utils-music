@@ -17,15 +17,15 @@ const faqData = [
   {
     question: '为什么在德国 B 被称为 H？',
     answer:
-      '这源于中世纪“B-quadratum”（方块B）在图形上的演变。在德语国家，字母 H 专用于还原 B（Si），而字母 B 则专门用于降 B（B-flat）。',
+      '这源于中世纪\"B-quadratum\"（方块B）在图形上的演变。在德语国家，字母 H 专用于还原 B（Si），而字母 B 则专门用于降 B（B-flat）。',
   },
   {
-    question: '科学音高记谱法中的“中央 C”是什么？',
+    question: '科学音高记谱法中的\"中央 C\"是什么？',
     answer:
       '中央 C（88 键钢琴正中间的 C 键）在 ANSI/国际标准中称为 C4。在音乐学院广泛使用的法比系统中，它被称为 Do3。',
   },
   {
-    question: '两个音“等音（Enharmonic）”是什么意思？',
+    question: '两个音\"等音（Enharmonic）\"是什么意思？',
     answer:
       '意味着它们有不同的名称，但代表相同的物理声音，并在相同的钢琴键上演奏。例如，升 C（C#）和降 D（Db）是等音。',
   },
@@ -51,7 +51,7 @@ const howToData = [
   },
   {
     name: '试听并验证',
-    text: '按下“试听”按钮听到所选音符的精确频率，以确认其音高。',
+    text: '按下\"试听\"按钮听到所选音符的精确频率，以确认其音高。',
   },
 ];
 
@@ -158,11 +158,11 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
     },
     {
       type: 'paragraph',
-      html: '许多初学者好奇为什么在德国“降 B”音被写成 B，而“B”音被写成 H。这源于中世纪抄写员的一个错误。在旧字母系统中，字母 B 用于表示 Si。它有两种变体：<em>B quadratum</em>（方形，用于还原 B）和 <em>B rotundum</em>（圆形，用于降 B）。',
+      html: '许多初学者好奇为什么在德国\"降 B\"音被写成 B，而\"B\"音被写成 H。这源于中世纪抄写员的一个错误。在旧字母系统中，字母 B 用于表示 Si。它有两种变体：<em>B quadratum</em>（方形，用于还原 B）和 <em>B rotundum</em>（圆形，用于降 B）。',
     },
     {
       type: 'paragraph',
-      html: '久而久之，在德国手稿中 <em>B quadratum</em> 的形状越来越像小写字母 h。这种图形演变在印刷中被固定下来，从而产生了现在的德语命名法：H 代表还原 B，B 代表降 B。有趣的是，这种区别使得像 J.S. 巴赫这样的作曲家能够用著名的“B-A-C-H”动机（降 B - A - C - 还原 B）来签署他们的作品。',
+      html: '久而久之，在德国手稿中 <em>B quadratum</em> 的形状越来越像小写字母 h。这种图形演变在印刷中被固定下来，从而产生了现在的德语命名法：H 代表还原 B，B 代表降 B。有趣的是，这种区别使得像 J.S. 巴赫这样的作曲家能够用著名的\"B-A-C-H\"动机（降 B - A - C - 还原 B）来签署他们的作品。',
     },
     {
       type: 'title',

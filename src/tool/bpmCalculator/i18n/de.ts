@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Was ist das Pre-Delay bei einem Hall?',
     answer:
-      'Das Pre-Delay ist die Zeit zwischen dem Direktschall (Quelle) und dem Beginn der Hallfahne. Eine rhythmische Einstellung lässt die ursprüngliche Quelle klarer hervortreten, bevor der Raumeffekt einsetzt – entscheidend für Gesang und Percussion.',
+      'Das Pre-Delay ist die Zeit zwischen dem Direktschall (Quelle) und dem Beginn der Hallfahne. Eine rhythmische Einstellung lässt die ursprüngliche Quelle klarer hervortreten, bevor der Raumeffekt einsetzt - entscheidend für Gesang und Percussion.',
   },
   {
     question: 'Wie funktioniert Tap Tempo?',

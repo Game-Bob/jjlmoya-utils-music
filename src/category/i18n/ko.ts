@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: '이 카테고리에서 찾을 수 있는 것',
       items: [
-        'Web Audio API를 사용한 온라인 메트로놈 — 밀리초 정밀도',
+        'Web Audio API를 사용한 온라인 메트로놈 - 밀리초 정밀도',
         '딜레이 및 리버브용 BPM에서 밀리초 계산기',
         '주파수에서 음악 음표로 변환기 (Hz, 센트 및 디튜닝)',
         '마이크 정렬을 위한 위상 거리 계산기',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: '음악은 여러 기보 시스템을 가진 언어입니다. <strong>음표 대응</strong> 도구는 라틴어 시스템 (도, 레, 미…), 미국 시스템 (C, D, E…), 독일어 시스템 (B 대신 H를 사용한 C, D, E…) 사이를 즉시 번역하여 다른 전통을 가진 음악가들과 의사소통하거나 다른 나라의 악보를 읽을 때의 혼란을 피합니다.',
+      html: '음악은 여러 기보 시스템을 가진 언어입니다. <strong>음표 대응</strong> 도구는 라틴어 시스템 (도, 레, 미...), 미국 시스템 (C, D, E...), 독일어 시스템 (B 대신 H를 사용한 C, D, E...) 사이를 즉시 번역하여 다른 전통을 가진 음악가들과 의사소통하거나 다른 나라의 악보를 읽을 때의 혼란을 피합니다.',
     },
     {
       type: 'tip',

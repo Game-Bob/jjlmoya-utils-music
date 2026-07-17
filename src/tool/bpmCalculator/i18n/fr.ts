@@ -12,7 +12,7 @@ const faqData = [
   {
     question: "Qu'est-ce que le Pre-delay dans une reverb ?",
     answer:
-      "Le pre-delay est le temps entre le son direct (la source) et le début de la queue de réverbération. Le régler rythmiquement permet à la source originale d'être claire sans être couverte par l'effet d'espace — essentiel pour les voix et les percussions.",
+      "Le pre-delay est le temps entre le son direct (la source) et le début de la queue de réverbération. Le régler rythmiquement permet à la source originale d'être claire sans être couverte par l'effet d'espace - essentiel pour les voix et les percussions.",
   },
   {
     question: 'Comment fonctionne le Tap Tempo ?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: "Pourquoi utiliser des millisecondes plutôt que la synchronisation automatique ?",
     answer:
-      "Il y a trois raisons principales : l'utilisation de hardware analogique sans MIDI, la conception fine de pre-delays pour que la reverb respire, et les ajustements de 'groove' où les effets sont décalés légèrement hors de la grille pour ne pas sonner statiques.",
+      "Il y a trois raisons principales: l'utilisation de hardware analogique sans MIDI, la conception fine de pre-delays pour que la reverb respire, et les ajustements de 'groove' où les effets sont décalés légèrement hors de la grille pour ne pas sonner statiques.",
   },
   {
     question: "À quoi sert le calcul rythmique en Hertz (Hz) ?",
@@ -115,7 +115,7 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
         'Calcul instantané pour notes simples, pointées et triolets',
         'Valeurs en millisecondes et Hz pour chaque subdivision rythmique',
         'Section Pre-delay pour le design de reverb avec précision musicale',
-        'Tap Tempo : détectez le BPM en tapant au rythme de la musique',
+        'Tap Tempo: détectez le BPM en tapant au rythme de la musique',
         'Copie en un clic vers le presse-papiers pour tout DAW ou plugin',
       ],
     },
@@ -176,14 +176,14 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: "La formule de base est simple : <code>ms = 60 000 / BPM</code>. À partir de là, des multiplicateurs sont appliqués pour les subdivisions.",
+      html: "La formule de base est simple: <code>ms = 60 000 / BPM</code>. À partir de là, des multiplicateurs sont appliqués pour les subdivisions.",
     },
     {
       type: 'list',
       items: [
-        'Notes simples : basées sur la division binaire (1, 0,5, 0,25, etc.).',
-        'Pointées (Dotted) : multiplie la valeur de base par 1,5.',
-        'Triolets (Triplets) : multiplie la valeur de base par 0,667 (2/3).',
+        'Notes simples: basées sur la division binaire (1, 0,5, 0,25, etc.).',
+        'Pointées (Dotted): multiplie la valeur de base par 1,5.',
+        'Triolets (Triplets): multiplie la valeur de base par 0,667 (2/3).',
       ],
     },
   ],

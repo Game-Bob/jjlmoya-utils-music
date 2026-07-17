@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Bagaimana ukuran rekaman audio dihitung?', level: 2 },
     {
       type: 'paragraph',
-      html: 'Ukuran file audio digital yang tidak dikompresi (seperti WAV atau AIFF) bergantung pada tiga faktor teknis mendasar: <strong>Sample Rate</strong> — seberapa sering per detik gelombang suara "diukur" (misalnya 44.1 kHz atau 48 kHz); <strong>Bit Depth</strong> — resolusi setiap pengukuran, dengan rentang dinamis yang lebih besar dan noise yang lebih rendah pada bit yang lebih tinggi; dan <strong>Saluran</strong> — apakah rekaman tersebut Mono (1), Stereo (2) atau Multisaluran (Surround). Rumus matematika standarnya adalah <strong>Bitrate</strong>; dikalikan dengan durasi dalam detik, akan menghasilkan total ukuran file mentah.',
+      html: 'Ukuran file audio digital yang tidak dikompresi (seperti WAV atau AIFF) bergantung pada tiga faktor teknis mendasar: <strong>Sample Rate</strong> - seberapa sering per detik gelombang suara "diukur" (misalnya 44.1 kHz atau 48 kHz); <strong>Bit Depth</strong> - resolusi setiap pengukuran, dengan rentang dinamis yang lebih besar dan noise yang lebih rendah pada bit yang lebih tinggi; dan <strong>Saluran</strong> - apakah rekaman tersebut Mono (1), Stereo (2) atau Multisaluran (Surround). Rumus matematika standarnya adalah <strong>Bitrate</strong>; dikalikan dengan durasi dalam detik, akan menghasilkan total ukuran file mentah.',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'Apakah ruang ekstra itu sepadan?',
-      html: 'Meskipun memakan lebih banyak ruang, audio 24-bit menawarkan rentang dinamis 144 dB dibandingkan 96 dB untuk 16-bit. Ini memberikan "noise floor" yang jauh lebih rendah, memungkinkan sinyal yang lebih lemah direkam tanpa noise latar belakang menjadi masalah — sangat penting selama proses mixing dan mastering profesional.',
+      html: 'Meskipun memakan lebih banyak ruang, audio 24-bit menawarkan rentang dinamis 144 dB dibandingkan 96 dB untuk 16-bit. Ini memberikan "noise floor" yang jauh lebih rendah, memungkinkan sinyal yang lebih lemah direkam tanpa noise latar belakang menjadi masalah - sangat penting selama proses mixing dan mastering profesional.',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3: Dampak pada disk', level: 2 },
     {

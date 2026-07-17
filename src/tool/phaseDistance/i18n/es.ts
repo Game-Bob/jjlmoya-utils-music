@@ -30,7 +30,7 @@ const faqData = [
       'Es la respuesta en frecuencia resultante de combinar una señal con una versión retrasada de sí misma. Crea una serie de picos y valles (como los dientes de un peine) que alteran drásticamente el timbre del instrumento.',
   },
   {
-    question: '¿Cuál es la regla del 3:1 en microfonía?',
+    question: '¿Cuál es la regla de 3 a 1 en microfonía?',
     answer:
       'Es una técnica para minimizar problemas de fase: cuando uses dos micrófonos para captar diferentes fuentes, la distancia entre los micrófonos debe ser al menos tres veces la distancia de cada micrófono a su fuente.',
   },
@@ -129,12 +129,12 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     statusCriticalDesc: 'Filtrado de peine notable en graves/medios.',
     statusOffAxis: 'FUERA DE EJE',
     statusOffAxisDesc: 'Desfase ligero. Textura modificada.',
-    warningCritical: '(!) POSIBLE CANCELACIÓN CRÍTICA',
+    warningCritical: 'POSIBLE CANCELACIÓN CRÍTICA',
     labelSoundSpeed: 'Velocidad del Sonido',
     labelDistDiff: 'Diferencia de Distancia',
     labelNullFreq: 'Primeros Nulos (Nulls)',
     textNone: 'Ninguno',
-    chartTitle: 'RESPUESTA EN FRECUENCIA (H) — COMB FILTERING',
+    chartTitle: 'RESPUESTA EN FRECUENCIA (H) - COMB FILTERING',
     promptSoundSpeed: 'Velocidad del Sonido (m/s):',
     copyFeedback: '¡Copiado!',
   },

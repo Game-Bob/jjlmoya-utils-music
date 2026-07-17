@@ -32,7 +32,7 @@ const faqData = [
   {
     question: "Quelle est la règle du 3:1 en microphone ?",
     answer:
-      "C'est une technique pour minimiser les problèmes de phase : lorsque vous utilisez deux microphones pour capter différentes sources, la distance entre les microphones doit être au moins trois fois la distance de chaque microphone à sa source.",
+      "C'est une technique pour minimiser les problèmes de phase: lorsque vous utilisez deux microphones pour capter différentes sources, la distance entre les microphones doit être au moins trois fois la distance de chaque microphone à sa source.",
   },
   {
     question: 'Vaut-il mieux aligner les micros physiquement ou avec un logiciel ?',
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     labelDistDiff: 'Différence de Distance',
     labelNullFreq: 'Premiers Nulls',
     textNone: 'Aucun',
-    chartTitle: 'RÉPONSE EN FRÉQUENCE (H) — COMB FILTERING',
+    chartTitle: 'RÉPONSE EN FRÉQUENCE (H) - COMB FILTERING',
     promptSoundSpeed: 'Vitesse du Son (m/s) :',
     copyFeedback: 'Copié !',
   },
@@ -167,7 +167,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     },
     {
       type: 'paragraph',
-      html: "Lorsque deux signaux identiques sont combinés avec un léger retard entre eux, une série de creux et de pics apparaît dans la réponse en fréquence. Vu sur un analyseur de spectre, le motif ressemble aux dents d'un peigne — d'où le nom. Cet effet altère de manière destructive le timbre naturel de l'instrument.",
+      html: "Lorsque deux signaux identiques sont combinés avec un léger retard entre eux, une série de creux et de pics apparaît dans la réponse en fréquence. Vu sur un analyseur de spectre, le motif ressemble aux dents d'un peigne - d'où le nom. Cet effet altère de manière destructive le timbre naturel de l'instrument.",
     },
     {
       type: 'comparative',
@@ -192,7 +192,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     },
     {
       type: 'paragraph',
-      html: "De nombreux ingénieurs du son oublient que l'air est un milieu physique et que sa densité varie avec la température. La vitesse du son n'est pas une constante immuable — à 20°C, elle se propage à environ 343 mètres par seconde.",
+      html: "De nombreux ingénieurs du son oublient que l'air est un milieu physique et que sa densité varie avec la température. La vitesse du son n'est pas une constante immuable - à 20°C, elle se propage à environ 343 mètres par seconde.",
     },
     {
       type: 'code',
@@ -212,10 +212,10 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     {
       type: 'list',
       items: [
-        'Caisse claire (dessus & dessous) : Alignez temporellement les deux peaux pour maximiser le punch.',
-        "Overheads et micros proches : Retardez les micros proches pour qu'ils correspondent à la phase des overheads.",
-        "Guitares avec plusieurs micros : Mélangez un dynamique et un ruban sans perdre les médiums-graves.",
-        "Basses en DI et micro : Synchronisez le signal direct avec le micro d'ampli pour un son massif.",
+        'Caisse claire (dessus & dessous): Alignez temporellement les deux peaux pour maximiser le punch.',
+        "Overheads et micros proches: Retardez les micros proches pour qu'ils correspondent à la phase des overheads.",
+        "Guitares avec plusieurs micros: Mélangez un dynamique et un ruban sans perdre les médiums-graves.",
+        "Basses en DI et micro: Synchronisez le signal direct avec le micro d'ampli pour un son massif.",
       ],
     },
     {
@@ -237,7 +237,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     },
     {
       type: 'title',
-      text: 'Tableau de référence : Distance vs. Premier Null',
+      text: 'Tableau de référence: Distance vs. Premier Null',
       level: 2,
     },
     {
@@ -260,20 +260,20 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
       type: 'proscons',
       items: [
         {
-          pro: "Alignement physique : Moins de dégradation du signal original.",
-          con: "Alignement physique : Difficile à ajuster avec une précision micrométrique.",
+          pro: "Alignement physique: Moins de dégradation du signal original.",
+          con: "Alignement physique: Difficile à ajuster avec une précision micrométrique.",
         },
         {
-          pro: "Correction numérique : Précision absolue au niveau de l'échantillon.",
-          con: "Correction numérique : Peut créer un pré-écho si mal appliqué.",
+          pro: "Correction numérique: Précision absolue au niveau de l'échantillon.",
+          con: "Correction numérique: Peut créer un pré-écho si mal appliqué.",
         },
         {
-          pro: "Inversion de polarité : Solution instantanée pour les annulations à 180°.",
-          con: "Inversion de polarité : Ne corrige pas les déphasages intermédiaires.",
+          pro: "Inversion de polarité: Solution instantanée pour les annulations à 180°.",
+          con: "Inversion de polarité: Ne corrige pas les déphasages intermédiaires.",
         },
         {
-          pro: "Compensation temporelle : Récupère l'impact et le punch perdus.",
-          con: "Compensation temporelle : Nécessite de mesurer chaque micro avec précision.",
+          pro: "Compensation temporelle: Récupère l'impact et le punch perdus.",
+          con: "Compensation temporelle: Nécessite de mesurer chaque micro avec précision.",
         },
       ],
     },

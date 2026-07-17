@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: '您将在此类别中找到的内容',
       items: [
-        '使用Web Audio API的在线节拍器 — 毫秒精度',
+        '使用Web Audio API的在线节拍器 - 毫秒精度',
         '用于延迟和混响的BPM到毫秒计算器',
         '频率到音乐音符转换器（Hz、音分和失调）',
         '用于麦克风对齐的相位距离计算器',
@@ -79,7 +79,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: '音乐是一种具有多种记谱系统的语言。<strong>音符对应</strong>工具即时在拉丁系统（Do、Re、Mi…）、美国系统（C、D、E…）和德国系统（用H替代B的C、D、E…）之间翻译，避免与来自不同传统的音乐家沟通或阅读不同国家乐谱时的混淆。',
+      html: '音乐是一种具有多种记谱系统的语言。<strong>音符对应</strong>工具即时在拉丁系统（Do、Re、Mi...）、美国系统（C、D、E...）和德国系统（用H替代B的C、D、E...）之间翻译，避免与来自不同传统的音乐家沟通或阅读不同国家乐谱时的混淆。',
     },
     {
       type: 'tip',

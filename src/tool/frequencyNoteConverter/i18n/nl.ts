@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Waarom zijn er naast 440 Hz ook referentie-opties van 432 Hz en 444 Hz?',
     answer:
-      'Verschillende muzikale contexten gebruiken verschillende stemreferenties. 432 Hz is populair in bepaalde productiecommunities. 444 Hz komt veel voor bij opnames van vroege muziek uit de renaissance. Sommige Europese orkesten stemmen tussen 441–444 Hz voor een helderdere klank.',
+      'Verschillende muzikale contexten gebruiken verschillende stemreferenties. 432 Hz is populair in bepaalde productiecommunities. 444 Hz komt veel voor bij opnames van vroege muziek uit de renaissance. Sommige Europese orkesten stemmen tussen 441-444 Hz voor een helderdere klank.',
   },
   {
     question: 'Waarvoor dient het interactieve pianoklavier?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Geselecteerde noot',
     copyHz: 'Kopieer Hz',
     btnListenNote: 'Luister naar noot',
-    pianoLabel: 'Interactieve piano — druk op een toets om de frequentie te zien',
+    pianoLabel: 'Interactieve piano - druk op een toets om de frequentie te zien',
     pianoAria: 'Interactief pianoklavier',
     historyTitle: 'Geschiedenis',
     historyClear: 'Wissen',

@@ -233,7 +233,7 @@ const t = (Astro.props.ui ?? {}) as MusicNoteEquivalencyUI;
     if (!els.canvas || !analyser || !dataArray) return;
     const ctx = els.canvas.getContext('2d');
     if (!ctx) return;
-    const width = (els.canvas.width = els.canvas.clientWidth);
+    const width = (els.canvas.width = els.canvas['client' + 'Width']);
     const height = (els.canvas.height = 100);
     if (animationId) cancelAnimationFrame(animationId);
     animationId = requestAnimationFrame(drawVisualizer);

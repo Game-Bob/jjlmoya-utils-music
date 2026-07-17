@@ -4,59 +4,59 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
 const slug = 'fasavstands-raknare';
-const title = 'Phase Distance Calculator for Microphones';
+const title = 'Fasavståndskalkylator för mikrofoner';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'Beräkna den fördröjning och kompensering som krävs för att rikta in mikrofoner. Undvik fasutsläckning och kamfiltrering med precision på samplenivå och temperaturjustering.';
 
 const faqData = [
   {
-    question: 'What is phase cancellation in audio?',
+    question: 'Vad är fasutsläckning inom ljud?',
     answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
+      'Det är ett akustiskt fenomen som inträffar när två signaler från samma källa anländer vid olika tidpunkter. Vågorna interfererar med varandra, och om de är förskjutna med 180 grader släcker de ut varandra, vilket gör att ljudet låter tunt och saknar fyllighet.',
   },
   {
-    question: 'Why does temperature affect the calculation?',
+    question: 'Varför påverkar temperaturen beräkningen?',
     answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
+      'Eftersom ljud färdas genom luft, och luftens densitet ändras med temperaturen. Ju varmare det är, desto snabbare färdas ljudet. En exakt temperaturjustering gör att du kan beräkna den exakta fördröjningen mellan separerade mikrofoner.',
   },
   {
-    question: 'Is inverting phase the same as inverting polarity?',
+    question: 'Är fasinvertering samma sak som polaritetsinvertering?',
     answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
+      'Tekniskt sett nej, även om termerna används synonymt. Polaritet är en elektrisk förändring (rotering 180°), medan fas är en tidsförskjutning. Vårt verktyg låter dig simulere båda för att hitta punkten med bäst ljudkoherens.',
   },
   {
-    question: 'What is Comb Filtering?',
+    question: 'Vad är kamfiltrering (Comb Filtering)?',
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      'Det är det frekvenssvar som blir resultatet av att kombinera en signal med en fördröjd version av sig själv. Det skapar en serie toppar och dalar - som tänderna på en kam - som drastiskt ändrar instrumentets klangfärg.',
   },
   {
-    question: "What is the 3:1 rule in microphone technique?",
+    question: 'Vad är 3 till 1-regeln inom mikrofonteknik?',
     answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
+      'Det är en teknik för att minimera fasproblem: när du använder två mikrofoner för olika källor bör avståndet mellan mikrofonerna vara minst tre gånger avståndet från varje mikrofon till dess källa.',
   },
   {
-    question: 'Is it better to align microphones physically or with software?',
+    question: 'Är det bättre att rikta in mikrofoner fysiskt eller med programvara?',
     answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
+      'En bra fysisk inriktning under inspelningen är alltid att föredra för att undvika artefakter. Digital fördröjning i DAW ger dock en precision på samplenivå som är nästan omöjlig att uppnå genom att flytta mikrofoner för hand.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
+    name: 'Mät avstånden',
+    text: 'Mät det fysiska avståndet från ljudkällan (t.ex. virveltrumman) till var och en av mikrofonerna du använder.',
   },
   {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
+    name: 'Ställ in miljön',
+    text: 'Ange rumstemperatur och samplingsfrekvens för ditt projekt för to få beräkningar baserade på verklig fysik.',
   },
   {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
+    name: 'Analysera grafen',
+    text: 'Titta på frekvenssvarsvisualiseringen för att identifiera möjliga kritiska utsläckningar i det hörbara området.',
   },
   {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
+    name: 'Tillämpa kompenseringen',
+    text: 'Kopiera millisekund- eller samplingvärdet och ange det i fördröjningspluggen på din kanal för att rikta in spåren perfekt.',
   },
 ];
 
@@ -102,194 +102,194 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelTemp: 'Temperature (°C) / Sound',
+    labelTemp: 'Temperatur (°C) / Ljud',
     btnAuto: 'Auto',
-    labelSampleRate: 'Sample Rate (kHz)',
-    labelUnits: 'Unit System',
-    optMetric: 'Metric (m/cm)',
+    labelSampleRate: 'Samplingsfrekvens (kHz)',
+    labelUnits: 'Enhetssystem',
+    optMetric: 'Metrisk (m/cm)',
     optImperial: 'Imperial (ft/in)',
-    labelDistA: 'Microphone A Distance',
-    labelDistB: 'Microphone B Distance',
-    labelPresets: 'Quick Presets',
-    presetCoincident: 'Coincident (XY)',
-    presetSnare: 'Snare',
-    presetAmbient: 'Ambient',
-    btnInvert: 'Invert Phase (Φ)',
-    labelGain: 'Relative Gain Mic B:',
-    btnCopy: 'Copy Samples',
-    labelDelay: 'Required Delay',
-    unitMs: 'milliseconds (ms)',
-    labelCompensation: 'Compensation',
+    labelDistA: 'Avstånd mikrofon A',
+    labelDistB: 'Avstånd mikrofon B',
+    labelPresets: 'Snabbinställningar',
+    presetCoincident: 'Sammanfallande (XY)',
+    presetSnare: 'Virvel',
+    presetAmbient: 'Ambiente',
+    btnInvert: 'Invertera fas (Φ)',
+    labelGain: 'Relativ förstärkning Mic B:',
+    btnCopy: 'Kopiera samplen',
+    labelDelay: 'Krävd fördröjning',
+    unitMs: 'millisekunder (ms)',
+    labelCompensation: 'Kompensering',
     unitSamples: 'Samples',
-    labelPhaseStatus: 'Phase Status',
-    textLoading: 'Loading...',
-    statusInPhase: 'IN PHASE',
-    statusInPhaseDesc: 'Signals perfectly aligned.',
-    statusCritical: 'CRITICAL CANCELLATION',
-    statusCriticalDesc: 'Significant comb filtering in low/mid range.',
-    statusOffAxis: 'OFF AXIS',
-    statusOffAxisDesc: 'Slight phase shift. Texture modified.',
-    warningCritical: '(!) POSSIBLE CRITICAL CANCELLATION',
-    labelSoundSpeed: 'Speed of Sound',
-    labelDistDiff: 'Distance Difference',
-    labelNullFreq: 'First Nulls',
-    textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
-    promptSoundSpeed: 'Speed of Sound (m/s):',
-    copyFeedback: 'Copied!',
+    labelPhaseStatus: 'Fasstatus',
+    textLoading: 'Laddar...',
+    statusInPhase: 'I FAS',
+    statusInPhaseDesc: 'Signaler perfekt inriktade.',
+    statusCritical: 'KRITISK UTSLÄCKNING',
+    statusCriticalDesc: 'Betydande kamfiltrering i det lägre/mellanregistret.',
+    statusOffAxis: 'UTOM AXEL',
+    statusOffAxisDesc: 'Liten fasförskjutning. Textur modifierad.',
+    warningCritical: 'MÖJLIG KRITISK UTSLÄCKNING',
+    labelSoundSpeed: 'Ljudhastighet',
+    labelDistDiff: 'Avståndsskillnad',
+    labelNullFreq: 'Första nollorna',
+    textNone: 'Ingen',
+    chartTitle: 'FREKVENSSVAR (H) - KAMFILTRERING',
+    promptSoundSpeed: 'Ljudhastighet (m/s):',
+    copyFeedback: 'Kopierat!',
   },
   seo: [
     {
       type: 'summary',
-      title: 'Calculator features',
+      title: 'Kalkylatorns funktioner',
       items: [
-        'Exact physical calculation with temperature adjustment for the speed of sound',
-        'Result in milliseconds and samples for DAW compensation',
-        'Canvas visualiser of comb filtering across the full audible spectrum',
-        'Microphone presets (XY coincident, snare, ambient)',
-        'Phase inversion simulation and relative gain control',
-        'Support for metric and imperial units',
+        'Exakt fysisk beräkning med temperaturjustering för ljudets hastighet',
+        'Resultat i millisekunder och samplen för kompensering i DAW',
+        'Canvas-visualiserare för kamfiltrering över hela det hörbara spektrumet',
+        'Mikrofoninställningar (XY, virvel, omgivning)',
+        'Fasinverteringssimulering och relativ förstärkningskontroll',
+        'Stöd för metriska och imperiala enheter',
       ],
     },
     {
       type: 'title',
-      text: 'What is phase cancellation and why does it ruin your mixes?',
+      text: 'Vad är fasutsläckning och varför förstör det dina mixar?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: 'Inom ljudteknik är fas ett av de mest kritiska koncepten och, paradoxalt nog, ett av de mest förbisedda av nybörjare. När du spelar in en ljudkälla - som ett trumset eller en gitarrförstärkare - med två eller fler mikrofoner placerade på olika avstånd, når ljudvågorna inte kapslarna samtidigt. Denna tidsskillnad, hur liten den än är, orsakar ett fenomen som kallas <strong>fasförskjutning</strong>.',
     },
     {
       type: 'title',
-      text: 'The Comb Filtering phenomenon',
+      text: 'Fenomenet kamfiltrering',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: 'När två identiska signaler kombineras med en liten fördröjning mellan dem uppstår en serie dalar och toppar i frekvenssvaret. Sett på en spektrumanalysator påminner mönstret om tänderna på en kam - därav namnet. Denna effekt förändrar instrumentets naturliga klangfärg på ett destruktivt sätt.',
     },
     {
       type: 'comparative',
       columns: 2,
       items: [
         {
-          title: 'Impact on Low End',
+          title: 'Inverkan på basen',
           description:
-            'Phase cancellation is most devastating in the low frequencies, where the body of the sound disappears entirely.',
+            'Fasutsläckning är mest förödande i de låga frekvenserna, där ljudets kropp försvinner helt.',
         },
         {
-          title: 'Metallic Texture',
+          title: 'Metallisk textur',
           description:
-            "Comb filtering adds an artificial coloration that sounds 'hollow' or overly processed.",
+            'Kamfiltrering lägger till en artificiell färgning som låter tom eller överdrivet processad.',
         },
       ],
     },
     {
       type: 'title',
-      text: 'The influence of temperature on the calculation',
+      text: 'Ljudhastighet och temperatur',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: 'Många ljudtekniker glömmer att luft är ett fysiskt medium och dess densitet ändras med temperaturen. Ljudhastigheten är inte en oföränderlig konstant - vid 20°C färdas ljudet med ungefär 343 meter per sekund.',
     },
     {
       type: 'code',
       code: 'v = 331.3 + (0.606 × T)',
-      ariaLabel: 'Formula for the speed of sound as a function of temperature',
+      ariaLabel: 'Formel för ljudets hastighet som funktion av temperatur',
     },
     {
       type: 'tip',
-      title: 'Surgical Compensation',
-      html: 'A few degrees of difference can shift the cancellation points by several hertz. Using our calculator with the actual temperature of your studio guarantees perfect alignment in the DAW.',
+      title: 'Kirurgisk kompensering',
+      html: 'Några graders skillnad kan flytta utsläckningspunkterna med flera hertz. Att använda vår kalkylator med den faktiska temperaturen i din studio garanterar perfekt inriktning i DAW.',
     },
     {
       type: 'title',
-      text: 'Critical recording scenarios',
+      text: 'Kritiska inspelningsscenarier',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Snare drum (Top & Bottom): Align both heads temporally to maximise punch.',
-        'Overheads and close mics: Delay the close mics to match the phase of the overhead mics.',
-        'Guitars with multiple mics: Blend a dynamic and a ribbon without losing low-mids.',
-        'Bass DI and mic: Sync the direct signal with the amp mic for a massive sound.',
+        'Virveltrumma (topp och botten): Rikta in båda skinnen tidsmässigt för att maximera punchen.',
+        'Overheads och närliggande mikrofoner: Fördröj närliggande mikrofoner för att matcha fasen på overheadmikrofonerna.',
+        'Gitarrer med flera mikrofoner: Blanda en dynamisk mikrofon och en bandmikrofon utan att förlora det lägre mellanregistret.',
+        'Bas DI och mikrofon: Synkronisera den direkta signalen med förstärkarmikrofonen för ett massivt ljud.',
       ],
     },
     {
       type: 'title',
-      text: 'Physical Alignment vs. Digital Processing',
+      text: 'Fysisk inriktning vs. digital fördröjning',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Although our tool gives you the values to correct phase in your DAW after recording, we always recommend attempting the best possible physical alignment in the studio. Moving a microphone a few millimetres can be more effective than any digital processing.',
+      html: 'Även om vårt verktyg ger dig värdena för att korrigera fas i din DAW efter inspelning, rekommenderar vi alltid att du försöker få den bästa möjliga fysiska inriktningen i studion. Att flytta en mikrofon några millimeter kan vara mer effektivt än någon digital bearbetning.',
     },
     {
       type: 'stats',
       items: [
-        { label: 'Speed @ 20°C', value: '343.2 m/s' },
-        { label: 'Milliseconds/cm', value: '0.029 ms' },
-        { label: 'Samples @ 48kHz', value: '1.4 per cm' },
+        { label: 'Hastighet vid 20°C', value: '343.2 m/s' },
+        { label: 'Millisekunder/cm', value: '0.029 ms' },
+        { label: 'Samplen vid 48kHz', value: '1.4 per cm' },
       ],
     },
     {
       type: 'title',
-      text: 'Reference table: Distance vs. First Null',
+      text: 'Referenstabell: Avstånd vs. Första noll',
       level: 2,
     },
     {
       type: 'table',
-      headers: ['Difference (cm)', 'Delay (ms)', '1st Null (Hz)', 'Affects...'],
+      headers: ['Skillnad (cm)', 'Fördröjning (ms)', '1:a noll (Hz)', 'Påverkar...'],
       rows: [
-        ['1 cm', '0.029', '17160', 'Extreme high end'],
-        ['5 cm', '0.146', '3432', 'Upper mids (Presence)'],
-        ['10 cm', '0.291', '1716', 'Mids (Presence)'],
-        ['30 cm', '0.874', '572', 'Low-mids (Body)'],
-        ['1 metre', '2.914', '172', 'Low end (Fundamental)'],
+        ['1 cm', '0.029', '17160', 'Extrem diskant'],
+        ['5 cm', '0.146', '3432', 'Övre mellanregister (Närvaro)'],
+        ['10 cm', '0.291', '1716', 'Mellanregister (Närvaro)'],
+        ['30 cm', '0.874', '572', 'Lägre mellanregister (Kropp)'],
+        ['1 meter', '2.914', '172', 'Bas (Grundton)'],
       ],
     },
     {
       type: 'title',
-      text: 'Pros and cons of correction methods',
+      text: 'För- och nackdelar med korrigeringsmetoder',
       level: 2,
     },
     {
       type: 'proscons',
       items: [
         {
-          pro: 'Physical alignment: Less degradation of the original signal.',
-          con: 'Physical alignment: Difficult to adjust with microscopic accuracy.',
+          pro: 'Fysisk inriktning: Mindre försämring av originalsignalen.',
+          con: 'Fysisk inriktning: Svårt att justera med mikroskopisk noggrannhet.',
         },
         {
-          pro: 'Digital correction: Absolute precision at the sample level.',
-          con: 'Digital correction: Can create pre-echo if applied incorrectly.',
+          pro: 'Digital korrigering: Absolut precision på samplenivå.',
+          con: 'Digital korrigering: Kan skapa för-eko om det tillämpas felaktigt.',
         },
         {
-          pro: 'Polarity inversion: Instant fix for 180° cancellations.',
-          con: 'Polarity inversion: Does not fix intermediate phase shifts.',
+          pro: 'Polaritetsinvertering: Snabb lösning för 180-graders utsläckningar.',
+          con: 'Polaritetsinvertering: Korrigerar inte mellanliggande fasförskjutningar.',
         },
         {
-          pro: 'Time compensation: Recovers lost impact and punch.',
-          con: 'Time compensation: Requires precise measurement of each mic.',
+          pro: 'Tidskompensering: Återställer förlorad kraft och punch.',
+          con: 'Tidskompensering: Kräver exakt mätning av varje mikrofon.',
         },
       ],
     },
     {
       type: 'tip',
-      title: 'How to detect phase problems by ear?',
-      html: 'Press the "Invert Phase" button (Φ). If activating it makes the sound gain body and low end, your microphones were out of phase. If the sound "disappears" or becomes thinner, they were correctly aligned.',
+      title: 'Hur upptäcker man fasproblem med örat?',
+      html: 'Tryck på knappen "Invertera fas" (Φ). Om aktiveringen av den gör att ljudet får mer kropp och bas, var mikrofonerna ur fas. Om ljudet försvinner eller blir tunnare, var de korrekt inriktade.',
     },
     {
       type: 'title',
-      text: 'Mono Compatibility and Stereo Perception',
+      text: 'Monokompatibilitet och stereobild',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In stereo recordings, the phase relationship defines the stability of the sound image. If there are serious inconsistencies, the sound could disappear entirely when the mix is played back on a mono system. Our calculator helps you predict which frequencies will suffer most when the channels are summed.',
+      html: 'I stereoinspelningar definierar fasförhållandet stabiliteten hos ljudbilden. Om det finns allvarliga inkonsekvenser kan ljudet försvinna helt när mixen spelas upp på ett monosystem. Vår kalkylator hjälper dig att förutsäga vilka frekvenser som kommer att drabbas mest när kanalerna summeras.',
     },
   ],
 };

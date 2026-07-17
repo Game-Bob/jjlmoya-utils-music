@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Bu kategoride neler bulacaksınız',
       items: [
-        'Web Audio API ile çevrimiçi metronom — milisaniye hassasiyeti',
+        'Web Audio API ile çevrimiçi metronom - milisaniye hassasiyeti',
         'Gecikmeler ve yankı için BPM milisaniye hesaplayıcı',
         'Frekansı müzik notasına dönüştürücü (Hz, sent ve akort bozukluğu)',
         'Mikrofon hizalaması için faz mesafesi hesaplayıcı',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: "Müzik, birden fazla nota sistemi olan bir dildir. <strong>Nota eşdeğerliği</strong> aracı, Latin sistemi (Do, Re, Mi…), Amerikan sistemi (C, D, E…) ve Alman sistemi (B yerine H ile C, D, E…) arasında anında çeviri yapar; farklı geleneklerden müzisyenlerle iletişim kurarken veya farklı ülkelerden notaları okurken karışıklığı önler.",
+      html: "Müzik, birden fazla nota sistemi olan bir dildir. <strong>Nota eşdeğerliği</strong> aracı, Latin sistemi (Do, Re, Mi...), Amerikan sistemi (C, D, E...) ve Alman sistemi (B yerine H ile C, D, E...) arasında anında çeviri yapar; farklı geleneklerden müzisyenlerle iletişim kurarken veya farklı ülkelerden notaları okurken karışıklığı önler.",
     },
     {
       type: 'tip',

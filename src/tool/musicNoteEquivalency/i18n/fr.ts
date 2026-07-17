@@ -4,7 +4,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { MusicNoteEquivalencyUI } from '../ui';
 
 const slug = 'equivalence-notes-musicales';
-const title = 'Équivalence des Notes Musicales : Latin, Anglophone et Germanique';
+const title = 'Équivalence des Notes Musicales: Latin, Anglophone et Germanique';
 const description =
   'Traducteur interactif de notes musicales entre systèmes latin (Do, Ré, Mi), anglo-saxon (C, D, E) et germanique (H). Inclut visualiseur de piano, octaves et fréquences (Hz).';
 
@@ -123,10 +123,10 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
       type: 'summary',
       title: 'Traducteur de Notes Musicales Multilingue',
       items: [
-        '<strong>3 systèmes simultanés</strong> : Latin, Anglo-Saxon et Germanique en un coup d\'œil.',
-        '<strong>Piano interactif</strong> : Cliquez sur n\'importe quelle touche pour voir ses équivalences.',
-        '<strong>Fréquences exactes</strong> : Chaque note affiche ses Hz selon la norme ISO 16.',
-        '<strong>Enharmonies</strong> : Identifie automatiquement les notes à double nom.',
+        '<strong>3 systèmes simultanés</strong>: Latin, Anglo-Saxon et Germanique en un coup d\'œil.',
+        '<strong>Piano interactif</strong>: Cliquez sur n\'importe quelle touche pour voir ses équivalences.',
+        '<strong>Fréquences exactes</strong>: Chaque note affiche ses Hz selon la norme ISO 16.',
+        '<strong>Enharmonies</strong>: Identifie automatiquement les notes à double nom.',
       ],
     },
     {
@@ -158,11 +158,11 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
     },
     {
       type: 'paragraph',
-      html: "Beaucoup de débutants se demandent pourquoi en Allemagne le Si s'écrit avec un H. L'origine est une erreur de copiste médiéval. Dans l'ancien système de lettres, la lettre B était utilisée pour le Si. Il existait deux variantes : le <em>B quadratum</em> (carré, pour le Si naturel) et le <em>B rotundum</em> (rond, pour le Si bémol).",
+      html: "Beaucoup de débutants se demandent pourquoi en Allemagne le Si s'écrit avec un H. L'origine est une erreur de copiste médiéval. Dans l'ancien système de lettres, la lettre B était utilisée pour le Si. Il existait deux variantes: le <em>B quadratum</em> (carré, pour le Si naturel) et le <em>B rotundum</em> (rond, pour le Si bémol).",
     },
     {
       type: 'paragraph',
-      html: 'Avec le temps, la forme du <em>B quadratum</em> ressemblait de plus en plus à un H minuscule dans les manuscrits allemands. Cette évolution graphique s\'est consolidée dans l\'imprimerie et a donné lieu à la nomenclature allemande actuelle : H pour le Si naturel et B pour le Si bémol. Curieusement, cette distinction a permis à des compositeurs comme J.S. Bach de signer leurs œuvres avec le célèbre motif "B-A-C-H" (Si bémol - La - Do - Si naturel).',
+      html: 'Avec le temps, la forme du <em>B quadratum</em> ressemblait de plus en plus à un H minuscule dans les manuscrits allemands. Cette évolution graphique s\'est consolidée dans l\'imprimerie et a donné lieu à la nomenclature allemande actuelle: H pour le Si naturel et B pour le Si bémol. Curieusement, cette distinction a permis à des compositeurs comme J.S. Bach de signer leurs œuvres avec le célèbre motif "B-A-C-H" (Si bémol - La - Do - Si naturel).',
     },
     {
       type: 'title',
@@ -189,29 +189,29 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
     },
     {
       type: 'paragraph',
-      html: "En musique occidentale nous utilisons 12 sons par octave. Les cinq notes supplémentaires sont représentées par des altérations : le dièse (#) et le bémol (b). Un dièse élève la note d'un demi-ton, tandis qu'un bémol la baisse d'un demi-ton.",
+      html: "En musique occidentale nous utilisons 12 sons par octave. Les cinq notes supplémentaires sont représentées par des altérations: le dièse (#) et le bémol (b). Un dièse élève la note d'un demi-ton, tandis qu'un bémol la baisse d'un demi-ton.",
     },
     {
       type: 'paragraph',
-      html: "Cela nous amène à l'<strong>Enharmonie</strong> : deux notes qui ont des noms différents mais sonnent exactement pareil et occupent la même touche du piano. Par exemple, Do# et Réb sont enharmoniques. Notre calculatrice met en évidence ces équivalences automatiquement.",
+      html: "Cela nous amène à l'<strong>Enharmonie</strong>: deux notes qui ont des noms différents mais sonnent exactement pareil et occupent la même touche du piano. Par exemple, Do# et Réb sont enharmoniques. Notre calculatrice met en évidence ces équivalences automatiquement.",
     },
     {
       type: 'title',
-      text: 'Octaves : Notation Scientifique vs Franco-Belge',
+      text: 'Octaves: Notation Scientifique vs Franco-Belge',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        "Notation Scientifique Internationale (ANSI) : Le Do central se nomme C4. C'est le standard dans les synthétiseurs, DAWs et logiciels de musique (MIDI).",
-        'Notation Franco-Belge : Très répandue dans les conservatoires classiques. Dans ce système, le Do central est le Do3.',
-        "Système de Helmholtz : Utilise lettres majuscules, minuscules et primées (C, c, c', c''). Plus commun dans l'ancienne littérature technique et l'acoustique allemande.",
+        "Notation Scientifique Internationale (ANSI): Le Do central se nomme C4. C'est le standard dans les synthétiseurs, DAWs et logiciels de musique (MIDI).",
+        'Notation Franco-Belge: Très répandue dans les conservatoires classiques. Dans ce système, le Do central est le Do3.',
+        "Système de Helmholtz: Utilise lettres majuscules, minuscules et primées (C, c, c', c''). Plus commun dans l'ancienne littérature technique et l'acoustique allemande.",
       ],
     },
     {
       type: 'tip',
       title: 'Conseil pour les producteurs',
-      html: "Attention aux DAWs : certains fabricants (comme Yamaha) considèrent que le Do central est C3, tandis que d'autres (comme Roland ou FL Studio) le considèrent C4 ou même C5. Si votre synthétiseur sonne une octave à côté, vérifiez quelle norme de notation scientifique le logiciel utilise.",
+      html: "Attention aux DAWs: certains fabricants (comme Yamaha) considèrent que le Do central est C3, tandis que d'autres (comme Roland ou FL Studio) le considèrent C4 ou même C5. Si votre synthétiseur sonne une octave à côté, vérifiez quelle norme de notation scientifique le logiciel utilise.",
     },
     {
       type: 'title',
@@ -265,12 +265,12 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
     {
       type: 'list',
       items: [
-        "Demi-ton : La distance minimale entre deux notes dans le système occidental (ex. de Mi à Fa).",
-        "Ton : La distance équivalente à deux demi-tons (ex. de Do à Ré).",
-        "Notation : Système d'abréviations pour représenter les notes et accords.",
-        "Hertz (Hz) : Unité de mesure de la fréquence sonore.",
-        "Octave : Intervalle séparant deux notes où la fréquence de l'une est le double de l'autre.",
-        "Armure : Ensemble d'altérations au début d'une portée qui définissent la tonalité.",
+        "Demi-ton: La distance minimale entre deux notes dans le système occidental (ex. de Mi à Fa).",
+        "Ton: La distance équivalente à deux demi-tons (ex. de Do à Ré).",
+        "Notation: Système d'abréviations pour représenter les notes et accords.",
+        "Hertz (Hz): Unité de mesure de la fréquence sonore.",
+        "Octave: Intervalle séparant deux notes où la fréquence de l'une est le double de l'autre.",
+        "Armure: Ensemble d'altérations au début d'une portée qui définissent la tonalité.",
       ],
     },
   ],

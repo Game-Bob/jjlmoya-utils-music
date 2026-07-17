@@ -15,14 +15,14 @@ const faqData = [
       '440 Hz 精确对应 A4，即全球通用的调律参考音。它是钢琴上中央 C 之上的 A 音。自 1939 年以来，该频率一直是 ISO 16 标准，并被用于调试世界各地的管弦乐器。',
   },
   {
-    question: '音符“偏高 15 音分”是什么意思？',
+    question: '音符\"偏高 15 音分\"是什么意思？',
     answer:
       '音分（cent）是半音的一百分之一。偏高 15 音分意味着频率略高于等程律中的精确音高。在合成器上，你应该应用 -15 音分的精调（fine-tune）来纠正它。',
   },
   {
     question: '除了 440 Hz，为什么还有 432 Hz 和 444 Hz 的参考选项？',
     answer:
-      '不同的音乐背景使用不同的调律参考。432 Hz 在某些制作社区中非常流行。444 Hz 在文艺复兴时期的早期音乐录音中很常见。一些欧洲管弦乐团为了使音色更明亮，会将参考音设定在 441–444 Hz 之间。',
+      '不同的音乐背景使用不同的调律参考。432 Hz 在某些制作社区中非常流行。444 Hz 在文艺复兴时期的早期音乐录音中很常见。一些欧洲管弦乐团为了使音色更明亮，会将参考音设定在 441-444 Hz 之间。',
   },
   {
     question: '交互式钢琴键盘有什么用？',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: '已选音符',
     copyHz: '复制 Hz',
     btnListenNote: '试听音符',
-    pianoLabel: '交互式钢琴 — 点击琴键查看其频率',
+    pianoLabel: '交互式钢琴 - 点击琴键查看其频率',
     pianoAria: '交互式钢琴键盘',
     historyTitle: '历史记录',
     historyClear: '清除',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: '历史记录：允许快速对比多个预设或采样。',
-          con: '超出人耳听力范围（20 Hz – 20 kHz）的频率实际用途有限。',
+          con: '超出人耳听力范围（20 Hz - 20 kHz）的频率实际用途有限。',
         },
       ],
     },

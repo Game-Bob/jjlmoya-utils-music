@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Como o tamanho de uma gravação de áudio é calculado?', level: 2 },
     {
       type: 'paragraph',
-      html: 'O tamanho de um arquivo de áudio digital não comprimido (como WAV ou AIFF) depende de três fatores técnicos fundamentais: <strong>Taxa de Amostragem</strong> — quantas vezes por segundo a onda sonora é "medida" (ex: 44.1 kHz ou 48 kHz); <strong>Profundidade de Bits</strong> — a resolução de cada medição, com maior faixa dinâmica e menor ruído em bits mais altos; e <strong>Canais</strong> — se a gravação é Mono (1), Estéreo (2) ou Multicanal (Surround). A fórmula matemática padrão é o <strong>Bitrate</strong>; multiplicado pela duração em segundos, resulta no tamanho total do arquivo bruto.',
+      html: 'O tamanho de um arquivo de áudio digital não comprimido (como WAV ou AIFF) depende de três fatores técnicos fundamentais: <strong>Taxa de Amostragem</strong> - quantas vezes por segundo a onda sonora é "medida" (ex: 44.1 kHz ou 48 kHz); <strong>Profundidade de Bits</strong> - a resolução de cada medição, com maior faixa dinâmica e menor ruído em bits mais altos; e <strong>Canais</strong> - se a gravação é Mono (1), Estéreo (2) ou Multicanal (Surround). A fórmula matemática padrão é o <strong>Bitrate</strong>; multiplicado pela duração em segundos, resulta no tamanho total do arquivo bruto.',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'O espaço extra vale a pena?',
-      html: 'Apesar de ocupar mais espaço, o áudio de 24 bits oferece uma faixa dinâmica de 144 dB contra 96 dB do de 16 bits. Isso proporciona um "piso de ruído" muito mais baixo, permitindo que sinais mais fracos sejam gravados sem que o ruído de fundo se torne um problema — vital durante a mixagem e masterização profissional.',
+      html: 'Apesar de ocupar mais espaço, o áudio de 24 bits oferece uma faixa dinâmica de 144 dB contra 96 dB do de 16 bits. Isso proporciona um "piso de ruído" muito mais baixo, permitindo que sinais mais fracos sejam gravados sem que o ruído de fundo se torne um problema - vital durante a mixagem e masterização profissional.',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3: O impacto no disco', level: 2 },
     {

@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Nota seleccionada',
     copyHz: 'Copiar Hz',
     btnListenNote: 'Escuchar nota',
-    pianoLabel: 'Piano interactivo — toca una tecla para ver su frecuencia',
+    pianoLabel: 'Piano interactivo - toca una tecla para ver su frecuencia',
     pianoAria: 'Teclado de piano interactivo',
     historyTitle: 'Historial',
     historyClear: 'Limpiar',

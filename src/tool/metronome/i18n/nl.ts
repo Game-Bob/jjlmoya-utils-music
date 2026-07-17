@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Metronoom functies',
       items: [
-        'Web Audio API engine — milliseconde precisie, geen afwijking',
+        'Web Audio API engine - milliseconde precisie, geen afwijking',
         'Tap Tempo: bereken BPM door op de maat te tikken',
         'Configureerbare maatsoort van 1 tot 12 beats met automatisch accent',
         'Visuele indicator met hoog contrast en rimpeleffect',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Italiaanse term', 'BPM ong.', 'Karakter'],
       rows: [
-        ['Largo', '40 – 60', 'Langzaam en plechtig'],
-        ['Andante', '76 – 108', 'Wandeltempo, rustig'],
-        ['Allegro', '120 – 156', 'Snel, helder en vrolijk'],
-        ['Presto', '168 – 200', 'Zeer snel, koortsachtig'],
+        ['Largo', '40 - 60', 'Langzaam en plechtig'],
+        ['Andante', '76 - 108', 'Wandeltempo, rustig'],
+        ['Allegro', '120 - 156', 'Snel, helder en vrolijk'],
+        ['Presto', '168 - 200', 'Zeer snel, koortsachtig'],
       ],
     },
     {

@@ -4,59 +4,59 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
 const slug = 'phase-distance-calculator';
-const title = 'Phase Distance Calculator for Microphones';
+const title = 'マイク位相距離計算機';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'マイクを整列させるために必要な遅延時間と補正値を計算します。サンプル精度の高い調整と温度補正により、位相の打ち消し合いとコームフィルタリングを防ぎます。';
 
 const faqData = [
   {
-    question: 'What is phase cancellation in audio?',
+    question: 'オーディオにおける位相の打ち消し合い（フェイズ・キャンセレーション）とは何ですか？',
     answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
+      '同一の音源からの2つの信号が異なる時間に到達したときに発生する音響現象です。波が互いに干渉し、180度ずれると完全に打ち消し合い、音が細く、存在感のないものになります。',
   },
   {
-    question: 'Why does temperature affect the calculation?',
+    question: 'なぜ温度が計算に影響するのですか？',
     answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
+      '音は空気を伝わり、空気の密度は温度によって変化するためです。気温が高いほど音速は速くなります。正確に温度を調整することで、離れたマイク間の正確な遅延時間を計算できます。',
   },
   {
-    question: 'Is inverting phase the same as inverting polarity?',
+    question: '位相反転（フェイズ・インバート）と極性反転（ポラリティ・インバート）は同じですか？',
     answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
+      '技術的には異なりますが、しばしば混同して使用されます。極性は電気的な変化（180度回転）ですが、位相は時間的なズレです。当ツールでは、音響的な一貫性が最も高いポイントを見つけるために、両方のシミュレーションを行えます。',
   },
   {
-    question: 'What is Comb Filtering?',
+    question: 'コームフィルタリング（櫛形フィルタ効果）とは何ですか？',
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      '信号と、それを遅延させた信号が合成されたときに生じる周波数特性です。櫛の歯のように規則的な山と谷が形成され、楽器の音色を大きく変化させます。',
   },
   {
-    question: "What is the 3:1 rule in microphone technique?",
+    question: 'マイク技術における3:1ルールとは何ですか？',
     answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
+      '位相問題を最小限に抑えるための技術です。複数の異なる音源に2つのマイクを使用する場合、マイク間の距離は、各マイクと音源との距離の少なくとも3倍以上離す必要があります。',
   },
   {
-    question: 'Is it better to align microphones physically or with software?',
+    question: 'マイクの整列は物理的に行うべきですか、それともソフトウェアで行うべきですか？',
     answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
+      '録音時の物理的な位置調整がノイズや不自然さを避けるために常に推奨されます。しかし、DAWにおけるデジタルディレイは、手作業でマイクを動かすだけでは不可能な、サンプル単位の非常に精密な調整を可能にします。',
   },
 ];
 
 const howToData = [
   {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
+    name: '距離の測定',
+    text: '音源（例：スネアドラム）から使用する各マイクまでの物理的な距離を測定します。',
   },
   {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
+    name: '環境の設定',
+    text: '実際の物理法則に基づいた計算結果を得るために、室温とプロジェクトのサンプリングレートを入力します。',
   },
   {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
+    name: 'グラフの分析',
+    text: '周波数特性ビジュアライザーを見て、可聴領域で発生する可能性のある深刻な打ち消し合いを確認します。',
   },
   {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
+    name: '補正の適用',
+    text: 'ミリ秒またはサンプル数をコピーして、DAWのディレイプラグインに適用し、トラックを完全に整列させます。',
   },
 ];
 
@@ -102,194 +102,194 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelTemp: 'Temperature (°C) / Sound',
-    btnAuto: 'Auto',
-    labelSampleRate: 'Sample Rate (kHz)',
-    labelUnits: 'Unit System',
-    optMetric: 'Metric (m/cm)',
-    optImperial: 'Imperial (ft/in)',
-    labelDistA: 'Microphone A Distance',
-    labelDistB: 'Microphone B Distance',
-    labelPresets: 'Quick Presets',
-    presetCoincident: 'Coincident (XY)',
-    presetSnare: 'Snare',
-    presetAmbient: 'Ambient',
-    btnInvert: 'Invert Phase (Φ)',
-    labelGain: 'Relative Gain Mic B:',
-    btnCopy: 'Copy Samples',
-    labelDelay: 'Required Delay',
-    unitMs: 'milliseconds (ms)',
-    labelCompensation: 'Compensation',
-    unitSamples: 'Samples',
-    labelPhaseStatus: 'Phase Status',
-    textLoading: 'Loading...',
-    statusInPhase: 'IN PHASE',
-    statusInPhaseDesc: 'Signals perfectly aligned.',
-    statusCritical: 'CRITICAL CANCELLATION',
-    statusCriticalDesc: 'Significant comb filtering in low/mid range.',
-    statusOffAxis: 'OFF AXIS',
-    statusOffAxisDesc: 'Slight phase shift. Texture modified.',
-    warningCritical: '(!) POSSIBLE CRITICAL CANCELLATION',
-    labelSoundSpeed: 'Speed of Sound',
-    labelDistDiff: 'Distance Difference',
-    labelNullFreq: 'First Nulls',
-    textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
-    promptSoundSpeed: 'Speed of Sound (m/s):',
-    copyFeedback: 'Copied!',
+    labelTemp: '温度 (°C) / 音',
+    btnAuto: '自動',
+    labelSampleRate: 'サンプリングレート (kHz)',
+    labelUnits: '単位系',
+    optMetric: 'メートル法 (m/cm)',
+    optImperial: 'ヤード・ポンド法 (ft/in)',
+    labelDistA: 'マイクA距離',
+    labelDistB: 'マイクB距離',
+    labelPresets: 'クイックプリセット',
+    presetCoincident: 'ワンポイントマイク (XY)',
+    presetSnare: 'スネア',
+    presetAmbient: 'アンビエント',
+    btnInvert: '位相を反転 (Φ)',
+    labelGain: 'マイクBの相対ゲイン:',
+    btnCopy: 'サンプルをコピー',
+    labelDelay: '必要な遅延',
+    unitMs: 'ミリ秒 (ms)',
+    labelCompensation: '補正',
+    unitSamples: 'サンプル',
+    labelPhaseStatus: '位相ステータス',
+    textLoading: '読み込み中...',
+    statusInPhase: '同相 (イン・フェイズ)',
+    statusInPhaseDesc: '信号が完璧に整列しています。',
+    statusCritical: '致命的な打ち消し合い',
+    statusCriticalDesc: '低・中音域で重大なコームフィルタリングが発生しています。',
+    statusOffAxis: '軸外 (オフアクシス)',
+    statusOffAxisDesc: 'わずかな位相のズレ。音の質感が変わります。',
+    warningCritical: '(!) 致命的な打ち消し合いの可能性あり',
+    labelSoundSpeed: '音速',
+    labelDistDiff: '距離の差',
+    labelNullFreq: '最初のディップ周波数',
+    textNone: 'なし',
+    chartTitle: '周波数特性 (H) - コームフィルタリング',
+    promptSoundSpeed: '音速 (m/s):',
+    copyFeedback: 'コピー完了！',
   },
   seo: [
     {
       type: 'summary',
-      title: 'Calculator features',
+      title: '計算機の機能',
       items: [
-        'Exact physical calculation with temperature adjustment for the speed of sound',
-        'Result in milliseconds and samples for DAW compensation',
-        'Canvas visualiser of comb filtering across the full audible spectrum',
-        'Microphone presets (XY coincident, snare, ambient)',
-        'Phase inversion simulation and relative gain control',
-        'Support for metric and imperial units',
+        '音速の温度補正を考慮した正確な物理的計算',
+        'DAW補正用のミリ秒およびサンプル単位の出力',
+        '可聴全域のコームフィルタリング効果を示すキャンバスビジュアライザー',
+        'マイクプリセット（XY、スネア、アンビエント）',
+        '位相反転シミュレーションと相対ゲイン調整',
+        'メートル法およびヤード・ポンド法への対応',
       ],
     },
     {
       type: 'title',
-      text: 'What is phase cancellation and why does it ruin your mixes?',
+      text: '位相の打ち消し合いとは何ですか？なぜミックスが台無しになるのですか？',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: '音響エンジニアリングの世界において、位相は最も重要な概念の一つであり、同時に初心者が見落としがちな要素です。ドラムセットやギターアンプなどの音源を、異なる距離に配置された複数のマイクで録音する場合、音波は同時にマイクカプセルに到達しません。このわずかな時間差が、<strong>位相のズレ</strong>（フェイズシフト）と呼ばれる現象を引き起こします。',
     },
     {
       type: 'title',
-      text: 'The Comb Filtering phenomenon',
+      text: 'コームフィルタリング現象',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: '同一の信号にわずかな遅延を加えて合成すると、周波数特性に山と谷ができます。スペクトラムアナライザーで観察すると、櫛（コーム）の歯のように見えるため、コームフィルタリングと呼ばれます。この効果は、楽器が持つ本来の自然な音色を損なう原因になります。',
     },
     {
       type: 'comparative',
       columns: 2,
       items: [
         {
-          title: 'Impact on Low End',
+          title: '低音域への影響',
           description:
-            'Phase cancellation is most devastating in the low frequencies, where the body of the sound disappears entirely.',
+            '位相の打ち消し合いは低音域で最も顕著に現れ、音の太さや芯が完全に失われます。',
         },
         {
-          title: 'Metallic Texture',
+          title: '金属的な質感',
           description:
-            "Comb filtering adds an artificial coloration that sounds 'hollow' or overly processed.",
+            'コームフィルタリングは、芯のない「スカスカ」した処理の強すぎる不自然な着色を加えます。',
         },
       ],
     },
     {
       type: 'title',
-      text: 'The influence of temperature on the calculation',
+      text: '計算に与える温度の影響',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: '多くの音響エンジニアは、空気が物理的な媒体であり、その密度が温度によって変化することを忘れています。音速は一定ではなく、20°Cでは毎秒約343メートルになります。',
     },
     {
       type: 'code',
       code: 'v = 331.3 + (0.606 × T)',
-      ariaLabel: 'Formula for the speed of sound as a function of temperature',
+      ariaLabel: '温度に基づく音速の計算公式',
     },
     {
       type: 'tip',
-      title: 'Surgical Compensation',
-      html: 'A few degrees of difference can shift the cancellation points by several hertz. Using our calculator with the actual temperature of your studio guarantees perfect alignment in the DAW.',
+      title: '精密な補正',
+      html: 'わずか数度の温度差で、打ち消される周波数が数ヘルツずれることがあります。スタジオの実際の温度を計算機に入力することで、DAWで完璧な整列を行えます。',
     },
     {
       type: 'title',
-      text: 'Critical recording scenarios',
+      text: '重要な録音シナリオ',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Snare drum (Top & Bottom): Align both heads temporally to maximise punch.',
-        'Overheads and close mics: Delay the close mics to match the phase of the overhead mics.',
-        'Guitars with multiple mics: Blend a dynamic and a ribbon without losing low-mids.',
-        'Bass DI and mic: Sync the direct signal with the amp mic for a massive sound.',
+        'スネアドラム（トップ＆ボトム）：両方のヘッドの時間軸を揃え、アタックと低音의パンチを最大化します。',
+        'オーバーヘッドとスポットマイク：オーバーヘッドの位相に合わせてスポットマイクを遅延させます。',
+        'マルチマイクを使用したギター：低中音域を失うことなく、ダイナミックマイクとリボンマイクをブレンドします。',
+        'ベースのDIとアンプ：ダイレクト音とマンプ音を同期させ、太いベースサウンドを実現します。',
       ],
     },
     {
       type: 'title',
-      text: 'Physical Alignment vs. Digital Processing',
+      text: '物理的整列 vs デジタル処理',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Although our tool gives you the values to correct phase in your DAW after recording, we always recommend attempting the best possible physical alignment in the studio. Moving a microphone a few millimetres can be more effective than any digital processing.',
+      html: 'このツールは録音後にDAWで位相を補正するための数値を提供しますが、録音時にスタジオで可能な限り物理的な整列を試みることを常にお勧めします。マイクを数ミリメートル動かすだけで、あらゆるデジタル処理以上に効果的な結果を得られます。',
     },
     {
       type: 'stats',
       items: [
-        { label: 'Speed @ 20°C', value: '343.2 m/s' },
-        { label: 'Milliseconds/cm', value: '0.029 ms' },
-        { label: 'Samples @ 48kHz', value: '1.4 per cm' },
+        { label: '20°Cでの音速', value: '343.2 m/s' },
+        { label: '1cmあたりの時間', value: '0.029 ms' },
+        { label: '48kHzでのサンプル', value: '1cmあたり1.4サンプル' },
       ],
     },
     {
       type: 'title',
-      text: 'Reference table: Distance vs. First Null',
+      text: '参照テーブル: 距離 vs 最初のディップ',
       level: 2,
     },
     {
       type: 'table',
-      headers: ['Difference (cm)', 'Delay (ms)', '1st Null (Hz)', 'Affects...'],
+      headers: ['距離の差 (cm)', '遅延時間 (ms)', '最初の谷 (Hz)', '影響を受ける帯域'],
       rows: [
-        ['1 cm', '0.029', '17160', 'Extreme high end'],
-        ['5 cm', '0.146', '3432', 'Upper mids (Presence)'],
-        ['10 cm', '0.291', '1716', 'Mids (Presence)'],
-        ['30 cm', '0.874', '572', 'Low-mids (Body)'],
-        ['1 metre', '2.914', '172', 'Low end (Fundamental)'],
+        ['1 cm', '0.029', '17160', '超高音域'],
+        ['5 cm', '0.146', '3432', '中高音域（プレゼンス）'],
+        ['10 cm', '0.291', '1716', '中音域（プレゼンス）'],
+        ['30 cm', '0.874', '572', '中低音域（ボディ）'],
+        ['1 m', '2.914', '172', '低音域（基音）'],
       ],
     },
     {
       type: 'title',
-      text: 'Pros and cons of correction methods',
+      text: '補正方法のメリットとデメリット',
       level: 2,
     },
     {
       type: 'proscons',
       items: [
         {
-          pro: 'Physical alignment: Less degradation of the original signal.',
-          con: 'Physical alignment: Difficult to adjust with microscopic accuracy.',
+          pro: '物理的な整列：オリジナル信号の音質劣化が少ない。',
+          con: '物理的な整列：ミリメートル単位の精密な調整が難しい。',
         },
         {
-          pro: 'Digital correction: Absolute precision at the sample level.',
-          con: 'Digital correction: Can create pre-echo if applied incorrectly.',
+          pro: 'デジタル補正：サンプル単位での絶対的な精度。',
+          con: 'デジタル補正：誤って適用するとプリエコーが発生する可能性がある。',
         },
         {
-          pro: 'Polarity inversion: Instant fix for 180° cancellations.',
-          con: 'Polarity inversion: Does not fix intermediate phase shifts.',
+          pro: '極性反転：180度のズレに対する即時の解決策。',
+          con: '極性反転：中間的な位相のズレは解決できない。',
         },
         {
-          pro: 'Time compensation: Recovers lost impact and punch.',
-          con: 'Time compensation: Requires precise measurement of each mic.',
+          pro: '時間補正：失われたパンチやアタック感を回復。',
+          con: '時間補正：各マイクの距離を精密に測定する必要がある。',
         },
       ],
     },
     {
       type: 'tip',
-      title: 'How to detect phase problems by ear?',
-      html: 'Press the "Invert Phase" button (Φ). If activating it makes the sound gain body and low end, your microphones were out of phase. If the sound "disappears" or becomes thinner, they were correctly aligned.',
+      title: '耳で位相問題を聞き分ける方法',
+      html: '「位相を反転」ボタン（Φ）を押します。有効にしたときに音が太くなり、低音域が豊かになれば、元々のマイク位置が位相ズレを起こしていたことを意味します。音が「消え」たり細くなったりする場合は、適切に整列されています。',
     },
     {
       type: 'title',
-      text: 'Mono Compatibility and Stereo Perception',
+      text: 'モノラル互換性とステレオ定位',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In stereo recordings, the phase relationship defines the stability of the sound image. If there are serious inconsistencies, the sound could disappear entirely when the mix is played back on a mono system. Our calculator helps you predict which frequencies will suffer most when the channels are summed.',
+      html: 'ステレオ録音において、位相関係は音像の安定性を定義します。重大な不一致がある場合、ミックスがモノラルシステムで再生されたときに完全に音が消えてしまう可能性があります。当社の計算機は、チャンネルが統合されたときにどの周波数が最も深刻な影響を受けるかを予測するのに役立ちます。',
     },
   ],
 };

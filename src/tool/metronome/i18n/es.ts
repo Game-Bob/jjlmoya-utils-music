@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Características del metrónomo',
       items: [
-        'Motor de sonido con Web Audio API — precisión de milisegundos sin drift',
+        'Motor de sonido con Web Audio API - precisión de milisegundos sin drift',
         'Tap Tempo: calcula el BPM pulsando al ritmo',
         'Compás configurable de 1 a 12 tiempos con acento automático',
         'Indicador visual de alto contraste con efecto ripple',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Término Italiano', 'BPM Aprox.', 'Carácter'],
       rows: [
-        ['Largo', '40 – 60', 'Lento y solemne'],
-        ['Andante', '76 – 108', 'Paso tranquilo, caminando'],
-        ['Allegro', '120 – 156', 'Rápido, brillante y alegre'],
-        ['Presto', '168 – 200', 'Muy rápido, frenético'],
+        ['Largo', '40 - 60', 'Lento y solemne'],
+        ['Andante', '76 - 108', 'Paso tranquilo, caminando'],
+        ['Allegro', '120 - 156', 'Rápido, brillante y alegre'],
+        ['Presto', '168 - 200', 'Muy rápido, frenético'],
       ],
     },
     {

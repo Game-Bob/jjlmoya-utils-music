@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'How is the size of an audio recording calculated?', level: 2 },
     {
       type: 'paragraph',
-      html: 'The size of an uncompressed digital audio file (such as WAV or AIFF) depends on three fundamental technical factors: <strong>Sample Rate</strong> — how many times per second the sound wave is "measured" (e.g. 44.1 kHz or 48 kHz); <strong>Bit Depth</strong> — the resolution of each measurement, with greater dynamic range and lower noise at higher bits; and <strong>Channels</strong> — whether the recording is Mono (1), Stereo (2) or Multichannel (Surround). The standard mathematical formula is the <strong>Bitrate</strong>; multiplied by the duration in seconds, it gives the total raw file size.',
+      html: 'The size of an uncompressed digital audio file (such as WAV or AIFF) depends on three fundamental technical factors: <strong>Sample Rate</strong> - how many times per second the sound wave is "measured" (e.g. 44.1 kHz or 48 kHz); <strong>Bit Depth</strong> - the resolution of each measurement, with greater dynamic range and lower noise at higher bits; and <strong>Channels</strong> - whether the recording is Mono (1), Stereo (2) or Multichannel (Surround). The standard mathematical formula is the <strong>Bitrate</strong>; multiplied by the duration in seconds, it gives the total raw file size.',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'Is the extra space worth it?',
-      html: 'Despite taking more space, 24-bit audio offers a dynamic range of 144 dB versus 96 dB for 16-bit. This provides a much lower "noise floor", allowing weaker signals to be recorded without background noise becoming an issue — vital during professional mixing and mastering.',
+      html: 'Despite taking more space, 24-bit audio offers a dynamic range of 144 dB versus 96 dB for 16-bit. This provides a much lower "noise floor", allowing weaker signals to be recorded without background noise becoming an issue - vital during professional mixing and mastering.',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3: The impact on disk', level: 2 },
     {

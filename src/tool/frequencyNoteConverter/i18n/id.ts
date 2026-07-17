@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Mengapa ada opsi referensi 432 Hz dan 444 Hz selain 440 Hz?',
     answer:
-      'Konteks musik yang berbeda menggunakan referensi stem yang berbeda. 432 Hz populer di kalangan komunitas produksi tertentu. 444 Hz umum digunakan dalam rekaman musik awal Renaisans. Beberapa orkestra Eropa menyetem antara 441–444 Hz untuk suara yang lebih cerah.',
+      'Konteks musik yang berbeda menggunakan referensi stem yang berbeda. 432 Hz populer di kalangan komunitas produksi tertentu. 444 Hz umum digunakan dalam rekaman musik awal Renaisans. Beberapa orkestra Eropa menyetem antara 441-444 Hz untuk suara yang lebih cerah.',
   },
   {
     question: 'Untuk apa keyboard piano interaktif digunakan?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Nota terpilih',
     copyHz: 'Salin Hz',
     btnListenNote: 'Dengarkan nota',
-    pianoLabel: 'Piano interaktif — tekan tombol untuk melihat frekuensinya',
+    pianoLabel: 'Piano interaktif - tekan tombol untuk melihat frekuensinya',
     pianoAria: 'Keyboard piano interaktif',
     historyTitle: 'Riwayat',
     historyClear: 'Bersihkan',

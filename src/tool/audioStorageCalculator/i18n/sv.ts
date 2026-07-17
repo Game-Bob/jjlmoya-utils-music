@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Vad är bäst för att spara utrymme: FLAC eller MP3?',
     answer:
-      'FLAC sparar upp till 50 % utrymme utan att förlora kvalitet (lossless-komprimering). MP3 sparar upp till 80–90 % men tar bort ohörbar ljudinformation (lossy-komprimering).',
+      'FLAC sparar upp till 50 % utrymme utan att förlora kvalitet (lossless-komprimering). MP3 sparar upp till 80-90 % men tar bort ohörbar ljudinformation (lossy-komprimering).',
   },
   {
     question: 'Hur beräknar man utrymmet som behövs för en 2-timmars podcast?',
@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Hur beräknas storleken på en ljudinspelning?', level: 2 },
     {
       type: 'paragraph',
-      html: 'Storleken på en okomprimerad digital ljudfil (som WAV eller AIFF) beror på tre grundläggande tekniska faktorer: <strong>Samplingsfrekvens</strong> — hur många gånger per sekund ljudvågen "mäts" (t.ex. 44.1 kHz eller 48 kHz); <strong>Bitdjup</strong> — upplösningen för varje mätning, med större dynamiskt omfång och lägre brus vid högre bitar; och <strong>Kanaler</strong> — om inspelningen är mono (1), stereo (2) eller multikanal (surround). Den matematiska standardformeln är <strong>Bitrate</strong>; multiplicerat med varaktigheten i sekunder ger det den totala råa filstorleken.',
+      html: 'Storleken på en okomprimerad digital ljudfil (som WAV eller AIFF) beror på tre grundläggande tekniska faktorer: <strong>Samplingsfrekvens</strong> - hur många gånger per sekund ljudvågen "mäts" (t.ex. 44.1 kHz eller 48 kHz); <strong>Bitdjup</strong> - upplösningen för varje mätning, med större dynamiskt omfång och lägre brus vid högre bitar; och <strong>Kanaler</strong> - om inspelningen är mono (1), stereo (2) eller multikanal (surround). Den matematiska standardformeln är <strong>Bitrate</strong>; multiplicerat med varaktigheten i sekunder ger det den totala råa filstorleken.',
     },
     {
       type: 'comparative',
@@ -182,12 +182,12 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'Är det extra utrymmet värt det?',
-      html: 'Trots att det tar mer plats erbjuder 24-bitars ljud ett dynamiskt omfång på 144 dB jämfört med 96 dB för 16-bitars. Detta ger ett mycket lägre "brusgolv", vilket gör att svagare signaler kan spelas in utan att bakgrundsbrus blir ett problem — livsviktigt vid professionell mixning och mastering.',
+      html: 'Trots att det tar mer plats erbjuder 24-bitars ljud ett dynamiskt omfång på 144 dB jämfört med 96 dB för 16-bitars. Detta ger ett mycket lägre "brusgolv", vilket gör att svagare signaler kan spelas in utan att bakgrundsbrus blir ett problem - livsviktigt vid professionell mixning och mastering.',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3: Påverkan på disken', level: 2 },
     {
       type: 'paragraph',
-      html: '<strong>WAV / AIFF</strong> är okomprimerade format som bevarar varje bit av originalinspelningen men är tyngst. <strong>FLAC</strong> använder lossless-komprimering, vilket minskar den ursprungliga storleken med 40–60 % utan att offra kvaliteten. <strong>MP3 / AAC</strong> använder lossy-komprimering som tar bort ohörbara frekvenser; en MP3 vid 320 kbps tar ungefär 22 % av original-WAV.',
+      html: '<strong>WAV / AIFF</strong> är okomprimerade format som bevarar varje bit av originalinspelningen men är tyngst. <strong>FLAC</strong> använder lossless-komprimering, vilket minskar den ursprungliga storleken med 40-60 % utan att offra kvaliteten. <strong>MP3 / AAC</strong> använder lossy-komprimering som tar bort ohörbara frekvenser; en MP3 vid 320 kbps tar ungefär 22 % av original-WAV.',
     },
     {
       type: 'table',

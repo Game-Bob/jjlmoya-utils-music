@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Was ist Tap Tempo und wie verwende ich es?',
     answer:
-      'Es ist eine Funktion, mit der Sie die BPM durch rhythmisches Tippen berechnen können. Klicken Sie einfach auf die Schaltfläche „TAP“ oder drücken Sie die Leertaste im Takt der Musik, die Sie gerade hören, um sofort das exakte Tempo zu erhalten.',
+      'Es ist eine Funktion, mit der Sie die BPM durch rhythmisches Tippen berechnen können. Klicken Sie einfach auf die Schaltfläche \"TAP\" oder drücken Sie die Leertaste im Takt der Musik, die Sie gerade hören, um sofort das exakte Tempo zu erhalten.',
   },
   {
     question: 'Kann ich die Taktart und Akzente ändern?',
@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Funktionen des Metronoms',
       items: [
-        'Web Audio API Engine — Millisekundengenauigkeit ohne Drift',
+        'Web Audio API Engine - Millisekundengenauigkeit ohne Drift',
         'Tap Tempo: BPM durch rhythmisches Tippen berechnen',
         'Konfigurierbare Taktart von 1 bis 12 Schlägen mit automatischer Betonung',
         'Kontrastreiche visuelle Anzeige mit Ripple-Effekt',
@@ -121,7 +121,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Willkommen beim <strong>definitiven Online-Metronom</strong>. Wir haben dieses Tool mit einem Ziel entwickelt: <em>Zuverlässigkeit</em>. Im Gegensatz zu anderen Online-Metronomen, die aufgrund von Prozessorlast an „Drift“ (kleine kumulative Verzögerungen) leiden, basiert unsere Sound-Engine direkt auf der <strong>Web Audio API</strong>.',
+      html: 'Willkommen beim <strong>definitiven Online-Metronom</strong>. Wir haben dieses Tool mit einem Ziel entwickelt: <em>Zuverlässigkeit</em>. Im Gegensatz zu anderen Online-Metronomen, die aufgrund von Prozessorlast an \"Drift\" (kleine kumulative Verzögerungen) leiden, basiert unsere Sound-Engine direkt auf der <strong>Web Audio API</strong>.',
     },
     {
       type: 'paragraph',
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
         {
           title: 'Klare Visualisierung',
           description:
-            'Große, kontrastreiche visuelle Anzeigen mit einem „Ripple“-Effekt. So konzipiert, dass sie mit peripherer Sicht wahrgenommen werden können, damit Sie Ihre Noten oder Ihr Instrument im Auge behalten können, ohne den Takt zu verlieren.',
+            'Große, kontrastreiche visuelle Anzeigen mit einem \"Ripple\"-Effekt. So konzipiert, dass sie mit peripherer Sicht wahrgenommen werden können, damit Sie Ihre Noten oder Ihr Instrument im Auge behalten können, ohne den Takt zu verlieren.',
         },
         {
           title: 'Smart Tap Tempo',
@@ -177,7 +177,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Verwenden Sie unsere Taktartwahl, um den Akzent zu verschieben. Das Üben einer 4/4-Passage mit einem auf 3/4 eingestellten Metronom bedeutet, dass der Akzent (der scharfe Klick) an verschiedenen Stellen Ihrer Phrasierung landet, was Sie zwingt, die absolute Zeit zu verinnerlichen, anstatt sich auf Schlag „Eins“ zu verlassen.',
+      html: 'Verwenden Sie unsere Taktartwahl, um den Akzent zu verschieben. Das Üben einer 4/4-Passage mit einem auf 3/4 eingestellten Metronom bedeutet, dass der Akzent (der scharfe Klick) an verschiedenen Stellen Ihrer Phrasierung landet, was Sie zwingt, die absolute Zeit zu verinnerlichen, anstatt sich auf Schlag \"Eins\" zu verlassen.',
     },
     {
       type: 'title',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Italienischer Begriff', 'BPM ca.', 'Charakter'],
       rows: [
-        ['Largo', '40 – 60', 'Langsam und feierlich'],
-        ['Andante', '76 – 108', 'Gehgeschwindigkeit, ruhig'],
-        ['Allegro', '120 – 156', 'Schnell, hell und freudig'],
-        ['Presto', '168 – 200', 'Sehr schnell, gehetzt'],
+        ['Largo', '40 - 60', 'Langsam und feierlich'],
+        ['Andante', '76 - 108', 'Gehgeschwindigkeit, ruhig'],
+        ['Allegro', '120 - 156', 'Schnell, hell und freudig'],
+        ['Presto', '168 - 200', 'Sehr schnell, gehetzt'],
       ],
     },
     {
@@ -218,7 +218,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Egal, ob Sie ein Schlagzeuger sind, der den Groove hält, ein Pianist, der an Tonleitern arbeitet, oder ein Gitarrist, der ein Solo perfektioniert – dieses Metronom ist Ihr stiller Partner (bis Sie auf Play drücken).',
+      html: 'Egal, ob Sie ein Schlagzeuger sind, der den Groove hält, ein Pianist, der an Tonleitern arbeitet, oder ein Gitarrist, der ein Solo perfektioniert - dieses Metronom ist Ihr stiller Partner (bis Sie auf Play drücken).',
     },
     {
       type: 'tip',

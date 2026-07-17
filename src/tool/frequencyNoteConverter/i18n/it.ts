@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Come faccio a sapere a quale nota corrispondono 440 Hz?',
     answer:
-      '440 Hz corrispondono esattamente al La4, la nota di riferimento universale per l’accordatura. È il La sopra il Do centrale del pianoforte. Questa frequenza è lo standard ISO 16 dal 1939 ed è utilizzata per accordare gli strumenti orchestrali in tutto il mondo.',
+      '440 Hz corrispondono esattamente al La4, la nota di riferimento universale per l\'accordatura. È il La sopra il Do centrale del pianoforte. Questa frequenza è lo standard ISO 16 dal 1939 ed è utilizzata per accordare gli strumenti orchestrali in tutto il mondo.',
   },
   {
     question: "Cosa significa che una nota è '15 centesimi sopra'?",
@@ -37,7 +37,7 @@ const faqData = [
   {
     question: 'Perché la modalità di ascolto genera un tono sinusoidale invece del suono reale?',
     answer:
-      'Un tono sinusoidale è un’onda pura che contiene solo la frequenza fondamentale senza armonici aggiuntivi. Ciò consente un confronto pulito con lo strumento reale senza che il colore timbrico interferisca con il giudizio dell’accordatura. È lo stesso segnale generato da un accordatore elettronico ad ago.',
+      'Un tono sinusoidale è un\'onda pura che contiene solo la frequenza fondamentale senza armonici aggiuntivi. Ciò consente un confronto pulito con lo strumento reale senza che il colore timbrico interferisca con il giudizio dell\'accordatura. È lo stesso segnale generato da un accordatore elettronico ad ago.',
   },
   {
     question: 'Come si calcola la frequenza di una nota musicale?',
@@ -50,9 +50,9 @@ const faqData = [
       'La frequenza di 440 Hz è esattamente la nota La4. È la nota di riferimento standard utilizzata dalla maggior parte delle orchestre e dai musicisti contemporanei per accordare i propri strumenti dalla metà del XX secolo.',
   },
   {
-    question: 'Qual è la differenza tra l’accordatura a 440 Hz e a 432 Hz?',
+    question: 'Qual è la differenza tra l\'accordatura a 440 Hz e a 432 Hz?',
     answer:
-      '440 Hz è lo standard internazionale (ISO 16). 432 Hz è un’accordatura alternativa che alcuni musicisti preferiscono per ragioni sonore soggettive, spesso usata nella musica per meditazione, sebbene non vi siano prove scientifiche di chiari benefici biologici rispetto ai 440 Hz.',
+      '440 Hz è lo standard internazionale (ISO 16). 432 Hz è un\'accordatura alternativa che alcuni musicisti preferiscono per ragioni sonore soggettive, spesso usata nella musica per meditazione, sebbene non vi siano prove scientifiche di chiari benefici biologici rispetto ai 440 Hz.',
   },
 ];
 
@@ -63,11 +63,11 @@ const howToData = [
   },
   {
     name: 'Leggi il risultato e il misuratore di centesimi',
-    text: 'L’indicatore visivo dell’accordatore mostra se la tua frequenza è crescente, calante o esattamente sulla nota. Il valore dei centesimi ti dice quanto regolare il fine-tuning del tuo strumento o plugin.',
+    text: 'L\'indicatore visivo dell\'accordatore mostra se la tua frequenza è crescente, calante o esattamente sulla nota. Il valore dei centesimi ti dice quanto regolare il fine-tuning del tuo strumento o plugin.',
   },
   {
     name: 'Usa gli armonici per accordare i layer',
-    text: 'Controlla le frequenze dell’ottava inferiore e superiore per configurare oscillatori aggiuntivi, filtri risonanti o layer di percussioni senza conflitti di frequenza.',
+    text: 'Controlla le frequenze dell\'ottava inferiore e superiore per configurare oscillatori aggiuntivi, filtri risonanti o layer di percussioni senza conflitti di frequenza.',
   },
   {
     name: 'Regola il riferimento La4',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Nota selezionata',
     copyHz: 'Copia Hz',
     btnListenNote: 'Ascolta la nota',
-    pianoLabel: 'Pianoforte interattivo — premi un tasto per vedere la sua frequenza',
+    pianoLabel: 'Pianoforte interattivo - premi un tasto per vedere la sua frequenza',
     pianoAria: 'Tastiera interattiva del pianoforte',
     historyTitle: 'Cronologia',
     historyClear: 'Cancella',
@@ -171,16 +171,16 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'title',
-      text: 'Cos’è la frequenza di una nota musicale e perché è importante',
+      text: 'Cos\'è la frequenza di una nota musicale e perché è importante',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Ogni nota musicale è, in sostanza, una vibrazione periodica dell’aria. Quando una corda di chitarra vibra a 440 cicli al secondo, produce il La4, la nota di riferimento universale per l’accordatura. Questa corrispondenza tra hertz e note non è arbitraria: è definita dal <strong>temperamento equabile</strong>, il sistema di accordatura predominante nella musica occidentale, che divide l’ottava in dodici semitoni perfettamente equidistanti da un punto di vista matematico.',
+      html: 'Ogni nota musicale è, in sostanza, una vibrazione periodica dell\'aria. Quando una corda di chitarra vibra a 440 cicli al secondo, produce il La4, la nota di riferimento universale per l\'accordatura. Questa corrispondenza tra hertz e note non è arbitraria: è definita dal <strong>temperamento equabile</strong>, il sistema di accordatura predominante nella musica occidentale, che divide l\'ottava in dodici semitoni perfettamente equidistanti da un punto di vista matematico.',
     },
     {
       type: 'paragraph',
-      html: 'Conoscere la frequenza esatta di ogni nota è fondamentale nella sintesi sonora, nella produzione musicale, nell’ingegneria del suono e nella costruzione di strumenti. Un sintetizzatore deve sapere a quale frequenza ogni oscillatore deve vibrare per riprodurre una nota accordata. Un ingegnere di mixaggio deve sapere dove tagliare con un equalizzatore per rimuovere un ronzio senza intaccare la fondamentale di uno strumento.',
+      html: 'Conoscere la frequenza esatta di ogni nota è fondamentale nella sintesi sonora, nella produzione musicale, nell\'ingegneria del suono e nella costruzione di strumenti. Un sintetizzatore deve sapere a quale frequenza ogni oscillatore deve vibrare per riprodurre una nota accordata. Un ingegnere di mixaggio deve sapere dove tagliare con un equalizzatore per rimuovere un ronzio senza intaccare la fondamentale di uno strumento.',
     },
     {
       type: 'title',
@@ -202,7 +202,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'title',
-      text: 'Centesimi: l’unità di precisione per musicisti e tecnici',
+      text: 'Centesimi: l\'unità di precisione per musicisti e tecnici',
       level: 2,
     },
     {
@@ -232,12 +232,12 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'title',
-      text: 'Il riferimento La4: 440 Hz, 432 Hz e le guerre dell’accordatura',
+      text: 'Il riferimento La4: 440 Hz, 432 Hz e le guerre dell\'accordatura',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'La frequenza di riferimento La4 = 440 Hz è stata standardizzata a livello internazionale nel 1939 (ISO 16). Tuttavia, i musicisti barocchi lavorano tipicamente con riferimenti a 415 Hz, e c’è una comunità crescente di produttori che preferisce i 432 Hz. Orchestre d’élite come i Berliner Philharmoniker usano regolarmente i 443 Hz per un suono più brillante e penetrante.',
+      html: 'La frequenza di riferimento La4 = 440 Hz è stata standardizzata a livello internazionale nel 1939 (ISO 16). Tuttavia, i musicisti barocchi lavorano tipicamente con riferimenti a 415 Hz, e c\'è una comunità crescente di produttori che preferisce i 432 Hz. Orchestre d\'élite come i Berliner Philharmoniker usano regolarmente i 443 Hz per un suono più brillante e penetrante.',
     },
     {
       type: 'paragraph',
@@ -246,7 +246,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     {
       type: 'tip',
       title: 'Trucco da campionatore professionista',
-      html: 'Quando importi un campione in un campionatore come Kontakt o Decent Sampler, inserisci la frequenza del campione in questo calcolatore. Il valore dei centesimi mostrato sull’accordatore ti dice esattamente il valore di <em>fine-tune</em> da inserire nel campionatore affinché la nota suoni perfettamente accordata.',
+      html: 'Quando importi un campione in un campionatore come Kontakt o Decent Sampler, inserisci la frequenza del campione in questo calcolatore. Il valore dei centesimi mostrato sull\'accordatore ti dice esattamente il valore di <em>fine-tune</em> da inserire nel campionatore affinché la nota suoni perfettamente accordata.',
     },
     {
       type: 'title',
@@ -261,7 +261,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
       type: 'table',
       headers: ['Nota', 'Frequenza (Hz)', 'Nota MIDI', 'Range tipico dello strumento'],
       rows: [
-        ['Do0', '16.35', '12', 'Contrabbasso, pedale dell’organo'],
+        ['Do0', '16.35', '12', 'Contrabbasso, pedale dell\'organo'],
         ['Do1', '32.70', '24', 'Contrabbasso, basso elettrico corda grave'],
         ['Do2', '65.41', '36', 'Violoncello, basso elettrico'],
         ['Do3', '130.81', '48', 'Viola, sax tenore, chitarra'],
@@ -274,20 +274,20 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'title',
-      text: 'Armonici e l’ottava come rapporto 2:1',
+      text: 'Armonici e l\'ottava come rapporto 2:1',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Uno dei rapporti più importanti nell’acustica musicale è l’ottava: raddoppiare la frequenza produce la stessa nota un’ottava sopra, e dimezzarla la porta un’ottava sotto. Questo rapporto 2:1 è alla base degli armonici naturali di qualsiasi strumento acustico.',
+      html: 'Uno dei rapporti più importanti nell\'acustica musicale è l\'ottava: raddoppiare la frequenza produce la stessa nota un\'ottava sopra, e dimezzarla la porta un\'ottava sotto. Questo rapporto 2:1 è alla base degli armonici naturali di qualsiasi strumento acustico.',
     },
     {
       type: 'paragraph',
-      html: 'Nella sintesi, conoscere gli armonici diretti di una frequenza è fondamentale per evitare collisioni spettrali tra gli oscillatori in un layer sonoro. Questo calcolatore mostra sempre l’ottava superiore e inferiore di qualsiasi frequenza inserita.',
+      html: 'Nella sintesi, conoscere gli armonici diretti di una frequenza è fondamentale per evitare collisioni spettrali tra gli oscillatori in un layer sonoro. Questo calcolatore mostra sempre l\'ottava superiore e inferiore di qualsiasi frequenza inserita.',
     },
     {
       type: 'title',
-      text: 'Casi d’uso reali per musicisti e produttori',
+      text: 'Casi d\'uso reali per musicisti e produttori',
       level: 2,
     },
     {
@@ -295,7 +295,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
       items: [
         'Accordatura di oscillatori analogici: misura la frequenza in uscita e confrontala con il calcolatore per sapere di quanti centesimi regolare il coarse o il fine tune.',
         'Assegnazione di campioni alle note: una grancassa registrata a 55 Hz è un La1. Questo strumento ti dice esattamente dove mapparla in un campionatore.',
-        'Rilevamento di risonanze problematiche: se una stanza risuona a 80 Hz, il calcolatore conferma che è un Mi2, guidando l’uso dell’EQ per attenuarla senza danneggiare i bassi.',
+        'Rilevamento di risonanze problematiche: se una stanza risuona a 80 Hz, il calcolatore conferma che è un Mi2, guidando l\'uso dell\'EQ per attenuarla senza danneggiare i bassi.',
         'Sincronizzazione di subwoofer: verificare che più sub riproducano la stessa nota evita rinforzi o cancellazioni dovuti a interferenze.',
         'Accordatura di campane e percussioni a intonazione determinata: identifica la fondamentale per integrarle nella tonalità del brano.',
         'Design di filtri risonanti: un filtro passa-banda con alto Q a 349.23 Hz avrà il suo picco sul Fa4, facilitando le decisioni di design armonico.',
@@ -308,7 +308,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'La tastiera del pianoforte è la mappa visiva più intuitiva dello spettro musicale. La sua disposizione di tasti bianchi (naturali) e neri (diesis/bemolle) permette di riconoscere a colpo d’occhio pattern di scale, accordi e intervalli. Il pianoforte interattivo evidenzia il tasto corrispondente a ogni frequenza, collegando il numero alla sua posizione sulla tastiera universale.',
+      html: 'La tastiera del pianoforte è la mappa visiva più intuitiva dello spettro musicale. La sua disposizione di tasti bianchi (naturali) e neri (diesis/bemolle) permette di riconoscere a colpo d\'occhio pattern di scale, accordi e intervalli. Il pianoforte interattivo evidenzia il tasto corrispondente a ogni frequenza, collegando il numero alla sua posizione sulla tastiera universale.',
     },
     {
       type: 'proscons',
@@ -327,26 +327,26 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Cronologia di ricerca: permette il confronto rapido di più patch o campioni.',
-          con: 'Le frequenze al di fuori del range udibile (20 Hz – 20 kHz) hanno un’utilità pratica limitata.',
+          con: 'Le frequenze al di fuori del range udibile (20 Hz - 20 kHz) hanno un\'utilità pratica limitata.',
         },
       ],
     },
     {
       type: 'title',
-      text: 'Glossario essenziale per l’uso di questo strumento',
+      text: 'Glossario essenziale per l\'uso di questo strumento',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Hz (Hertz): cicli al secondo. Misura la frequenza di un’onda sonora.',
+        'Hz (Hertz): cicli al secondo. Misura la frequenza di un\'onda sonora.',
         'Nota MIDI: intero da 0 a 127 che identifica ogni nota nello standard MIDI. La4 = 69.',
-        'Ottava scientifica: sistema di denominazione che aggiunge il numero dell’ottava alla nota (La4, Do3).',
+        'Ottava scientifica: sistema di denominazione che aggiunge il numero dell\'ottava alla nota (La4, Do3).',
         'Centesimi (cent): centesima parte di un semitono. Permette di esprimere le deviazioni di accordatura con precisione.',
         'Temperamento equabile: sistema di accordatura in cui tutti i semitoni sono uguali (rapporto 2^(1/12)).',
         'La4: nota di riferimento. Standard internazionale: 440 Hz (ISO 16, 1975).',
         'Armonico: frequenze multiple intere della fondamentale prodotte naturalmente dagli strumenti acustici.',
-        'Fine-tune: parametro di sintetizzatori e campionatori per regolare l’accordatura in centesimi.',
+        'Fine-tune: parametro di sintetizzatori e campionatori per regolare l\'accordatura in centesimi.',
       ],
     },
   ],

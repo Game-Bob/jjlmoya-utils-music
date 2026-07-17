@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: '선택된 음',
     copyHz: 'Hz 복사',
     btnListenNote: '음 청취',
-    pianoLabel: '대화형 피아노 — 건반을 눌러 주파수를 확인하세요',
+    pianoLabel: '대화형 피아노 - 건반을 눌러 주파수를 확인하세요',
     pianoAria: '대화형 피아노 키보드',
     historyTitle: '히스토리',
     historyClear: '삭제',

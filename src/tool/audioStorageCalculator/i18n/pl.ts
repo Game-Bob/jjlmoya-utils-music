@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Jak oblicza się rozmiar nagrania audio?', level: 2 },
     {
       type: 'paragraph',
-      html: 'Rozmiar nieskompresowanego cyfrowego pliku audio (takiego jak WAV lub AIFF) zależy od trzech podstawowych czynników technicznych: <strong>Częstotliwości próbkowania</strong> — ile razy na sekundę fala dźwiękowa jest "mierzona" (np. 44,1 kHz lub 48 kHz); <strong>Głębi bitowej</strong> — rozdzielczości każdego pomiaru (wyższa liczba bitów zapewnia większy zakres dynamiczny i niższy poziom szumów); oraz <strong>Kanałów</strong> — czy nagranie jest w formacie Mono (1), Stereo (2) czy wielokanałowym (Surround). Standardowy wzór matematyczny to <strong>Bitrate</strong>; pomnożony przez czas trwania w sekundach, daje całkowity rozmiar surowego pliku.',
+      html: 'Rozmiar nieskompresowanego cyfrowego pliku audio (takiego jak WAV lub AIFF) zależy od trzech podstawowych czynników technicznych: <strong>Częstotliwości próbkowania</strong> - ile razy na sekundę fala dźwiękowa jest "mierzona" (np. 44,1 kHz lub 48 kHz); <strong>Głębi bitowej</strong> - rozdzielczości każdego pomiaru (wyższa liczba bitów zapewnia większy zakres dynamiczny i niższy poziom szumów); oraz <strong>Kanałów</strong> - czy nagranie jest w formacie Mono (1), Stereo (2) czy wielokanałowym (Surround). Standardowy wzór matematyczny to <strong>Bitrate</strong>; pomnożony przez czas trwania w sekundach, daje całkowity rozmiar surowego pliku.',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'Czy warto poświęcić dodatkowe miejsce?',
-      html: 'Mimo że zajmuje więcej miejsca, dźwięk 24-bitowy oferuje zakres dynamiczny 144 dB w porównaniu do 96 dB dla 16-bitów. Zapewnia to znacznie niższy "poziom szumów", co pozwala na nagrywanie słabszych sygnałów bez problemu z szumem tła — jest to kluczowe podczas profesjonalnego miksowania i masteringu.',
+      html: 'Mimo że zajmuje więcej miejsca, dźwięk 24-bitowy oferuje zakres dynamiczny 144 dB w porównaniu do 96 dB dla 16-bitów. Zapewnia to znacznie niższy "poziom szumów", co pozwala na nagrywanie słabszych sygnałów bez problemu z szumem tła - jest to kluczowe podczas profesjonalnego miksowania i masteringu.',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3: wpływ na dysk', level: 2 },
     {

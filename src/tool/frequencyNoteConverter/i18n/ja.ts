@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: '選択された音',
     copyHz: 'Hzをコピー',
     btnListenNote: '音名で聴く',
-    pianoLabel: 'インタラクティブ・ピアノ — 鍵盤を押すと周波数が表示されます',
+    pianoLabel: 'インタラクティブ・ピアノ - 鍵盤を押すと周波数が表示されます',
     pianoAria: 'インタラクティブ・ピアノキーボード',
     historyTitle: '履歴',
     historyClear: '消去',

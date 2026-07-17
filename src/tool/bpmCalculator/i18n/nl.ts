@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Wat is Pre-delay bij een reverb?',
     answer:
-      'Pre-delay is de tijd tussen het directe geluid (bron) en het begin van de reverbstaart. Door dit ritmisch in te stellen, blijft de originele bron helder voordat het ruimtelijke effect het overneemt — essentieel voor zang en percussie.',
+      'Pre-delay is de tijd tussen het directe geluid (bron) en het begin van de reverbstaart. Door dit ritmisch in te stellen, blijft de originele bron helder voordat het ruimtelijke effect het overneemt - essentieel voor zang en percussie.',
   },
   {
     question: 'Hoe werkt Tap Tempo?',
@@ -126,7 +126,7 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'In de moderne muziekproductie onderscheidt ritmische precisie een amateurmix van een professionele mix. Hoewel de meeste DAW’s zoals Ableton Live, FL Studio of Logic Pro automatische synchronisatie voor hun effecten hebben, zijn er talloze situaties waarin handmatige bediening superieur is.',
+      html: 'In de moderne muziekproductie onderscheidt ritmische precisie een amateurmix van een professionele mix. Hoewel de meeste DAW\'s zoals Ableton Live, FL Studio of Logic Pro automatische synchronisatie voor hun effecten hebben, zijn er talloze situaties waarin handmatige bediening superieur is.',
     },
     {
       type: 'title',
@@ -157,12 +157,12 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'Gesynchroniseerde Compressie en LFO’s',
+      text: 'Gesynchroniseerde Compressie en LFO\'s',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Wist je dat de <strong>Attack-</strong> en <strong>Release-tijden</strong> van een compressor ook ritmisch kunnen zijn? Door de release van je drum bus-compressor zo in te stellen dat deze precies voor de volgende kick-hit eindigt, ontstaat een "pomp-" of <em>ademeffect</em> dat het ritme van het nummer versterkt. Evenzo is de Hz-waarde essentieel voor het configureren van low-frequency oscillatoren (LFO’s) op synths zonder native tempo-sync.',
+      html: 'Wist je dat de <strong>Attack-</strong> en <strong>Release-tijden</strong> van een compressor ook ritmisch kunnen zijn? Door de release van je drum bus-compressor zo in te stellen dat deze precies voor de volgende kick-hit eindigt, ontstaat een "pomp-" of <em>ademeffect</em> dat het ritme van het nummer versterkt. Evenzo is de Hz-waarde essentieel voor het configureren van low-frequency oscillatoren (LFO\'s) op synths zonder native tempo-sync.',
     },
     {
       type: 'tip',

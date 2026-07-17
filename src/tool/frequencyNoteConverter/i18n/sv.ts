@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Varför finns det referensalternativ för 432 Hz och 444 Hz förutom 440 Hz?',
     answer:
-      'Olika musikaliska sammanhang använder olika stämreferenser. 432 Hz är populärt i vissa produktionskretsar. 444 Hz är vanligt i inspelningar av tidig musik från renässansen. Vissa europeiska orkestrar stämmer mellan 441–444 Hz för ett ljusare ljud.',
+      'Olika musikaliska sammanhang använder olika stämreferenser. 432 Hz är populärt i vissa produktionskretsar. 444 Hz är vanligt i inspelningar av tidig musik från renässansen. Vissa europeiska orkestrar stämmer mellan 441-444 Hz för ett ljusare ljud.',
   },
   {
     question: 'Vad används det interaktiva pianoklaviaturen till?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Vald not',
     copyHz: 'Kopiera Hz',
     btnListenNote: 'Lyssna på not',
-    pianoLabel: 'Interaktivt piano — tryck på en tangent för att se dess frekvens',
+    pianoLabel: 'Interaktivt piano - tryck på en tangent för att se dess frekvens',
     pianoAria: 'Interaktivt pianoklaviatur',
     historyTitle: 'Historik',
     historyClear: 'Rensa',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Sökhistorik: möjliggör snabb jämförelse av flera patcher eller samples.',
-          con: 'Frekvenser utanför det hörbara området (20 Hz – 20 kHz) har begränsad praktisk nytta.',
+          con: 'Frekvenser utanför det hörbara området (20 Hz - 20 kHz) har begränsad praktisk nytta.',
         },
       ],
     },

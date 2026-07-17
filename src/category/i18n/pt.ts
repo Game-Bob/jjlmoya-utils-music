@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'O que você encontrará nesta categoria',
       items: [
-        'Metrônomo online com Web Audio API — precisão em milissegundos',
+        'Metrônomo online com Web Audio API - precisão em milissegundos',
         'Calculadora de BPM para milissegundos para delays e reverbs',
         'Conversor de frequência para nota musical (Hz, cents e desintonização)',
         'Calculadora de distância de fase para alinhamento de microfones',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'A música é uma linguagem com múltiplos sistemas de notação. A ferramenta de <strong>equivalência de notas</strong> traduz instantaneamente entre o sistema latino (Dó, Ré, Mi…), o sistema americano (C, D, E…) e o sistema alemão (C, D, E… com H em vez de B), evitando confusão ao se comunicar com músicos de diferentes tradições ou ler partituras de diferentes países.',
+      html: 'A música é uma linguagem com múltiplos sistemas de notação. A ferramenta de <strong>equivalência de notas</strong> traduz instantaneamente entre o sistema latino (Dó, Ré, Mi...), o sistema americano (C, D, E...) e o sistema alemão (C, D, E... com H em vez de B), evitando confusão ao se comunicar com músicos de diferentes tradições ou ler partituras de diferentes países.',
     },
     {
       type: 'tip',

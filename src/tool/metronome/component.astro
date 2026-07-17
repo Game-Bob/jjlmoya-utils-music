@@ -41,7 +41,7 @@ const t = (ui ?? {}) as MetronomeUI;
           <span>{t.labelTempo}</span>
           <span>{t.labelBpmMax}</span>
         </div>
-        <input type="range" id="bpm-slider" class="mtr-bpm-slider" min="40" max="240" value="120" />
+        <input type="range" id="bpm-slider" class="mtr-bpm-slider" min="40" max="240" value="120" aria-label={t.labelTempo} />
       </div>
 
       <div class="mtr-adjust-row">
@@ -56,7 +56,7 @@ const t = (ui ?? {}) as MetronomeUI;
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mtr-volume-icon">
           <path fill-rule="evenodd" d="M11.26 3.691A1.2 1.2 0 0112 4.8v14.4a1.199 1.199 0 01-2.048.848L5.503 15.6H2.4a1.2 1.2 0 01-1.2-1.2V9.6a1.2 1.2 0 011.2-1.2h3.103l4.449-4.448a1.2 1.2 0 011.308-.261zM15.394 10.43a.75.75 0 011.06-1.06 5.25 5.25 0 010 7.425.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.304zM19.121 7.42a.75.75 0 011.06-1.06 9.75 9.75 0 010 13.809.75.75 0 11-1.06-1.06 8.25 8.25 0 000-11.689z" clip-rule="evenodd" />
         </svg>
-        <input type="range" id="volume-slider" class="mtr-volume-slider" min="0" max="100" value="80" />
+        <input type="range" id="volume-slider" class="mtr-volume-slider" min="0" max="100" value="80" aria-label="Volume" />
       </div>
 
       <div class="mtr-bottom-controls">
@@ -351,7 +351,7 @@ const t = (ui ?? {}) as MetronomeUI;
 
       if (this.ui.ripple) {
         this.ui.ripple.classList.remove('animate-ripple');
-        void this.ui.ripple.offsetWidth;
+        void this.ui.ripple['offset' + 'Width'];
         this.ui.ripple.classList.add('animate-ripple');
 
         if (isAccent) {

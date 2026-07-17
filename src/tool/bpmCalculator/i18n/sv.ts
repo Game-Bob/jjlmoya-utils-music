@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Vad är Pre-delay i ett reverb?',
     answer:
-      'Pre-delay är tiden mellan det direkta ljudet (källan) och början av reverbsvansen. Genom att ställa in det rytmiskt kan originalkällan förbli tydlig innan den spatiala effekten tar över – avgörande för sång och slagverk.',
+      'Pre-delay är tiden mellan det direkta ljudet (källan) och början av reverbsvansen. Genom att ställa in det rytmiskt kan originalkällan förbli tydlig innan den spatiala effekten tar över - avgörande för sång och slagverk.',
   },
   {
     question: 'Hur fungerar Tap Tempo?',

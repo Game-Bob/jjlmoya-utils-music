@@ -4,7 +4,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { AudioStorageCalculatorUI } from '../ui';
 
 const slug = 'calculateur-stockage-audio-numerique';
-const title = "Calculateur de Stockage Audio Numérique : WAV, FLAC et MP3";
+const title = "Calculateur de Stockage Audio Numérique: WAV, FLAC et MP3";
 const description =
   "Estimez l'espace disque nécessaire pour vos enregistrements audio en WAV, FLAC et MP3 selon la fréquence d'échantillonnage et la profondeur de bits.";
 
@@ -20,7 +20,7 @@ const faqData = [
       "WAV est un format sans compression 'lossless', ce qui signifie qu'il stocke chaque échantillon audio individuellement pour préserver la fidélité maximale sans réduire les données.",
   },
   {
-    question: "Qu'est-ce qui est mieux pour économiser de l'espace : FLAC ou MP3 ?",
+    question: "Qu'est-ce qui est mieux pour économiser de l'espace: FLAC ou MP3 ?",
     answer:
       "FLAC économise jusqu'à 50 % d'espace sans perte de qualité (compression sans perte). Le MP3 économise jusqu'à 80-90 % mais supprime des informations audio imperceptibles (compression avec perte).",
   },
@@ -127,7 +127,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     optCh2: 'Stéréo (2 canaux)',
     optCh6: '5.1 Surround (6 canaux)',
     optCh8: '7.1 Surround (8 canaux)',
-    labelDurationSet: 'Durée configurée : {time}',
+    labelDurationSet: 'Durée configurée: {time}',
     labelRecordingPossible: 'Enregistrement possible avec {gb} Go configurés',
     toggleLabelTime: 'Retour au calcul par durée',
     labelSpaceAvailable: 'Espace Disponible',
@@ -142,16 +142,16 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
       type: 'summary',
       title: 'Calculateur de Capacité pour Son Numérique',
       items: [
-        '<strong>WAV à MP3</strong> : Calculez le poids des fichiers avec et sans compression.',
-        "<strong>Résolution Audio</strong> : Ajustez la fréquence (kHz) et les bits (16/24/32).",
-        '<strong>Calcul inverse</strong> : Combien puis-je enregistrer avec mon espace restant ?',
-        '<strong>Formats Professionnels</strong> : Estimation pour FLAC et masterisation en 192kHz.',
+        '<strong>WAV à MP3</strong>: Calculez le poids des fichiers avec et sans compression.',
+        "<strong>Résolution Audio</strong>: Ajustez la fréquence (kHz) et les bits (16/24/32).",
+        '<strong>Calcul inverse</strong>: Combien puis-je enregistrer avec mon espace restant ?',
+        '<strong>Formats Professionnels</strong>: Estimation pour FLAC et masterisation en 192kHz.',
       ],
     },
     { type: 'title', text: "Comment calcule-t-on la taille d'un enregistrement audio ?", level: 2 },
     {
       type: 'paragraph',
-      html: "La taille d'un fichier audio numérique non compressé (comme WAV ou AIFF) dépend de trois facteurs techniques fondamentaux : la <strong>Fréquence d'Échantillonnage</strong> — combien de fois par seconde l'onde sonore est « mesurée » ; la <strong>Profondeur de Bits</strong> — la résolution de chaque mesure ; et les <strong>Canaux</strong> — Mono (1), Stéréo (2) ou Multicanal (Surround). La formule mathématique standard est le <strong>Débit binaire (Bitrate)</strong> ; multiplié par la durée en secondes, il donne la taille totale du fichier brut.",
+      html: "La taille d'un fichier audio numérique non compressé (comme WAV ou AIFF) dépend de trois facteurs techniques fondamentaux: la <strong>Fréquence d'Échantillonnage</strong> - combien de fois par seconde l'onde sonore est \" mesurée \" ; la <strong>Profondeur de Bits</strong> - la résolution de chaque mesure ; et les <strong>Canaux</strong> - Mono (1), Stéréo (2) ou Multicanal (Surround). La formule mathématique standard est le <strong>Débit binaire (Bitrate)</strong> ; multiplié par la durée en secondes, il donne la taille totale du fichier brut.",
     },
     {
       type: 'comparative',
@@ -182,9 +182,9 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: "L'espace supplémentaire en vaut-il la peine ?",
-      html: "L'audio 24-bit offre une plage dynamique de 144 dB contre 96 dB pour le 16-bit, ce qui fournit un « plancher de bruit » beaucoup plus bas — essentiel lors du mixage et de la masterisation professionnels.",
+      html: "L'audio 24-bit offre une plage dynamique de 144 dB contre 96 dB pour le 16-bit, ce qui fournit un \" plancher de bruit \" beaucoup plus bas - essentiel lors du mixage et de la masterisation professionnels.",
     },
-    { type: 'title', text: 'WAV vs FLAC vs MP3 : L\'impact sur le disque', level: 2 },
+    { type: 'title', text: 'WAV vs FLAC vs MP3: L\'impact sur le disque', level: 2 },
     {
       type: 'paragraph',
       html: '<strong>WAV / AIFF</strong> sont des formats sans compression qui préservent chaque bit de l\'enregistrement original. <strong>FLAC</strong> applique une compression sans perte, réduisant la taille de 40-60% sans sacrifier la qualité. <strong>MP3 / AAC</strong> appliquent une compression avec perte ; un MP3 à 320 kbps occupe environ 22% du WAV original.',
@@ -214,11 +214,11 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'list',
       items: [
-        'Podcast : Évitez de manquer d\'espace sur votre enregistreur portable lors d\'une longue interview.',
-        'Studio de Musique : Calculez combien de Go d\'espace libre vous avez besoin avant d\'ouvrir une session de 40 pistes à 96kHz.',
-        'Ingénierie du Son Numérique : Vérifiez que le débit de transfert est compatible avec votre matériel.',
-        'Post-production Cinéma : Estimez le poids des prises multicanaux 5.1 pour l\'envoi de fichiers par réseau.',
-        'Archivage : Déterminez la capacité nécessaire pour numériser une collection de cassettes analogiques en qualité Master.',
+        'Podcast: Évitez de manquer d\'espace sur votre enregistreur portable lors d\'une longue interview.',
+        'Studio de Musique: Calculez combien de Go d\'espace libre vous avez besoin avant d\'ouvrir une session de 40 pistes à 96kHz.',
+        'Ingénierie du Son Numérique: Vérifiez que le débit de transfert est compatible avec votre matériel.',
+        'Post-production Cinéma: Estimez le poids des prises multicanaux 5.1 pour l\'envoi de fichiers par réseau.',
+        'Archivage: Déterminez la capacité nécessaire pour numériser une collection de cassettes analogiques en qualité Master.',
       ],
     },
   ],

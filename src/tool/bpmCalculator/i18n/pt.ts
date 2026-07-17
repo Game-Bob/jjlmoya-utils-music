@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'O que é o Pre-delay em um reverb?',
     answer:
-      'O Pre-delay é o tempo entre o som direto (fonte) e o início da cauda do reverb. Ajustá-lo ritmicamente permite que a fonte original permaneça clara antes que o efeito espacial assuma o controle — vital para vocais e percussão.',
+      'O Pre-delay é o tempo entre o som direto (fonte) e o início da cauda do reverb. Ajustá-lo ritmicamente permite que a fonte original permaneça clara antes que o efeito espacial assuma o controle - vital para vocais e percussão.',
   },
   {
     question: 'Como funciona o Tap Tempo?',

@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Warum gibt es neben 440 Hz auch Referenzoptionen wie 432 Hz und 444 Hz?',
     answer:
-      'Verschiedene musikalische Kontexte verwenden unterschiedliche Stimmenreferenzen. 432 Hz ist in bestimmten Produktionskreisen beliebt. 444 Hz ist bei Aufnahmen Alter Musik aus der Renaissance üblich. Einige europäische Orchester stimmen zwischen 441–444 Hz für einen brillanteren Klang.',
+      'Verschiedene musikalische Kontexte verwenden unterschiedliche Stimmenreferenzen. 432 Hz ist in bestimmten Produktionskreisen beliebt. 444 Hz ist bei Aufnahmen Alter Musik aus der Renaissance üblich. Einige europäische Orchester stimmen zwischen 441-444 Hz für einen brillanteren Klang.',
   },
   {
     question: 'Wozu dient die interaktive Klaviertastatur?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Ausgewählte Note',
     copyHz: 'Hz kopieren',
     btnListenNote: 'Note anhören',
-    pianoLabel: 'Interaktives Klavier — Taste drücken, um Frequenz zu sehen',
+    pianoLabel: 'Interaktives Klavier - Taste drücken, um Frequenz zu sehen',
     pianoAria: 'Interaktive Klaviertastatur',
     historyTitle: 'Verlauf',
     historyClear: 'Löschen',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Suchverlauf: erlaubt den schnellen Vergleich mehrerer Patches oder Samples.',
-          con: 'Frequenzen außerhalb des hörbaren Bereichs (20 Hz – 20 kHz) haben einen begrenzten praktischen Nutzen.',
+          con: 'Frequenzen außerhalb des hörbaren Bereichs (20 Hz - 20 kHz) haben einen begrenzten praktischen Nutzen.',
         },
       ],
     },

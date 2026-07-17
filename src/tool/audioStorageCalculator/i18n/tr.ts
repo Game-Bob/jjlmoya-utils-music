@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Bir ses kaydının boyutu nasıl hesaplanır?', level: 2 },
     {
       type: 'paragraph',
-      html: 'Sıkıştırılmamış bir dijital ses dosyasının (WAV veya AIFF gibi) boyutu üç temel teknik faktöre bağlıdır: <strong>Örnekleme Hızı</strong> — ses dalgasının saniyede kaç kez "ölçüldüğü" (örneğin 44.1 kHz veya 48 kHz); <strong>Bit Derinliği</strong> — daha yüksek bitlerde daha geniş dinamik aralık ve daha düşük gürültü ile her ölçümün çözünürlüğü; ve <strong>Kanallar</strong> — kaydın Mono (1), Stereo (2) veya Çok Kanallı (Surround) olup olmadığı. Standart matematiksel formül <strong>Bitrate</strong>\'tir; saniye cinsinden süre ile çarpıldığında toplam ham dosya boyutunu verir.',
+      html: 'Sıkıştırılmamış bir dijital ses dosyasının (WAV veya AIFF gibi) boyutu üç temel teknik faktöre bağlıdır: <strong>Örnekleme Hızı</strong> - ses dalgasının saniyede kaç kez "ölçüldüğü" (örneğin 44.1 kHz veya 48 kHz); <strong>Bit Derinliği</strong> - daha yüksek bitlerde daha geniş dinamik aralık ve daha düşük gürültü ile her ölçümün çözünürlüğü; ve <strong>Kanallar</strong> - kaydın Mono (1), Stereo (2) veya Çok Kanallı (Surround) olup olmadığı. Standart matematiksel formül <strong>Bitrate</strong>\'tir; saniye cinsinden süre ile çarpıldığında toplam ham dosya boyutunu verir.',
     },
     {
       type: 'comparative',

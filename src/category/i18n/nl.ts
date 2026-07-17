@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Wat u in deze categorie vindt',
       items: [
-        'Online metronoom met Web Audio API — milliseconde precisie',
+        'Online metronoom met Web Audio API - milliseconde precisie',
         'BPM naar milliseconden rekenmachine voor delays en galm',
         'Frequentie naar muzieknoot converter (Hz, centen en detuning)',
         'Faseafstandsrekenmachine voor microfoonsuitlijning',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Muziek is een taal met meerdere notatiesystemen. De <strong>nootequivalentie</strong> tool vertaalt direct tussen het Latijnse systeem (Do, Re, Mi…), het Amerikaanse systeem (C, D, E…) en het Duitse systeem (C, D, E… met H in plaats van B), waardoor verwarring wordt voorkomen bij communicatie met muzikanten uit verschillende tradities of het lezen van partituren uit verschillende landen.',
+      html: 'Muziek is een taal met meerdere notatiesystemen. De <strong>nootequivalentie</strong> tool vertaalt direct tussen het Latijnse systeem (Do, Re, Mi...), het Amerikaanse systeem (C, D, E...) en het Duitse systeem (C, D, E... met H in plaats van B), waardoor verwarring wordt voorkomen bij communicatie met muzikanten uit verschillende tradities of het lezen van partituren uit verschillende landen.',
     },
     {
       type: 'tip',

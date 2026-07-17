@@ -10,9 +10,9 @@ const description =
 
 const faqData = [
   {
-    question: 'Quanto spazio occupa un’ora di audio a 44.1 kHz 16-bit?',
+    question: 'Quanto spazio occupa un\'ora di audio a 44.1 kHz 16-bit?',
     answer:
-      'In stereo (qualità CD), un’ora di audio occupa circa 635 MB di spazio non compresso (WAV/AIFF).',
+      'In stereo (qualità CD), un\'ora di audio occupa circa 635 MB di spazio non compresso (WAV/AIFF).',
   },
   {
     question: 'Perché il formato WAV occupa così tanto spazio?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Cosa è meglio per risparmiare spazio: FLAC o MP3?',
     answer:
-      'Il FLAC risparmia fino al 50% di spazio senza perdere qualità (compressione lossless). L’MP3 risparmia fino all’80-90% ma rimuove informazioni audio impercettibili (compressione lossy).',
+      'Il FLAC risparmia fino al 50% di spazio senza perdere qualità (compressione lossless). L\'MP3 risparmia fino all\'80-90% ma rimuove informazioni audio impercettibili (compressione lossy).',
   },
   {
     question: 'Come calcolare lo spazio necessario per un podcast di 2 ore?',
@@ -33,7 +33,7 @@ const faqData = [
 
 const howToData = [
   {
-    name: 'Configura l’audio',
+    name: 'Configura l\'audio',
     text: 'Scegli la frequenza di campionamento (kHz), la profondità di bit e il numero di canali.',
   },
   {
@@ -46,7 +46,7 @@ const howToData = [
   },
   {
     name: 'Valuta la capacità',
-    text: 'Controlla quale percentuale del tuo spazio sulla scheda SD o sull’hard disk sarà occupata dalla registrazione.',
+    text: 'Controlla quale percentuale del tuo spazio sulla scheda SD o sull\'hard disk sarà occupata dalla registrazione.',
   },
 ];
 
@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Come si calcola la dimensione di una registrazione audio?', level: 2 },
     {
       type: 'paragraph',
-      html: 'La dimensione di un file audio digitale non compresso (come WAV o AIFF) dipende da tre fattori tecnici fondamentali: la <strong>Frequenza di Campionamento</strong> — quante volte al secondo l’onda sonora viene "misurata" (es. 44.1 kHz o 48 kHz); la <strong>Profondità di Bit</strong> — la risoluzione di ogni misurazione, con maggiore gamma dinamica e minor rumore a bit più elevati; e i <strong>Canali</strong> — se la registrazione è Mono (1), Stereo (2) o Multicanale (Surround). La formula matematica standard è il <strong>Bitrate</strong>; moltiplicato per la durata in secondi, fornisce la dimensione totale del file grezzo.',
+      html: 'La dimensione di un file audio digitale non compresso (come WAV o AIFF) dipende da tre fattori tecnici fondamentali: la <strong>Frequenza di Campionamento</strong> - quante volte al secondo l\'onda sonora viene "misurata" (es. 44.1 kHz o 48 kHz); la <strong>Profondità di Bit</strong> - la risoluzione di ogni misurazione, con maggiore gamma dinamica e minor rumore a bit più elevati; e i <strong>Canali</strong> - se la registrazione è Mono (1), Stereo (2) o Multicanale (Surround). La formula matematica standard è il <strong>Bitrate</strong>; moltiplicato per la durata in secondi, fornisce la dimensione totale del file grezzo.',
     },
     {
       type: 'comparative',
@@ -160,7 +160,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
         {
           title: 'Qualità CD',
           description:
-            '16-bit / 44.1 kHz. Occupa circa 10.1 MB al minuto in stereo. Lo standard storico dell’industria musicale.',
+            '16-bit / 44.1 kHz. Occupa circa 10.1 MB al minuto in stereo. Lo standard storico dell\'industria musicale.',
         },
         {
           title: 'Registrazione Pro',
@@ -174,17 +174,17 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
         },
       ],
     },
-    { type: 'title', text: 'Perché l’audio a 24-bit occupa il 50% di spazio in più rispetto al 16-bit?', level: 2 },
+    { type: 'title', text: 'Perché l\'audio a 24-bit occupa il 50% di spazio in più rispetto al 16-bit?', level: 2 },
     {
       type: 'paragraph',
-      html: 'Ogni campione audio a 16-bit utilizza 2 byte (16 ÷ 8) per memorizzare l’ampiezza. L’audio a 24-bit utilizza 3 byte per campione. Ciò significa che, a parità di frequenza di campionamento, un file a 24-bit sarà esattamente il 50% più grande di un file a 16-bit. Se un’ora di registrazione a 16-bit/44.1kHz occupa 635 MB, la stessa registrazione a 24-bit/44.1kHz salirà a 953 MB.',
+      html: 'Ogni campione audio a 16-bit utilizza 2 byte (16 ÷ 8) per memorizzare l\'ampiezza. L\'audio a 24-bit utilizza 3 byte per campione. Ciò significa che, a parità di frequenza di campionamento, un file a 24-bit sarà esattamente il 50% più grande di un file a 16-bit. Se un\'ora di registrazione a 16-bit/44.1kHz occupa 635 MB, la stessa registrazione a 24-bit/44.1kHz salirà a 953 MB.',
     },
     {
       type: 'tip',
       title: 'Ne vale la pena?',
-      html: 'Nonostante occupi più spazio, l’audio a 24-bit offre una gamma dinamica di 144 dB contro i 96 dB del 16-bit. Ciò fornisce un "noise floor" molto più basso, permettendo di registrare segnali più deboli senza che il rumore di fondo diventi un problema — fondamentale durante il mixaggio e il mastering professionale.',
+      html: 'Nonostante occupi più spazio, l\'audio a 24-bit offre una gamma dinamica di 144 dB contro i 96 dB del 16-bit. Ciò fornisce un "noise floor" molto più basso, permettendo di registrare segnali più deboli senza che il rumore di fondo diventi un problema - fondamentale durante il mixaggio e il mastering professionale.',
     },
-    { type: 'title', text: 'WAV vs FLAC vs MP3: l’impatto sul disco', level: 2 },
+    { type: 'title', text: 'WAV vs FLAC vs MP3: l\'impatto sul disco', level: 2 },
     {
       type: 'paragraph',
       html: '<strong>WAV / AIFF</strong> sono formati non compressi che preservano ogni bit della registrazione originale ma sono i più pesanti. Il <strong>FLAC</strong> applica una compressione lossless, riducendo la dimensione originale del 40-60% senza sacrificare la qualità. <strong>MP3 / AAC</strong> applicano una compressione lossy, rimuovendo frequenze impercettibili; un MP3 a 320 kbps occupa circa il 22% del WAV originale.',
@@ -210,7 +210,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
       ariaLabel: 'Logica di calcolo spazio audio',
       code: `const sampleRate = 48000;\nconst bitDepth = 24;\nconst channels = 2;\nconst seconds = 3600;\n\nconst bitsPerSecond = sampleRate * bitDepth * channels;\nconst totalBytes = (bitsPerSecond * seconds) / 8;`,
     },
-    { type: 'title', text: 'Casi d’uso per questo strumento', level: 2 },
+    { type: 'title', text: 'Casi d\'uso per questo strumento', level: 2 },
     {
       type: 'list',
       items: [

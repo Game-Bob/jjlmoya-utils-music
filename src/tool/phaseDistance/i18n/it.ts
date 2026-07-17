@@ -4,59 +4,59 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
 const slug = 'calcolatore-distanza-fase';
-const title = 'Phase Distance Calculator for Microphones';
+const title = 'Calcolatore della distanza di fase per i microfoni';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'Calcola il ritardo e la compensazione necessari per allineare i microfoni. Evita la cancellazione di fase e il filtrato a pettine con precisione al singolo campione e regolazione della temperatura.';
 
 const faqData = [
   {
-    question: 'What is phase cancellation in audio?',
+    question: "Cos'è la cancellazione di fase nell'audio?",
     answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
+      'Si tratta di un fenomeno acustico che si verifica quando due segnali provenienti dalla stessa sorgente arrivano in tempi diversi. Le onde interferiscono tra loro e, se sono disallineate di 180 gradi, si cancellano a vicenda, rendendo il suono sottile e privo di corpo.',
   },
   {
-    question: 'Why does temperature affect the calculation?',
+    question: 'Perché la temperatura influenza il calcolo?',
     answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
+      "Perché il suono viaggia attraverso l'aria e la densità dell'aria cambia con la temperatura. Più fa caldo, più velocemente viaggia il suono. Una regolazione precisa della temperatura consente di calcolare l'esatto ritardo tra microfoni separati.",
   },
   {
-    question: 'Is inverting phase the same as inverting polarity?',
+    question: "L'inversione di fase è uguale all'inversione di polarità?",
     answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
+      "Tecnicamente no, sebbene i termini siano usati in modo intercambiabile. La polarità è un cambiamento elettrico (rotazione di 180°), mentre la fase è uno spostamento temporale. Il nostro strumento ti consente di simulare entrambi per trovare il punto di massima coerenza sonora.",
   },
   {
-    question: 'What is Comb Filtering?',
+    question: "Cos'è il filtrato a pettine (Comb Filtering)?",
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      'È la risposta in frequenza che risulta dalla combinazione di un segnale con una versione ritardata di se stesso. Crea una serie di picchi e valli - come i denti di un pettine - che alterano drasticamente il timbro dello strumento.',
   },
   {
-    question: "What is the 3:1 rule in microphone technique?",
+    question: "Cos'è la regola di 3 a 1 nella tecnica microfonica?",
     answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
+      'È una tecnica per ridurre al minimo i problemi di fase: quando si utilizzano due microfoni per sorgenti diverse, la distanza tra i microfoni deve essere almeno tre volte la distanza tra ciascun microfono e la sua sorgente.',
   },
   {
-    question: 'Is it better to align microphones physically or with software?',
+    question: 'È meglio allineare i microfoni fisicamente o con un software?',
     answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
+      'Un buon allineamento fisico durante la registrazione è sempre preferibile per evitare artefatti. Tuttavia, il ritardo digitale nella DAW offre una precisione al singolo campione che è quasi impossibile da ottenere spostando i microfoni a mano.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
+    name: 'Misura le distanze',
+    text: 'Misura la distanza fisica dalla sorgente sonora (ad esempio il rullante) a ciascuno dei microfoni che stai utilizzando.',
   },
   {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
+    name: 'Imposta l\'ambiente',
+    text: 'Inserisci la temperatura ambiente e la frequenza di campionamento del tuo progetto per ottenere calcoli basati sulla fisica reale.',
   },
   {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
+    name: 'Analizza il grafico',
+    text: 'Guarda il visualizzatore della risposta in frequenza per identificare possibili cancellazioni critiche nella gamma udibile.',
   },
   {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
+    name: 'Applica la compensazione',
+    text: 'Copia il valore in millisecondi o campioni e inseriscilo nel plugin di ritardo sul tuo canale per allineare perfettamente le tracce.',
   },
 ];
 
@@ -102,194 +102,194 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelTemp: 'Temperature (°C) / Sound',
+    labelTemp: 'Temperatura (°C) / Suono',
     btnAuto: 'Auto',
-    labelSampleRate: 'Sample Rate (kHz)',
-    labelUnits: 'Unit System',
-    optMetric: 'Metric (m/cm)',
-    optImperial: 'Imperial (ft/in)',
-    labelDistA: 'Microphone A Distance',
-    labelDistB: 'Microphone B Distance',
-    labelPresets: 'Quick Presets',
-    presetCoincident: 'Coincident (XY)',
-    presetSnare: 'Snare',
-    presetAmbient: 'Ambient',
-    btnInvert: 'Invert Phase (Φ)',
-    labelGain: 'Relative Gain Mic B:',
-    btnCopy: 'Copy Samples',
-    labelDelay: 'Required Delay',
-    unitMs: 'milliseconds (ms)',
-    labelCompensation: 'Compensation',
-    unitSamples: 'Samples',
-    labelPhaseStatus: 'Phase Status',
-    textLoading: 'Loading...',
-    statusInPhase: 'IN PHASE',
-    statusInPhaseDesc: 'Signals perfectly aligned.',
-    statusCritical: 'CRITICAL CANCELLATION',
-    statusCriticalDesc: 'Significant comb filtering in low/mid range.',
-    statusOffAxis: 'OFF AXIS',
-    statusOffAxisDesc: 'Slight phase shift. Texture modified.',
-    warningCritical: '(!) POSSIBLE CRITICAL CANCELLATION',
-    labelSoundSpeed: 'Speed of Sound',
-    labelDistDiff: 'Distance Difference',
-    labelNullFreq: 'First Nulls',
-    textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
-    promptSoundSpeed: 'Speed of Sound (m/s):',
-    copyFeedback: 'Copied!',
+    labelSampleRate: 'Frequenza di campionamento (kHz)',
+    labelUnits: 'Sistema di unità',
+    optMetric: 'Metrico (m/cm)',
+    optImperial: 'Imperiale (ft/in)',
+    labelDistA: 'Distanza microfono A',
+    labelDistB: 'Distanza microfono B',
+    labelPresets: 'Preimpostazioni rapide',
+    presetCoincident: 'Coincidente (XY)',
+    presetSnare: 'Rullante',
+    presetAmbient: 'Ambiente',
+    btnInvert: 'Inverti fase (Φ)',
+    labelGain: 'Guadagno relativo Mic B:',
+    btnCopy: 'Copia campioni',
+    labelDelay: 'Ritardo richiesto',
+    unitMs: 'millisecondi (ms)',
+    labelCompensation: 'Compensazione',
+    unitSamples: 'Campioni',
+    labelPhaseStatus: 'Stato della fase',
+    textLoading: 'Caricamento...',
+    statusInPhase: 'IN FASE',
+    statusInPhaseDesc: 'Segnali perfettamente allineati.',
+    statusCritical: 'CANCELLAZIONE CRITICA',
+    statusCriticalDesc: 'Notevole filtrato a pettine nella gamma medio-bassa.',
+    statusOffAxis: 'FUORI ASSE',
+    statusOffAxisDesc: 'Leggero spostamento di fase. Consistenza modificata.',
+    warningCritical: 'POSSIBILE CANCELLAZIONE CRITICA',
+    labelSoundSpeed: 'Velocità del suono',
+    labelDistDiff: 'Differenza di distanza',
+    labelNullFreq: 'Primi nuli',
+    textNone: 'Nessuno',
+    chartTitle: 'RISPOSTA IN FREQUENZA (H) - COMB FILTERING',
+    promptSoundSpeed: 'Velocità del suono (m/s):',
+    copyFeedback: 'Copiato!',
   },
   seo: [
     {
       type: 'summary',
-      title: 'Calculator features',
+      title: 'Caratteristiche della calcolatrice',
       items: [
-        'Exact physical calculation with temperature adjustment for the speed of sound',
-        'Result in milliseconds and samples for DAW compensation',
-        'Canvas visualiser of comb filtering across the full audible spectrum',
-        'Microphone presets (XY coincident, snare, ambient)',
-        'Phase inversion simulation and relative gain control',
-        'Support for metric and imperial units',
+        'Calcolo fisico esatto con regolazione della temperatura per la velocità del suono',
+        'Risultato in millisecondi e campioni per compensazione in DAW',
+        'Visualizzatore Canvas del filtrato a pettine in tutto lo spettro udibile',
+        'Preimpostazioni di microfonazione (XY coincidente, rullante, ambiente)',
+        'Simulazione di inversione di fase e controllo del guadagno relativo',
+        'Supporto per unità metriche ed imperiali',
       ],
     },
     {
       type: 'title',
-      text: 'What is phase cancellation and why does it ruin your mixes?',
+      text: "Cos'è la cancellazione di fase e perché rovina i tuoi mix?",
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: "Nel mondo dell'ingegneria del suono, la fase è uno dei concetti più critici e, paradossalmente, uno dei più trascurati dai principianti. Quando si registra una sorgente sonora - come una batteria o un amplificatore per chitarra - con due o più microfoni posizionati a distanze diverse, le onde sonore non raggiungono le capsule contemporaneamente. Questa differenza di tempo, seppur minima, causa un fenomeno noto come <strong>spostamento di fase</strong>.",
     },
     {
       type: 'title',
-      text: 'The Comb Filtering phenomenon',
+      text: 'Il fenomeno del Filtrato a Pettine (Comb Filtering)',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: 'Quando due segnali identici vengono combinati con un leggero ritardo tra loro, nella risposta in frequenza appare una serie di valli e picchi. Visto su un analizzatore di spettro, il pattern ricorda i denti di un pettine, da cui il nome. Questo effetto altera drasticamente il timbro naturale dello strumento in modo distruttivo.',
     },
     {
       type: 'comparative',
       columns: 2,
       items: [
         {
-          title: 'Impact on Low End',
+          title: 'Impatto sulle basse frequenze',
           description:
-            'Phase cancellation is most devastating in the low frequencies, where the body of the sound disappears entirely.',
+            'La cancellazione di fase è più devastante nelle basse frequenze, dove il corpo del suono scompare del tutto.',
         },
         {
-          title: 'Metallic Texture',
+          title: 'Consistenza metallica',
           description:
-            "Comb filtering adds an artificial coloration that sounds 'hollow' or overly processed.",
+            'Il filtrato a pettine aggiunge una colorazione artificiale che suona vuota o eccessivamente elaborata.',
         },
       ],
     },
     {
       type: 'title',
-      text: 'The influence of temperature on the calculation',
+      text: 'La influenza della temperatura nel calcolo',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: "Molti ingegneri del suono dimenticano che l'aria è un mezzo fisico e la sua densità cambia con la temperatura. La velocità del suono non è una costante immutabile; a 20°C viaggia a circa 343 metri al secondo.",
     },
     {
       type: 'code',
       code: 'v = 331.3 + (0.606 × T)',
-      ariaLabel: 'Formula for the speed of sound as a function of temperature',
+      ariaLabel: 'Fórmula de la velocidad del sonido según la temperatura',
     },
     {
       type: 'tip',
-      title: 'Surgical Compensation',
-      html: 'A few degrees of difference can shift the cancellation points by several hertz. Using our calculator with the actual temperature of your studio guarantees perfect alignment in the DAW.',
+      title: 'Compensazione Chirurgica',
+      html: "Pochi gradi di differenza possono spostare i punti di cancellazione di diversi hertz. L'utilizzo del nostro calcolatore con la temperatura reale del tuo studio garantisce un allineamento perfetto nella DAW.",
     },
     {
       type: 'title',
-      text: 'Critical recording scenarios',
+      text: 'Escenarios críticos de grabación',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Snare drum (Top & Bottom): Align both heads temporally to maximise punch.',
-        'Overheads and close mics: Delay the close mics to match the phase of the overhead mics.',
-        'Guitars with multiple mics: Blend a dynamic and a ribbon without losing low-mids.',
-        'Bass DI and mic: Sync the direct signal with the amp mic for a massive sound.',
+        'Rullante (Top e Bottom): allinea temporalmente le due pelli per massimizzare l\'impatto.',
+        'Overheads e microfoni ravvicinati: ritarda i microfoni ravvicinati per farli coincidere con la fase degli overheads.',
+        'Chitarre con più microfoni: miscela un microfono dinamico e uno a nastro senza perdere i medi-bassi.',
+        'Basso DI e microfono: sincronizza il segnale diretto con il microfono dell\'amplificatore per un suono massiccio.',
       ],
     },
     {
       type: 'title',
-      text: 'Physical Alignment vs. Digital Processing',
+      text: 'Alineación Física vs. Procesamiento Digital',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Although our tool gives you the values to correct phase in your DAW after recording, we always recommend attempting the best possible physical alignment in the studio. Moving a microphone a few millimetres can be more effective than any digital processing.',
+      html: 'Sebbene il nostro strumento fornisca i valori per correggere la fase nella tua DAW dopo la registrazione, consigliamo sempre di cercare il miglior allineamento fisico possibile in studio. Spostare un microfono di pochi millimetri può essere più efficace di qualsiasi elaborazione digitale.',
     },
     {
       type: 'stats',
       items: [
-        { label: 'Speed @ 20°C', value: '343.2 m/s' },
-        { label: 'Milliseconds/cm', value: '0.029 ms' },
-        { label: 'Samples @ 48kHz', value: '1.4 per cm' },
+        { label: 'Velocità a 20°C', value: '343.2 m/s' },
+        { label: 'Milisegundos/cm', value: '0.029 ms' },
+        { label: 'Campioni a 48kHz', value: '1.4 per cm' },
       ],
     },
     {
       type: 'title',
-      text: 'Reference table: Distance vs. First Null',
+      text: 'Tabla de referencia: Distancia vs. Primer Nulo',
       level: 2,
     },
     {
       type: 'table',
-      headers: ['Difference (cm)', 'Delay (ms)', '1st Null (Hz)', 'Affects...'],
+      headers: ['Differenza (cm)', 'Ritardo (ms)', '1° Nullo (Hz)', 'Influenza...'],
       rows: [
-        ['1 cm', '0.029', '17160', 'Extreme high end'],
-        ['5 cm', '0.146', '3432', 'Upper mids (Presence)'],
-        ['10 cm', '0.291', '1716', 'Mids (Presence)'],
-        ['30 cm', '0.874', '572', 'Low-mids (Body)'],
-        ['1 metre', '2.914', '172', 'Low end (Fundamental)'],
+        ['1 cm', '0.029', '17160', 'Estremo acuto'],
+        ['5 cm', '0.146', '3432', 'Medi-alti (Presenza)'],
+        ['10 cm', '0.291', '1716', 'Medi (Presenza)'],
+        ['30 cm', '0.874', '572', 'Medio-bassi (Corpo)'],
+        ['1 metro', '2.914', '172', 'Basse frequenze (Fondamentale)'],
       ],
     },
     {
       type: 'title',
-      text: 'Pros and cons of correction methods',
+      text: 'Ventajas y desventajas de los métodos de corrección',
       level: 2,
     },
     {
       type: 'proscons',
       items: [
         {
-          pro: 'Physical alignment: Less degradation of the original signal.',
-          con: 'Physical alignment: Difficult to adjust with microscopic accuracy.',
+          pro: 'Allineamento fisico: minore degradazione del segnale originale.',
+          con: 'Allineamento fisico: difficile da regolare con precisione micrometrica.',
         },
         {
-          pro: 'Digital correction: Absolute precision at the sample level.',
-          con: 'Digital correction: Can create pre-echo if applied incorrectly.',
+          pro: 'Correzione digital: precisione assoluta a livello di campione.',
+          con: 'Correzione digital: può creare un pre-eco se applicata in modo errato.',
         },
         {
-          pro: 'Polarity inversion: Instant fix for 180° cancellations.',
-          con: 'Polarity inversion: Does not fix intermediate phase shifts.',
+          pro: 'Inversione di polarità: soluzione istantanea per cancellazioni a 180°.',
+          con: 'Inversione di polarità: non corregge gli spostamenti di fase intermedi.',
         },
         {
-          pro: 'Time compensation: Recovers lost impact and punch.',
-          con: 'Time compensation: Requires precise measurement of each mic.',
+          pro: 'Compensazione temporale: recupera l\'impatto e la definizione perduti.',
+          con: 'Compensazione temporale: richiede la misurazione precisa di ciascun microfono.',
         },
       ],
     },
     {
       type: 'tip',
-      title: 'How to detect phase problems by ear?',
-      html: 'Press the "Invert Phase" button (Φ). If activating it makes the sound gain body and low end, your microphones were out of phase. If the sound "disappears" or becomes thinner, they were correctly aligned.',
+      title: 'Come rilevare i problemi di fase ad orecchio?',
+      html: 'Premi il pulsante "Inverti fase" (Φ). Se attivandolo il suono acquista corpo e basse frequenze, i microfoni erano fuori fase. Se il suono scompare o diventa più sottile, erano allineati correttamente.',
     },
     {
       type: 'title',
-      text: 'Mono Compatibility and Stereo Perception',
+      text: 'Compatibilità Mono e Percezione Estéreo',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In stereo recordings, the phase relationship defines the stability of the sound image. If there are serious inconsistencies, the sound could disappear entirely when the mix is played back on a mono system. Our calculator helps you predict which frequencies will suffer most when the channels are summed.',
+      html: 'Nelle registrazioni stereo, la relazione di fase definisce la stabilità dell\'immagine sonora. Se ci sono gravi incongruenze, il suono potrebbe scomparire del tutto quando il mix viene riprodotto su un sistema mono. Il nostro calcolatore ti aiuta a prevedere quali frequenze subiranno maggiormente gli effetti negativi quando i canali verranno sommati.',
     },
   ],
 };

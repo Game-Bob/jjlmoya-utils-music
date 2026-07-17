@@ -10,7 +10,7 @@ const description =
 
 const faqData = [
   {
-    question: '¿Cuánto ocupa una hora de audio a 44.1 kHz 16 bits?',
+    question: '¿Cuánto ocupa una hora de audio a 44,1 kHz 16 bits?',
     answer:
       'En estéreo (calidad CD), una hora de audio ocupa aproximadamente 635 MB de espacio en disco sin compresión (WAV/AIFF).',
   },
@@ -20,7 +20,7 @@ const faqData = [
       "WAV es un formato 'lossless' sin compresión, lo que significa que guarda cada muestra de audio individualmente para preservar la máxima fidelidad posible sin reducir datos.",
   },
   {
-    question: '¿Qué es mejor para ahorrar espacio: FLAC o MP3?',
+    question: '¿Qué es mejor para ahorrar espacio, FLAC o MP3?',
     answer:
       'FLAC ahorra hasta un 50% de espacio sin perder calidad (compresión sin pérdida). MP3 ahorra hasta un 80-90% pero elimina información de audio imperceptible (compresión con pérdida).',
   },
@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: '¿Cómo se calcula el tamaño de una grabación de audio?', level: 2 },
     {
       type: 'paragraph',
-      html: 'El tamaño de un archivo de audio digital sin compresión (como WAV o AIFF) depende de tres factores técnicos fundamentales: <strong>Frecuencia de Muestreo (Sample Rate)</strong> — cuántas veces por segundo se "mide" la onda sonora (ej. 44.1 kHz o 48 kHz); <strong>Profundidad de Bits (Bit Depth)</strong> — la resolución de cada medida, con mayor rango dinámico y menor ruido a más bits; y <strong>Canales</strong> — si la grabación es Mono (1), Estéreo (2) o Multicanal (Surround). La fórmula matemática estándar es el <strong>Bitrate</strong>; multiplicado por la duración en segundos, da el tamaño total del archivo en bruto.',
+      html: 'El tamaño de un archivo de audio digital sin compresión (como WAV o AIFF) depende de tres factores técnicos fundamentales: <strong>Frecuencia de Muestreo (Sample Rate)</strong> - cuántas veces por segundo se "mide" la onda sonora (ej. 44.1 kHz o 48 kHz); <strong>Profundidad de Bits (Bit Depth)</strong> - la resolución de cada medida, con mayor rango dinámico y menor ruido a más bits; y <strong>Canales</strong> - si la grabación es Mono (1), Estéreo (2) o Multicanal (Surround). La fórmula matemática estándar es el <strong>Bitrate</strong>; multiplicado por la duración en segundos, da el tamaño total del archivo en bruto.',
     },
     {
       type: 'comparative',

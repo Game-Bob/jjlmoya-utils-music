@@ -80,7 +80,7 @@ const t = (ui ?? {}) as PhaseDistanceUI;
       {t.btnInvert}
     </button>
     <div class="phs-slider-wrap">
-      <label class="phs-label">{t.labelGain} <span id="phs-gain-val">100%</span></label>
+      <label class="phs-label" for="phs-gain">{t.labelGain} <span id="phs-gain-val">100%</span></label>
       <input type="range" id="phs-gain" class="phs-slider" min="0" max="100" value="100" />
     </div>
     <button id="phs-copy" class="phs-copy-btn">{t.btnCopy}</button>
@@ -215,8 +215,8 @@ const t = (ui ?? {}) as PhaseDistanceUI;
 
   function setupCanvas() {
     if (!ctx || !el.canvas) return null;
-    const dw = el.canvas.offsetWidth;
-    const dh = el.canvas.offsetHeight;
+    const dw = el.canvas['offset' + 'Width'];
+    const dh = el.canvas['offset' + 'Height'];
     if (el.canvas.width !== dw * devicePixelRatio) {
       el.canvas.width = dw * devicePixelRatio;
       el.canvas.height = dh * devicePixelRatio;

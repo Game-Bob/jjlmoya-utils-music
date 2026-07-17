@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Why are there 432 Hz and 444 Hz reference options besides 440 Hz?',
     answer:
-      'Different musical contexts use different tuning references. 432 Hz is popular in certain production communities. 444 Hz is common in Renaissance early music recordings. Some European orchestras tune between 441–444 Hz for a brighter sound.',
+      'Different musical contexts use different tuning references. 432 Hz is popular in certain production communities. 444 Hz is common in Renaissance early music recordings. Some European orchestras tune between 441-444 Hz for a brighter sound.',
   },
   {
     question: 'What is the interactive piano keyboard for?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Selected note',
     copyHz: 'Copy Hz',
     btnListenNote: 'Listen to note',
-    pianoLabel: 'Interactive piano — press a key to see its frequency',
+    pianoLabel: 'Interactive piano - press a key to see its frequency',
     pianoAria: 'Interactive piano keyboard',
     historyTitle: 'History',
     historyClear: 'Clear',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Search history: allows quick comparison of multiple patches or samples.',
-          con: 'Frequencies outside the audible range (20 Hz – 20 kHz) have limited practical use.',
+          con: 'Frequencies outside the audible range (20 Hz - 20 kHz) have limited practical use.',
         },
       ],
     },

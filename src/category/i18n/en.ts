@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'What you will find in this category',
       items: [
-        'Online metronome with Web Audio API — millisecond precision',
+        'Online metronome with Web Audio API - millisecond precision',
         'BPM to milliseconds calculator for delays and reverbs',
         'Frequency to musical note converter (Hz, cents and detuning)',
         'Phase distance calculator for microphone alignment',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Music is a language with multiple notation systems. The <strong>note equivalency</strong> tool instantly translates between the Latin system (Do, Re, Mi…), the American system (C, D, E…) and the German system (C, D, E… with H instead of B), avoiding confusion when communicating with musicians from different traditions or reading scores from different countries.',
+      html: 'Music is a language with multiple notation systems. The <strong>note equivalency</strong> tool instantly translates between the Latin system (Do, Re, Mi...), the American system (C, D, E...) and the German system (C, D, E... with H instead of B), avoiding confusion when communicating with musicians from different traditions or reading scores from different countries.',
     },
     {
       type: 'tip',

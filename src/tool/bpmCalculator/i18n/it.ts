@@ -10,9 +10,9 @@ const description =
 
 const faqData = [
   {
-    question: 'Cos’è il Pre-delay in un riverbero?',
+    question: 'Cos\'è il Pre-delay in un riverbero?',
     answer:
-      'Il Pre-delay è il tempo che intercorre tra il suono diretto (sorgente) e l’inizio della coda del riverbero. Impostarlo ritmicamente permette alla sorgente originale di rimanere chiara prima che l’effetto spaziale prenda il sopravvento — vitale per voci e percussioni.',
+      'Il Pre-delay è il tempo che intercorre tra il suono diretto (sorgente) e l\'inizio della coda del riverbero. Impostarlo ritmicamente permette alla sorgente originale di rimanere chiara prima che l\'effetto spaziale prenda il sopravvento - vitale per voci e percussioni.',
   },
   {
     question: 'Come funziona il Tap Tempo?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Perché usare i millisecondi invece della sincronizzazione automatica?',
     answer:
-      "Ci sono tre ragioni principali: l’uso di hardware analogico senza MIDI, il perfezionamento dei pre-delay affinché il riverbero 'respiri', e le regolazioni di 'groove' dove gli effetti vengono spostati leggermente fuori dalla griglia per evitare un feeling statico e robotico.",
+      "Ci sono tre ragioni principali: l\'uso di hardware analogico senza MIDI, il perfezionamento dei pre-delay affinché il riverbero 'respiri', e le regolazioni di 'groove' dove gli effetti vengono spostati leggermente fuori dalla griglia per evitare un feeling statico e robotico.",
   },
   {
     question: 'A cosa serve il valore Hz ritmico?',
@@ -42,7 +42,7 @@ const howToData = [
   },
   {
     name: 'Copia il valore',
-    text: 'Clicca sull’icona di copia accanto al valore in millisecondi per incollarlo direttamente nel tuo plugin o hardware.',
+    text: 'Clicca sull\'icona di copia accanto al valore in millisecondi per incollarlo direttamente nel tuo plugin o hardware.',
   },
   {
     name: 'Imposta il Pre-delay',
@@ -102,7 +102,7 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     colMs: 'ms',
     colHz: 'Hz',
     infoPreDelay:
-      'Il <strong>Pre-delay</strong> separa l’attacco originale dalla coda del riverbero per guadagnare chiarezza.',
+      'Il <strong>Pre-delay</strong> separa l\'attacco originale dalla coda del riverbero per guadagnare chiarezza.',
     copyAriaMs: 'Copia millisecondi',
     copyAriaPreDelay: 'Copia pre-delay',
     copyFeedback: 'Copiato!',
@@ -130,12 +130,12 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     },
     {
       type: 'title',
-      text: 'L’importanza del Pre-delay nel Riverbero',
+      text: 'L\'importanza del Pre-delay nel Riverbero',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Uno degli usi più critici di questo strumento è la regolazione del <strong>pre-delay</strong>. Se applichi un riverbero a una voce senza pre-delay, la coda dell’effetto inizia immediatamente, offuscando le consonanti e riducendo la chiarezza. Calcolando un pre-delay ritmico (come un sessantaquattresimo o un centoventottesimo di nota), lasci respirare la voce originale prima che lo spazio acustico artificiale prenda il sopravvento. Questo crea un senso di profondità senza sacrificare la presenza della sorgente.',
+      html: 'Uno degli usi più critici di questo strumento è la regolazione del <strong>pre-delay</strong>. Se applichi un riverbero a una voce senza pre-delay, la coda dell\'effetto inizia immediatamente, offuscando le consonanti e riducendo la chiarezza. Calcolando un pre-delay ritmico (come un sessantaquattresimo o un centoventottesimo di nota), lasci respirare la voce originale prima che lo spazio acustico artificiale prenda il sopravvento. Questo crea un senso di profondità senza sacrificare la presenza della sorgente.',
     },
     {
       type: 'title',
@@ -167,7 +167,7 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     {
       type: 'tip',
       title: 'Come usare il Tap Tempo',
-      html: 'La funzione <strong>Tap Tempo</strong> è ideale per situazioni live o quando stai ascoltando una traccia esterna di cui non conosci il tempo. Clicca semplicemente ritmicamente sul pulsante seguendo la pulsazione della musica. Consigliamo almeno 4 o 5 clic affinché l’algoritmo possa calcolare la media del valore in modo più accurato.',
+      html: 'La funzione <strong>Tap Tempo</strong> è ideale per situazioni live o quando stai ascoltando una traccia esterna di cui non conosci il tempo. Clicca semplicemente ritmicamente sul pulsante seguendo la pulsazione della musica. Consigliamo almeno 4 o 5 clic affinché l\'algoritmo possa calcolare la media del valore in modo più accurato.',
     },
     {
       type: 'title',

@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Nota selecionada',
     copyHz: 'Copiar Hz',
     btnListenNote: 'Ouvir nota',
-    pianoLabel: 'Piano interativo — pressione uma tecla para ver sua frequência',
+    pianoLabel: 'Piano interativo - pressione uma tecla para ver sua frequência',
     pianoAria: 'Teclado de piano interativo',
     historyTitle: 'Histórico',
     historyClear: 'Limpar',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Histórico de busca: permite a comparação rápida de vários timbres ou samples.',
-          con: 'Frequências fora da faixa audível (20 Hz – 20 kHz) têm utilidade prática limitada.',
+          con: 'Frequências fora da faixa audível (20 Hz - 20 kHz) têm utilidade prática limitada.',
         },
       ],
     },

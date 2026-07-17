@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Apa yang akan Anda temukan di kategori ini',
       items: [
-        'Metronom online dengan Web Audio API — presisi milidetik',
+        'Metronom online dengan Web Audio API - presisi milidetik',
         'Kalkulator BPM ke milidetik untuk delay dan reverb',
         'Konverter frekuensi ke not musik (Hz, sen, dan detuning)',
         'Kalkulator jarak fase untuk penyelarasan mikrofon',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Musik adalah bahasa dengan beberapa sistem notasi. Alat <strong>ekuivalensi not</strong> langsung menerjemahkan antara sistem Latin (Do, Re, Mi…), sistem Amerika (C, D, E…) dan sistem Jerman (C, D, E… dengan H menggantikan B), menghindari kebingungan saat berkomunikasi dengan musisi dari tradisi yang berbeda atau membaca partitur dari negara yang berbeda.',
+      html: 'Musik adalah bahasa dengan beberapa sistem notasi. Alat <strong>ekuivalensi not</strong> langsung menerjemahkan antara sistem Latin (Do, Re, Mi...), sistem Amerika (C, D, E...) dan sistem Jerman (C, D, E... dengan H menggantikan B), menghindari kebingungan saat berkomunikasi dengan musisi dari tradisi yang berbeda atau membaca partitur dari negara yang berbeda.',
     },
     {
       type: 'tip',

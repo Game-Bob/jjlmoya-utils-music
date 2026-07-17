@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Co to jest Tap Tempo i jak go używać?',
     answer:
-      'Jest to funkcja, która pozwala obliczyć BPM poprzez rytmiczne stukanie. Po prostu klikaj przycisk „TAP” lub naciskaj spację w rytm muzyki, której słuchasz, aby natychmiast uzyskać dokładne tempo.',
+      'Jest to funkcja, która pozwala obliczyć BPM poprzez rytmiczne stukanie. Po prostu klikaj przycisk \"TAP\" lub naciskaj spację w rytm muzyki, której słuchasz, aby natychmiast uzyskać dokładne tempo.',
   },
   {
     question: 'Czy mogę zmienić metrum i akcenty?',
@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Funkcje metronomu',
       items: [
-        'Silnik Web Audio API — precyzja milisekundowa, brak dryfu',
+        'Silnik Web Audio API - precyzja milisekundowa, brak dryfu',
         'Tap Tempo: oblicz BPM, stukając w rytm',
         'Konfigurowalne metrum od 1 do 12 uderzeń z automatycznym akcentem',
         'Wysokokontrastowy wskaźnik wizualny z efektem fali',
@@ -121,7 +121,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Witaj w <strong>Najlepszym Metronomie Online</strong>. Stworzyliśmy to narzędzie z jednym celem: <em>niezawodnością</em>. W przeciwieństwie廣 innych metronomów internetowych, które cierpią na „dryf” (małe skumulowane opóźnienia) z powodu obciążenia procesora, nasz silnik dźwiękowy jest zbudowany bezpośrednio na <strong>Web Audio API</strong>.',
+      html: 'Witaj w <strong>Najlepszym Metronomie Online</strong>. Stworzyliśmy to narzędzie z jednym celem: <em>niezawodnością</em>. W przeciwieństwie廣 innych metronomów internetowych, które cierpią na \"dryf\" (małe skumulowane opóźnienia) z powodu obciążenia procesora, nasz silnik dźwiękowy jest zbudowany bezpośrednio na <strong>Web Audio API</strong>.',
     },
     {
       type: 'paragraph',
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
         {
           title: 'Wyraźna wizualizacja',
           description:
-            'Duże, wysokokontrastowe wskaźniki wizualne z efektem „fali”. Zaprojektowane tak, aby były postrzegane widzeniem obwodowym, co pozwala skupić wzrok na nutach lub instrumencie bez utraty rytmu.',
+            'Duże, wysokokontrastowe wskaźniki wizualne z efektem \"fali\". Zaprojektowane tak, aby były postrzegane widzeniem obwodowym, co pozwala skupić wzrok na nutach lub instrumencie bez utraty rytmu.',
         },
         {
           title: 'Inteligentny Tap Tempo',
@@ -177,7 +177,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Użyj naszego selektora metrum, aby przesunąć akcent. Ćwiczenie fragmentu 4/4 z metronomem ustawionym na 3/4 oznacza, że akcent (ostre kliknięcie) wypada w różnych miejscach frazowania, co zmusza Cię do zinternalizowania czasu absolutnego zamiast polegania na uderzeniu „raz”.',
+      html: 'Użyj naszego selektora metrum, aby przesunąć akcent. Ćwiczenie fragmentu 4/4 z metronomem ustawionym na 3/4 oznacza, że akcent (ostre kliknięcie) wypada w różnych miejscach frazowania, co zmusza Cię do zinternalizowania czasu absolutnego zamiast polegania na uderzeniu \"raz\".',
     },
     {
       type: 'title',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Włoski termin', 'BPM ok.', 'Charakter'],
       rows: [
-        ['Largo', '40 – 60', 'Powoli i uroczyście'],
-        ['Andante', '76 – 108', 'W tempie kroku, spokojnie'],
-        ['Allegro', '120 – 156', 'Szybko, jasno i radośnie'],
-        ['Presto', '168 – 200', 'Bardzo szybko, nerwowo'],
+        ['Largo', '40 - 60', 'Powoli i uroczyście'],
+        ['Andante', '76 - 108', 'W tempie kroku, spokojnie'],
+        ['Allegro', '120 - 156', 'Szybko, jasno i radośnie'],
+        ['Presto', '168 - 200', 'Bardzo szybko, nerwowo'],
       ],
     },
     {

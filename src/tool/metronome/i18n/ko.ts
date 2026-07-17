@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: '메트로놈 기능',
       items: [
-        'Web Audio API 엔진 — 밀리초 단위의 정밀도, 오차 없음',
+        'Web Audio API 엔진 - 밀리초 단위의 정밀도, 오차 없음',
         '탭 템포: 박자에 맞춰 탭하여 BPM 계산',
         '1~12비트까지 설정 가능한 박자표 및 자동 액센트',
         '리플(ripple) 효과가 있는 고대비 시각적 인디케이터',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['이탈리아어 용어', 'BPM 근사치', '성격'],
       rows: [
-        ['Largo', '40 – 60', '느리고 장엄하게'],
-        ['Andante', '76 – 108', '걷는 속도로, 평온하게'],
-        ['Allegro', '120 – 156', '빠르고, 밝고 즐겁게'],
-        ['Presto', '168 – 200', '매우 빠르고, 격렬하게'],
+        ['Largo', '40 - 60', '느리고 장엄하게'],
+        ['Andante', '76 - 108', '걷는 속도로, 평온하게'],
+        ['Allegro', '120 - 156', '빠르고, 밝고 즐겁게'],
+        ['Presto', '168 - 200', '매우 빠르고, 격렬하게'],
       ],
     },
     {

@@ -17,7 +17,7 @@ const faqData = [
   {
     question: "Qu'est-ce que le Tap Tempo et comment l'utiliser ?",
     answer:
-      "C'est une fonction qui permet de calculer les BPM en tapant rythmiquement. Il suffit de cliquer sur le bouton « TAP » ou d'appuyer sur la barre espace en rythme avec la musique pour obtenir instantanément le tempo exact.",
+      "C'est une fonction qui permet de calculer les BPM en tapant rythmiquement. Il suffit de cliquer sur le bouton \" TAP \" ou d'appuyer sur la barre espace en rythme avec la musique pour obtenir instantanément le tempo exact.",
   },
   {
     question: 'Puis-je changer la mesure et les accents ?',
@@ -107,8 +107,8 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Fonctionnalités du métronome',
       items: [
-        'Moteur Web Audio API — précision à la milliseconde, sans dérive',
-        'Tap Tempo : calculez les BPM en tapant dans le rythme',
+        'Moteur Web Audio API - précision à la milliseconde, sans dérive',
+        'Tap Tempo: calculez les BPM en tapant dans le rythme',
         'Mesure configurable de 1 à 12 temps avec accent automatique',
         'Indicateur visuel haute contraste avec effet ripple',
         'Contrôle du volume et boutons de réglage fin ±1/±5 BPM',
@@ -121,7 +121,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Bienvenue dans le <strong>Métronome en ligne Définitif</strong>. Nous avons construit cet outil en pensant à une seule chose : la <em>fiabilité</em>. Contrairement aux autres métronomes web qui souffrent de "drift" (petits décalages cumulatifs) dus à la charge processeur, notre moteur sonore est construit directement sur la <strong>Web Audio API</strong>.',
+      html: 'Bienvenue dans le <strong>Métronome en ligne Définitif</strong>. Nous avons construit cet outil en pensant à une seule chose: la <em>fiabilité</em>. Contrairement aux autres métronomes web qui souffrent de "drift" (petits décalages cumulatifs) dus à la charge processeur, notre moteur sonore est construit directement sur la <strong>Web Audio API</strong>.',
     },
     {
       type: 'paragraph',
@@ -145,7 +145,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'title',
-      text: 'Guide Maître : Comment Pratiquer avec un Métronome',
+      text: 'Guide Maître: Comment Pratiquer avec un Métronome',
       level: 2,
     },
     {
@@ -186,7 +186,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: "Une technique avancée consiste à régler le métronome à la moitié de la vitesse (ex. 60 BPM si vous jouez à 120) et à sentir chaque clic comme les temps 1 et 3. Encore plus difficile : le sentir uniquement comme les contre-temps. Cela développe votre <strong>horloge intérieure</strong>.",
+      html: "Une technique avancée consiste à régler le métronome à la moitié de la vitesse (ex. 60 BPM si vous jouez à 120) et à sentir chaque clic comme les temps 1 et 3. Encore plus difficile: le sentir uniquement comme les contre-temps. Cela développe votre <strong>horloge intérieure</strong>.",
     },
     {
       type: 'title',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Terme italien', 'BPM approx.', 'Caractère'],
       rows: [
-        ['Largo', '40 – 60', 'Lent et solennel'],
-        ['Andante', '76 – 108', 'Allure marchée, calme'],
-        ['Allegro', '120 – 156', 'Rapide, brillant et joyeux'],
-        ['Presto', '168 – 200', 'Très rapide, frénétique'],
+        ['Largo', '40 - 60', 'Lent et solennel'],
+        ['Andante', '76 - 108', 'Allure marchée, calme'],
+        ['Allegro', '120 - 156', 'Rapide, brillant et joyeux'],
+        ['Presto', '168 - 200', 'Très rapide, frénétique'],
       ],
     },
     {

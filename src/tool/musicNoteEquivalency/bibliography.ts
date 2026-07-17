@@ -2,7 +2,7 @@ import type { BibliographyEntry } from '../../types';
 
 export const bibliography: BibliographyEntry[] = [
     {
-      name: 'ISO 16:1975 Acoustics — Standard tuning frequency',
+      name: 'ISO 16:1975 Acoustics - Standard tuning frequency',
       url: 'https://www.iso.org/standard/3601.html',
     },
     {

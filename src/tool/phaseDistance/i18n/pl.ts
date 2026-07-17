@@ -4,59 +4,59 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
 const slug = 'kalkulator-rozstaw-fazy';
-const title = 'Phase Distance Calculator for Microphones';
+const title = 'Kalkulator odległości fazowej dla mikrofonów';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'Oblicz opóźnienie i kompensację wymagane do wyrównania mikrofonów. Unikaj znoszenia fazy i filtrowania grzebieniowego z dokładnością co do próbki oraz korekcją temperatury.';
 
 const faqData = [
   {
-    question: 'What is phase cancellation in audio?',
+    question: 'Co to jest znoszenie fazy w dźwięku?',
     answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
+      'Jest to zjawisko akustyczne, które występuje, gdy dwa sygnały z tego samego źródła docierają w różnym czasie. Fale nakładają się na siebie i jeśli są przesunięte o 180 stopni, znoszą się wzajemnie, czyniąc dźwięk cienkim i pozbawionym ciała.',
   },
   {
-    question: 'Why does temperature affect the calculation?',
+    question: 'Dlaczego temperatura wpływa na obliczenia?',
     answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
+      'Ponieważ dźwięk rozchodzi się w powietrzu, a gęstość powietrza zmienia się wraz z temperaturą. Im cieplej, tym szybciej rozchodzi się dźwięk. Precyzyjna regulacja temperatury pozwala obliczyć dokładne opóźnienie między rozdzielonymi mikrofonami.',
   },
   {
-    question: 'Is inverting phase the same as inverting polarity?',
+    question: 'Czy odwrócenie fazy to to samo co odwrócenie polaryzacji?',
     answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
+      'Technicznie nie, chociaż terminy te są używane zamiennie. Polaryzacja to zmiana elektryczna (obrót o 180°), podczas gdy faza to przesunięcie w czasie. Nasze narzędzie pozwala symulować jedno i drugie, aby znaleźć punkt największej spójności dźwiękowej.',
   },
   {
-    question: 'What is Comb Filtering?',
+    question: 'Co to jest filtrowanie grzebieniowe (Comb Filtering)?',
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      'Jest to odpowiedź częstotliwościowa wynikająca z połączenia sygnału z jego opóźnioną wersją. Tworzy serię szczytów i dołków - jak zęby grzebienia - które drastycznie zmieniają brzmienie instrumentu.',
   },
   {
-    question: "What is the 3:1 rule in microphone technique?",
+    question: 'Jaka jest reguła 3 do 1 w technice mikrofonowej?',
     answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
+      'Jest to technika minimalizowania problemów z fazą: przy użyciu dwóch mikrofonów dla różnych źródeł, odległość między mikrofonami powinna wynosić co najmniej trzykrotność odległości każdego mikrofonu od jego źródła.',
   },
   {
-    question: 'Is it better to align microphones physically or with software?',
+    question: 'Czy lepiej wyrównywać mikrofony fizycznie czy programowo?',
     answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
+      'Dobre wyrównanie fizyczne podczas nagrywania jest zawsze zalecane, aby uniknąć artefaktów. Jednak cyfrowe opóźnienie w programie DAW zapewnia dokładność co do próbki, która jest prawie niemożliwa do osiągnięcia poprzez ręczne przesuwanie mikrofonów.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
+    name: 'Zmierz odległości',
+    text: 'Zmierz fizyczną odległość od źródła dźwięku (np. werbla) do każdego z używanych mikrofonów.',
   },
   {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
+    name: 'Ustaw środowisko',
+    text: 'Wprowadź temperaturę otoczenia i częstotliwość próbkowania swojego projektu, aby uzyskać obliczenia oparte na rzeczywistej fizyce.',
   },
   {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
+    name: 'Przeanalizuj wykres',
+    text: 'Spójrz na wizualizator odpowiedzi częstotliwościowej, aby zidentyfikować ewentualne krytyczne znoszenia w zakresie słyszalnym.',
   },
   {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
+    name: 'Zastosuj kompensację',
+    text: 'Skopiuj wartość w milisekundach lub próbkach i wprowadź ją do wtyczki opóźnienia na swoim kanale, aby idealnie wyrównać ścieżki.',
   },
 ];
 
@@ -102,194 +102,194 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelTemp: 'Temperature (°C) / Sound',
+    labelTemp: 'Temperatura (°C) / Dźwięk',
     btnAuto: 'Auto',
-    labelSampleRate: 'Sample Rate (kHz)',
-    labelUnits: 'Unit System',
-    optMetric: 'Metric (m/cm)',
-    optImperial: 'Imperial (ft/in)',
-    labelDistA: 'Microphone A Distance',
-    labelDistB: 'Microphone B Distance',
-    labelPresets: 'Quick Presets',
-    presetCoincident: 'Coincident (XY)',
-    presetSnare: 'Snare',
-    presetAmbient: 'Ambient',
-    btnInvert: 'Invert Phase (Φ)',
-    labelGain: 'Relative Gain Mic B:',
-    btnCopy: 'Copy Samples',
-    labelDelay: 'Required Delay',
-    unitMs: 'milliseconds (ms)',
-    labelCompensation: 'Compensation',
-    unitSamples: 'Samples',
-    labelPhaseStatus: 'Phase Status',
-    textLoading: 'Loading...',
-    statusInPhase: 'IN PHASE',
-    statusInPhaseDesc: 'Signals perfectly aligned.',
-    statusCritical: 'CRITICAL CANCELLATION',
-    statusCriticalDesc: 'Significant comb filtering in low/mid range.',
-    statusOffAxis: 'OFF AXIS',
-    statusOffAxisDesc: 'Slight phase shift. Texture modified.',
-    warningCritical: '(!) POSSIBLE CRITICAL CANCELLATION',
-    labelSoundSpeed: 'Speed of Sound',
-    labelDistDiff: 'Distance Difference',
-    labelNullFreq: 'First Nulls',
-    textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
-    promptSoundSpeed: 'Speed of Sound (m/s):',
-    copyFeedback: 'Copied!',
+    labelSampleRate: 'Częstotliwość próbkowania (kHz)',
+    labelUnits: 'Układ jednostek',
+    optMetric: 'Metryczny (m/cm)',
+    optImperial: 'Imperialny (ft/in)',
+    labelDistA: 'Odległość mikrofonu A',
+    labelDistB: 'Odległość mikrofonu B',
+    labelPresets: 'Szybkie ustawienia',
+    presetCoincident: 'Koincydentny (XY)',
+    presetSnare: 'Werbel',
+    presetAmbient: 'Otoczenie',
+    btnInvert: 'Odwróć fazę (Φ)',
+    labelGain: 'Względne wzmocnienie mikrofonu B:',
+    btnCopy: 'Kopiuj próbki',
+    labelDelay: 'Wymagane opóźnienie',
+    unitMs: 'milisekurdy (ms)',
+    labelCompensation: 'Kompensacja',
+    unitSamples: 'Próbki',
+    labelPhaseStatus: 'Status fazy',
+    textLoading: 'Ładowanie...',
+    statusInPhase: 'W FAZIE',
+    statusInPhaseDesc: 'Sygnały idealnie wyrównane.',
+    statusCritical: 'KRYTYCZNE ZNOSZENIE',
+    statusCriticalDesc: 'Znaczne filtrowanie grzebieniowe w niskim i średnim zakresie.',
+    statusOffAxis: 'POZA OSIĄ',
+    statusOffAxisDesc: 'Lekkie przesunięcie fazowe. Zmieniona tekstura.',
+    warningCritical: 'MOŻLIWE KRYTYCZNE ZNOSZENIE',
+    labelSoundSpeed: 'Prędkość dźwięku',
+    labelDistDiff: 'Różnica odległości',
+    labelNullFreq: 'Pierwsze znoszenia',
+    textNone: 'Brak',
+    chartTitle: 'ODPOWIEDŹ CZĘSTOTLIWOŚCIOWA (H) - FILTROWANIE GRZEBIENIOWE',
+    promptSoundSpeed: 'Prędkość dźwięku (m/s):',
+    copyFeedback: 'Skopiowano!',
   },
   seo: [
     {
       type: 'summary',
-      title: 'Calculator features',
+      title: 'Funkcje kalkulatora',
       items: [
-        'Exact physical calculation with temperature adjustment for the speed of sound',
-        'Result in milliseconds and samples for DAW compensation',
-        'Canvas visualiser of comb filtering across the full audible spectrum',
-        'Microphone presets (XY coincident, snare, ambient)',
-        'Phase inversion simulation and relative gain control',
-        'Support for metric and imperial units',
+        'Dokładne obliczenia fizyczne z kompensacją temperatury dla prędkości dźwięku',
+        'Wynik w milisekundach i próbkach do kompensacji w DAW',
+        'Wizualizator odpowiedzi częstotliwościowej na wykresie w pełnym paśmie słyszalnym',
+        'Gotowe ustawienia mikrofonów (XY, werbel, ambient)',
+        'Symulacja odwrócenia fazy i regulacja względnego wzmocnienia',
+        'Obsługa jednostek metrycznych i imperialnych',
       ],
     },
     {
       type: 'title',
-      text: 'What is phase cancellation and why does it ruin your mixes?',
+      text: 'Co to jest znoszenie fazy i dlaczego niszczy twoje miksy?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: 'W świecie inżynierii dźwięku faza jest jednym z najbardziej krytycznych pojęć i, paradoksalnie, jednym z najczęściej pomijanych przez początkujących. Kiedy nagrywasz źródło dźwięku - takie jak zestaw perkusyjny lub wzmacniacz gitarowy - za pomocą dwóch lub więcej mikrofonów umieszczonych w różnych odległościach, fale dźwiękowe nie docierają do kapsuł w tym samym czasie. Ta różnica czasu, choć niewielka, powoduje zjawisko znane jako <strong>przesunięcie fazowe</strong>.',
     },
     {
       type: 'title',
-      text: 'The Comb Filtering phenomenon',
+      text: 'Zjawisko filtrowania grzebieniowego',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: 'Kiedy dwa identyczne sygnały są łączone z niewielkim opóźnieniem między nimi, w odpowiedzi częstotliwościowej pojawia się seria dołków i szczytów. Widziany na analizatorze widma wzór przypomina zęby grzebienia - stąd nazwa. Ten efekt drastycznie i destrukcyjnie zmienia naturalną barwę instrumentu.',
     },
     {
       type: 'comparative',
       columns: 2,
       items: [
         {
-          title: 'Impact on Low End',
+          title: 'Wpływ na niskie tony',
           description:
-            'Phase cancellation is most devastating in the low frequencies, where the body of the sound disappears entirely.',
+            'Znoszenie fazy jest najbardziej niszczycielskie w niskich częstotliwościach, gdzie ciało dźwięku całkowicie znika.',
         },
         {
-          title: 'Metallic Texture',
+          title: 'Metaliczna tekstura',
           description:
-            "Comb filtering adds an artificial coloration that sounds 'hollow' or overly processed.",
+            'Filtrowanie grzebieniowe dodaje sztuczne podbarwienie, które brzmi pusto lub jest zbyt przetworzone.',
         },
       ],
     },
     {
       type: 'title',
-      text: 'The influence of temperature on the calculation',
+      text: 'Wpływ temperatury na obliczenia',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: 'Wielu realizatorów dźwięku zapomina, że powietrze jest ośrodkiem fizycznym, a jego gęstość zmienia się wraz z temperaturą. Prędkość dźwięku nie jest stałą niezmienną - przy 20°C wynosi w przybliżeniu 343 metry na sekundę.',
     },
     {
       type: 'code',
       code: 'v = 331.3 + (0.606 × T)',
-      ariaLabel: 'Formula for the speed of sound as a function of temperature',
+      ariaLabel: 'Wzór na prędkość dźwięku w funkcji temperatury',
     },
     {
       type: 'tip',
-      title: 'Surgical Compensation',
-      html: 'A few degrees of difference can shift the cancellation points by several hertz. Using our calculator with the actual temperature of your studio guarantees perfect alignment in the DAW.',
+      title: 'Chirurgiczna kompensacja',
+      html: 'Różnica zaledwie kilku stopni może przesunąć punkty znoszenia o kilka herców. Użycie naszego kalkulatora z rzeczywistą temperaturą twojego studia gwarantuje idealne wyrównanie w programie DAW.',
     },
     {
       type: 'title',
-      text: 'Critical recording scenarios',
+      text: 'Krytyczne scenariusze nagraniowe',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Snare drum (Top & Bottom): Align both heads temporally to maximise punch.',
-        'Overheads and close mics: Delay the close mics to match the phase of the overhead mics.',
-        'Guitars with multiple mics: Blend a dynamic and a ribbon without losing low-mids.',
-        'Bass DI and mic: Sync the direct signal with the amp mic for a massive sound.',
+        'Werbel (góra i dół): Wyrównaj oba naciągi w czasie, aby zmaksymalizować uderzenie.',
+        'Overheads i bliskie mikrofony: Opóźnij bliskie mikrofony, aby pasowały do fazy overheadów.',
+        'Gitary z wieloma mikrofonami: Połącz mikrofon dynamiczny i wstęgowy bez utraty niskiego środka.',
+        'Bas DI i mikrofon: Zsynchronizuj sygnał bezpośredni z mikrofonem wzmacniacza, aby uzyskać potężne brzmienie.',
       ],
     },
     {
       type: 'title',
-      text: 'Physical Alignment vs. Digital Processing',
+      text: 'Wyrównanie fizyczne a przetwarzanie cyfrowe',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Although our tool gives you the values to correct phase in your DAW after recording, we always recommend attempting the best possible physical alignment in the studio. Moving a microphone a few millimetres can be more effective than any digital processing.',
+      html: 'Chociaż nasze narzędzie podaje wartości do korygowania fazy w programie DAW po nagraniu, zawsze zalecamy dążenie do najlepszego możliwego wyrównania fizycznego w studiu. Przesunięcie mikrofonu o kilka milimetrów może być bardziej skuteczne niż jakiekolwiek przetwarzanie cyfrowe.',
     },
     {
       type: 'stats',
       items: [
-        { label: 'Speed @ 20°C', value: '343.2 m/s' },
-        { label: 'Milliseconds/cm', value: '0.029 ms' },
-        { label: 'Samples @ 48kHz', value: '1.4 per cm' },
+        { label: 'Prędkość przy 20°C', value: '343.2 m/s' },
+        { label: 'Milisekundy/cm', value: '0.029 ms' },
+        { label: 'Próbki przy 48kHz', value: '1.4 na cm' },
       ],
     },
     {
       type: 'title',
-      text: 'Reference table: Distance vs. First Null',
+      text: 'Tabela odniesienia: Odległość vs. Pierwsze znoszenie',
       level: 2,
     },
     {
       type: 'table',
-      headers: ['Difference (cm)', 'Delay (ms)', '1st Null (Hz)', 'Affects...'],
+      headers: ['Różnica (cm)', 'Opóźnienie (ms)', '1. znoszenie (Hz)', 'Wpływa na...'],
       rows: [
-        ['1 cm', '0.029', '17160', 'Extreme high end'],
-        ['5 cm', '0.146', '3432', 'Upper mids (Presence)'],
-        ['10 cm', '0.291', '1716', 'Mids (Presence)'],
-        ['30 cm', '0.874', '572', 'Low-mids (Body)'],
-        ['1 metre', '2.914', '172', 'Low end (Fundamental)'],
+        ['1 cm', '0.029', '17160', 'Ekstremalna góra'],
+        ['5 cm', '0.146', '3432', 'Wyższy środek (obecność)'],
+        ['10 cm', '0.291', '1716', 'Środek (obecność)'],
+        ['30 cm', '0.874', '572', 'Niski środek (ciało)'],
+        ['1 metr', '2.914', '172', 'Dół (częstotliwość podstawowa)'],
       ],
     },
     {
       type: 'title',
-      text: 'Pros and cons of correction methods',
+      text: 'Zalety i wady metod korekcji',
       level: 2,
     },
     {
       type: 'proscons',
       items: [
         {
-          pro: 'Physical alignment: Less degradation of the original signal.',
-          con: 'Physical alignment: Difficult to adjust with microscopic accuracy.',
+          pro: 'Wyrównanie fizyczne: Mniejsza degradacja oryginalnego sygnału.',
+          con: 'Wyrównanie fizyczne: Trudne do dostrojenia z mikroskopijną dokładnością.',
         },
         {
-          pro: 'Digital correction: Absolute precision at the sample level.',
-          con: 'Digital correction: Can create pre-echo if applied incorrectly.',
+          pro: 'Korekcja cyfrowa: Absolutna precyzja na poziomie próbek.',
+          con: 'Korekcja cyfrowa: Może powodować pre-echo przy nieprawidłowym zastosowaniu.',
         },
         {
-          pro: 'Polarity inversion: Instant fix for 180° cancellations.',
-          con: 'Polarity inversion: Does not fix intermediate phase shifts.',
+          pro: 'Odwrócenie polaryzacji: Natychmiastowe rozwiązanie w przypadku znoszenia o 180°.',
+          con: 'Odwrócenie polaryzacji: Nie koryguje pośrednich przesunięć fazowych.',
         },
         {
-          pro: 'Time compensation: Recovers lost impact and punch.',
-          con: 'Time compensation: Requires precise measurement of each mic.',
+          pro: 'Kompensacja czasowa: Przywraca utracone uderzenie i dynamikę.',
+          con: 'Kompensacja czasowa: Wymaga precyzyjnego pomiaru każdego mikrofonu.',
         },
       ],
     },
     {
       type: 'tip',
-      title: 'How to detect phase problems by ear?',
-      html: 'Press the "Invert Phase" button (Φ). If activating it makes the sound gain body and low end, your microphones were out of phase. If the sound "disappears" or becomes thinner, they were correctly aligned.',
+      title: 'Jak wykryć problemy z fazą na ucho?',
+      html: 'Naciśnij przycisk "Odwróć fazę" (Φ). Jeśli jego włączenie sprawi, że dźwięk zyska ciało i niskie częstotliwości, oznacza to, że mikrofony były poza fazą. Jeśli dźwięk znika lub staje się cieńszy, były one prawidłowo wyrównane.',
     },
     {
       type: 'title',
-      text: 'Mono Compatibility and Stereo Perception',
+      text: 'Kompatybilność Mono i Stereofonia',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In stereo recordings, the phase relationship defines the stability of the sound image. If there are serious inconsistencies, the sound could disappear entirely when the mix is played back on a mono system. Our calculator helps you predict which frequencies will suffer most when the channels are summed.',
+      html: 'W nagraniach stereo relacja fazowa określa stabilność obrazu dźwiękowego. W przypadku poważnych niespójności dźwięk może całkowicie zniknąć, gdy miks zostanie odtworzony w systemie mono. Nasz kalkulator pomaga przewidzieć, które częstotliwości ucierpią najbardziej po zsumowaniu kanałów.',
     },
   ],
 };

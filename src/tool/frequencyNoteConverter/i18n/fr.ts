@@ -134,14 +134,14 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelOctaveDown: 'Octave inférieure',
     labelInputFreq: 'Fréquence saisie',
     labelOctaveUp: 'Octave supérieure',
-    labelNoteInput: 'NOM DE LA NOTE (ex : La4, A4, Do#3)',
+    labelNoteInput: 'NOM DE LA NOTE (ex: La4, A4, Do#3)',
     placeholderNote: 'Écrivez la note...',
     labelSetNote: 'CHOISIR LA NOTE',
     labelSetOctave: "CHOISIR L'OCTAVE",
     labelSelectedNote: 'Note sélectionnée',
     copyHz: 'Copier Hz',
     btnListenNote: 'Écouter la note',
-    pianoLabel: 'Piano interactif — appuyez sur une touche pour voir sa fréquence',
+    pianoLabel: 'Piano interactif - appuyez sur une touche pour voir sa fréquence',
     pianoAria: 'Clavier de piano interactif',
     historyTitle: 'Historique',
     historyClear: 'Effacer',
@@ -162,7 +162,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
       type: 'summary',
       title: 'Fonctionnalités de la calculatrice',
       items: [
-        'Conversion bidirectionnelle : Hz vers note et note vers Hz dans le même outil',
+        'Conversion bidirectionnelle: Hz vers note et note vers Hz dans le même outil',
         "Précision à l'échantillon près avec référence A4 réglable (440 / 432 / 444 Hz)",
         'Compteur visuel en cents avec indicateur dièse / bémol / accordé',
         'Affichage des harmoniques (fondamentale, octave inférieure, octave supérieure)',
@@ -177,7 +177,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: "Chaque note musicale est, en essence, une vibration périodique de l'air. Quand une corde de guitare vibre à 440 cycles par seconde, elle produit le La4 (A4), la note de référence universelle pour l'accordage. Cette correspondance entre hertz et notes n'est pas arbitraire : elle est définie par le <strong>tempérament égal</strong>, le système d'accordage prédominant en musique occidentale, qui divise l'octave en douze demi-tons parfaitement équidistants d'un point de vue mathématique.",
+      html: "Chaque note musicale est, en essence, une vibration périodique de l'air. Quand une corde de guitare vibre à 440 cycles par seconde, elle produit le La4 (A4), la note de référence universelle pour l'accordage. Cette correspondance entre hertz et notes n'est pas arbitraire: elle est définie par le <strong>tempérament égal</strong>, le système d'accordage prédominant en musique occidentale, qui divise l'octave en douze demi-tons parfaitement équidistants d'un point de vue mathématique.",
     },
     {
       type: 'paragraph',
@@ -203,7 +203,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'title',
-      text: "Les cents : l'unité de précision pour musiciens et techniciens",
+      text: "Les cents: l'unité de précision pour musiciens et techniciens",
       level: 2,
     },
     {
@@ -233,7 +233,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'title',
-      text: 'La référence A4 : 440 Hz, 432 Hz et les guerres d\'accordage',
+      text: 'La référence A4: 440 Hz, 432 Hz et les guerres d\'accordage',
       level: 2,
     },
     {
@@ -280,7 +280,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: "L'une des relations les plus importantes en acoustique musicale est l'octave : doubler la fréquence produit la même note à l'octave supérieure, et la diviser par deux l'amène une octave en dessous. Cette relation 2:1 est la base des harmoniques naturelles de tout instrument acoustique.",
+      html: "L'une des relations les plus importantes en acoustique musicale est l'octave: doubler la fréquence produit la même note à l'octave supérieure, et la diviser par deux l'amène une octave en dessous. Cette relation 2:1 est la base des harmoniques naturelles de tout instrument acoustique.",
     },
     {
       type: 'paragraph',
@@ -294,12 +294,12 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     {
       type: 'list',
       items: [
-        "Accorder des oscillateurs analogiques : mesurez la fréquence de sortie et comparez avec la calculatrice pour savoir combien de cents ajuster au coarse ou fine tune.",
-        "Assigner des samples aux notes : une grosse caisse enregistrée à 55 Hz est un La1. Cet outil vous dit exactement où la mapper dans un sampler.",
-        "Détecter les résonances gênantes : si une salle résonne à 80 Hz, la calculatrice confirme que c'est un Mi2, guidant l'utilisation de l'égaliseur.",
-        "Synchroniser des caissons de graves : vérifier que plusieurs subs reproduisent la même note évite les renforcements ou annulations par interférence.",
-        "Accorder cloches et percussions à hauteur définie : identifiez la fondamentale pour les intégrer dans la tonalité de la pièce.",
-        "Conception de filtres résonants : un filtre passe-bande à 349.23 Hz produira un pic en Fa4, facilitant les décisions harmoniques.",
+        "Accorder des oscillateurs analogiques: mesurez la fréquence de sortie et comparez avec la calculatrice pour savoir combien de cents ajuster au coarse ou fine tune.",
+        "Assigner des samples aux notes: une grosse caisse enregistrée à 55 Hz est un La1. Cet outil vous dit exactement où la mapper dans un sampler.",
+        "Détecter les résonances gênantes: si une salle résonne à 80 Hz, la calculatrice confirme que c'est un Mi2, guidant l'utilisation de l'égaliseur.",
+        "Synchroniser des caissons de graves: vérifier que plusieurs subs reproduisent la même note évite les renforcements ou annulations par interférence.",
+        "Accorder cloches et percussions à hauteur définie: identifiez la fondamentale pour les intégrer dans la tonalité de la pièce.",
+        "Conception de filtres résonants: un filtre passe-bande à 349.23 Hz produira un pic en Fa4, facilitant les décisions harmoniques.",
       ],
     },
     {
@@ -315,20 +315,20 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
       type: 'proscons',
       items: [
         {
-          pro: 'Précision mathématique : utilise la formule ISO 16 du tempérament égal exact.',
-          con: "Limitation : ne s'applique qu'au tempérament égal, pas aux accordages historiques comme le mésotonique.",
+          pro: 'Précision mathématique: utilise la formule ISO 16 du tempérament égal exact.',
+          con: "Limitation: ne s'applique qu'au tempérament égal, pas aux accordages historiques comme le mésotonique.",
         },
         {
-          pro: "Calibrage libre : permet de travailler avec des références A4 entre 400 et 480 Hz.",
+          pro: "Calibrage libre: permet de travailler avec des références A4 entre 400 et 480 Hz.",
           con: "Le ton sinusoïdal ne reproduit pas le timbre réel de l'instrument, seulement la fréquence fondamentale.",
         },
         {
-          pro: 'Conversion bidirectionnelle : Hz vers note et note vers Hz dans le même outil.',
+          pro: 'Conversion bidirectionnelle: Hz vers note et note vers Hz dans le même outil.',
           con: "Le compteur de cents est relatif au demi-ton le plus proche, pas au tempérament juste ou pur.",
         },
         {
-          pro: "Historique de recherche : permet de comparer rapidement plusieurs patches ou samples.",
-          con: "Les fréquences hors de la plage audible (20 Hz – 20 kHz) ont peu d'utilité pratique.",
+          pro: "Historique de recherche: permet de comparer rapidement plusieurs patches ou samples.",
+          con: "Les fréquences hors de la plage audible (20 Hz - 20 kHz) ont peu d'utilité pratique.",
         },
       ],
     },
@@ -340,14 +340,14 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     {
       type: 'list',
       items: [
-        'Hz (Hertz) : cycles par seconde. Mesure la fréquence d\'une onde sonore.',
-        'Note MIDI : entier de 0 à 127 identifiant chaque note dans le standard MIDI. A4 = 69.',
-        "Octave scientifique : système de nomenclature ajoutant le numéro d'octave à la note (La4, Do3).",
-        "Cents : centième de demi-ton. Permet d'exprimer les déviations d'accordage avec précision.",
-        "Tempérament égal : système d'accordage où tous les demi-tons sont égaux (rapport 2^(1/12)).",
-        "A4 / La4 : note de référence. Standard international : 440 Hz (ISO 16, 1975).",
-        "Harmonique : fréquences multiples entiers de la fondamentale produites naturellement par les instruments acoustiques.",
-        "Fine-tune : paramètre des synthétiseurs et samplers pour ajuster l'accordage en cents.",
+        'Hz (Hertz): cycles par seconde. Mesure la fréquence d\'une onde sonore.',
+        'Note MIDI: entier de 0 à 127 identifiant chaque note dans le standard MIDI. A4 = 69.',
+        "Octave scientifique: système de nomenclature ajoutant le numéro d'octave à la note (La4, Do3).",
+        "Cents: centième de demi-ton. Permet d'exprimer les déviations d'accordage avec précision.",
+        "Tempérament égal: système d'accordage où tous les demi-tons sont égaux (rapport 2^(1/12)).",
+        "A4 / La4: note de référence. Standard international: 440 Hz (ISO 16, 1975).",
+        "Harmonique: fréquences multiples entiers de la fondamentale produites naturellement par les instruments acoustiques.",
+        "Fine-tune: paramètre des synthétiseurs et samplers pour ajuster l'accordage en cents.",
       ],
     },
   ],

@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Metronomfunktioner',
       items: [
-        'Web Audio API-motor — precision på millisekunden, ingen drift',
+        'Web Audio API-motor - precision på millisekunden, ingen drift',
         'Tap Tempo: beräkna BPM genom att knacka i takt',
         'Konfigurerbar taktart från 1 till 12 slag med automatisk accent',
         'Visuell indikator med hög kontrast och ringeffekt',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['Italiensk term', 'BPM ca.', 'Karaktär'],
       rows: [
-        ['Largo', '40 – 60', 'Långsamt och högtidligt'],
-        ['Andante', '76 – 108', 'Gångtakt, lugnt'],
-        ['Allegro', '120 – 156', 'Snabbt, ljust och glatt'],
-        ['Presto', '168 – 200', 'Mycket snabbt, frenetiskt'],
+        ['Largo', '40 - 60', 'Långsamt och högtidligt'],
+        ['Andante', '76 - 108', 'Gångtakt, lugnt'],
+        ['Allegro', '120 - 156', 'Snabbt, ljust och glatt'],
+        ['Presto', '168 - 200', 'Mycket snabbt, frenetiskt'],
       ],
     },
     {

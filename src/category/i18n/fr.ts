@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Ce que vous trouverez dans cette catégorie',
       items: [
-        'Métronome en ligne avec Web Audio API — précision à la milliseconde',
+        'Métronome en ligne avec Web Audio API - précision à la milliseconde',
         'Calculateur BPM en millisecondes pour delays et reverbs',
         'Convertisseur fréquence vers note musicale (Hz, cents et désaccordage)',
         "Calculateur de distance de phase pour l'alignement des microphones",
@@ -25,11 +25,11 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: "De la première répétition au mastering final, chaque musicien et producteur a besoin d'outils précis disponibles à tout moment. Notre collection d'<strong>utilitaires musicaux en ligne</strong> a été conçue avec un objectif clair : la précision technique maximale avec un minimum de friction.",
+      html: "De la première répétition au mastering final, chaque musicien et producteur a besoin d'outils précis disponibles à tout moment. Notre collection d'<strong>utilitaires musicaux en ligne</strong> a été conçue avec un objectif clair: la précision technique maximale avec un minimum de friction.",
     },
     {
       type: 'paragraph',
-      html: 'Aucune installation requise. Tous les outils fonctionnent directement dans votre navigateur, sont entièrement gratuits et protègent votre vie privée : aucune donnée ne quitte votre appareil.',
+      html: 'Aucune installation requise. Tous les outils fonctionnent directement dans votre navigateur, sont entièrement gratuits et protègent votre vie privée: aucune donnée ne quitte votre appareil.',
     },
     {
       type: 'title',
@@ -65,7 +65,7 @@ export const content: CategoryLocaleContent = {
         {
           title: 'Précision Technique',
           description:
-            'Tous les outils sont basés sur des algorithmes vérifiés mathématiquement. Aucune approximation : les résultats sont exacts et reproductibles.',
+            'Tous les outils sont basés sur des algorithmes vérifiés mathématiquement. Aucune approximation: les résultats sont exacts et reproductibles.',
         },
         {
           title: 'Confidentialité Totale',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: "La musique est un langage avec plusieurs systèmes de notation. L'outil d'<strong>équivalence de notes</strong> permet de traduire instantanément entre le système Latin (Do, Ré, Mi…), le système Américain (C, D, E…) et le système Germanique (C, D, E… avec H au lieu de B), évitant les confusions lors des échanges avec des musiciens de différentes traditions ou lors de la lecture de partitions de pays différents.",
+      html: "La musique est un langage avec plusieurs systèmes de notation. L'outil d'<strong>équivalence de notes</strong> permet de traduire instantanément entre le système Latin (Do, Ré, Mi...), le système Américain (C, D, E...) et le système Germanique (C, D, E... avec H au lieu de B), évitant les confusions lors des échanges avec des musiciens de différentes traditions ou lors de la lecture de partitions de pays différents.",
     },
     {
       type: 'tip',

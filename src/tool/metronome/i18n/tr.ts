@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: 'Metronom özellikleri',
       items: [
-        'Web Audio API motoru — milisaniye hassasiyeti, kayma yok',
+        'Web Audio API motoru - milisaniye hassasiyeti, kayma yok',
         'Tap Tempo: Ritme vurarak BPM hesaplayın',
         'Otomatik vurgulu 1 ile 12 vuruş arası yapılandırılabilir zaman işareti',
         'Dalgalanma efektli yüksek kontrastlı görsel gösterge',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['İtalyanca Terim', 'Yaklaşık BPM', 'Karakter'],
       rows: [
-        ['Largo', '40 – 60', 'Yavaş ve görkemli'],
-        ['Andante', '76 – 108', 'Yürüyüş hızı, sakin'],
-        ['Allegro', '120 – 156', 'Hızlı, parlak ve neşeli'],
-        ['Presto', '168 – 200', 'Çok hızlı, telaşlı'],
+        ['Largo', '40 - 60', 'Yavaş ve görkemli'],
+        ['Andante', '76 - 108', 'Yürüyüş hızı, sakin'],
+        ['Allegro', '120 - 156', 'Hızlı, parlak ve neşeli'],
+        ['Presto', '168 - 200', 'Çok hızlı, telaşlı'],
       ],
     },
     {

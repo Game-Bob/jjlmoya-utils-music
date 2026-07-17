@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Was Sie in dieser Kategorie finden',
       items: [
-        'Online-Metronom mit Web Audio API — Millisekundengenauigkeit',
+        'Online-Metronom mit Web Audio API - Millisekundengenauigkeit',
         'BPM-zu-Millisekunden-Rechner für Delays und Hallgeräte',
         'Frequenz-zu-Musiknote-Konverter (Hz, Cent und Verstimmung)',
         'Phasenabstandsrechner für Mikrofonausrichtung',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Musik ist eine Sprache mit mehreren Notationssystemen. Das <strong>Notenäquivalenz</strong>-Werkzeug übersetzt sofort zwischen dem lateinischen System (Do, Re, Mi…), dem amerikanischen System (C, D, E…) und dem deutschen System (C, D, E… mit H statt B), um Verwirrung bei der Kommunikation mit Musikern aus verschiedenen Traditionen oder beim Lesen von Noten aus verschiedenen Ländern zu vermeiden.',
+      html: 'Musik ist eine Sprache mit mehreren Notationssystemen. Das <strong>Notenäquivalenz</strong>-Werkzeug übersetzt sofort zwischen dem lateinischen System (Do, Re, Mi...), dem amerikanischen System (C, D, E...) und dem deutschen System (C, D, E... mit H statt B), um Verwirrung bei der Kommunikation mit Musikern aus verschiedenen Traditionen oder beim Lesen von Noten aus verschiedenen Ländern zu vermeiden.',
     },
     {
       type: 'tip',

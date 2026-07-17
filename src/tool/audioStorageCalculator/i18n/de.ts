@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Wie wird die Größe einer Audioaufnahme berechnet?', level: 2 },
     {
       type: 'paragraph',
-      html: 'Die Größe einer unkomprimierten digitalen Audiodatei (wie WAV oder AIFF) hängt von drei grundlegenden technischen Faktoren ab: <strong>Abtastrate</strong> — wie oft pro Sekunde die Schallwelle "gemessen" wird (z. B. 44,1 kHz oder 48 kHz); <strong>Bittiefe</strong> — die Auflösung jeder Messung, wobei höhere Bits einen größeren Dynamikbereich und geringeres Rauschen bieten; und <strong>Kanäle</strong> — ob die Aufnahme in Mono (1), Stereo (2) oder Mehrkanal (Surround) erfolgt. Die mathematische Standardformel ist die <strong>Bitrate</strong>; multipliziert mit der Dauer in Sekunden ergibt sie die gesamte Rohdateigröße.',
+      html: 'Die Größe einer unkomprimierten digitalen Audiodatei (wie WAV oder AIFF) hängt von drei grundlegenden technischen Faktoren ab: <strong>Abtastrate</strong> - wie oft pro Sekunde die Schallwelle "gemessen" wird (z. B. 44,1 kHz oder 48 kHz); <strong>Bittiefe</strong> - die Auflösung jeder Messung, wobei höhere Bits einen größeren Dynamikbereich und geringeres Rauschen bieten; und <strong>Kanäle</strong> - ob die Aufnahme in Mono (1), Stereo (2) oder Mehrkanal (Surround) erfolgt. Die mathematische Standardformel ist die <strong>Bitrate</strong>; multipliziert mit der Dauer in Sekunden ergibt sie die gesamte Rohdateigröße.',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'Lohnt sich der zusätzliche Platz?',
-      html: 'Obwohl es mehr Platz beansprucht, bietet 24-Bit-Audio einen Dynamikbereich von 144 dB gegenüber 96 dB bei 16-Bit. Dies sorgt für einen wesentlich niedrigeren "Noise Floor", wodurch schwächere Signale ohne störendes Hintergrundrauschen aufgenommen werden können — entscheidend bei professionellem Mischen und Mastering.',
+      html: 'Obwohl es mehr Platz beansprucht, bietet 24-Bit-Audio einen Dynamikbereich von 144 dB gegenüber 96 dB bei 16-Bit. Dies sorgt für einen wesentlich niedrigeren "Noise Floor", wodurch schwächere Signale ohne störendes Hintergrundrauschen aufgenommen werden können - entscheidend bei professionellem Mischen und Mastering.',
     },
     { type: 'title', text: 'WAV vs. FLAC vs. MP3: Die Auswirkung auf den Datenträger', level: 2 },
     {

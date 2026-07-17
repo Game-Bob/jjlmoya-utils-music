@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Apa itu Pre-delay dalam sebuah reverb?',
     answer:
-      'Pre-delay adalah waktu antara suara langsung (sumber) dan awal dari ekor reverb. Mengaturnya secara ritmik memungkinkan sumber asli tetap jernih sebelum efek spasial mengambil alih — sangat penting untuk vokal dan perkusi.',
+      'Pre-delay adalah waktu antara suara langsung (sumber) dan awal dari ekor reverb. Mengaturnya secara ritmik memungkinkan sumber asli tetap jernih sebelum efek spasial mengambil alih - sangat penting untuk vokal dan perkusi.',
   },
   {
     question: 'Bagaimana cara kerja Tap Tempo?',

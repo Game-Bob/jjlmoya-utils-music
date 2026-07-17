@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: 'Hoe wordt de grootte van een audio-opname berekend?', level: 2 },
     {
       type: 'paragraph',
-      html: 'De grootte van een ongecomprimeerd digitaal audiobestand (zoals WAV of AIFF) hangt af van drie fundamentele technische factoren: <strong>Samplefrequentie</strong> — hoe vaak per seconde de geluidsgolf wordt "gemeten" (bijv. 44.1 kHz of 48 kHz); <strong>Bitdiepte</strong> — de resolutie van elke meting, met een groter dynamisch bereik en lagere ruis bij hogere bits; en <strong>Kanalen</strong> — of de opname Mono (1), Stereo (2) of Meerkanaals (Surround) is. De standaard wiskundige formule is de <strong>Bitrate</strong>; vermenigvuldigd met de duur in seconden, geeft dit de totale grootte van het ruwe bestand.',
+      html: 'De grootte van een ongecomprimeerd digitaal audiobestand (zoals WAV of AIFF) hangt af van drie fundamentele technische factoren: <strong>Samplefrequentie</strong> - hoe vaak per seconde de geluidsgolf wordt "gemeten" (bijv. 44.1 kHz of 48 kHz); <strong>Bitdiepte</strong> - de resolutie van elke meting, met een groter dynamisch bereik en lagere ruis bij hogere bits; en <strong>Kanalen</strong> - of de opname Mono (1), Stereo (2) of Meerkanaals (Surround) is. De standaard wiskundige formule is de <strong>Bitrate</strong>; vermenigvuldigd met de duur in seconden, geeft dit de totale grootte van het ruwe bestand.',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: 'Is de extra ruimte het waard?',
-      html: 'Hoewel het meer ruimte in beslag neemt, biedt 24-bit audio een dynamisch bereik van 144 dB tegenover 96 dB voor 16-bit. Dit zorgt voor een veel lagere "ruisvloer", waardoor zwakkere signalen kunnen worden opgenomen zonder dat achtergrondruis een probleem wordt — essentieel tijdens professioneel mixen en masteren.',
+      html: 'Hoewel het meer ruimte in beslag neemt, biedt 24-bit audio een dynamisch bereik van 144 dB tegenover 96 dB voor 16-bit. Dit zorgt voor een veel lagere "ruisvloer", waardoor zwakkere signalen kunnen worden opgenomen zonder dat achtergrondruis een probleem wordt - essentieel tijdens professioneel mixen en masteren.',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3: De impact op de schijf', level: 2 },
     {
@@ -210,7 +210,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
       ariaLabel: 'Logica voor berekening van audio-opslag',
       code: `const sampleRate = 48000;\nconst bitDepth = 24;\nconst channels = 2;\nconst seconds = 3600;\n\nconst bitsPerSecond = sampleRate * bitDepth * channels;\nconst totalBytes = (bitsPerSecond * seconds) / 8;`,
     },
-    { type: 'title', text: 'Gebruiksscenario’s voor deze tool', level: 2 },
+    { type: 'title', text: 'Gebruiksscenario\'s voor deze tool', level: 2 },
     {
       type: 'list',
       items: [

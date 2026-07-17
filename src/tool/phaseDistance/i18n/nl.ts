@@ -27,7 +27,7 @@ const faqData = [
   {
     question: 'What is Comb Filtering?',
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches - like the teeth of a comb - that drastically alter the timbre of the instrument.',
   },
   {
     question: "What is the 3:1 rule in microphone technique?",
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     labelDistDiff: 'Distance Difference',
     labelNullFreq: 'First Nulls',
     textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
+    chartTitle: 'FREQUENCY RESPONSE (H) - COMB FILTERING',
     promptSoundSpeed: 'Speed of Sound (m/s):',
     copyFeedback: 'Copied!',
   },
@@ -158,7 +158,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source - such as a drum kit or guitar amplifier - with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
     },
     {
       type: 'title',
@@ -167,7 +167,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb - hence the name. This effect destructively alters the natural timbre of the instrument.',
     },
     {
       type: 'comparative',
@@ -192,7 +192,7 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant - at 20°C it travels at approximately 343 metres per second.',
     },
     {
       type: 'code',

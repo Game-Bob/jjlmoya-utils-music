@@ -17,7 +17,7 @@ const faqData = [
   {
     question: '什么是 Tap Tempo，如何使用？',
     answer:
-      '这是一项允许你通过节奏性地点击来计算 BPM（每分钟节拍数）的功能。只需点击“TAP”按钮或根据你正在听的音乐节奏按下空格键，即可立即获取准确的节奏。',
+      '这是一项允许你通过节奏性地点击来计算 BPM（每分钟节拍数）的功能。只需点击\"TAP\"按钮或根据你正在听的音乐节奏按下空格键，即可立即获取准确的节奏。',
   },
   {
     question: '我可以更改拍号和重音吗？',
@@ -107,7 +107,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'summary',
       title: '节拍器特色',
       items: [
-        'Web Audio API 引擎 — 毫秒级精度，无漂移',
+        'Web Audio API 引擎 - 毫秒级精度，无漂移',
         'Tap Tempo：通过跟随节拍点击来计算 BPM',
         '可配置从 1 到 12 拍的拍号，带自动重音',
         '带波纹效果的高对比度视觉指示器',
@@ -121,7 +121,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: '欢迎使用<strong>终极在线节拍器</strong>。我们打造此工具时始终贯彻一个目标：<em>可靠性</em>。与其他容易因处理器负载产生“漂移”（累积延迟）的 Web 节拍器不同，我们的声音引擎直接构建在 <strong>Web Audio API</strong> 之上。',
+      html: '欢迎使用<strong>终极在线节拍器</strong>。我们打造此工具时始终贯彻一个目标：<em>可靠性</em>。与其他容易因处理器负载产生\"漂移\"（累积延迟）的 Web 节拍器不同，我们的声音引擎直接构建在 <strong>Web Audio API</strong> 之上。',
     },
     {
       type: 'paragraph',
@@ -134,7 +134,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
         {
           title: '清晰的可视化',
           description:
-            '带有“波纹”效果的高对比度大型视觉指示器。专为余光感知而设计，让你在盯着乐谱或乐器的同时不会丢失节奏。',
+            '带有\"波纹\"效果的高对比度大型视觉指示器。专为余光感知而设计，让你在盯着乐谱或乐器的同时不会丢失节奏。',
         },
         {
           title: '智能 Tap Tempo',
@@ -177,7 +177,7 @@ export const content: ToolLocaleContent<MetronomeUI> = {
     },
     {
       type: 'paragraph',
-      html: '使用我们的拍号选择器来移动重音。用设定为 3/4 拍的节拍器练习 4/4 拍的片段，意味着重音（尖锐的点击声）会落在乐句中不同的位置，这会强迫你内化绝对时间的感官，而不是依赖每小节的“第一拍”。',
+      html: '使用我们的拍号选择器来移动重音。用设定为 3/4 拍的节拍器练习 4/4 拍的片段，意味着重音（尖锐的点击声）会落在乐句中不同的位置，这会强迫你内化绝对时间的感官，而不是依赖每小节的\"第一拍\"。',
     },
     {
       type: 'title',
@@ -201,10 +201,10 @@ export const content: ToolLocaleContent<MetronomeUI> = {
       type: 'table',
       headers: ['意大利语术语', '近似 BPM', '性格'],
       rows: [
-        ['Largo (广板)', '40 – 60', '缓慢且庄严'],
-        ['Andante (行板)', '76 – 108', '慢步走的速度，平静'],
-        ['Allegro (快板)', '120 – 156', '快速，明亮且欢快'],
-        ['Presto (急板)', '168 – 200', '非常快，急速'],
+        ['Largo (广板)', '40 - 60', '缓慢且庄严'],
+        ['Andante (行板)', '76 - 108', '慢步走的速度，平静'],
+        ['Allegro (快板)', '120 - 156', '快速，明亮且欢快'],
+        ['Presto (急板)', '168 - 200', '非常快，急速'],
       ],
     },
     {

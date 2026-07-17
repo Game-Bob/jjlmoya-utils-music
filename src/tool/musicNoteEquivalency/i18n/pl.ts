@@ -51,7 +51,7 @@ const howToData = [
   },
   {
     name: 'Posłuchaj i zweryfikuj',
-    text: 'Naciśnij przycisk „Słuchaj”, aby usłyszeć dokładną częstotliwość wybranej nuty i potwierdzić jej wysokość.',
+    text: 'Naciśnij przycisk \"Słuchaj\", aby usłyszeć dokładną częstotliwość wybranej nuty i potwierdzić jej wysokość.',
   },
 ];
 
@@ -162,7 +162,7 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Z czasem kształt <em>B quadratum</em> w niemieckich manuskryptach coraz bardziej przypominał małą literę h. Ta graficzna ewolucja utrwaliła się w druku i dała początek obecnej niemieckiej nomenklaturze: H dla naturalnego Si i B dla Si-bemol. Co ciekawe, to rozróżnienie pozwoliło kompozytorom takim jak J.S. Bach podpisywać swoje dzieła słynnym motywem „B-A-C-H” (Si-bemol - La - Do - Si naturalne).',
+      html: 'Z czasem kształt <em>B quadratum</em> w niemieckich manuskryptach coraz bardziej przypominał małą literę h. Ta graficzna ewolucja utrwaliła się w druku i dała początek obecnej niemieckiej nomenklaturze: H dla naturalnego Si i B dla Si-bemol. Co ciekawe, to rozróżnienie pozwoliło kompozytorom takim jak J.S. Bach podpisywać swoje dzieła słynnym motywem \"B-A-C-H\" (Si-bemol - La - Do - Si naturalne).',
     },
     {
       type: 'title',

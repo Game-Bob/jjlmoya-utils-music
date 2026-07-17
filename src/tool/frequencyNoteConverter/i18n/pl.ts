@@ -15,14 +15,14 @@ const faqData = [
       '440 Hz odpowiada dokładnie nucie A4, która jest uniwersalnym standardem strojenia. Jest to dźwięk A powyżej środkowego C na pianinie. Częstotliwość ta jest standardem ISO 16 od 1939 roku i służy do strojenia instrumentów orkiestrowych na całym świecie.',
   },
   {
-    question: 'Co oznacza, że nuta jest „15 centów powyżej”?',
+    question: 'Co oznacza, że nuta jest \"15 centów powyżej\"?',
     answer:
       'Cent to jedna setna półtonu. Znajdowanie się 15 centów powyżej nuty oznacza, że częstotliwość jest nieco wyższa niż dokładna nuta w stroju równomiernie temperowanym. W syntezatorze należy zastosować fine-tune o wartości -15 centów, aby to skorygować.',
   },
   {
     question: 'Dlaczego oprócz 440 Hz dostępne są opcje referencyjne 432 Hz i 444 Hz?',
     answer:
-      'Różne konteksty muzyczne wymagają różnych standardów strojenia. 432 Hz jest popularne w niektórych społecznościach producenckich. 444 Hz jest spotykane w nagraniach muzyki dawnej z epoki renesansu. Niektóre europejskie orkiestry stroją instrumenty w zakresie 441–444 Hz, aby uzyskać jaśniejsze brzmienie.',
+      'Różne konteksty muzyczne wymagają różnych standardów strojenia. 432 Hz jest popularne w niektórych społecznościach producenckich. 444 Hz jest spotykane w nagraniach muzyki dawnej z epoki renesansu. Niektóre europejskie orkiestry stroją instrumenty w zakresie 441-444 Hz, aby uzyskać jaśniejsze brzmienie.',
   },
   {
     question: 'Do czego służy interaktywna klawiatura pianina?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Wybrana nuta',
     copyHz: 'Kopiuj Hz',
     btnListenNote: 'Posłuchaj nuty',
-    pianoLabel: 'Interaktywne pianino — naciśnij klawisz, aby zobaczyć jego częstotliwość',
+    pianoLabel: 'Interaktywne pianino - naciśnij klawisz, aby zobaczyć jego częstotliwość',
     pianoAria: 'Interaktywna klawiatura pianina',
     historyTitle: 'Historia',
     historyClear: 'Wyczyść',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Historia wyszukiwania: pozwala na szybkie porównanie wielu patchów lub sampli.',
-          con: 'Częstotliwości spoza zakresu słyszalnego (20 Hz – 20 kHz) mają ograniczone zastosowanie praktyczne.',
+          con: 'Częstotliwości spoza zakresu słyszalnego (20 Hz - 20 kHz) mają ograniczone zastosowanie praktyczne.',
         },
       ],
     },

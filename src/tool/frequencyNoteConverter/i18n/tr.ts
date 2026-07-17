@@ -22,7 +22,7 @@ const faqData = [
   {
     question: '440 Hz dışında neden 432 Hz ve 444 Hz referans seçenekleri var?',
     answer:
-      'Farklı müzikal bağlamlar farklı akort referansları kullanır. 432 Hz, belirli prodüksiyon topluluklarında popülerdir. 444 Hz, Rönesans dönemi erken müzik kayıtlarında yaygındır. Bazı Avrupa orkestraları, daha parlak bir ses elde etmek için 441–444 Hz arasında akort yapar.',
+      'Farklı müzikal bağlamlar farklı akort referansları kullanır. 432 Hz, belirli prodüksiyon topluluklarında popülerdir. 444 Hz, Rönesans dönemi erken müzik kayıtlarında yaygındır. Bazı Avrupa orkestraları, daha parlak bir ses elde etmek için 441-444 Hz arasında akort yapar.',
   },
   {
     question: 'Etkileşimli piyano klavyesi ne işe yarar?',
@@ -141,7 +141,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
     labelSelectedNote: 'Seçilen nota',
     copyHz: 'Hz\'i kopyala',
     btnListenNote: 'Notayı dinle',
-    pianoLabel: 'Etkileşimli piyano — frekansını görmek için bir tuşa basın',
+    pianoLabel: 'Etkileşimli piyano - frekansını görmek için bir tuşa basın',
     pianoAria: 'Etkileşimli piyano klavyesi',
     historyTitle: 'Geçmiş',
     historyClear: 'Temizle',
@@ -327,7 +327,7 @@ export const content: ToolLocaleContent<FrequencyNoteConverterUI> = {
         },
         {
           pro: 'Arama geçmişi: Birden fazla yamanın veya örneğin hızlı bir şekilde karşılaştırılmasına olanak tanır.',
-          con: 'İşitilebilir aralığın (20 Hz – 20 kHz) dışındaki frekansların pratik kullanımı sınırlıdır.',
+          con: 'İşitilebilir aralığın (20 Hz - 20 kHz) dışındaki frekansların pratik kullanımı sınırlıdır.',
         },
       ],
     },

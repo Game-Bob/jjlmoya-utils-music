@@ -17,7 +17,7 @@ const faqData = [
   {
     question: '为什么 WAV 格式占用这么多空间？',
     answer:
-      'WAV 是一种未压缩的“无损”格式，这意味着它会单独存储每个音频样本，以在不减少数据的情况下保持最大忠实度。',
+      'WAV 是一种未压缩的\"无损\"格式，这意味着它会单独存储每个音频样本，以在不减少数据的情况下保持最大忠实度。',
   },
   {
     question: '为了节省空间，选择 FLAC 还是 MP3 更好？',
@@ -151,7 +151,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     { type: 'title', text: '音频录制的大小是如何计算的？', level: 2 },
     {
       type: 'paragraph',
-      html: '未压缩数字音频文件（如 WAV 或 AIFF）的大小取决于三个关键技术因素：<strong>采样率</strong> —— 每秒对声波进行“测量”的次数（例如 44.1 kHz 或 48 kHz）；<strong>位深度</strong> —— 每次测量的分辨率，位数越高，动态范围越大，底噪越低；以及<strong>声道</strong> —— 录音是单声道 (1)、立体声 (2) 还是多声道（环绕声）。标准数学公式首先得到<strong>比特率</strong>，再乘以持续秒数，即可得出原始文件总大小。',
+      html: '未压缩数字音频文件（如 WAV 或 AIFF）的大小取决于三个关键技术因素：<strong>采样率</strong> - 每秒对声波进行\"测量\"的次数（例如 44.1 kHz 或 48 kHz）；<strong>位深度</strong> - 每次测量的分辨率，位数越高，动态范围越大，底噪越低；以及<strong>声道</strong> - 录音是单声道 (1)、立体声 (2) 还是多声道（环绕声）。标准数学公式首先得到<strong>比特率</strong>，再乘以持续秒数，即可得出原始文件总大小。',
     },
     {
       type: 'comparative',
@@ -182,7 +182,7 @@ export const content: ToolLocaleContent<AudioStorageCalculatorUI> = {
     {
       type: 'tip',
       title: '额外的空间值得吗？',
-      html: '虽然占用更多空间，但 24-bit 音频提供 144 dB 的动态范围，而 16-bit 仅为 96 dB。这提供了极低的“底噪”，使得微弱信号在录制时不会受到背景噪音的干扰 —— 这在专业的混音和母带处理中至关重要。',
+      html: '虽然占用更多空间，但 24-bit 音频提供 144 dB 的动态范围，而 16-bit 仅为 96 dB。这提供了极低的\"底噪\"，使得微弱信号在录制时不会受到背景噪音的干扰 - 这在专业的混音和母带处理中至关重要。',
     },
     { type: 'title', text: 'WAV vs FLAC vs MP3：对磁盘的影响', level: 2 },
     {

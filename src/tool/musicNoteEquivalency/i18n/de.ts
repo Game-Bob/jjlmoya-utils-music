@@ -17,10 +17,10 @@ const faqData = [
   {
     question: 'Warum heißt das B in Deutschland H?',
     answer:
-      'Aufgrund einer mittelalterlichen grafischen Entwicklung des „B-quadratum“. In deutschsprachigen Ländern ist der Buchstabe H dem natürlichen B vorbehalten, während der Buchstabe B ausschließlich für das B-Dur (B-flat) verwendet wird.',
+      'Aufgrund einer mittelalterlichen grafischen Entwicklung des \"B-quadratum\". In deutschsprachigen Ländern ist der Buchstabe H dem natürlichen B vorbehalten, während der Buchstabe B ausschließlich für das B-Dur (B-flat) verwendet wird.',
   },
   {
-    question: 'Was ist das „mittlere C“ in der wissenschaftlichen Notation?',
+    question: 'Was ist das \"mittlere C\" in der wissenschaftlichen Notation?',
     answer:
       'Das mittlere C (die C-Taste in der Mitte eines Klaviers mit 88 Tasten) ist C4 im ANSI/Internationalen Standard. Im franko-belgischen System, das in Konservatorien weit verbreitet ist, wird es Do3 genannt.',
   },
@@ -51,7 +51,7 @@ const howToData = [
   },
   {
     name: 'Anhören und Überprüfen',
-    text: 'Drücken Sie die Schaltfläche „Anhören“, um die genaue Frequenz der ausgewählten Note zu hören und die musikalische Tonhöhe zu bestätigen.',
+    text: 'Drücken Sie die Schaltfläche \"Anhören\", um die genaue Frequenz der ausgewählten Note zu hören und die musikalische Tonhöhe zu bestätigen.',
   },
 ];
 
@@ -162,7 +162,7 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Im Laufe der Zeit ähnelte die Form des <em>B quadratum</em> in deutschen Manuskripten immer mehr einem kleinen h. Diese grafische Entwicklung festigte sich im Druck und führte zur heutigen deutschen Nomenklatur: H für das natürliche B und B für das B-Dur (B-flat). Interessanterweise erlaubte diese Unterscheidung Komponisten wie J.S. Bach, ihre Werke mit dem berühmten „B-A-C-H“-Motiv zu signieren (B-flat - A - C - H).',
+      html: 'Im Laufe der Zeit ähnelte die Form des <em>B quadratum</em> in deutschen Manuskripten immer mehr einem kleinen h. Diese grafische Entwicklung festigte sich im Druck und führte zur heutigen deutschen Nomenklatur: H für das natürliche B und B für das B-Dur (B-flat). Interessanterweise erlaubte diese Unterscheidung Komponisten wie J.S. Bach, ihre Werke mit dem berühmten \"B-A-C-H\"-Motiv zu signieren (B-flat - A - C - H).',
     },
     {
       type: 'title',

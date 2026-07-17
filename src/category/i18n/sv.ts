@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Vad du hittar i den här kategorin',
       items: [
-        'Online metronom med Web Audio API — millisekundprecision',
+        'Online metronom med Web Audio API - millisekundprecision',
         'BPM till millisekunder kalkylator för delays och reverb',
         'Frekvens till musiknot omvandlare (Hz, cent och detuning)',
         'Fasavståndsräknare för mikrofonjustering',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Musik är ett språk med flera notationssystem. Verktyget för <strong>notsekvivalens</strong> översätter omedelbart mellan det latinska systemet (Do, Re, Mi…), det amerikanska systemet (C, D, E…) och det tyska systemet (C, D, E… med H istället för B), och undviker förvirring vid kommunikation med musiker från olika traditioner eller läsning av noter från olika länder.',
+      html: 'Musik är ett språk med flera notationssystem. Verktyget för <strong>notsekvivalens</strong> översätter omedelbart mellan det latinska systemet (Do, Re, Mi...), det amerikanska systemet (C, D, E...) och det tyska systemet (C, D, E... med H istället för B), och undviker förvirring vid kommunikation med musiker från olika traditioner eller läsning av noter från olika länder.',
     },
     {
       type: 'tip',

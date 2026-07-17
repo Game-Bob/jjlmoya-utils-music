@@ -4,59 +4,59 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
 const slug = 'faz-mesafesi-hesaplayicisi';
-const title = 'Phase Distance Calculator for Microphones';
+const title = 'Mikrofonlar için Faz Mesafesi Hesaplayıcı';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'Mikrofonları hizalamak için gereken gecikmeyi ve telafiyi hesaplayın. Örneklem hassasiyetinde doğruluk ve sıcaklık ayarı ile faz iptalini ve tarak filtrelemeyi önleyin.';
 
 const faqData = [
   {
-    question: 'What is phase cancellation in audio?',
+    question: 'Ses sinyalinde faz iptali nedir?',
     answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
+      'Aynı kaynaktan gelen iki sinyalin farklı zamanlarda ulaşmasıyla ortaya çıkan akustik bir olaydır. Dalgalar birbirini etkiler ve 180 derece uyumsuz olduklarında birbirlerini sönümleyerek sesin zayıf ve gövdesiz çıkmasına neden olurlar.',
   },
   {
-    question: 'Why does temperature affect the calculation?',
+    question: 'Sıcaklık hesaplamayı neden etkiler?',
     answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
+      'Çünkü ses havada yayılır ve havanın yoğunluğu sıcaklıkla değişir. Hava ne kadar sıcaksa, ses o kadar hızlı yayılır. Hassas bir sıcaklık ayarı, ayrı mikrofonlar arasındaki tam gecikmeyi hesaplamanızı sağlar.',
   },
   {
-    question: 'Is inverting phase the same as inverting polarity?',
+    question: 'Fazı ters çevirmek, polariteyi ters çevirmekle aynı şey midir?',
     answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
+      'Teknik olarak hayır, ancak bu terimler birbirinin yerine kullanılır. Polarite elektriksel bir değişimdir (180° döndürme), faz ise zamansal bir kaymadır. Aracımız, en yüksek ses uyumunu bulmanız için her ikisini de simüle etmenize olanak tanır.',
   },
   {
-    question: 'What is Comb Filtering?',
+    question: 'Tarak Filtreleme (Comb Filtering) nedir?',
     answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches — like the teeth of a comb — that drastically alter the timbre of the instrument.',
+      'Bir sinyalin kendisinin geciktirilmiş bir versiyonuyla birleştirilmesinden kaynaklanan frekans tepkisidir. Enstrümanın tınısını büyük ölçüde değiştiren, tarak dişlerine benzeyen bir dizi tepe ve çukur oluşturur.',
   },
   {
-    question: "What is the 3:1 rule in microphone technique?",
+    question: 'Mikrofon tekniğinde 3 ila 1 kuralı nedir?',
     answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
+      'Faz sorunlarını en aza indirmek için kullanılan bir yöntemdir: farklı kaynaklar için iki mikrofon kullanırken, mikrofonlar arasındaki mesafe, her bir mikrofonun kendi kaynağına olan mesafesinin en az üç katı olmalıdır.',
   },
   {
-    question: 'Is it better to align microphones physically or with software?',
+    question: 'Mikrofonları fiziksel olarak mı yoksa yazılımla mı hizalamak daha iyidir?',
     answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
+      'Kayıt sırasında iyi bir fiziksel hizalama, yapay sesleri önlemek açısından her zaman tercih edilir. Ancak, DAW\'daki dijital gecikme, mikrofonları elle hareket ettirerek elde edilmesi neredeyse imkansız olan örneklem düzeyinde bir hassasiyet sağlar.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
+    name: 'Mesafeleri ölçün',
+    text: 'Ses kaynağından (örneğin trampet) kullandığınız mikrofonların her birine olan fiziksel mesafeyi ölçün.',
   },
   {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
+    name: 'Ortamı ayarlayın',
+    text: 'Gerçek fizik kurallarına dayalı hesaplamalar elde etmek için oda sıcaklığını ve projenizin örnekleme hızını girin.',
   },
   {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
+    name: 'Grafiği analiz edin',
+    text: 'Duyulabilir aralıktaki olası kritik iptalleri belirlemek için frekans tepkisi görselleştiricisine bakın.',
   },
   {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
+    name: 'Telafiyi uygulayın',
+    text: 'Milisaniye veya örnek değerini kopyalayın ve kanalları mükemmel şekilde hizalamak için kanalınızdaki gecikme eklentisine girin.',
   },
 ];
 
@@ -102,194 +102,194 @@ export const content: ToolLocaleContent<PhaseDistanceUI> = {
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   ui: {
-    labelTemp: 'Temperature (°C) / Sound',
-    btnAuto: 'Auto',
-    labelSampleRate: 'Sample Rate (kHz)',
-    labelUnits: 'Unit System',
-    optMetric: 'Metric (m/cm)',
-    optImperial: 'Imperial (ft/in)',
-    labelDistA: 'Microphone A Distance',
-    labelDistB: 'Microphone B Distance',
-    labelPresets: 'Quick Presets',
-    presetCoincident: 'Coincident (XY)',
-    presetSnare: 'Snare',
-    presetAmbient: 'Ambient',
-    btnInvert: 'Invert Phase (Φ)',
-    labelGain: 'Relative Gain Mic B:',
-    btnCopy: 'Copy Samples',
-    labelDelay: 'Required Delay',
-    unitMs: 'milliseconds (ms)',
-    labelCompensation: 'Compensation',
-    unitSamples: 'Samples',
-    labelPhaseStatus: 'Phase Status',
-    textLoading: 'Loading...',
-    statusInPhase: 'IN PHASE',
-    statusInPhaseDesc: 'Signals perfectly aligned.',
-    statusCritical: 'CRITICAL CANCELLATION',
-    statusCriticalDesc: 'Significant comb filtering in low/mid range.',
-    statusOffAxis: 'OFF AXIS',
-    statusOffAxisDesc: 'Slight phase shift. Texture modified.',
-    warningCritical: '(!) POSSIBLE CRITICAL CANCELLATION',
-    labelSoundSpeed: 'Speed of Sound',
-    labelDistDiff: 'Distance Difference',
-    labelNullFreq: 'First Nulls',
-    textNone: 'None',
-    chartTitle: 'FREQUENCY RESPONSE (H) — COMB FILTERING',
-    promptSoundSpeed: 'Speed of Sound (m/s):',
-    copyFeedback: 'Copied!',
+    labelTemp: 'Sıcaklık (°C) / Ses',
+    btnAuto: 'Oto',
+    labelSampleRate: 'Örnekleme Hızı (kHz)',
+    labelUnits: 'Birim Sistemi',
+    optMetric: 'Metrik (m/cm)',
+    optImperial: 'İmparatorluk (ft/in)',
+    labelDistA: 'Mikrofon A Mesafesi',
+    labelDistB: 'Mikrofon B Mesafesi',
+    labelPresets: 'Hızlı Hazır Ayarlar',
+    presetCoincident: 'Çakışık (XY)',
+    presetSnare: 'Trampet',
+    presetAmbient: 'Ortam (Ambient)',
+    btnInvert: 'Fazı Ters Çevir (Φ)',
+    labelGain: 'Mikrofon B Göreli Kazancı:',
+    btnCopy: 'Örnekleri Kopyala',
+    labelDelay: 'Gereken Gecikme',
+    unitMs: 'milisaniye (ms)',
+    labelCompensation: 'Telafi',
+    unitSamples: 'Örnekler',
+    labelPhaseStatus: 'Faz Durumu',
+    textLoading: 'Yükleniyor...',
+    statusInPhase: 'FAZDA',
+    statusInPhaseDesc: 'Sinyaller mükemmel şekilde hizalandı.',
+    statusCritical: 'KRİTİK İPTAL',
+    statusCriticalDesc: 'Alt/orta frekanslarda belirgin tarak filtreleme.',
+    statusOffAxis: 'EKSEN DIŞI',
+    statusOffAxisDesc: 'Hafif faz kayması. Doku değişti.',
+    warningCritical: 'OLASI KRİTİK İPTAL',
+    labelSoundSpeed: 'Ses Hızı',
+    labelDistDiff: 'Mesafe Farkı',
+    labelNullFreq: 'İlk Çukurlar',
+    textNone: 'Yok',
+    chartTitle: 'FREKANS TEPKİSİ (H) - TARAK FİLTRELEME',
+    promptSoundSpeed: 'Ses Hızı (m/s):',
+    copyFeedback: 'Kopyalandı!',
   },
   seo: [
     {
       type: 'summary',
-      title: 'Calculator features',
+      title: 'Hesaplayıcı Özellikleri',
       items: [
-        'Exact physical calculation with temperature adjustment for the speed of sound',
-        'Result in milliseconds and samples for DAW compensation',
-        'Canvas visualiser of comb filtering across the full audible spectrum',
-        'Microphone presets (XY coincident, snare, ambient)',
-        'Phase inversion simulation and relative gain control',
-        'Support for metric and imperial units',
+        'Ses hızı için sıcaklık ayarlı kesin fiziksel hesaplama',
+        'DAW telafisi için milisaniye ve örnek cinsinden sonuç',
+        'Duyulabilir tüm spektrumda tarak filtrelemenin grafik görselleştiricisi',
+        'Mikrofon hazır ayarları (XY çakışık, trampet, ortam)',
+        'Faz ters çevirme simülasyonu ve göreli kazanç kontrolü',
+        'Metrik ve emperyal birim desteği',
       ],
     },
     {
       type: 'title',
-      text: 'What is phase cancellation and why does it ruin your mixes?',
+      text: 'Faz iptali nedir ve mikslerinizi neden bozar?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the world of audio engineering, phase is one of the most critical concepts and, paradoxically, one of the most overlooked by beginners. When you record a sound source — such as a drum kit or guitar amplifier — with two or more microphones placed at different distances, the sound waves do not reach the capsules at the same time. This time difference, however small, causes a phenomenon known as <strong>phase shift</strong>.',
+      html: 'Ses mühendisliği dünyasında faz, en kritik kavramlardan biridir ve paradoksal olarak yeni başlayanlar tarafından en çok göz ardı edilenlerden biridir. Bir ses kaynağını (örneğin bir bateri kiti veya gitar amfisi) farklı mesafelere yerleştirilmiş iki veya daha fazla mikrofonla kaydettiğinizde, ses dalgaları mikrofon kapsüllerine aynı anda ulaşmaz. Bu küçük zaman farkı, <strong>faz kayması</strong> olarak bilinen bir olguya neden olur.',
     },
     {
       type: 'title',
-      text: 'The Comb Filtering phenomenon',
+      text: 'Tarak filtreleme olgusu',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When two identical signals are combined with a slight delay between them, a series of notches and peaks appear in the frequency response. Viewed on a spectrum analyser, the pattern resembles the teeth of a comb — hence the name. This effect destructively alters the natural timbre of the instrument.',
+      html: 'İki özdeş sinyal aralarında hafif bir gecikmeyle birleştirildiğinde, frekans tepkisinde bir dizi çukur ve tepe belirir. Spektrum analizöründe bakıldığında, desen bir tarağın dişlerini andırır - bu yüzden bu adı almıştır. Bu etki, enstrümanın doğal tınısını yıkıcı bir şekilde değiştirir.',
     },
     {
       type: 'comparative',
       columns: 2,
       items: [
         {
-          title: 'Impact on Low End',
+          title: 'Alt Frekanslara Etkisi',
           description:
-            'Phase cancellation is most devastating in the low frequencies, where the body of the sound disappears entirely.',
+            'Faz iptali, sesin gövdesinin tamamen yok olduğu düşük frekanslarda en yıkıcı etkiye sahiptir.',
         },
         {
-          title: 'Metallic Texture',
+          title: 'Metalik Doku',
           description:
-            "Comb filtering adds an artificial coloration that sounds 'hollow' or overly processed.",
+            'Tarak filtreleme, kulağa boş gelen veya aşırı işlenmiş gibi gelen yapay bir renklenme ekler.',
         },
       ],
     },
     {
       type: 'title',
-      text: 'The influence of temperature on the calculation',
+      text: 'Sıcaklığın hesaplamaya etkisi',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Many sound engineers forget that air is a physical medium and its density changes with temperature. The speed of sound is not an immutable constant — at 20°C it travels at approximately 343 metres per second.',
+      html: 'Birçok ses mühendisi, havanın fiziksel bir ortam olduğunu ve yoğunluğunun sıcaklıkla değiştiğini unutur. Ses hızı değişmez bir sabit değildir; 20°C\'de saniyede yaklaşık 343 metre hızla yayılır.',
     },
     {
       type: 'code',
       code: 'v = 331.3 + (0.606 × T)',
-      ariaLabel: 'Formula for the speed of sound as a function of temperature',
+      ariaLabel: 'Sıcaklığın bir fonksiyonu olarak ses hızı formülü',
     },
     {
       type: 'tip',
-      title: 'Surgical Compensation',
-      html: 'A few degrees of difference can shift the cancellation points by several hertz. Using our calculator with the actual temperature of your studio guarantees perfect alignment in the DAW.',
+      title: 'Cerrahi Telafi',
+      html: 'Birkaç derecelik fark, iptal noktalarını birkaç hertz kaydırabilir. Hesaplayıcımızı stüdyonuzun gerçek sıcaklığıyla kullanmak, DAW\'da mükemmel hizalamayı garanti eder.',
     },
     {
       type: 'title',
-      text: 'Critical recording scenarios',
+      text: 'Kritik kayıt senaryoları',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        'Snare drum (Top & Bottom): Align both heads temporally to maximise punch.',
-        'Overheads and close mics: Delay the close mics to match the phase of the overhead mics.',
-        'Guitars with multiple mics: Blend a dynamic and a ribbon without losing low-mids.',
-        'Bass DI and mic: Sync the direct signal with the amp mic for a massive sound.',
+        'Trampet (Üst ve Alt): Vuruş etkisini en üst düzeye çıkarmak için her iki deriyi zamansal olarak hizalayın.',
+        'Overheads ve yakın mikrofonlar: Yakın mikrofonları, overhead\'lerin fazıyla eşleşecek şekilde geciktirin.',
+        'Çoklu mikrofonlu gitarlar: Alt-orta frekansları kaybetmeden bir dinamik ve bir şerit mikrofonu karıştırın.',
+        'Bas DI ve mikrofonu: Güçlü bir ses elde etmek için doğrudan sinyali amfi mikrofonuyla senkronize edin.',
       ],
     },
     {
       type: 'title',
-      text: 'Physical Alignment vs. Digital Processing',
+      text: 'Fiziksel Hizalama vs. Dijital İşlem',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Although our tool gives you the values to correct phase in your DAW after recording, we always recommend attempting the best possible physical alignment in the studio. Moving a microphone a few millimetres can be more effective than any digital processing.',
+      html: 'Aracımız kayıt sonrasında DAW\'ınızda fazı düzeltmeniz için değerleri sağlasa da, her zaman stüdyoda mümkün olan en iyi fiziksel hizalamayı yapmaya çalışmanızı öneririz. Bir mikrofonu birkaç milimetre hareket ettirmek, herhangi bir dijital işlemden daha etkili olabilir.',
     },
     {
       type: 'stats',
       items: [
-        { label: 'Speed @ 20°C', value: '343.2 m/s' },
-        { label: 'Milliseconds/cm', value: '0.029 ms' },
-        { label: 'Samples @ 48kHz', value: '1.4 per cm' },
+        { label: '20°C\'deki Hız', value: '343.2 m/s' },
+        { label: 'Milisaniye/cm', value: '0.029 ms' },
+        { label: '48kHz\'deki Örnekler', value: 'cm başına 1.4' },
       ],
     },
     {
       type: 'title',
-      text: 'Reference table: Distance vs. First Null',
+      text: 'Referans tablosu: Mesafe vs. İlk Çukur',
       level: 2,
     },
     {
       type: 'table',
-      headers: ['Difference (cm)', 'Delay (ms)', '1st Null (Hz)', 'Affects...'],
+      headers: ['Fark (cm)', 'Gecikme (ms)', '1. Çukur (Hz)', 'Etkilediği...'],
       rows: [
-        ['1 cm', '0.029', '17160', 'Extreme high end'],
-        ['5 cm', '0.146', '3432', 'Upper mids (Presence)'],
-        ['10 cm', '0.291', '1716', 'Mids (Presence)'],
-        ['30 cm', '0.874', '572', 'Low-mids (Body)'],
-        ['1 metre', '2.914', '172', 'Low end (Fundamental)'],
+        ['1 cm', '0.029', '17160', 'Aşırı tiz frekanslar'],
+        ['5 cm', '0.146', '3432', 'Üst orta frekanslar (Varlık)'],
+        ['10 cm', '0.291', '1716', 'Orta frekanslar (Varlık)'],
+        ['30 cm', '0.874', '572', 'Alt orta frekanslar (Gövde)'],
+        ['1 metre', '2.914', '172', 'Bas frekanslar (Temel Ton)'],
       ],
     },
     {
       type: 'title',
-      text: 'Pros and cons of correction methods',
+      text: 'Düzeltme yöntemlerinin artıları ve eksileri',
       level: 2,
     },
     {
       type: 'proscons',
       items: [
         {
-          pro: 'Physical alignment: Less degradation of the original signal.',
-          con: 'Physical alignment: Difficult to adjust with microscopic accuracy.',
+          pro: 'Fiziksel hizalama: Orijinal sinyalde daha az bozulma.',
+          con: 'Fiziksel hizalama: Mikroskobik hassasiyetle ayarlanması zordur.',
         },
         {
-          pro: 'Digital correction: Absolute precision at the sample level.',
-          con: 'Digital correction: Can create pre-echo if applied incorrectly.',
+          pro: 'Dijital düzeltme: Örneklem düzeyinde mutlak hassasiyet.',
+          con: 'Dijital düzeltme: Yanlış uygulanırsa ön yankı oluşturabilir.',
         },
         {
-          pro: 'Polarity inversion: Instant fix for 180° cancellations.',
-          con: 'Polarity inversion: Does not fix intermediate phase shifts.',
+          pro: 'Polarite ters çevirme: 180° iptaller için anında çözüm.',
+          con: 'Polarite ters çevirme: Ara faz kaymalarını düzeltmez.',
         },
         {
-          pro: 'Time compensation: Recovers lost impact and punch.',
-          con: 'Time compensation: Requires precise measurement of each mic.',
+          pro: 'Zaman telafisi: Kaybedilen darbe ve dinamikleri geri kazandırır.',
+          con: 'Zaman telafisi: Her bir mikrofonun mesafesinin tam olarak ölçülmesini gerektirir.',
         },
       ],
     },
     {
       type: 'tip',
-      title: 'How to detect phase problems by ear?',
-      html: 'Press the "Invert Phase" button (Φ). If activating it makes the sound gain body and low end, your microphones were out of phase. If the sound "disappears" or becomes thinner, they were correctly aligned.',
+      title: 'Faz sorunları kulakla nasıl tespit edilir?',
+      html: '"Fazı Ters Çevir" düğmesine (Φ) basın. Etkinleştirmek sesin gövde ve alt frekanslar kazanmasını sağlıyorsa, mikrofonlarınız faz dışı demektir. Ses kayboluyor veya inceliyorsa doğru hizalanmışlardır.',
     },
     {
       type: 'title',
-      text: 'Mono Compatibility and Stereo Perception',
+      text: 'Mono Uyumluluk ve Stereo Algı',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In stereo recordings, the phase relationship defines the stability of the sound image. If there are serious inconsistencies, the sound could disappear entirely when the mix is played back on a mono system. Our calculator helps you predict which frequencies will suffer most when the channels are summed.',
+      html: 'Stereo kayıtlarda faz ilişkisi, ses görüntüsünün kararlılığını tanımlar. Ciddi tutarsızlıklar varsa, miks mono bir sistemde çalındığında ses tamamen yok olabilir. Hesaplayıcımız, kanallar toplandığında hangi frekansların en çok zarar göreceğini tahmin etmenize yardımcı olur.',
     },
   ],
 };

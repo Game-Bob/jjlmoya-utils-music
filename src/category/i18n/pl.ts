@@ -10,7 +10,7 @@ export const content: CategoryLocaleContent = {
       type: 'summary',
       title: 'Co znajdziesz w tej kategorii',
       items: [
-        'Internetowy metronom z Web Audio API — precyzja milisekundowa',
+        'Internetowy metronom z Web Audio API - precyzja milisekundowa',
         'Kalkulator BPM na milisekundy dla delayów i pogłosów',
         'Konwerter częstotliwości na nuty muzyczne (Hz, centy i detuning)',
         'Kalkulator odległości fazowej do ustawiania mikrofonów',
@@ -81,7 +81,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Muzyka jest językiem z wieloma systemami notacji. Narzędzie <strong>ekwiwalentności nut</strong> natychmiast tłumaczy między systemem łacińskim (Do, Re, Mi…), systemem amerykańskim (C, D, E…) i systemem niemieckim (C, D, E… z H zamiast B), unikając nieporozumień podczas komunikacji z muzykami z różnych tradycji lub czytania partytur z różnych krajów.',
+      html: 'Muzyka jest językiem z wieloma systemami notacji. Narzędzie <strong>ekwiwalentności nut</strong> natychmiast tłumaczy między systemem łacińskim (Do, Re, Mi...), systemem amerykańskim (C, D, E...) i systemem niemieckim (C, D, E... z H zamiast B), unikając nieporozumień podczas komunikacji z muzykami z różnych tradycji lub czytania partytur z różnych krajów.',
     },
     {
       type: 'tip',

@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Co to jest Pre-delay w pogłosie?',
     answer:
-      'Pre-delay to czas między dźwiękiem bezpośrednim (źródłem) a początkiem ogona pogłosu. Rytmiczne ustawienie tego parametru pozwala oryginalnemu źródłu pozostać wyraźnym przed włączeniem się efektu przestrzennego — ma to kluczowe znaczenie dla wokali i instrumentów perkusyjnych.',
+      'Pre-delay to czas między dźwiękiem bezpośrednim (źródłem) a początkiem ogona pogłosu. Rytmiczne ustawienie tego parametru pozwala oryginalnemu źródłu pozostać wyraźnym przed włączeniem się efektu przestrzennego - ma to kluczowe znaczenie dla wokali i instrumentów perkusyjnych.',
   },
   {
     question: 'Jak działa Tap Tempo?',
@@ -144,7 +144,7 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Jeśli kolekcjonujesz analogowe kostki delay lub vintage’owe syntezatory, wiesz, że wiele z nich nie posiada wejścia MIDI clock. Ręczne ustawienie edycji taśmowej wymaga dokładnej znajomości liczby milisekund odpowiadających ósemce lub ćwierćnucie z kropką. Nasz kalkulator natychmiast podaje te wartości, pozwalając na precyzyjne ustawienie sprzętu.',
+      html: 'Jeśli kolekcjonujesz analogowe kostki delay lub vintage\'owe syntezatory, wiesz, że wiele z nich nie posiada wejścia MIDI clock. Ręczne ustawienie edycji taśmowej wymaga dokładnej znajomości liczby milisekund odpowiadających ósemce lub ćwierćnucie z kropką. Nasz kalkulator natychmiast podaje te wartości, pozwalając na precyzyjne ustawienie sprzętu.',
     },
     {
       type: 'title',
@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<BpmCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Czasami matematyczna doskonałość brzmi nudno. Wielu producentów wykorzystuje wartości milisekundowe jako punkt wyjścia, a następnie lekko je przesuwa. Przesunięcie delay’a o 5 do 10 ms poza siatkę może dodać ludzki <em>swing</em> lub unikalny <em>groove</em>, którego sztywna kwantyzacja nigdy nie będzie w stanie odtworzyć.',
+      html: 'Czasami matematyczna doskonałość brzmi nudno. Wielu producentów wykorzystuje wartości milisekundowe jako punkt wyjścia, a następnie lekko je przesuwa. Przesunięcie delay\'a o 5 do 10 ms poza siatkę może dodać ludzki <em>swing</em> lub unikalny <em>groove</em>, którego sztywna kwantyzacja nigdy nie będzie w stanie odtworzyć.',
     },
     {
       type: 'title',
