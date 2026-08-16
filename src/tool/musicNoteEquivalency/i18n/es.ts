@@ -139,17 +139,9 @@ export const content: ToolLocaleContent<MusicNoteEquivalencyUI> = {
       html: 'La música es un lenguaje universal, pero su escritura y nomenclatura varían profundamente según la región geográfica y el contexto académico. Mientras que en los países de habla hispana y en la tradición clásica europea predomina el sistema latino (Do, Re, Mi...), en la música moderna, el jazz y el ámbito anglosajón se ha estandarizado el cifrado americano (C, D, E...). Además, existe una particularidad histórica en los países de influencia germánica donde el Si natural se denomina H y el Si bemol es B.',
     },
     {
-      type: 'paragraph',
-      html: 'Esta herramienta de equivalencia de notas musicales ha sido diseñada para resolver confusiones instantáneamente. Permite traducir entre estos tres sistemas principales, identificar la octava exacta en notación científica internacional y visualizar la posición de cada nota en un teclado de piano interactivo. Es una utilidad esencial para estudiantes de conservatorio que se inician en el jazz, productores que trabajan con librerías internacionales y músicos que necesitan interpretar partituras de distintas procedencias.',
-    },
-    {
       type: 'title',
       text: 'Los tres sistemas principales de nomenclatura musical',
       level: 2,
-    },
-    {
-      type: 'paragraph',
-      html: 'Para navegar por la teoría musical global, es fundamental conocer las tres "lenguas" en las que se expresan las notas:',
     },
     {
       type: 'list',

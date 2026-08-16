@@ -4,60 +4,24 @@ import type { ToolLocaleContent } from '../../../types';
 import type { PhaseDistanceUI } from '../ui';
 
 const slug = 'kalkulator-jarak-fase';
-const title = 'Phase Distance Calculator for Microphones';
+const title = 'Kalkulator Jarak Fase untuk Mikrofon';
 const description =
-  'Calculate the delay and compensation needed to align microphones. Avoid phase cancellation and comb filtering with sample-accurate precision and temperature adjustment.';
+  'Hitung penundaan dan kompensasi untuk menyelaraskan mikrofon. Hindari pembatalan fase dan penyaringan sisir dengan presisi hingga sampel serta penyesuaian suhu.';
 
 const faqData = [
-  {
-    question: 'What is phase cancellation in audio?',
-    answer:
-      'It is an acoustic phenomenon that occurs when two signals from the same source arrive at different times. The waves interfere with each other, and if they are misaligned by 180 degrees they cancel out, making the sound thin and lacking body.',
-  },
-  {
-    question: 'Why does temperature affect the calculation?',
-    answer:
-      'Because sound travels through air, and the density of air changes with temperature. The warmer it is, the faster sound travels. A precise temperature adjustment allows you to calculate the exact delay between separated microphones.',
-  },
-  {
-    question: 'Is inverting phase the same as inverting polarity?',
-    answer:
-      'Technically no, although the terms are used interchangeably. Polarity is an electrical change (rotating 180°), while phase is a time shift. Our tool lets you simulate both to find the point of greatest sonic coherence.',
-  },
-  {
-    question: 'What is Comb Filtering?',
-    answer:
-      'It is the frequency response that results from combining a signal with a delayed version of itself. It creates a series of peaks and notches - like the teeth of a comb - that drastically alter the timbre of the instrument.',
-  },
-  {
-    question: "What is the 3:1 rule in microphone technique?",
-    answer:
-      'It is a technique to minimise phase issues: when using two microphones for different sources, the distance between the microphones should be at least three times the distance from each microphone to its source.',
-  },
-  {
-    question: 'Is it better to align microphones physically or with software?',
-    answer:
-      'A good physical alignment during recording is always preferable to avoid artefacts. However, digital delay in the DAW provides sample-accurate precision that is almost impossible to achieve by moving microphones by hand.',
-  },
+  { question: 'Apa itu pembatalan fase dalam audio?', answer: 'Pembatalan fase terjadi ketika dua sinyal dari sumber yang sama tiba pada waktu berbeda. Gelombang yang tidak selaras dapat membuat suara tipis dan kehilangan isi.' },
+  { question: 'Mengapa suhu memengaruhi perhitungan?', answer: 'Suara merambat melalui udara dan kecepatannya berubah mengikuti suhu. Penyesuaian suhu membantu menghitung jeda antara mikrofon dengan tepat.' },
+  { question: 'Apakah membalik fase sama dengan membalik polaritas?', answer: 'Tidak. Polaritas adalah perubahan listrik sebesar 180 derajat, sedangkan fase adalah pergeseran waktu. Alat ini dapat mensimulasikan keduanya.' },
+  { question: 'Apa itu penyaringan sisir?', answer: 'Penyaringan sisir muncul saat sinyal digabungkan dengan salinan yang tertunda. Respons frekuensinya membentuk puncak dan lembah seperti gigi sisir.' },
+  { question: 'Apa aturan 3:1 dalam teknik mikrofon?', answer: 'Saat dua mikrofon dipakai untuk sumber berbeda, jarak antarmikrofon sebaiknya setidaknya tiga kali jarak setiap mikrofon ke sumbernya.' },
+  { question: 'Lebih baik menyelaraskan mikrofon secara fisik atau dengan perangkat lunak?', answer: 'Penyelarasan fisik saat merekam adalah pilihan utama. Penundaan digital pada DAW memberi presisi tingkat sampel yang sulit dicapai secara manual.' },
 ];
 
 const howToData = [
-  {
-    name: 'Measure the distances',
-    text: 'Measure the physical distance from the sound source (e.g. snare drum) to each of the microphones you are using.',
-  },
-  {
-    name: 'Set the environment',
-    text: 'Enter the room temperature and the sample rate of your project to get calculations based on real physics.',
-  },
-  {
-    name: 'Analyse the graph',
-    text: 'Look at the frequency response visualiser to identify possible critical cancellations in the audible range.',
-  },
-  {
-    name: 'Apply the compensation',
-    text: 'Copy the millisecond or sample value and enter it into the delay plugin on your channel to perfectly align the tracks.',
-  },
+  { name: 'Ukur jaraknya', text: 'Ukur jarak dari sumber suara, misalnya snare, ke setiap mikrofon.' },
+  { name: 'Atur lingkungan', text: 'Masukkan suhu ruangan dan laju sampel proyek agar perhitungannya mengikuti kondisi fisik.' },
+  { name: 'Analisis grafik', text: 'Amati respons frekuensi untuk menemukan pembatalan kritis pada rentang yang terdengar.' },
+  { name: 'Terapkan kompensasi', text: 'Salin nilai milidetik atau sampel ke plugin penundaan untuk menyelaraskan trek.' },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
