@@ -1,0 +1,13 @@
+---
+import { Bibliography } from '@jjlmoya/utils-shared';
+import { bibliography } from './bibliography';
+import type { BibliographyEntry } from '../../types';
+
+interface Props {
+  links?: BibliographyEntry[];
+}
+
+const { links = bibliography } = Astro.props;
+---
+
+<Bibliography links={links} />

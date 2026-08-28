@@ -11,4 +11,5 @@ import { frequencyNoteConverter } from './tool/frequencyNoteConverter/entry';
 import { metronome } from './tool/metronome/entry';
 import { musicNoteEquivalency } from './tool/musicNoteEquivalency/entry';
 import { phaseDistance } from './tool/phaseDistance/entry';
-export const ALL_ENTRIES = [audioStorageCalculator, bpmCalculator, frequencyNoteConverter, metronome, musicNoteEquivalency, phaseDistance];
+import { guitarStringTensionCalculator } from './tool/guitarStringTensionCalculator/entry';
+export const ALL_ENTRIES = [audioStorageCalculator, bpmCalculator, frequencyNoteConverter, metronome, musicNoteEquivalency, phaseDistance, guitarStringTensionCalculator];

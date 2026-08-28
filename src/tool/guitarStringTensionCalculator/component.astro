@@ -1,0 +1,27 @@
+---
+import './guitar-string-tension-calculator.css';
+import type { GuitarStringTensionUI } from './ui';
+
+interface Props {
+  ui: GuitarStringTensionUI;
+}
+
+const { ui } = Astro.props;
+---
+
+<div class="gst-tool" data-gst-tool>
+  <div class="gst-form" data-gst-form></div>
+  <div class="gst-output" data-gst-output></div>
+</div>
+
+<script is:inline type="application/json" data-gst-ui set:html={JSON.stringify(ui)}></script>
+
+<script>
+  import { mountGuitarStringTension } from './controller';
+
+  const uiScript = document.querySelector<HTMLScriptElement>('[data-gst-ui]');
+  const ui = uiScript ? JSON.parse(uiScript.textContent ?? '{}') : null;
+  document.querySelectorAll<HTMLElement>('[data-gst-tool]').forEach((root) => {
+    if (ui) mountGuitarStringTension({ root, ui });
+  });
+</script>

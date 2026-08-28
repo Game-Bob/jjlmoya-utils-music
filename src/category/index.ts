@@ -5,10 +5,11 @@ import { phaseDistance } from '../tool/phaseDistance/entry';
 import { frequencyNoteConverter } from '../tool/frequencyNoteConverter/entry';
 import { audioStorageCalculator } from '../tool/audioStorageCalculator/entry';
 import { musicNoteEquivalency } from '../tool/musicNoteEquivalency/entry';
+import { guitarStringTensionCalculator } from '../tool/guitarStringTensionCalculator/entry';
 
 export const musicCategory: MusicCategoryEntry = {
   icon: 'mdi:music',
-  tools: [metronome, bpmCalculator, phaseDistance, frequencyNoteConverter, audioStorageCalculator, musicNoteEquivalency],
+  tools: [metronome, bpmCalculator, phaseDistance, frequencyNoteConverter, audioStorageCalculator, musicNoteEquivalency, guitarStringTensionCalculator],
   i18n: {
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),
