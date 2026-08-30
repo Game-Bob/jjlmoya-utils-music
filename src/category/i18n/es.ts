@@ -38,7 +38,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'El <strong>metrónomo online</strong> es la herramienta fundamental de cualquier músico en formación o en activo. Nuestro metrónomo utiliza la Web Audio API para garantizar una precisión de milisegundos, eliminar el drift y ofrecer retroalimentación visual con efecto ripple. La función <strong>Tap Tempo</strong> permite calcular el BPM de cualquier canción al instante.',
+      html: 'El <strong>metrónomo online</strong> es una herramienta práctica para cualquier músico en formación o en activo. Utiliza la Web Audio API para mantener un pulso estable, reducir el drift y ofrecer retroalimentación visual con efecto ripple. La función <strong>Tap Tempo</strong> permite estimar el BPM de cualquier canción.',
     },
     {
       type: 'title',
@@ -65,7 +65,7 @@ export const content: CategoryLocaleContent = {
         {
           title: 'Precisión Técnica',
           description:
-            'Todas las herramientas están basadas en algoritmos verificados matemáticamente. Nada de aproximaciones: los resultados son exactos y reproducibles.',
+            'Las herramientas aplican operaciones matemáticas documentadas. Los resultados se muestran con el redondeo indicado para que puedas repetir y revisar cada ejercicio.',
         },
         {
           title: 'Privacidad Total',

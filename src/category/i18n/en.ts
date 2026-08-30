@@ -38,7 +38,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'The <strong>online metronome</strong> is the fundamental tool for any musician in training or in practice. Our metronome uses the Web Audio API to guarantee millisecond precision, eliminate drift and provide visual feedback with a ripple effect. The <strong>Tap Tempo</strong> feature lets you instantly find the BPM of any song.',
+      html: 'The <strong>online metronome</strong> is a practical tool for any musician in training or in practice. Our metronome uses the Web Audio API to target stable timing, reduce drift and provide visual feedback with a ripple effect. The <strong>Tap Tempo</strong> feature lets you estimate the BPM of any song.',
     },
     {
       type: 'title',
