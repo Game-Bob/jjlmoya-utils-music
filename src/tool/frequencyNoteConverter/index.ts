@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { frequencyNoteConverter } from './entry';
 export * from './entry';
 export const FREQUENCY_NOTE_CONVERTER_TOOL: ToolDefinition = {

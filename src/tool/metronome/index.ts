@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { metronome } from './entry';
 export * from './entry';
 export const METRONOME_TOOL: ToolDefinition = {
