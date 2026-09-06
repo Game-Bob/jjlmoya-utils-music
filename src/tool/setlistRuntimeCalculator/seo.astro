@@ -1,0 +1,12 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import { setlistRuntimeCalculator } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props { locale?: KnownLocale; }
+
+const { locale = 'en' } = Astro.props;
+const content = await setlistRuntimeCalculator.i18n[locale]?.() ?? await setlistRuntimeCalculator.i18n.en?.();
+---
+
+{content && <SEORenderer content={{ locale, sections: content.seo }} />}

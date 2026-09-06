@@ -3,7 +3,7 @@ import { ALL_TOOLS } from '../tools';
 describe('Locale Completeness Validation', () => {
 
 
-  it('seven registered music tools include the guitar string tension calculator', () => {
-    expect(ALL_TOOLS.length).toBe(7);
+  it('eight registered music tools include the guitar string tension calculator and setlist runtime calculator', () => {
+    expect(ALL_TOOLS.length).toBe(8);
   });
 });

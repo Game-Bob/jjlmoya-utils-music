@@ -1,0 +1,12 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import type { KnownLocale } from '../../types';
+import { setlistRuntimeCalculator } from './index';
+
+interface Props { locale: KnownLocale; }
+
+const { locale } = Astro.props;
+const content = await setlistRuntimeCalculator.i18n[locale]?.() ?? await setlistRuntimeCalculator.i18n.en?.();
+---
+
+{content && <SharedBibliography links={content.bibliography} />}

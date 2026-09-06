@@ -1,0 +1,406 @@
+---
+import type { KnownLocale } from '../../types';
+import type { SetlistRuntimeCalculatorUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as SetlistRuntimeCalculatorUI;
+const initialItems = [
+  { id: 'song-1', title: 'Opening number', duration: '4:00', pauseMinutes: 1, kind: 'song' as const, included: true },
+  { id: 'song-2', title: 'Middle set', duration: '4:30', pauseMinutes: 1, kind: 'song' as const, included: true },
+  { id: 'song-3', title: 'Set closer', duration: '5:00', pauseMinutes: 1, kind: 'song' as const, included: true },
+  { id: 'encore-1', title: 'Encore', duration: '4:00', pauseMinutes: 0, kind: 'encore' as const, included: false },
+];
+---
+
+<div class="msr-root" id="msr-root" data-ui={JSON.stringify(t)}>
+  <div class="msr-card">
+    <div class="msr-top-controls">
+      <label class="msr-field">
+        <span>{t.labelStartTime}</span>
+        <input id="msr-start-time" type="time" value="20:00" aria-label={t.labelStartTime} />
+      </label>
+      <label class="msr-field">
+        <span>{t.labelSlot}</span>
+        <span class="msr-input-with-unit">
+          <input id="msr-slot" type="number" min="15" max="720" step="5" value="90" aria-label={t.labelSlot} />
+          <span>{t.unitMinutes}</span>
+        </span>
+      </label>
+    </div>
+
+    <div class="msr-order-heading">
+      <div>
+        <span class="msr-eyebrow">{t.labelSetOrder}</span>
+        <p class="msr-hint">{t.hintExample}</p>
+      </div>
+      <div class="msr-add-actions">
+        <button type="button" class="msr-secondary-button" data-action="add-song">{t.buttonAddSong}</button>
+        <button type="button" class="msr-secondary-button msr-secondary-button-accent" data-action="add-encore">{t.buttonAddEncore}</button>
+      </div>
+    </div>
+
+    <div id="msr-items" class="msr-items">
+      {initialItems.map((item, index) => (
+        <div class:list={['msr-item', item.kind === 'encore' && 'msr-item-encore', !item.included && 'msr-item-excluded']} data-item data-item-id={item.id} data-kind={item.kind} data-included={String(item.included)}>
+          <span class="msr-order-number">{String(index + 1).padStart(2, '0')}</span>
+          <div class="msr-item-fields">
+            <label class="msr-field msr-field-title">
+              <span>{t.labelTitle}</span>
+              <input data-field="title" type="text" value={item.title} maxlength="80" aria-label={t.labelTitle} />
+            </label>
+            <label class="msr-field">
+              <span>{t.labelDuration}</span>
+              <span class="msr-input-with-unit">
+                <input data-field="duration" type="text" inputmode="numeric" value={item.duration} placeholder="04:00" aria-label={t.labelDuration} />
+                <span>mm:ss</span>
+              </span>
+            </label>
+            <label class="msr-field">
+              <span>{t.labelPauseAfter}</span>
+              <span class="msr-input-with-unit">
+                <input data-field="pause" type="number" min="0" max="30" step="0.5" value={item.pauseMinutes} aria-label={t.labelPauseAfter} />
+                <span>{t.unitPause}</span>
+              </span>
+            </label>
+          </div>
+          <div class="msr-item-actions">
+            {item.kind === 'encore' && (
+              <button type="button" class="msr-include-button" data-action="toggle-include" aria-pressed={item.included}>
+                {item.included ? t.buttonExcludeEncore : t.buttonIncludeEncore}
+              </button>
+            )}
+            <button type="button" class="msr-remove-button" data-action="remove" aria-label={`${t.buttonRemove} ${item.title}`}>×</button>
+          </div>
+          <p class="msr-item-error" data-item-error aria-live="polite"></p>
+        </div>
+      ))}
+    </div>
+
+    <div class="msr-result" aria-live="polite">
+      <div class="msr-result-head">
+        <div>
+          <span id="msr-status" class="msr-status">{t.statusWithin}</span>
+          <p id="msr-message" class="msr-result-message">{t.withinMessage}</p>
+        </div>
+        <div class="msr-finish">
+          <span>{t.labelFinish}</span>
+          <strong id="msr-finish-time">21:00</strong>
+        </div>
+      </div>
+
+      <div class="msr-stats">
+        <div><span>{t.labelTotal}</span><strong id="msr-total">16m</strong></div>
+        <div><span>{t.labelSongs}</span><strong id="msr-songs">13m 30s</strong></div>
+        <div><span>{t.labelPauses}</span><strong id="msr-pauses">2m</strong></div>
+        <div><span>{t.labelMargin}</span><strong id="msr-margin">+1h 14m</strong></div>
+      </div>
+
+      <div class="msr-timeline-wrap">
+        <div class="msr-timeline-meta">
+          <span>{t.timelineLabel}</span>
+          <span id="msr-timeline-range">20:00 → 21:00</span>
+        </div>
+        <div id="msr-timeline" class="msr-timeline" role="img" aria-label={t.timelineLabel}>
+          <div id="msr-timeline-track" class="msr-timeline-track"></div>
+          <div id="msr-booked-marker" class="msr-booked-marker"><span>{t.bookedMarker}</span></div>
+        </div>
+        <div class="msr-legend">
+          <span><i class="msr-legend-song"></i>{t.songMarker}</span>
+          <span><i class="msr-legend-pause"></i>{t.pauseMarker}</span>
+          <span><i class="msr-legend-booked"></i>{t.bookedMarker}</span>
+        </div>
+      </div>
+
+      <div class="msr-result-actions">
+        <p id="msr-errors" class="msr-errors" role="alert"></p>
+        <button type="button" class="msr-copy-button" data-action="copy">{t.buttonCopy}</button>
+        <span id="msr-copy-status" class="msr-copy-status" role="status"></span>
+      </div>
+    </div>
+  </div>
+
+  <template id="msr-item-template">
+    <div class="msr-item" data-item data-item-id="new-item" data-kind="song" data-included="true">
+      <span class="msr-order-number">00</span>
+      <div class="msr-item-fields">
+        <label class="msr-field msr-field-title">
+          <span>{t.labelTitle}</span>
+          <input data-field="title" type="text" maxlength="80" aria-label={t.labelTitle} />
+        </label>
+        <label class="msr-field">
+          <span>{t.labelDuration}</span>
+          <span class="msr-input-with-unit">
+            <input data-field="duration" type="text" inputmode="numeric" value="04:00" placeholder="04:00" aria-label={t.labelDuration} />
+            <span>mm:ss</span>
+          </span>
+        </label>
+        <label class="msr-field">
+          <span>{t.labelPauseAfter}</span>
+          <span class="msr-input-with-unit">
+            <input data-field="pause" type="number" min="0" max="30" step="0.5" value="1" aria-label={t.labelPauseAfter} />
+            <span>{t.unitPause}</span>
+          </span>
+        </label>
+      </div>
+      <div class="msr-item-actions">
+        <button type="button" class="msr-remove-button" data-action="remove" aria-label={t.buttonRemove}>×</button>
+      </div>
+      <p class="msr-item-error" data-item-error aria-live="polite"></p>
+    </div>
+  </template>
+</div>
+
+<script>
+  import { buildScheduleText, calculateSetlistRuntime, formatClockTime, formatDuration, formatSignedDuration } from './logic';
+
+  const root = document.getElementById('msr-root');
+  if (root) {
+    const {
+      buttonIncludeEncore,
+      buttonExcludeEncore,
+      statusWithin,
+      statusOver,
+      statusInvalid,
+      withinMessage,
+      overMessage,
+      invalidMessage,
+      invalidStart,
+      invalidSlot,
+      invalidTitle,
+      invalidDuration,
+      invalidPause,
+      emptySetlist,
+      copySuccess,
+      copyFailure,
+      bookedMarker,
+    } = JSON.parse(root.dataset.ui ?? '{}');
+    const itemsElement = root.querySelector('#msr-items');
+    const startTimeElement = root.querySelector('#msr-start-time') as HTMLInputElement | null;
+    const slotElement = root.querySelector('#msr-slot') as HTMLInputElement | null;
+    const statusElement = root.querySelector('#msr-status');
+    const messageElement = root.querySelector('#msr-message');
+    const finishElement = root.querySelector('#msr-finish-time');
+    const totalElement = root.querySelector('#msr-total');
+    const songsElement = root.querySelector('#msr-songs');
+    const pausesElement = root.querySelector('#msr-pauses');
+    const marginElement = root.querySelector('#msr-margin');
+    const errorsElement = root.querySelector('#msr-errors');
+    const trackElement = root.querySelector('#msr-timeline-track');
+    const markerElement = root.querySelector('#msr-booked-marker') as HTMLElement | null;
+    const rangeElement = root.querySelector('#msr-timeline-range');
+    const timelineElement = root.querySelector('#msr-timeline');
+    const copyStatusElement = root.querySelector('#msr-copy-status');
+    const template = root.querySelector('#msr-item-template') as HTMLTemplateElement | null;
+    let nextId = 10;
+    let latestResult = calculateSetlistRuntime(startTimeElement?.value ?? '20:00', Number(slotElement?.value ?? 90), []);
+
+    const readFieldValue = (item: HTMLElement, field: string, fallback = '') => item.querySelector<HTMLInputElement>(`[data-field="${field}"]`)?.value ?? fallback;
+    const readDataValue = (item: HTMLElement, key: string, fallback = '') => item.dataset[key] ?? fallback;
+    const readItem = (item: HTMLElement) => {
+      const kind = readDataValue(item, 'kind') === 'encore' ? 'encore' as const : 'song' as const;
+      return {
+        id: readDataValue(item, 'itemId', `item-${nextId}`),
+        title: readFieldValue(item, 'title'),
+        duration: readFieldValue(item, 'duration'),
+        pauseMinutes: Number(readFieldValue(item, 'pause', '0')),
+        kind,
+        included: readDataValue(item, 'included') !== 'false',
+      };
+    };
+    const getItems = () => Array.from(root.querySelectorAll<HTMLElement>('[data-item]'), readItem);
+
+    const setFieldState = (item: HTMLElement, errorCodes: string[]) => {
+      const id = item.dataset.itemId ?? '';
+      const fields = [
+        ['title', `title:${id}`],
+        ['duration', `duration:${id}`],
+        ['pause', `pause:${id}`],
+      ] as const;
+      fields.forEach(([field, code]) => {
+        const input = item.querySelector<HTMLInputElement>(`[data-field="${field}"]`);
+        const invalid = errorCodes.includes(code);
+        input?.toggleAttribute('aria-invalid', invalid);
+      });
+      const itemError = item.querySelector('[data-item-error]');
+      const messages = [];
+      if (errorCodes.includes(`title:${id}`)) messages.push(invalidTitle);
+      if (errorCodes.includes(`duration:${id}`)) messages.push(invalidDuration);
+      if (errorCodes.includes(`pause:${id}`)) messages.push(invalidPause);
+      if (itemError) itemError.textContent = messages.join(' ');
+    };
+
+    const appendTimelineItem = (item: (typeof latestResult.items)[number]) => {
+      if (!trackElement) return;
+      const songBlock = document.createElement('div');
+      const songWidth = (item.durationSeconds / latestResult.timelineSeconds) * 100;
+      songBlock.className = `msr-timeline-block ${item.kind === 'encore' ? 'msr-timeline-encore' : ''}`;
+      songBlock.style.width = `${Math.max(songWidth, 1.5)}%`;
+      songBlock.textContent = item.title;
+      songBlock.title = `${item.title} · ${formatDuration(item.durationSeconds)}`;
+      songBlock.setAttribute('aria-label', `${item.title}, ${formatDuration(item.durationSeconds)}`);
+      trackElement.append(songBlock);
+      if (item.pauseAfterSeconds > 0) {
+        const pauseBlock = document.createElement('div');
+        pauseBlock.className = 'msr-timeline-pause';
+        pauseBlock.style.width = `${(item.pauseAfterSeconds / latestResult.timelineSeconds) * 100}%`;
+        pauseBlock.title = `${formatDuration(item.pauseAfterSeconds)} pause`;
+        pauseBlock.setAttribute('aria-label', `${formatDuration(item.pauseAfterSeconds)} pause`);
+        trackElement.append(pauseBlock);
+      }
+    };
+
+    const updateTimelineMeta = () => {
+      if (rangeElement && latestResult.startTimeMinutes !== null) rangeElement.textContent = `${formatClockTime(latestResult.startTimeMinutes, 0)} → ${latestResult.finishTime ?? '—'}`;
+      const slotLabel = latestResult.slotSeconds ? formatDuration(latestResult.slotSeconds) : '—';
+      timelineElement?.setAttribute('aria-label', `${bookedMarker}: ${slotLabel}; ${latestResult.items.length} items; finish ${latestResult.finishTime ?? '—'}`);
+    };
+    const renderValidTimeline = () => {
+      latestResult.items.forEach(appendTimelineItem);
+      const markerPercent = latestResult.slotSeconds === null ? 100 : Math.min(100, (latestResult.slotSeconds / latestResult.timelineSeconds) * 100);
+      if (markerElement) markerElement.style.left = `${markerPercent}%`;
+      updateTimelineMeta();
+    };
+    const renderTimeline = () => {
+      if (!trackElement || !markerElement) return;
+      trackElement.replaceChildren();
+      if (!latestResult.valid) {
+        markerElement.style.left = '100%';
+        if (rangeElement) rangeElement.textContent = '—';
+        return;
+      }
+      renderValidTimeline();
+    };
+
+    const setText = (element: Element | null, value: string) => {
+      if (element) element.textContent = value;
+    };
+    const statusText = () => {
+      if (latestResult.status === 'within') return statusWithin;
+      if (latestResult.status === 'over') return statusOver;
+      return statusInvalid;
+    };
+    const messageText = () => {
+      if (latestResult.status === 'within') return withinMessage;
+      if (latestResult.status === 'over') return overMessage;
+      return invalidMessage;
+    };
+    const renderErrors = () => {
+      const errors: string[] = [];
+      if (latestResult.errorCodes.includes('start-time')) errors.push(invalidStart);
+      if (latestResult.errorCodes.includes('slot-minutes')) errors.push(invalidSlot);
+      if (latestResult.errorCodes.includes('items')) errors.push(emptySetlist);
+      setText(errorsElement, errors.join(' '));
+    };
+    const resultDuration = (seconds: number) => latestResult.valid ? formatDuration(seconds) : '—';
+    const resultMargin = () => latestResult.marginSeconds === null ? '—' : formatSignedDuration(latestResult.marginSeconds);
+    const render = () => {
+      latestResult = calculateSetlistRuntime(startTimeElement?.value ?? '', Number(slotElement?.value ?? 0), getItems());
+      root.dataset.status = latestResult.status;
+      setText(statusElement, statusText());
+      setText(messageElement, messageText());
+      setText(finishElement, latestResult.finishTime ?? '—');
+      setText(totalElement, resultDuration(latestResult.totalSeconds));
+      setText(songsElement, resultDuration(latestResult.songSeconds));
+      setText(pausesElement, resultDuration(latestResult.pauseSeconds));
+      setText(marginElement, resultMargin());
+      renderErrors();
+      root.querySelectorAll<HTMLElement>('[data-item]').forEach((item) => setFieldState(item, latestResult.errorCodes));
+      renderTimeline();
+    };
+
+    const addEncoreToggle = (clone: HTMLElement) => {
+      const actions = clone.querySelector('.msr-item-actions');
+      const removeButton = clone.querySelector('[data-action="remove"]');
+      if (!actions || !removeButton) return;
+      const includeButton = document.createElement('button');
+      includeButton.type = 'button';
+      includeButton.className = 'msr-include-button';
+      includeButton.dataset.action = 'toggle-include';
+      includeButton.setAttribute('aria-pressed', 'false');
+      includeButton.textContent = buttonIncludeEncore;
+      actions.insertBefore(includeButton, removeButton);
+    };
+    const configureClone = (clone: HTMLElement, kind: 'song' | 'encore', id: string) => {
+      clone.dataset.itemId = id;
+      clone.dataset.kind = kind;
+      clone.dataset.included = kind === 'song' ? 'true' : 'false';
+      clone.classList.toggle('msr-item-encore', kind === 'encore');
+      clone.classList.toggle('msr-item-excluded', kind === 'encore');
+      clone.querySelector<HTMLInputElement>('[data-field="title"]')?.setAttribute('value', kind === 'encore' ? 'Encore' : '');
+      if (kind === 'encore') addEncoreToggle(clone);
+    };
+    const addItem = (kind: 'song' | 'encore') => {
+      if (!template || !itemsElement) return;
+      const clone = template.content.firstElementChild?.cloneNode(true) as HTMLElement | null;
+      if (!clone) return;
+      const id = `${kind}-${nextId}`;
+      nextId += 1;
+      configureClone(clone, kind, id);
+      itemsElement.append(clone);
+      renumber();
+      clone.querySelector<HTMLInputElement>('[data-field="title"]')?.focus();
+      render();
+    };
+
+    const renumber = () => root.querySelectorAll<HTMLElement>('[data-item]').forEach((item, index) => {
+      const order = item.querySelector('.msr-order-number');
+      if (order) order.textContent = String(index + 1).padStart(2, '0');
+    });
+
+    root.addEventListener('input', (event) => {
+      if ((event.target as HTMLElement).matches('input')) render();
+    });
+    root.addEventListener('change', (event) => {
+      if ((event.target as HTMLElement).matches('input')) render();
+    });
+    const removeItem = (button: HTMLButtonElement) => {
+      button.closest('[data-item]')?.remove();
+      renumber();
+      render();
+    };
+    const toggleEncore = (button: HTMLButtonElement) => {
+      const item = button.closest<HTMLElement>('[data-item]');
+      if (!item) return;
+      const included = item.dataset.included !== 'true';
+      item.dataset.included = String(included);
+      item.classList.toggle('msr-item-excluded', !included);
+      button.setAttribute('aria-pressed', String(included));
+      button.textContent = included ? buttonExcludeEncore : buttonIncludeEncore;
+      render();
+    };
+    const copySchedule = async () => {
+      if (!latestResult.valid || !navigator.clipboard) {
+        setText(copyStatusElement, copyFailure);
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(buildScheduleText(latestResult));
+        setText(copyStatusElement, copySuccess);
+      } catch {
+        setText(copyStatusElement, copyFailure);
+      }
+    };
+    const handleClick = async (event: Event) => {
+      const target = event.target as HTMLElement;
+      const button = target.closest<HTMLButtonElement>('button[data-action]');
+      if (!button) return;
+      const action = button.dataset.action;
+      if (action === 'add-song' || action === 'add-encore') {
+        addItem(action === 'add-encore' ? 'encore' : 'song');
+      } else if (action === 'remove') {
+        removeItem(button);
+      } else if (action === 'toggle-include') {
+        toggleEncore(button);
+      } else if (action === 'copy') {
+        await copySchedule();
+      }
+    };
+    root.addEventListener('click', (event) => { void handleClick(event); });
+    render();
+  }
+</script>

@@ -16,6 +16,7 @@ export const content: CategoryLocaleContent = {
         'Phase distance calculator for microphone alignment',
         'Note equivalency between Latin, American and German systems',
         'Digital audio storage calculator',
+        'Concert setlist runtime calculator with pauses and optional encores',
       ],
     },
     {
@@ -87,6 +88,15 @@ export const content: CategoryLocaleContent = {
       type: 'tip',
       title: 'No installation needed',
       html: 'All tools run directly in the browser, with no plugins or additional apps. Bookmark this page to have them always at hand during your sessions.',
+    },
+    {
+      type: 'title',
+      text: 'Plan the End of a Live Set',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'The <strong>concert setlist runtime calculator</strong> combines song durations, transitions and optional encores to show the expected finish time against a booked slot. It is designed for a band or technician who has their own timings and needs a quick schedule before the show.',
     },
   ],
 };
