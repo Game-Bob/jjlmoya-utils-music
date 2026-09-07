@@ -1,546 +1,906 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T06:38:30.853Z",
+  "generatedAt": "2026-09-07T16:42:10.582Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/audio-speicher-rechner/": {
-      "hash": "7bb006cd074f6a27eeb2e6ba8789883fa5a7272b2bc4389d7b01f0b27e78bf00",
+      "hash": "6aa078db749d4854d3ddee620e02b1287a12cc49ceee012df29fd88caf83f30f",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/audio-speicher-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/bpm-zu-ms-rechner/": {
-      "hash": "12e27f9a71567e206c326d02cdb689ec27e6bea07aafd4fc9597b5d7bccdba47",
+      "hash": "c350584c00ef6c08b3af91532248111e52a46b86e1529d4dd2d123fa573e0e42",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/bpm-zu-ms-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/frequenz-zu-note-konverter/": {
-      "hash": "28039485f34d1e9278a5bd00ddea1227cffb0363788bd1f9e56f87d31d601749",
+      "hash": "0c4f41e3a7ed77f2b5e1f8e4e9c152c873199fe405ac78546ef229ea372afe58",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/frequenz-zu-note-konverter/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/gitarren-saitenspannung-rechner/": {
-      "hash": "7a84463d508533a85ad791837b5e7372646046bc42efd2247b60f910d47e5c79",
+      "hash": "7654c95d16f26ac90d0317d4adc06d2508381168d4e73f764ae9d75c5bb07904",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/gitarren-saitenspannung-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/": {
-      "hash": "fd6e948e926aaad59363ef2c6373bcab6c30df0e03d58534198ceb2f1d58529f",
+      "hash": "4fe1990ac734af875ed3a447d49e2be73fbfc0f40950d49becfdc692468807dd",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/metronom/": {
-      "hash": "9ed8a7a2aec0aecd58277a565deb5ca66641fc49ee84e48cf7d9cc3e3e65c7c3",
+      "hash": "0594ccbc3d539dc2027ea275dc10eb6cb2df42303250cb7e141e9ba508532661",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/metronom/"
     },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/mp3-in-ogg-umwandeln/": {
+      "hash": "e75af909797c5ebbb4d1d3ad7a95fd54a1fb4a0bdb8d808bc1e4c85703b36efc",
+      "route": "/de/werkzeuge/kategorien/musikwerkzeuge/mp3-in-ogg-umwandeln/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/mp3-in-wav-umwandeln/": {
+      "hash": "fc7b7aca40a4e3b9ae18274f2cc3fc289e71f4fb25b70a2d028fa2e44442975f",
+      "route": "/de/werkzeuge/kategorien/musikwerkzeuge/mp3-in-wav-umwandeln/"
+    },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/notenbezeichnungen-vergleich/": {
-      "hash": "34c000c81c35e53a9ea1e03c26d4658e048b04953219b368dc4a709952533aa7",
+      "hash": "c262d613d0743a23241a043ec8dd583f7e203254789f5ab39b56f0116b64f010",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/notenbezeichnungen-vergleich/"
     },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/ogg-in-mp3-umwandeln/": {
+      "hash": "b52230994138493bd9f540e710e6eb76222dfe637924132925ba14df0fa843f7",
+      "route": "/de/werkzeuge/kategorien/musikwerkzeuge/ogg-in-mp3-umwandeln/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/ogg-in-wav-umwandeln/": {
+      "hash": "83aa934d9f27a2bfc7d4f93479aeb183d32c9645ed82737347b8a8b80571e954",
+      "route": "/de/werkzeuge/kategorien/musikwerkzeuge/ogg-in-wav-umwandeln/"
+    },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/phasendistanz-rechner/": {
-      "hash": "f82d6747c78320e2b63c7a6d4ceb021873c89f23d785436988639ae4fa2fb903",
+      "hash": "5b3aef79fb7a25719258682a090a5e2464033bf25bf3884961d9581eacc9a0f6",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/phasendistanz-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/rechner-setlist-laufzeit-konzert/": {
-      "hash": "8784626c3e8e6ebcdfa93999703186a8706bd355ab853dcf032a29fe592ec297",
+      "hash": "8326ba76670a931c828143d6807e60e8769713aafd520d83914842e4f550ddaa",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/rechner-setlist-laufzeit-konzert/"
     },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/wav-in-mp3-umwandeln/": {
+      "hash": "d2f1d9598a7631ee48f0f84e7ebb10478d5425e97f96cfc5945793a133b23495",
+      "route": "/de/werkzeuge/kategorien/musikwerkzeuge/wav-in-mp3-umwandeln/"
+    },
+    "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/wav-in-ogg-umwandeln/": {
+      "hash": "aceb40e13390f74718cbe06d9a0cba16194a9d1de5fcd2eebbe8e5140e78e495",
+      "route": "/de/werkzeuge/kategorien/musikwerkzeuge/wav-in-ogg-umwandeln/"
+    },
     "https://www.gamebob.dev/en/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "45dff406da4618e26b1001d5bf6782817cfbd1ec35c9ab916097e3d6a499390e",
+      "hash": "df73c0ccdc531fad9e9b34491a8929595036dbe043770ac0557291707d911325",
       "route": "/en/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "0613b9ee083a9ee7ddb86b1497dd2d79ed09a437c7cf6a33c99427db125a7dbd",
+      "hash": "4a77e39c3fb44336df1569914a02b596275de223aad6674a30e27ed6eb7ffdc7",
       "route": "/en/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "81e615e4743dee4bfef2800c0730cea8fd15ebc587502d5370c483eb4abba46b",
+      "hash": "4ab7ab3e62f05403609bc2b1cdad07ec130692d08a0d563ccf1d0b6640352fa7",
       "route": "/en/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "6ff9efe624a6a92ed7d225dc4e9a534be8a1df3ae41d5071bfaa749b20570dd4",
+      "hash": "258b5974a6af49fe82029f58b9fa739a8d3817071f0f5387ce02e738b2389d46",
       "route": "/en/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/": {
-      "hash": "7df6d306e4d5a3f3695c3bfa27f444a0c1045a3144d8f4182938940602db5fda",
+      "hash": "700689b91eebe71070fa0b2cf5c208276a54f34ae78fe62a67e86bc5da739ff1",
       "route": "/en/utilities/categories/music/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/metronome/": {
-      "hash": "41267c56dea88d537d0a204c0d42bb492c869ea15ba1d813a1c70c54b3f4e389",
+      "hash": "3257d75e119303e94893234f26ce8a273b97b2dc59fbc7ecb59455effcdfd9e0",
       "route": "/en/utilities/categories/music/metronome/"
     },
+    "https://www.gamebob.dev/en/utilities/categories/music/mp3-to-ogg-converter/": {
+      "hash": "4503443c97f61b6dad7d2e1e4b690b16bae219e7bccc708844206863a7585cb8",
+      "route": "/en/utilities/categories/music/mp3-to-ogg-converter/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/music/mp3-to-wav-converter/": {
+      "hash": "211eebdc1fce142c820b2b037d2383caaed5388da95b75be57c94759bd6feab2",
+      "route": "/en/utilities/categories/music/mp3-to-wav-converter/"
+    },
     "https://www.gamebob.dev/en/utilities/categories/music/music-note-equivalency/": {
-      "hash": "74bc866f08b33f9f9c9ac32fdf53eed0d398e3c8f0bb335d5fb6984a388f47eb",
+      "hash": "6eb1bdbcf3c378d0d1cac6ef768165cf9066a69ab08240ddfc557d974bdd55e7",
       "route": "/en/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "0f8423a9b691419bf4cd9f71642b411872f840f3e95c695f1b732c9cd884359d",
+      "hash": "0c949e4d44c717a96b9a035339602b6a18181962532784d9380e5d5039d564da",
       "route": "/en/utilities/categories/music/music-setlist-runtime-calculator/"
     },
+    "https://www.gamebob.dev/en/utilities/categories/music/ogg-to-mp3-converter/": {
+      "hash": "4637ccbea5ad486ea269eb2e97b9fb0c6c9b7ab539481a6217d62de49671d238",
+      "route": "/en/utilities/categories/music/ogg-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/music/ogg-to-wav-converter/": {
+      "hash": "ca8ec5c4394c1db8070c60a66d320528cec1962e3f540ac8fd01c3716d38cde7",
+      "route": "/en/utilities/categories/music/ogg-to-wav-converter/"
+    },
     "https://www.gamebob.dev/en/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "ce17fa3180bbc3964c244a87359f4dcef433537a3eaf9969b1b41c5be4f7c2c3",
+      "hash": "6c8c324937e3be30d6b998bb223fb2f17cde4bc8ae86fb8f18b0583d4dafed99",
       "route": "/en/utilities/categories/music/phase-distance-calculator/"
     },
+    "https://www.gamebob.dev/en/utilities/categories/music/wav-to-mp3-converter/": {
+      "hash": "d04ace470615ed510aaec1b5843b295dff0a02375faf06b34ada374b33e70c0b",
+      "route": "/en/utilities/categories/music/wav-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/en/utilities/categories/music/wav-to-ogg-converter/": {
+      "hash": "d1cb9ba93a3a0b5ad9e1894b49a35dd335c02787dffe161cc006ce5fe535153c",
+      "route": "/en/utilities/categories/music/wav-to-ogg-converter/"
+    },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-bpm-millisecondes/": {
-      "hash": "6d73f7177994c476e8984b818bd5f14229448daa26eabe64432ff335cf58d960",
+      "hash": "9a2e01ac94924293691e92301fe61ca5bc7b2fb987676eeee6cd99f8225cef7b",
       "route": "/fr/utilitaires/categories/musique/calculateur-bpm-millisecondes/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-distance-phase/": {
-      "hash": "1d5917d03156e0a0892622cbe575817822e2c4defa34bb48009a1bf8009ef56f",
+      "hash": "9f33d29d11cb965e652c2ce36e0a36d58028e3909316b63731d0f9e5ab2afe00",
       "route": "/fr/utilitaires/categories/musique/calculateur-distance-phase/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-duree-setlist-concert/": {
-      "hash": "42d68ddb565495a2eaa7b21eb7a71743ffb2626faeef652412d7e1d6f1ab478c",
+      "hash": "ecf9fe025faebcc93dfbf61398ac8371cb7bf803804bc72c93cad0b28a9d2063",
       "route": "/fr/utilitaires/categories/musique/calculateur-duree-setlist-concert/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-stockage-audio-numerique/": {
-      "hash": "68543ae1776eac85ea53651bedfb6d2fa284d99fb4855c316466b5ec3f1a3322",
+      "hash": "18ad284063711bc367ce06dbbb10e8a7db02e023f23bc7d51925b1dbe639f19f",
       "route": "/fr/utilitaires/categories/musique/calculateur-stockage-audio-numerique/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-tension-cordes-guitare/": {
-      "hash": "cf0c0e46f7d75a7b903134760a0821ae2c698d4f757e80f0a07d04989da8a2e2",
+      "hash": "f89714dc34d064c101211dbfbfbcec4c1a63df63a4c9ba1419d2d939bb304cae",
       "route": "/fr/utilitaires/categories/musique/calculateur-tension-cordes-guitare/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-frequence-note-musicale/": {
-      "hash": "9ca470c9310cb46ce4c3ba20130044fd3016b3b9937d1d198d273b4d24157aa6",
+      "hash": "bcc5a74cec82b61deae5e8fa0a014bfc7e75f2b8367cfb438b945bdf81d950c2",
       "route": "/fr/utilitaires/categories/musique/convertisseur-frequence-note-musicale/"
     },
+    "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-mp3-en-ogg/": {
+      "hash": "0e5faa5474d8d0b084a19259de878e368d42ea52eb8f71046b155d29b7b74f95",
+      "route": "/fr/utilitaires/categories/musique/convertisseur-mp3-en-ogg/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-mp3-en-wav/": {
+      "hash": "2b8342a5f47a5d380e23bce1ad771710a6c7e4344b78c8896c92d6f09f5d3aa7",
+      "route": "/fr/utilitaires/categories/musique/convertisseur-mp3-en-wav/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-ogg-en-mp3/": {
+      "hash": "75093a4b3eb278f5f01ccdd6f14d0d0d58374664813e70bd03705a54208a790e",
+      "route": "/fr/utilitaires/categories/musique/convertisseur-ogg-en-mp3/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-ogg-en-wav/": {
+      "hash": "f30c46525757c99e3369a48fcf715ba47d06b21ddb545261668b958a5aaacebe",
+      "route": "/fr/utilitaires/categories/musique/convertisseur-ogg-en-wav/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-wav-en-mp3/": {
+      "hash": "fb5afef8713f905b23bf754f109f2e2c7ac9a2f55a43c599da2e275889d1569e",
+      "route": "/fr/utilitaires/categories/musique/convertisseur-wav-en-mp3/"
+    },
+    "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-wav-en-ogg/": {
+      "hash": "3995eacaad011e9adf1b251b90fe75b5549d266e02b159ab417f1c74446cd3fb",
+      "route": "/fr/utilitaires/categories/musique/convertisseur-wav-en-ogg/"
+    },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/equivalence-notes-musicales/": {
-      "hash": "a3e785ee8e9a33701f1498175da803e1a9a6b752c6a00ee3d792e1c668c8ddbb",
+      "hash": "e573a47c21424814462a932e85c5696026fa29772134e7a831ff4a954b3f29dc",
       "route": "/fr/utilitaires/categories/musique/equivalence-notes-musicales/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/": {
-      "hash": "65323c1460337729525cc94baffaf89da33ce223eb3af8ef7993c09c089159e2",
+      "hash": "a7cce915b899e80d586b0567bba541ce7bf700e1d4f1dec727f6ff73a1176a8d",
       "route": "/fr/utilitaires/categories/musique/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/le-metronome/": {
-      "hash": "ee2960208dad4e179b568cd6f2d88bab2d2d955bec2e8dd557aae8f94abd0428",
+      "hash": "6d33f22969389573320992dbead05b60efd7aa38e9831742bd0a0b4b62b4c4bd",
       "route": "/fr/utilitaires/categories/musique/le-metronome/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/": {
-      "hash": "94daf62825e1d80127c3c96bbdc04772f2de8c4a1035427b6e6a367baf0d48ba",
+      "hash": "425fad539b77ea7d6e1972322130ca548b5ccf73e18c0aa0298bd9892abdde34",
       "route": "/id/utilitas/kategori/musik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-bpm-ke-milidetik/": {
-      "hash": "a7bee00f5efab9459dd2f62cba10e98fc05674d7e6c645d8216bfdba38bc1e83",
+      "hash": "6e1e53a40d47bd0ae4b33f24df56296d6507527ac31e8d8d7f2506d8fabade95",
       "route": "/id/utilitas/kategori/musik/kalkulator-bpm-ke-milidetik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-durasi-setlist-konser/": {
-      "hash": "0517d31c78855caa336395743995730c1b79b9ec541f1998305015dda11cf4a1",
+      "hash": "f26ad34a734712cf0b4ab63ce1bb5e2c68d1fff3de86583555b47f370ed6ec44",
       "route": "/id/utilitas/kategori/musik/kalkulator-durasi-setlist-konser/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-jarak-fase/": {
-      "hash": "64de1b7eff1681b66c93ce510b9559efb0ecfc6a71241b9a4ca19ce7f2fa5b30",
+      "hash": "db40ee88b22fa6a3b787d28b491de7e5c2cee09e43b02e79bb938a4288aebd4a",
       "route": "/id/utilitas/kategori/musik/kalkulator-jarak-fase/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-penyimpanan-audio/": {
-      "hash": "96f55e8d99f249bf3092c66bb15458e9a4904e7d2abfba6a996b4a3423568d71",
+      "hash": "664204b6d4af9063aa999994c952f4cd9e3adc4baf924c31b124d6b6eb345ea8",
       "route": "/id/utilitas/kategori/musik/kalkulator-penyimpanan-audio/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-tegangan-senar-gitar/": {
-      "hash": "ca450a0fb614b6b5102c271f1c0b19595fef7bb1e331a50fc50e4f7e65f45b68",
+      "hash": "b72d255f67265652e29586c9cac1657324790235cad0ee0107444fe8edad4814",
       "route": "/id/utilitas/kategori/musik/kalkulator-tegangan-senar-gitar/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kesetaraan-not-musik/": {
-      "hash": "888818dfcb6bc16c3e63d55e2210d8d01704575ebc31bb272d8e55d675c20ce3",
+      "hash": "7bd1bf72cc22d22b701257e92ec85e5f1d2dad02115c2f21545a70b777ce4cf0",
       "route": "/id/utilitas/kategori/musik/kesetaraan-not-musik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-frekuensi-ke-nota/": {
-      "hash": "3b7987c7020ad765f85ddc139d55d8ac29977b0ea852c99fd3811818ccae238a",
+      "hash": "a42ccaf205edd1c6e5481bcb3326eeb5a5c73c8781dabe0f059a3a474c495829",
       "route": "/id/utilitas/kategori/musik/konverter-frekuensi-ke-nota/"
     },
+    "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-mp3-ke-ogg/": {
+      "hash": "3bfaae40d4dc2f989c91c15044a7b3cbf76c3de9759701498d3b039f95976f42",
+      "route": "/id/utilitas/kategori/musik/konverter-mp3-ke-ogg/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-mp3-ke-wav/": {
+      "hash": "f1f05ae56dba9afad7998a248179ee5bf3bf1715506758ceacb760ca3e594a18",
+      "route": "/id/utilitas/kategori/musik/konverter-mp3-ke-wav/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-ogg-ke-mp3/": {
+      "hash": "47a117d730718fccb8e539b8ce817bb58a69f84b233f018250f899eec084b9d9",
+      "route": "/id/utilitas/kategori/musik/konverter-ogg-ke-mp3/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-ogg-ke-wav/": {
+      "hash": "ecc95a1c26bf8d2ec4f2a3ca74baae8e7a8a6f16f35c2ae9857bd968ab0c8318",
+      "route": "/id/utilitas/kategori/musik/konverter-ogg-ke-wav/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-wav-ke-mp3/": {
+      "hash": "b12207b7511579e3a9811f54b07a836a5480300c9e342570bab39ed04d2af5ac",
+      "route": "/id/utilitas/kategori/musik/konverter-wav-ke-mp3/"
+    },
+    "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-wav-ke-ogg/": {
+      "hash": "abc4d03b8911009e3c071cd634da098a952f30bb443b6aec9c3b512fb7c3ecfa",
+      "route": "/id/utilitas/kategori/musik/konverter-wav-ke-ogg/"
+    },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/metronom-online-latihan/": {
-      "hash": "7a9dc7e1b1dc08a99de7721122e3eb47b55a782a8946c6562b65c4a1693f5b57",
+      "hash": "9d4624c6f4085eacf3706c43d4d0cf6b83751256db753fe850de103f75d5fb8d",
       "route": "/id/utilitas/kategori/musik/metronom-online-latihan/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-bpm-millisecondi/": {
-      "hash": "1d68416feacc7b97162206880906da4954893d9320e0509710bd7878ce0b20b2",
+      "hash": "3ef528bfeac3b07c923229c09bd51271999dc4c7184a21cfc733995debbed2b7",
       "route": "/it/utilita/categorie/musica-online/calcolatore-bpm-millisecondi/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-distanza-fase/": {
-      "hash": "81281dbe2ad050c3c49cd46da1f3d4459aeb26e7a9518af9ad59e807d46d1f4d",
+      "hash": "b0bc860caa6e219cafe510f415c8a0de787b42706fd45c1d8103d2d25e35e9a2",
       "route": "/it/utilita/categorie/musica-online/calcolatore-distanza-fase/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-durata-scaletta-concerto/": {
-      "hash": "4abca2378b94da21fae052f3739049eb3fc36b69359d108d64bc630145147492",
+      "hash": "e181b3b58edbfe33b194cfd7c72f13a6f0963f62c61fb509f5d7e68332fb3eec",
       "route": "/it/utilita/categorie/musica-online/calcolatore-durata-scaletta-concerto/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-spazio-audio/": {
-      "hash": "d09c58ebe5dd4a4c0f8943708828011d72063bcffcf4c1c12147c5f9d5336e85",
+      "hash": "439a81582727df0f9213c538778434ffe91c791a1ec74723bd3a08d346c10283",
       "route": "/it/utilita/categorie/musica-online/calcolatore-spazio-audio/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-tensione-corde-chitarra/": {
-      "hash": "09310058c42b892c1eb88d73ac49b6def1d831ad187f9d67cedb3944b2175b01",
+      "hash": "cf9439dc5c43e114c8d802e6a2199646f7479eb6b7bee078741ba90347be4cfa",
       "route": "/it/utilita/categorie/musica-online/calcolatore-tensione-corde-chitarra/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-frequenza-nota/": {
-      "hash": "1a1b1aa44cd486b41c93b1fe89a28f7581a465982489b3ea9c563793a63bb93c",
+      "hash": "2c23a54fe5c5eac5b334858fc05aa2c95da1753f78a2ca1e5da43e87128bc3c4",
       "route": "/it/utilita/categorie/musica-online/convertitore-frequenza-nota/"
     },
+    "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-mp3-in-ogg/": {
+      "hash": "ec9b79362b24b33c1a084c8aa5e72048d124d2e76a437a6ca4987d0814c18b41",
+      "route": "/it/utilita/categorie/musica-online/convertitore-mp3-in-ogg/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-mp3-in-wav/": {
+      "hash": "f82923b9ccd9eea62604d6f80482b8fffe8158b8f93fd774328e795fb91d5fb0",
+      "route": "/it/utilita/categorie/musica-online/convertitore-mp3-in-wav/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-ogg-in-mp3/": {
+      "hash": "67a81bb1d4605750c00492a4bb98cec265dda32f1e311cec9949f6b45f4cb2d0",
+      "route": "/it/utilita/categorie/musica-online/convertitore-ogg-in-mp3/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-ogg-in-wav/": {
+      "hash": "cf4de1ad714c353881d948b48af4c06af7648a1bb7de3fcf6bcca734aaea51a6",
+      "route": "/it/utilita/categorie/musica-online/convertitore-ogg-in-wav/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-wav-in-mp3/": {
+      "hash": "93451f57db87b9563f620105e16a8b1ed21115bfc3b90a85c285e52a430244a7",
+      "route": "/it/utilita/categorie/musica-online/convertitore-wav-in-mp3/"
+    },
+    "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-wav-in-ogg/": {
+      "hash": "2f558c4ffbe31afb70a337aad298e1c2449c46c6e8bc99c85a433395053bea04",
+      "route": "/it/utilita/categorie/musica-online/convertitore-wav-in-ogg/"
+    },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/equivalenza-note-musicali/": {
-      "hash": "d34607a6e77f718788d76808f7913c07291ca64f62c970bd197e374260075db3",
+      "hash": "f26ad314aee1e05c87fe343737c4db7eebab6500e0174f1cf21c7f8a25229f21",
       "route": "/it/utilita/categorie/musica-online/equivalenza-note-musicali/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/": {
-      "hash": "f673dbd163bc106809f11fbcad574fca647ab4e76b0095e949a6cd008871d6d2",
+      "hash": "131f1f2b5d036180b23748fcf73df1ec68c14a696a45e0bb6332840c656d2f54",
       "route": "/it/utilita/categorie/musica-online/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/metronomo-online-preciso/": {
-      "hash": "1c940db6715bc823492326ebbb3fb42eb4e89aea9baff12a27e135dc401242fb",
+      "hash": "1ed889ec372d4e3eac6ace284466c409d7204aa52b973b1e8e6c02d297666365",
       "route": "/it/utilita/categorie/musica-online/metronomo-online-preciso/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "dd8bc1ebd3d2d3896a04b7f2b732c0c52aba6a2a0e3f5750101bd7a166be4f90",
+      "hash": "fad69f9a706faeba53058c06f4f6820a3cfd2c972072ea210ee325ab3a01c187",
       "route": "/ja/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "2a79eadbc053bcb95489afbf980b8c50ccc99aacce4b5b8298701df3de5bd9a0",
+      "hash": "e417cd440361386c025cca3b80eacf807121da2c309eee0b7fc484c54d7eb2fc",
       "route": "/ja/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "6d9432c1cadf669dfc582525f15f67fd0d8e001ce2504763d7eb59509eae2ef4",
+      "hash": "bc10c073b8ad2e450d3e2bf1c71b25c64cc2c45313abbeef6ca56f3b4be42f1e",
       "route": "/ja/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "150a1e04387d43e40933ed1ac01838c5403d201cbc3cef7ce18b42f02554a8c6",
+      "hash": "cbd7db35b762a0abf884e7bc5d3683c41d70011056f6acbc9e95dc93b035fdef",
       "route": "/ja/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/": {
-      "hash": "5f29b316bb766be747ceda121e682a604a57d6f42513e64af77910941e24a2d9",
+      "hash": "5075986555342ee5c7cef0306c2964c4c6e31f16a34ddf5a80ec4e798c308a9a",
       "route": "/ja/utilities/categories/music/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/metronome/": {
-      "hash": "4a6f2fa32b5b6f3e08dac8fd0b869abb8cb215996028c953ee886e0bbd017231",
+      "hash": "d8a6852253895b5af7f3bfa548fc2e97f11f3f54a83a5e295c8830731ed69ea0",
       "route": "/ja/utilities/categories/music/metronome/"
     },
+    "https://www.gamebob.dev/ja/utilities/categories/music/mp3-to-ogg-converter/": {
+      "hash": "a87f022223ec549d3ffb068f8168d33f21789172d021d8d0f2e81461b4c46040",
+      "route": "/ja/utilities/categories/music/mp3-to-ogg-converter/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/music/mp3-to-wav-converter/": {
+      "hash": "866fb0f6923e21782f4eb77027070af7d8e7fbb4731e61364dbea72086a9a794",
+      "route": "/ja/utilities/categories/music/mp3-to-wav-converter/"
+    },
     "https://www.gamebob.dev/ja/utilities/categories/music/music-note-equivalency/": {
-      "hash": "776819214ed9a4fa5cc1068ed2b5b37d182663bb4f84e46e6a7c65db2424c0b3",
+      "hash": "9ce46c40cd182e665f1d89a52ec919918fbd6a7e41f422a483abc60cef7f0cba",
       "route": "/ja/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "e7fcd6e5c8fdc93a7bff59d2de0c2182e14d8a2308331112d81ad9d130569cb7",
+      "hash": "e0cf78bf94c2079207c7d9f7af6585bd636ed51942b9b28417baf43627a0fa54",
       "route": "/ja/utilities/categories/music/music-setlist-runtime-calculator/"
     },
+    "https://www.gamebob.dev/ja/utilities/categories/music/ogg-to-mp3-converter/": {
+      "hash": "dcc8bf5d743df806ec053be14a8aad232bf0e0eeabc4a3c8631aca4fdfb5c31e",
+      "route": "/ja/utilities/categories/music/ogg-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/music/ogg-to-wav-converter/": {
+      "hash": "ff50a8a58ca2a7cc02727dc976523857ee635e15f0b32036cbb7e3e9d32c9442",
+      "route": "/ja/utilities/categories/music/ogg-to-wav-converter/"
+    },
     "https://www.gamebob.dev/ja/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "5baf083775b5a10ff930085fe1cc767d3b4b23917d848ac7901a5f403c22a5fb",
+      "hash": "5fe50099f120519604538313e3dcbd18684e0de064c70b3f704482320f3d5e0c",
       "route": "/ja/utilities/categories/music/phase-distance-calculator/"
     },
+    "https://www.gamebob.dev/ja/utilities/categories/music/wav-to-mp3-converter/": {
+      "hash": "c6b34f442c1ce8b298ace1a4d191789321107d11e52761fe390f70133e14f372",
+      "route": "/ja/utilities/categories/music/wav-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/ja/utilities/categories/music/wav-to-ogg-converter/": {
+      "hash": "80f245f517b1ef780feca9f2e9787369cd13bda8731b53c025a0e2f0c9ce89e5",
+      "route": "/ja/utilities/categories/music/wav-to-ogg-converter/"
+    },
     "https://www.gamebob.dev/ko/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "f0117a0bbf6e0df4537e829755a0889d55437a8d7a10996fc69a426f8f04ca5e",
+      "hash": "378bad573fa615f72b7434eadb5c1186014a38f22cd4bd27e6efafa039781a7a",
       "route": "/ko/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "ecc157a367ff205c05981f4f9beed83cced4a9dd32e39915da5b9e78ab84f73f",
+      "hash": "507ffc3161f291b6bebd6e223d2e88e932d0c22949cbdc1f01a4460b7f1bbe9b",
       "route": "/ko/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "193b201297110ead24f93d6aa0ec1303975fbae9d7536af049a7c8caa7402a5c",
+      "hash": "72166cd2a0be2fc06e323ce3bc036e8d389180b8e3f8415dac6b60509d8ce98f",
       "route": "/ko/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "0570ef5bc9bb3855c5badd871f0f49cfec815eda7da12ad25cf95340f25cadb1",
+      "hash": "4e85f47cc0545a5c9868593a2b001e423beacffaf0dedbaa717beff2bab1a12e",
       "route": "/ko/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/": {
-      "hash": "a481a6de86083288a33ac296ddb848854feeb08a5d635fa8867ce81436cbd6f6",
+      "hash": "a78bee544d810e5c1b5729512ec10a10fa35f2f8ef28f9e0669b381b428ffc4b",
       "route": "/ko/utilities/categories/music/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/metronome/": {
-      "hash": "b72a876bec45a2cc1111bc4478a5dfb6e844f5e0ec5fbbb3e1e30ed585b36ba5",
+      "hash": "336b19f2efb4bf68f743a4c4a3a419dd610492a751b3842dbce65338c2729aaa",
       "route": "/ko/utilities/categories/music/metronome/"
     },
+    "https://www.gamebob.dev/ko/utilities/categories/music/mp3-to-ogg-converter/": {
+      "hash": "752fdf7c7129233758613beb72c631da388f1199bfe5ff0fc1751f0150790525",
+      "route": "/ko/utilities/categories/music/mp3-to-ogg-converter/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/music/mp3-to-wav-converter/": {
+      "hash": "ab60a11baffa196e0aa93b725b5a5140592940b269f5344353b85b1d25461cb1",
+      "route": "/ko/utilities/categories/music/mp3-to-wav-converter/"
+    },
     "https://www.gamebob.dev/ko/utilities/categories/music/music-note-equivalency/": {
-      "hash": "2091eb34b9ca8b43dc8c1042745bfbb5b83757dbfb5c9e4dd0ada0a06c14a05b",
+      "hash": "32face671f0a4e30dd059c24cc7cb28496b17540001759417f5052733ad1450f",
       "route": "/ko/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "f427827443df17c8df3d2368ab9a0a5d63b697e71fa7888b27a6d59acb764646",
+      "hash": "b8842808bb3f8e6594eaf89c79d863f97861c9c2fa60c10f216b4aecfa79cba6",
       "route": "/ko/utilities/categories/music/music-setlist-runtime-calculator/"
     },
+    "https://www.gamebob.dev/ko/utilities/categories/music/ogg-to-mp3-converter/": {
+      "hash": "f842983292b4f33089819cce3ac7a90e483b778b2d57587efaf7e461e5e153d3",
+      "route": "/ko/utilities/categories/music/ogg-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/music/ogg-to-wav-converter/": {
+      "hash": "30444baa4ad9553b0c8eac06c549f5281707bfc3b5bafc1d613e36d1fd3ba319",
+      "route": "/ko/utilities/categories/music/ogg-to-wav-converter/"
+    },
     "https://www.gamebob.dev/ko/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "034fa0e080cf02b8d6e513757ebd6926a8febdf16616f5fbb162c2ea3ad80f4f",
+      "hash": "1e120d16dd8187167c9bedd818c9d9d2762f845490b91720e9e000136398e268",
       "route": "/ko/utilities/categories/music/phase-distance-calculator/"
     },
+    "https://www.gamebob.dev/ko/utilities/categories/music/wav-to-mp3-converter/": {
+      "hash": "81551e482a607e4e18075ca128425b54e8f3d63c514447fc56f27995abc7e3f5",
+      "route": "/ko/utilities/categories/music/wav-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/ko/utilities/categories/music/wav-to-ogg-converter/": {
+      "hash": "cd006bc863bab7a21a7080569a407b95f0fb47e310b53c6734adff18d035fe8a",
+      "route": "/ko/utilities/categories/music/wav-to-ogg-converter/"
+    },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/audio-opslag-calculator/": {
-      "hash": "2cb041841e43babf3ab5adff7a9672c88b40224826d0abbd40f340deaa0b92a9",
+      "hash": "8bdcb3b8ea07db3e443e029da046818f363e2e28ed01fe26a28cbc7d33be4c4e",
       "route": "/nl/hulpmiddelen/categorieen/muziek/audio-opslag-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/bpm-naar-ms-calculator/": {
-      "hash": "bda234903b74c067bafdf8dfaed8309250935b49a69599feb134ee5f79ab24e2",
+      "hash": "01a6e7f40ad19f11b1cbe26909cc7a0cf5c5e6fa0cd90a0148fec3ddad3ef40d",
       "route": "/nl/hulpmiddelen/categorieen/muziek/bpm-naar-ms-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/fase-afstand-calculator/": {
-      "hash": "a7251f60019a0e2ffaf203f26e943d33940a3ecc97ed04c4961e865c1a629bbb",
+      "hash": "2e7aa62135fcb799f34a8265b030af343a471ea9c21679e5eb1ddfd91676bccb",
       "route": "/nl/hulpmiddelen/categorieen/muziek/fase-afstand-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/frequentie-naar-noot-converter/": {
-      "hash": "532a4667cd2c6ec496f1aa1b16c4165198dcac7afa2c8d40e1bbdbcaf1fda791",
+      "hash": "d0d5655d6fc64e96e45248c05d916b0613b8d9f7b4569110b2fdd2790f1c6085",
       "route": "/nl/hulpmiddelen/categorieen/muziek/frequentie-naar-noot-converter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/gitaarsnaarspanning-calculator/": {
-      "hash": "5381a89acba9d77b8f4108eb8d5a6440b36aa3dd356efc9348dea48b6501799a",
+      "hash": "7198501cffa8fe2f7193fc7db84e03e435181da285bb5b84f9d7271dcb42aa7a",
       "route": "/nl/hulpmiddelen/categorieen/muziek/gitaarsnaarspanning-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/": {
-      "hash": "f1286fbc09a20f2acecece6e81ed4cc2997ec15e2dc8b185fbf81bd048500790",
+      "hash": "aab2bdf6a592030b0df1e3c7641c8b1d7bf0fbfdcfa7c04ebf98c97323af6767",
       "route": "/nl/hulpmiddelen/categorieen/muziek/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/metronoom/": {
-      "hash": "d607895b97675a9502a9e2772651b1e76ed2db5bef60779b4cc3fe9ba5413322",
+      "hash": "6ee31cfaf2713c12e33e74831067806803582ac10340136151ed5a00fa092f94",
       "route": "/nl/hulpmiddelen/categorieen/muziek/metronoom/"
     },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/mp3-naar-ogg-converter/": {
+      "hash": "c7d03c353be5d3358aea8d1fe45314dac55526a859e59109cfa1ee0e31dfa5b0",
+      "route": "/nl/hulpmiddelen/categorieen/muziek/mp3-naar-ogg-converter/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/mp3-naar-wav-converter/": {
+      "hash": "26607dd05c7ca7ba321a7511ca3acb1478c1e07c47681295e748326299a11000",
+      "route": "/nl/hulpmiddelen/categorieen/muziek/mp3-naar-wav-converter/"
+    },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/muzieknoot-equivalentie/": {
-      "hash": "5223db164226214abc1a7aec63cb5f7190fc2bf8654fa4bf29e1f01545bad570",
+      "hash": "f19e91b7ec7b6724f8d8b0b1af3fb18a2419c4af74db3670b6a9dc1c44852874",
       "route": "/nl/hulpmiddelen/categorieen/muziek/muzieknoot-equivalentie/"
     },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/ogg-naar-mp3-converter/": {
+      "hash": "043e4c5ebe546f8a480d4453d20c75ce59d1391c3b27061eb4a59c5d4a002b41",
+      "route": "/nl/hulpmiddelen/categorieen/muziek/ogg-naar-mp3-converter/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/ogg-naar-wav-converter/": {
+      "hash": "f42dcb706e9a71ae414368beb0ae649b415547bf42cc32ed5b984587de861518",
+      "route": "/nl/hulpmiddelen/categorieen/muziek/ogg-naar-wav-converter/"
+    },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/rekenhulp-speeltijd-concertsetlist/": {
-      "hash": "4d0d5836c66c7e5e1b170a669f4ba16872537bd983359f5a07ad609456ac916b",
+      "hash": "e8cb94832c753475c78f0413d713c2d048e4f0568a27606116e0e081cce1d736",
       "route": "/nl/hulpmiddelen/categorieen/muziek/rekenhulp-speeltijd-concertsetlist/"
     },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/wav-naar-mp3-converter/": {
+      "hash": "c607f4e45ed721010115a69d862fe7163c11f9ff1f153517c11a7685963b0818",
+      "route": "/nl/hulpmiddelen/categorieen/muziek/wav-naar-mp3-converter/"
+    },
+    "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/wav-naar-ogg-converter/": {
+      "hash": "dca5161bc6fc476be50b24cdc6101f0aa831de4907f3d7ed21f1a80d57523e3f",
+      "route": "/nl/hulpmiddelen/categorieen/muziek/wav-naar-ogg-converter/"
+    },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/": {
-      "hash": "7f80e088a1e35071c769c479e4675d977e06aac497fbe0f7b9a85e3c79e1907e",
+      "hash": "db1ee03b61eda320bf19b586af17c64b24790e180473a1f3ec955b6a6b8cbd83",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-bpm-na-milisekundy/": {
-      "hash": "59682969b0390d53c961cda91c33e32e62793bd73e925b7ea4fbb846a2d0d8cc",
+      "hash": "5b1d7e1f7ad045073a3ae1fb62a1c0f5f24e4dba89a0e5713968ddb70db7d885",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-bpm-na-milisekundy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-czasu-setlisty-koncertowej/": {
-      "hash": "53bd502c3247d0b35c8a1295e7a019fc7c4dd5afa35ea32437e4bb6357a2425b",
+      "hash": "e295bcd4b436780c6b76493c446fc68aa349fec39a719ab692ba665e9fc1850b",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-czasu-setlisty-koncertowej/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-naciagu-strun-gitarowych/": {
-      "hash": "595c1fa5cfd4e27d75e90de0ca2f0daae914a18e6fa7be1262f36b61e90956c1",
+      "hash": "e1e1c8918de316b978e6d873311b84eb5a64dc017aec0c58a0fde79985ce55dd",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-naciagu-strun-gitarowych/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-pamieci-audio/": {
-      "hash": "118eec637cfb062ca603927d220d503435c9b324a1e636fec22eee06210fc05b",
+      "hash": "cdc1bef2225e3f485a7d109f33d8f5de60c98c2f651c23340f50889fc455a9e4",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-pamieci-audio/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-rozstaw-fazy/": {
-      "hash": "7762a122e24c9eb8ff0fac018f4acadcec685403573de7f7208337e0f9f22743",
+      "hash": "e90e80b7be187384c5746fa25f33a3920bd4c5405a17a067d1bb980b5a5e78cb",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-rozstaw-fazy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-czestotliwosci-na-nuty/": {
-      "hash": "be1b15729458a95284bea470790820e667a5360b755d0eecc769f9eb37650760",
+      "hash": "a6bec70f6c90202ed5010e0dddfff687c925cf92ba4dfa88b60f0dcb4e598c74",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-czestotliwosci-na-nuty/"
     },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-mp3-na-ogg/": {
+      "hash": "a567aca326dd4c94106341d741a1484df4980b9d82ffa6ae046b7fb75f05fb25",
+      "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-mp3-na-ogg/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-mp3-na-wav/": {
+      "hash": "3645d88c7865ece8d244b9ce16bd4dc94bb2998a14b130251fbaa8a3380832c5",
+      "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-mp3-na-wav/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-ogg-na-mp3/": {
+      "hash": "13a26fed1451081ed0efeb35165a2005b6487eddce8c2bb43cd6e2444009e805",
+      "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-ogg-na-mp3/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-ogg-na-wav/": {
+      "hash": "5f441709437701c6298249b5df727484437e0dbb46809c2aa6f72f67287c0913",
+      "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-ogg-na-wav/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-wav-na-mp3/": {
+      "hash": "e57f1580af818a4204c4121d8d0b1b681848dfcbbc4ee368a250daff43bdbd8c",
+      "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-wav-na-mp3/"
+    },
+    "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-wav-na-ogg/": {
+      "hash": "5f34d88d1d5fa24388680d2c889d35b12cc225735166b09419f09abe74ad2f2e",
+      "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-wav-na-ogg/"
+    },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/metronom-online-cwiczenia/": {
-      "hash": "95018e4cbefabaf94a014edb64d894f203b210843c245d3ff1c584ad41ebf205",
+      "hash": "2a91f3759c65d4e06e80f6bdc5d9ff3b560c23ea4e99faa171516b5e7c5e343d",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/metronom-online-cwiczenia/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/odpowiedniki-nut-muzycznych/": {
-      "hash": "2372e8e5e487433e7e97e0f1f929d75f8610ff33460072206d142273e222b7db",
+      "hash": "e1dbe274e1ee84e194d29789185d06579a41337e0ed8a876c848d969b90466fd",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/odpowiedniki-nut-muzycznych/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-armazenamento-audio/": {
-      "hash": "fce9fb9de0cca2e7518872741b7c33d12234bc3e1815eff43d870afd69adc44a",
+      "hash": "11f80df1a14a0c79bdd58611f3a6c563b9529f4ee82eca5a9b4ef49af0571660",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-armazenamento-audio/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-bpm-para-milissegundos/": {
-      "hash": "616733ba6af389fa7b2a44971b04121b40a8eecf259e40c39be3e58f857bb216",
+      "hash": "86450316c07a74392027c4ec83a5beef89c93f4c5ffbce32d1ed6587016967d7",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-bpm-para-milissegundos/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-distancia-de-fase/": {
-      "hash": "fd4c2e2f5c6d2551ab7abfebe4f5aad9e93084ffec4765ad51f2cb27218e3d28",
+      "hash": "42607878909a6fcb0b67f22705793ef7bb15fe8486a666c8b2fbce3267514dab",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-distancia-de-fase/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-duracao-setlist-concerto/": {
-      "hash": "7c85010507c8e38408b2b4f461aafa182bead7038f59c840ce4dce673a0ed73d",
+      "hash": "a7eaef8c5674936fd9e1efeb61d444043d3ce0a0d2548491e282d752e18553cd",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-duracao-setlist-concerto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-tensao-cordas-guitarra/": {
-      "hash": "faf5212fd0c4c696b3fc845aed93c8e0fd30d2abb6c7141f822449fb7c7e3df4",
+      "hash": "b809a6a253bf4bbb124169e83fa3f6813eabc8220ed87e648bb1af252b80ac7a",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-tensao-cordas-guitarra/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-frequencia-para-nota/": {
-      "hash": "12d9008a6fe30ee0c97f6c4e6d9782098d8f980e6fd74943b460477c32413ff9",
+      "hash": "af503927d3d985b5275bb0dcdb0fc8a8fbd2d96507df6bda600c5da2e6015ff7",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-frequencia-para-nota/"
     },
+    "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-mp3-para-ogg/": {
+      "hash": "121c504f98e0c11473fc38cf30a46c92123bf5c24f503a4b158abf6376bc633d",
+      "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-mp3-para-ogg/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-mp3-para-wav/": {
+      "hash": "33e3037d32f67fcad7a4c91e5aa0df10b253d46d924d62e9eab257757d58d863",
+      "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-mp3-para-wav/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-ogg-para-mp3/": {
+      "hash": "75462859b57b3016e56f75e5189158ebdc0f4316fc9f0c6eaeee79e2f57b4151",
+      "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-ogg-para-mp3/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-ogg-para-wav/": {
+      "hash": "7f0ad3fdfde530827ee9059d985217a1ab05f0d2875f200d05a5f1f19c836d91",
+      "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-ogg-para-wav/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-wav-para-mp3/": {
+      "hash": "0fc92cfcd39df9202e55b7a3b435c9a1829a438290b9c21ff86517e297003d84",
+      "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-wav-para-mp3/"
+    },
+    "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-wav-para-ogg/": {
+      "hash": "e9a548a1b50ee3b2a1e409a583b61780cb4da350ff3d287fc6243f7b063f1763",
+      "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-wav-para-ogg/"
+    },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/equivalencia-notas-musicais/": {
-      "hash": "b8606c45d878be297e0fe780fbc446dd5c6b5502402a734abeeeffa1d35b3a66",
+      "hash": "90f46389a127fb4239edf3a00c0f9452a0f7ae7d0b374e0f987c94b4817ce0d9",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/equivalencia-notas-musicais/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/": {
-      "hash": "275b29490c4810773973c34298c96f67dcfb4ffce52c83b59f10723516deab52",
+      "hash": "8c13fcf29e6a7762770a5f137684f7995a87ea9ce7cf01428b4334079a441ce1",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/metronomo-online-pratica/": {
-      "hash": "04ab5c8afb5bc2b99887dc223df630f2faf47ed3327a6b85578941d8569178d7",
+      "hash": "d19e5052c4a985be38be4af2967d0b297924e1ccd1c3de1f03446616cbe507fa",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/metronomo-online-pratica/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/ecvivalentnost-muzykalnyh-not/": {
-      "hash": "ffc2a91e5756bc4fd220db5b68804cfcdafa35c78adea22dc8fef98528f570c3",
+      "hash": "41ac1b2926007ee691163a1a9c1b9dba9211302c989bd1b1b8337415b30c49fd",
       "route": "/ru/instrumenty/kategorii/muzyka/ecvivalentnost-muzykalnyh-not/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/": {
-      "hash": "f423ae044137fb3da17637b59b8f6695538f63acfc3297a7a096f5054acbcfff",
+      "hash": "7387062fd8e9672d960f594d989349914f59f4e390ec1036efc568248dee89e9",
       "route": "/ru/instrumenty/kategorii/muzyka/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulator-dlitelnosti-koncertnogo-setlista/": {
-      "hash": "c0a7fb6bfbc09ccbb5bc1be639d7e49f0ed8e09ea71ccc9f0f422ec321d31e78",
+      "hash": "46003dfab67cbfd664664325f4419d8a023000fed3ae4e8b17c98faf96e5b4fa",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulator-dlitelnosti-koncertnogo-setlista/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-bpm-v-millisekundakh/": {
-      "hash": "2d4746726b62e52d59ebef7c3a167b0f5e4b2ee2c8fce1824222adb6590f2960",
+      "hash": "76712308f001eb06377751967e08a1e0eed790e43c66a241972af14d0f54f45c",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-bpm-v-millisekundakh/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-fazovogo-rasstoyaniya/": {
-      "hash": "c3b7192db4e5005df638934582f955be2c7607d9deae123aef6f15daa8b9d394",
+      "hash": "c7651d7a26c4eb6578139c96c6a8caa373ed9a6d97d341c7b0bb7f7e1951d86f",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-fazovogo-rasstoyaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-natyazheniya-gitarnykh-strun/": {
-      "hash": "a1022b81b654f2d42a0b2bb3f707d2dcbd2b3ecd96b2e1eefe5c63a1d6a3d1da",
+      "hash": "b5c4d6838bad8c8651e41685fc6d3bbb1fe8e9be81d6e1391d2888b4dc77cc98",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-natyazheniya-gitarnykh-strun/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-pamyati-audio/": {
-      "hash": "426acd0ca5dabf8dfb083944e0c0e46f5f5574b5df551bf3f62d343a79ccaeed",
+      "hash": "97086fe6b2dd81c55ba269683c19a20702b3aed574c9f32aeee764298bead46b",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-pamyati-audio/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-chastoty-v-noty/": {
-      "hash": "a08d8f352718e542b0df3657185ab6b4eef8a45e2bfbb3bcd851d7c5ecde3835",
+      "hash": "1c9d4256e9a1421c4f2a0100c5cedf39b317a9e7dd6ff185ec302be7d8fd805d",
       "route": "/ru/instrumenty/kategorii/muzyka/konverter-chastoty-v-noty/"
     },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-mp3-v-ogg/": {
+      "hash": "6d7f625fc353e86b0024ce19be9eda00a1134748913cb7714f0364dc15fe69b8",
+      "route": "/ru/instrumenty/kategorii/muzyka/konverter-mp3-v-ogg/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-mp3-v-wav/": {
+      "hash": "c52e4dd14bbbaf65ee19dbc9cda3c6b77089f9d215d62eb7e4302f0be2be7397",
+      "route": "/ru/instrumenty/kategorii/muzyka/konverter-mp3-v-wav/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-ogg-v-mp3/": {
+      "hash": "ade083593c83aeacd0e39e37817010957963e6c78f03caebba884ceb7f5e2c22",
+      "route": "/ru/instrumenty/kategorii/muzyka/konverter-ogg-v-mp3/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-ogg-v-wav/": {
+      "hash": "f870a2e0eee24c800d6265e3d50ac82397330547cd7a94736b9bf7f14b35672c",
+      "route": "/ru/instrumenty/kategorii/muzyka/konverter-ogg-v-wav/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-wav-v-mp3/": {
+      "hash": "208c3c253dbf14ff4b3591ee775597b9d11bcd09931b3924259176aa1cf793f6",
+      "route": "/ru/instrumenty/kategorii/muzyka/konverter-wav-v-mp3/"
+    },
+    "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-wav-v-ogg/": {
+      "hash": "6f3e41f77baa1792e9e9c4a95fa0d426e0142944fa2599363caf4d77421cf958",
+      "route": "/ru/instrumenty/kategorii/muzyka/konverter-wav-v-ogg/"
+    },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/metronom-online-uprajneniya/": {
-      "hash": "6116af69aec4c11dc60d49afd4a34962d34e1de0025f28b555332f00d5240f89",
+      "hash": "0d39724ca3a48eb4bdfc6a08461d9aa4f7b917f928d4e0b106c74df5bc2e5c4f",
       "route": "/ru/instrumenty/kategorii/muzyka/metronom-online-uprajneniya/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/bpm-till-ms-kalkylator/": {
-      "hash": "622295f0f7308be3399e56f6c79fdd08e03bab3ab4e2ae82d9d288fd6a1649d5",
+      "hash": "f9ff72f2525a60973a959951c083438f626b019205f2204e3cacdb3d0566a9be",
       "route": "/sv/verktyg/kategorier/musikverktyg/bpm-till-ms-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/fasavstands-raknare/": {
-      "hash": "adcb0e9aa6ef691190e347029de5ae7ff6f910cf0092ade13840d76c547ebedf",
+      "hash": "cd689247ac9c18515209c8f31d09cd6d0831d78ae6672999dc31a5174d9816e6",
       "route": "/sv/verktyg/kategorier/musikverktyg/fasavstands-raknare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/frekvens-till-not-konverterare/": {
-      "hash": "33f35ce4803c68155156f3709c26d464c71f0597f894e3a5400353ddae36092f",
+      "hash": "d4ce950b958c89ca4735effae9e9b0d78bd2f255b847f4a2ba4dafd8d285d9ca",
       "route": "/sv/verktyg/kategorier/musikverktyg/frekvens-till-not-konverterare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/": {
-      "hash": "521cfc895e0d61c73292af2d9e1ff407e8f3097909ce940425f8ddb7857fb3ce",
+      "hash": "0c45b636f3714b9bbcd42d29a0e273f1e279bd7f5e24b5ad58527a99fe748635",
       "route": "/sv/verktyg/kategorier/musikverktyg/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/kalkylator-gitarrstrangars-spanning/": {
-      "hash": "ee97110e862584bb22ce8f2908526e3d45d26513732941973c7bf27af78145f6",
+      "hash": "634b83f82129af4a7ba78abdfad5d85a3d9046d5d8a3da6c30e5116e4e572d19",
       "route": "/sv/verktyg/kategorier/musikverktyg/kalkylator-gitarrstrangars-spanning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/kalkylator-konsertens-setlisttid/": {
-      "hash": "cf55f96044cde09c9bd022dcddae49f351433c1e6e78528c51c958df4c47fbf7",
+      "hash": "31b5f0f142eee7e0a96c3dd06034856236e84afd131356fd9bb560e7d1e69b1d",
       "route": "/sv/verktyg/kategorier/musikverktyg/kalkylator-konsertens-setlisttid/"
     },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/konvertera-mp3-till-ogg/": {
+      "hash": "5e1c88571f82a71af50036b8f76ff6296721cd1d3f4a825d29af257af7d48a17",
+      "route": "/sv/verktyg/kategorier/musikverktyg/konvertera-mp3-till-ogg/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/konvertera-mp3-till-wav/": {
+      "hash": "88e8c029a27eb8b680731dd937891a5db8ccec83a69a931a87fd32da149580ec",
+      "route": "/sv/verktyg/kategorier/musikverktyg/konvertera-mp3-till-wav/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/konvertera-ogg-till-mp3/": {
+      "hash": "86cf10c0dc9b5c68e63d58c3701da2010aaba360f6d9d59e6c25fb4a58a8e3f5",
+      "route": "/sv/verktyg/kategorier/musikverktyg/konvertera-ogg-till-mp3/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/konvertera-ogg-till-wav/": {
+      "hash": "ae0b6af1516b8c450b9ed054e9a1611916fea181da631b16c655afc3c3f9f2a9",
+      "route": "/sv/verktyg/kategorier/musikverktyg/konvertera-ogg-till-wav/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/konvertera-wav-till-mp3/": {
+      "hash": "c3f4c91297d1b561077e6fe23eb5b459095a510c01a74bec13e55b85cf27dfda",
+      "route": "/sv/verktyg/kategorier/musikverktyg/konvertera-wav-till-mp3/"
+    },
+    "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/konvertera-wav-till-ogg/": {
+      "hash": "b3cd114cebfd179cf77a6ede7c50990048d8e215dc0568a69b50fb8d3acb6e95",
+      "route": "/sv/verktyg/kategorier/musikverktyg/konvertera-wav-till-ogg/"
+    },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/ljudlagringskalkylator/": {
-      "hash": "c8587fc68fecdf0e90ef733fe9f2369a3a368d338c1c4ecbc3021fee03818f88",
+      "hash": "8fad30b51285ac7cbb169c70041521739da727466fb0983dbb6cc24ad369331d",
       "route": "/sv/verktyg/kategorier/musikverktyg/ljudlagringskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/metronom-online-ovning/": {
-      "hash": "f2a48fffd08fbeb05a1389851d210d871dccd7100505d25254c80eb918432b27",
+      "hash": "363c82891a97c91bb6891e2d93c69a4d67769042f028e033ebfd9e2dd7098ee3",
       "route": "/sv/verktyg/kategorier/musikverktyg/metronom-online-ovning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/noternas-motsvarigheter/": {
-      "hash": "d9007bb08b6bf46981edad3be60def6b8e39edd4378913be441eb8c3149b66dd",
+      "hash": "ef61bb7a25cb42556c6159b0042dcb73c4088fecaf2df1a7d2561a83e7cac5a3",
       "route": "/sv/verktyg/kategorier/musikverktyg/noternas-motsvarigheter/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/bpm-ms-hesaplayici/": {
-      "hash": "d6d148f3897f162b98a006b770ee27792c5a4a008127e13e9de48c80dbb87c5f",
+      "hash": "6f13d9278c55b2831a9c530a65e8c3afc4d1f4244fe7efcbac7540b2a158c72b",
       "route": "/tr/araclar/kategoriler/muzik/bpm-ms-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/faz-mesafesi-hesaplayicisi/": {
-      "hash": "cd0085c1189af0c1a507a1d12621ea3604e3e191cea61b22ea4642b7a56db644",
+      "hash": "59e31b0b93b5eb241821a08e812198431230df4345fce273eb960cbdbc6c493a",
       "route": "/tr/araclar/kategoriler/muzik/faz-mesafesi-hesaplayicisi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/frekans-nota-donusturucu/": {
-      "hash": "49dbf360b81f125985ed8ec6c0da813e8b8a5202d7a704c51b8192cd45fb67ad",
+      "hash": "031f750c9347070a8800f93f76c18d222d304d0fbd7450caa52feadf2cb0bce5",
       "route": "/tr/araclar/kategoriler/muzik/frekans-nota-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/gitar-tel-gerilimi-hesaplayici/": {
-      "hash": "fecca129942ac13b6fc15da06253918238a8eab7b77a598ebcebf7a8e70c819b",
+      "hash": "7bf874b8f175294d4f164a9f60fa1aec54eb91074537b03fe2a9ebd28cb77201",
       "route": "/tr/araclar/kategoriler/muzik/gitar-tel-gerilimi-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/": {
-      "hash": "4003a515836d28d7de4bdc95b647cb322648b1755b5f0ba798e0f0cd0a2d338f",
+      "hash": "2edcbb62f9ba4851079637c1b8063d761a46f4e9cf58e367de19c7e9808af9d1",
       "route": "/tr/araclar/kategoriler/muzik/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/konser-setlistesi-sure-hesaplayici/": {
-      "hash": "97d5a9dfb63a1d17b97093068ffca166eca450f3455037d52123714aa46e40ed",
+      "hash": "d5d4f22ca380a828c48692dda86ea7d1420c4835785ab4ba480c66d896d44760",
       "route": "/tr/araclar/kategoriler/muzik/konser-setlistesi-sure-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/metronom-online-egzersiz/": {
-      "hash": "15272175306596ca7c976cb69ef6242377ae7b9c0e74820c3b40805e3969ca37",
+      "hash": "b8468ca40f904432f6a6194e308fc097db31a895f6f3aa9e957fb5f748397b1a",
       "route": "/tr/araclar/kategoriler/muzik/metronom-online-egzersiz/"
     },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/mp3-ogg-donusturucu/": {
+      "hash": "81c92ffc44d62f5ed70cc308d73c594d25a37993120651218023f6f53bd0673c",
+      "route": "/tr/araclar/kategoriler/muzik/mp3-ogg-donusturucu/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/mp3-wav-donusturucu/": {
+      "hash": "4a4e0ae7f4e40d18c34d5366933db721c3a3febe22704fffe3a656883a93c2bc",
+      "route": "/tr/araclar/kategoriler/muzik/mp3-wav-donusturucu/"
+    },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/muzik-notasi-esdegerligi/": {
-      "hash": "061279479f2686e55f39a3af3f421a0e0d852772cc1d86e8dd119367e606d00c",
+      "hash": "4012b00bd77f8a72c3d8bebcc16b118c70d1fadca02c3e46625965820b541c72",
       "route": "/tr/araclar/kategoriler/muzik/muzik-notasi-esdegerligi/"
     },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/ogg-mp3-donusturucu/": {
+      "hash": "a3b5a84482dc3e59f47503d8df3669caa64077e89fd0c9a9219beebccbf32768",
+      "route": "/tr/araclar/kategoriler/muzik/ogg-mp3-donusturucu/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/ogg-wav-donusturucu/": {
+      "hash": "6c94c3320d124428bbaa7a59a9e14c4c746c0a8b6e4b09e3049f7111e256b915",
+      "route": "/tr/araclar/kategoriler/muzik/ogg-wav-donusturucu/"
+    },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/ses-depolama-hesaplayici/": {
-      "hash": "96313fa8df23f037b666d7859cd93071513921ecb88ab142fd61417f724fee08",
+      "hash": "4288267efdb2d99d0f124f27a9c769e05a50bb8518abba17d71cd277294986bc",
       "route": "/tr/araclar/kategoriler/muzik/ses-depolama-hesaplayici/"
     },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/wav-mp3-donusturucu/": {
+      "hash": "63f44580bfe6e37e0bee23862ca6b9622f7b2b8d7629c57800c1e39e5422b814",
+      "route": "/tr/araclar/kategoriler/muzik/wav-mp3-donusturucu/"
+    },
+    "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/wav-ogg-donusturucu/": {
+      "hash": "460014d638aa3fa1169638fde683ee0c54a8ac456b78f0e1a433751791145826",
+      "route": "/tr/araclar/kategoriler/muzik/wav-ogg-donusturucu/"
+    },
     "https://www.jjlmoya.es/utilidades/calculadora-almacenamiento-audio-digital/": {
-      "hash": "310a883d54c59e9a74a4824d9deeba84e9e541f67b333b0a244e75cbd856698e",
+      "hash": "f3c0e369245bc7e58685a2360a794b6439f64e43cb41b868fd25cb86ff6f573b",
       "route": "/utilidades/calculadora-almacenamiento-audio-digital/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-bpm-milisegundos/": {
-      "hash": "ffdd7cf70b74cfc9a948f912092bc854f90bfe0a62086eebbed7beb635929029",
+      "hash": "91b330cbf850de001f6ee9df1b5bcb0cc01020f0f6a96413b8fb3fd72a63836c",
       "route": "/utilidades/calculadora-bpm-milisegundos/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-distancia-fase/": {
-      "hash": "8dc3771b84d3a5a9da6643a1700855e620a2157e9f8afd82e4343305fb411890",
+      "hash": "75933b9917ccc6aed38c42a25eef8321d353399f11d1e7112882190d4313d5d4",
       "route": "/utilidades/calculadora-distancia-fase/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-duracion-repertorio-concierto/": {
-      "hash": "4e588f1f8d80f5c617cc218ab9cfde78d1987aa14f01db0ae71e95ebb92edbd8",
+      "hash": "a61ab5b7d3b5f0bc19943834ceaef1e5c5026ce222028d3b412609d64c5a8a3f",
       "route": "/utilidades/calculadora-duracion-repertorio-concierto/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-tension-cuerdas-guitarra/": {
-      "hash": "b015b254995b6f0e68b91be5b019d5bf791b1c41d73b776b9c2a647e2d5432c0",
+      "hash": "00369900069b968d8a85e03752e1c54567e782040a616af92bef8332b5fba586",
       "route": "/utilidades/calculadora-tension-cuerdas-guitarra/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/musica/": {
-      "hash": "3557446069a3eafefc1fa21582e9c4d56b166dc03233961d1bcd74d86f9a293b",
+      "hash": "9cd3c24d2b246ce0238bbbf86fb080ab5c2d1283e0adebb0c1c21eb4a06a0fe7",
       "route": "/utilidades/categorias/musica/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-frecuencia-nota-musical/": {
-      "hash": "081ef8f03ccb86f7ec9aa7c01cd9c25f7a6b40d95f0cebeef94326905080e2ce",
+      "hash": "3fcc8934991943d517aa0e9a9695ad09c3043cf0313be28731ae8c25bd815bfc",
       "route": "/utilidades/conversor-frecuencia-nota-musical/"
     },
+    "https://www.jjlmoya.es/utilidades/convertir-mp3-a-ogg/": {
+      "hash": "11b597a2cdb99cc598778517a8aea69664df18c04576ec5c7a4164ae2dd41b81",
+      "route": "/utilidades/convertir-mp3-a-ogg/"
+    },
+    "https://www.jjlmoya.es/utilidades/convertir-mp3-a-wav/": {
+      "hash": "23b2369799f0876eb98ad2a81ef891c760896e546f6e0e3b2b7924b6697082d1",
+      "route": "/utilidades/convertir-mp3-a-wav/"
+    },
+    "https://www.jjlmoya.es/utilidades/convertir-ogg-a-mp3/": {
+      "hash": "d77729c01558f44b2e212481a56e02c6c85b939ca1d96a97eee84f91e265c72d",
+      "route": "/utilidades/convertir-ogg-a-mp3/"
+    },
+    "https://www.jjlmoya.es/utilidades/convertir-ogg-a-wav/": {
+      "hash": "08fcdee76684ecf52736d28a4ff96cbcb9805f4cba7e053ede3aba50386fc8bb",
+      "route": "/utilidades/convertir-ogg-a-wav/"
+    },
+    "https://www.jjlmoya.es/utilidades/convertir-wav-a-mp3/": {
+      "hash": "24cf0116f073e5ec9b34c16c541621fbd1d83160f619125f58e5d5ae15a25d00",
+      "route": "/utilidades/convertir-wav-a-mp3/"
+    },
+    "https://www.jjlmoya.es/utilidades/convertir-wav-a-ogg/": {
+      "hash": "cd7e5c44e9c18f32f5e7f2890a68d2ae76a74e8bddda36efb90cafa475a46910",
+      "route": "/utilidades/convertir-wav-a-ogg/"
+    },
     "https://www.jjlmoya.es/utilidades/equivalencia-notas-musicales/": {
-      "hash": "8cce9183d4af5a8a1aa08465c7fbda45ae3978406072ded2d3e88d5e9346d225",
+      "hash": "cf5c0297413975b6a664f954d66ebd79840f5a4ff9f7ab66c32f5aeea328c2ce",
       "route": "/utilidades/equivalencia-notas-musicales/"
     },
     "https://www.jjlmoya.es/utilidades/metronomo/": {
-      "hash": "e4a7f11a06d37cd49a24db94f8cb90c4fba86b16c0816cf038fb008a80389a3a",
+      "hash": "aef377a5490ea669bfd52146405487108e67d8b24aa481b70c559ff22251ec52",
       "route": "/utilidades/metronomo/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "9008df570694a428e9204388e066b55ce38e10f0729db171950da50096e9246f",
+      "hash": "df3fcdc0ce5f8adbd9cfa97d31c1a6eded0d8bcb04ad1dad70df01985fec175e",
       "route": "/zh/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "cb357197e0caa9459e6a3182a509b0a24400022eaf3255fb406bfb13df7fd54e",
+      "hash": "af8615cb9387dd1d6ff8073d9122e059b64a77fb403cc1061c38ea5055b6373f",
       "route": "/zh/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "ceb8695bfec5d9dbf90f27426db0ad5398b9e42f20597f594b42050fe3c41b3f",
+      "hash": "d14e35acbd3beb4f230f70be63a45e145bbd1658bb902c8c0579093cfd5b9fcb",
       "route": "/zh/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "ef2ca2632fdf4b538b4b9ed3c5de643965145660748ea871072a351a80cd9121",
+      "hash": "87fb3ce0027b70f842037be96b1b7cdd7f2266f0fc9a806a968286e0b4b0c727",
       "route": "/zh/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/": {
-      "hash": "b9024878c2683189128c3abb58a799cedcbd7fefa400070c4c7596c5966c8830",
+      "hash": "549c1ee457c3dac7db278aef307bcd1684aa75b2b24095196a02c93e6059d0e0",
       "route": "/zh/utilities/categories/music/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/metronome/": {
-      "hash": "c2644be737f93c576db3628f4d33a209e2e6f617318f06e81aa3df3b01cd282b",
+      "hash": "7a7045bece8b43f293f4ba4143a9a07498fe6707618b96a766d0c02e624937ba",
       "route": "/zh/utilities/categories/music/metronome/"
     },
+    "https://www.gamebob.dev/zh/utilities/categories/music/mp3-to-ogg-converter/": {
+      "hash": "12881fd0442e135c165ba21c0c556df6f1fcc5b0b27f8d05f70a7bbfbade10c1",
+      "route": "/zh/utilities/categories/music/mp3-to-ogg-converter/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/music/mp3-to-wav-converter/": {
+      "hash": "f310c265d09af9fcb797f11f5ac61bb484a835f4bd5f605ddc9ec5f724bfcc93",
+      "route": "/zh/utilities/categories/music/mp3-to-wav-converter/"
+    },
     "https://www.gamebob.dev/zh/utilities/categories/music/music-note-equivalency/": {
-      "hash": "fe00a7f3ced515985c6498534fdc2e167c1c6f28dcf124c5a90eb3ff69039dc8",
+      "hash": "93a31d5a0f47f26d34bfbb0825c9181cc651509b565bf6eae2e0f3549affecd0",
       "route": "/zh/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "5dd271bd30fd95319fcb910426eea79a9ac802a39c6cf3ca6af68e13764de47b",
+      "hash": "dc10f24136ef73e2c6451cb992dc9cf322038140006f520d044c4fe4be314aee",
       "route": "/zh/utilities/categories/music/music-setlist-runtime-calculator/"
     },
+    "https://www.gamebob.dev/zh/utilities/categories/music/ogg-to-mp3-converter/": {
+      "hash": "389a06f9116d8119c33bfd37bf9258c672e51a315913081d0471be79332b275a",
+      "route": "/zh/utilities/categories/music/ogg-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/music/ogg-to-wav-converter/": {
+      "hash": "634d592dc2d25d301d395c241d235be76cb9b3fce1d96040c6375884446099c4",
+      "route": "/zh/utilities/categories/music/ogg-to-wav-converter/"
+    },
     "https://www.gamebob.dev/zh/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "66dbebfb164d142c3901a37c84fb827eb01836b9243e5ee1a9e96a0d1072785e",
+      "hash": "055c0df13d1547dfa3972eb318cd5b5c39d1be7bb3b871e9cdb8bb5fb9ffa197",
       "route": "/zh/utilities/categories/music/phase-distance-calculator/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/music/wav-to-mp3-converter/": {
+      "hash": "0423c8fd3e6baa0c24c7c1f29a985f9c600e3310fbc177cabf2b84c4a81d0d01",
+      "route": "/zh/utilities/categories/music/wav-to-mp3-converter/"
+    },
+    "https://www.gamebob.dev/zh/utilities/categories/music/wav-to-ogg-converter/": {
+      "hash": "129c5ad64e1952482cc5916d49a558372164c506b43dd9a46409056af9bf3acb",
+      "route": "/zh/utilities/categories/music/wav-to-ogg-converter/"
     }
   }
 }
