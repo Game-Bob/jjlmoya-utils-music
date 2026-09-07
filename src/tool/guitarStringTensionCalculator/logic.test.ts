@@ -27,7 +27,7 @@ describe('guitar string tension logic', () => {
   });
 
   it('creates a drop D tuning with the lowest string lowered', () => {
-    const strings = createStrings([0.042, 0.032, 0.024, 0.016, 0.011, 0.009], TUNING_PRESETS[2]);
+    const strings = createStrings([0.042, 0.032, 0.024, 0.016, 0.011, 0.009], TUNING_PRESETS[2]!);
     expect(strings[0]!.note).toBe('D2');
     expect(strings[0]!.frequency).toBeCloseTo(73.416, 2);
     expect(strings[1]!.note).toBe('A2');

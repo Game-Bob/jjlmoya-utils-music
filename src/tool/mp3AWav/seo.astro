@@ -1,0 +1,9 @@
+---
+import { SEORenderer } from '@jjlmoya/utils-shared';
+import type { KnownLocale } from '../../types';
+import { createAudioLocaleContent } from '../../shared/audio-content';
+interface Props { locale?: KnownLocale }
+const { locale = 'es' } = Astro.props;
+const content = createAudioLocaleContent('mp3', 'wav', locale);
+---
+<SEORenderer content={{ locale, sections: content.seo }} />

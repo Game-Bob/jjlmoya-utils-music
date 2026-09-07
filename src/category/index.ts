@@ -7,10 +7,16 @@ import { audioStorageCalculator } from '../tool/audioStorageCalculator/entry';
 import { musicNoteEquivalency } from '../tool/musicNoteEquivalency/entry';
 import { guitarStringTensionCalculator } from '../tool/guitarStringTensionCalculator/entry';
 import { setlistRuntimeCalculator } from '../tool/setlistRuntimeCalculator/entry';
+import { mp3AOgg } from '../tool/mp3AOgg/entry';
+import { wavAOgg } from '../tool/wavAOgg/entry';
+import { oggAMp3 } from '../tool/oggAMp3/entry';
+import { oggAWav } from '../tool/oggAWav/entry';
+import { mp3AWav } from '../tool/mp3AWav/entry';
+import { wavAMp3 } from '../tool/wavAMp3/entry';
 
 export const musicCategory: MusicCategoryEntry = {
   icon: 'mdi:music',
-  tools: [metronome, bpmCalculator, phaseDistance, frequencyNoteConverter, audioStorageCalculator, musicNoteEquivalency, guitarStringTensionCalculator, setlistRuntimeCalculator],
+  tools: [metronome, bpmCalculator, phaseDistance, frequencyNoteConverter, audioStorageCalculator, musicNoteEquivalency, guitarStringTensionCalculator, setlistRuntimeCalculator, mp3AOgg, wavAOgg, oggAMp3, oggAWav, mp3AWav, wavAMp3],
   i18n: {
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),

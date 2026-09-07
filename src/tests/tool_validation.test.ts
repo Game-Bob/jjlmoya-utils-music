@@ -4,8 +4,8 @@ import { musicCategory } from '../data';
 
 describe('Tool Validation Suite', () => {
   describe('Library Registration', () => {
-    it('should have 8 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(8);
+    it('should have 14 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(14);
     });
 
     it('musicCategory should be defined', () => {

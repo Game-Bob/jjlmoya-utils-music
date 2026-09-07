@@ -50,11 +50,11 @@ function renderAdvancedInputs(ui: GuitarStringTensionUI, system: MeasurementSyst
   const lengthLabel = system === 'metric' ? ui.metricLength : ui.imperialLength;
   const lengthValue = system === 'metric' ? '647.7' : '25.5';
   const strings = [6, 5, 4, 3, 2, 1].map((id) => renderStringField(id, ui, gaugeLabel, system));
-  return `<details class="gst-advanced" data-gst-advanced><summary>${ui.customSet}</summary><div class="gst-inputs"><label class="gst-field gst-length"><span>${lengthLabel}</span><input data-gst-scale-input inputmode="decimal" type="number" min="400" max="1000" step="0.1" value="${lengthValue}"><small>${ui.customScaleHint}</small></label><div class="gst-string-fields">${strings.join('')}</div></div></details>`;
+  return `<details class="gst-advanced" data-gst-advanced><summary>${ui.customSet} (${ui.presetCustom})</summary><div class="gst-inputs"><label class="gst-field gst-length"><span>${lengthLabel}</span><input data-gst-scale-input inputmode="decimal" type="number" min="400" max="1000" step="0.1" value="${lengthValue}"><small>${ui.customScaleHint}</small></label><div class="gst-string-fields">${strings.join('')}</div></div></details>`;
 }
 
 function renderStringField(id: number, ui: GuitarStringTensionUI, gaugeLabel: string, system: MeasurementSystem): string {
-  const gauge = [0.046, 0.036, 0.026, 0.017, 0.013, 0.010][6 - id];
+  const gauge = [0.046, 0.036, 0.026, 0.017, 0.013, 0.010][6 - id] ?? 0.010;
   const value = system === 'metric' ? (gauge * 25.4).toFixed(2) : (gauge * 1000).toFixed(0);
   const step = system === 'metric' ? '0.01' : '1';
   return `<label class="gst-string-field"><span class="gst-string-id">${id}</span><span class="gst-string-note" data-gst-note="${id}">E${id === 6 ? '2' : '4'}</span><span class="gst-string-caption">${ui.gauge}</span><input data-gst-gauge="${id}" aria-label="${ui.gauge} ${id}" inputmode="decimal" type="number" min="${system === 'metric' ? '0.15' : '6'}" max="${system === 'metric' ? '3' : '120'}" step="${step}" value="${value}"><small>${gaugeLabel}</small></label>`;
@@ -64,7 +64,9 @@ function renderSummary(result: TensionSet, ui: GuitarStringTensionUI, system: Me
   const evaluation = evaluateSet(result);
   const total = system === 'metric' ? `${formatNumber(result.totalKilograms)} kg` : `${formatNumber(result.totalPounds)} lb`;
   const spread = system === 'metric' ? `${formatNumber(result.spreadPounds * 0.45359237)} kg` : `${formatNumber(result.spreadPounds)} lb`;
-  return `<div class="gst-summary"><div class="gst-summary-total"><span>${ui.totalTension}</span><strong>${total}</strong><b class="gst-status gst-status-${evaluation.status}">${statusText(evaluation.status, ui)}</b></div><div class="gst-summary-metrics"><span><b>${spread}</b><br>${ui.tensionSpread}</span></div></div>`;
+  const tensionUnit = system === 'metric' ? ui.metricTension : ui.imperialTension;
+  const average = system === 'metric' ? `${formatNumber(result.averagePounds * 0.45359237)} kg` : `${formatNumber(result.averagePounds)} lb`;
+  return `<div class="gst-summary"><div class="gst-summary-total"><span>${ui.totalTension} (${tensionUnit})</span><strong>${total}</strong><b class="gst-status gst-status-${evaluation.status}">${statusText(evaluation.status, ui)}</b></div><div class="gst-summary-metrics"><span><b>${spread}</b><br>${ui.tensionSpread}</span><span><b>${average}</b><br>${ui.averageTension}</span></div></div>`;
 }
 
 function renderProfile(result: TensionSet, ui: GuitarStringTensionUI, system: MeasurementSystem): string {

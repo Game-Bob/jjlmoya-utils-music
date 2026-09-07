@@ -108,7 +108,7 @@ const t = (ui ?? {}) as BpmCalculatorUI;
 
 
 
-<script define:vars={{ ariaMs: t.copyAriaMs, ariaPreDelay: t.copyAriaPreDelay, copyFeedback: t.copyFeedback }}>
+<script is:inline define:vars={{ ariaMs: t.copyAriaMs, ariaPreDelay: t.copyAriaPreDelay, copyFeedback: t.copyFeedback }}>
   const bpmInput = document.getElementById('bpm-input');
   const tapBtn = document.getElementById('bpm-tap-btn');
   const simpleBody = document.getElementById('bpm-simple-body');

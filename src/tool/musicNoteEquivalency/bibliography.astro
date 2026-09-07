@@ -1,5 +1,5 @@
 ---
-import { Bibliography } from '@jjlmoya/utils-shared';
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
 import { musicNoteEquivalency } from './index';
 import type { KnownLocale } from '../../types';
 
@@ -11,4 +11,4 @@ const { locale = 'es' } = Astro.props;
 const content = await musicNoteEquivalency.i18n[locale]?.();
 ---
 
-{content && <Bibliography links={content.bibliography} />}
+{content && <SharedBibliography links={content.bibliography} />}

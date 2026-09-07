@@ -1,5 +1,5 @@
 ---
-import { Bibliography } from '@jjlmoya/utils-shared';
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
 import type { KnownLocale } from '../../types';
 import { bpmCalculator } from './index';
 
@@ -13,7 +13,7 @@ const content = await bpmCalculator.i18n[locale]?.();
 
 {
   content && (
-    <Bibliography
+    <SharedBibliography
       links={content.bibliography}
     />
   )

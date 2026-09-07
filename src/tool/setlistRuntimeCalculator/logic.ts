@@ -113,23 +113,22 @@ function getSlotSeconds(slotMinutes: number): number | null {
   return valid ? Math.round(slotMinutes * 60) : null;
 }
 
-function hasValidInputValues(title: string, durationSeconds: number | null, validPause: boolean): boolean {
-  if (!title) return false;
-  if (durationSeconds === null) return false;
-  return validPause;
+function hasValidInput(title: string, durationSeconds: number | null, validPause: boolean): durationSeconds is number {
+  return Boolean(title) && durationSeconds !== null && validPause;
 }
 
 function validateInput(input: SetlistItemInput, errorCodes: string[]): ValidInput | null {
   const title = input.title.trim();
   const durationSeconds = parseDuration(input.duration);
-  const pauseMinutes = Number(input.pauseMinutes);
+  const pauseMinutes: number = Number(input.pauseMinutes);
   const validPause = Number.isFinite(pauseMinutes) && pauseMinutes >= 0 && pauseMinutes <= MAX_PAUSE_MINUTES;
 
   if (!title) errorCodes.push(`title:${input.id}`);
   if (durationSeconds === null) errorCodes.push(`duration:${input.id}`);
   if (!validPause) errorCodes.push(`pause:${input.id}`);
-  if (!hasValidInputValues(title, durationSeconds, validPause)) return null;
-  return { input, durationSeconds, pauseSeconds: Math.round(pauseMinutes * 60) };
+  if (!hasValidInput(title, durationSeconds, validPause)) return null;
+  const pauseSeconds = Math.round(Number(input.pauseMinutes) * 60);
+  return { input, durationSeconds, pauseSeconds };
 }
 
 function collectValidInputs(inputs: SetlistItemInput[], errorCodes: string[]): ValidInput[] {

@@ -107,15 +107,15 @@ function readFormState(root: HTMLElement, system: MeasurementSystem): FormState 
   const scaleInput = numberOf(root, '[data-gst-scale-input]', system === 'metric' ? 647.7 : 25.5);
   const scaleInches = scaleId === 'customScale' ? toInches(scaleInput, system) : scaleFromId(scaleId);
   const tuningId = valueOf(root, '[data-gst-select="gst-tuning"]', 'standard');
-  const tuning = TUNING_PRESETS.find((item) => item.id === tuningId) ?? TUNING_PRESETS[0];
+  const tuning = TUNING_PRESETS.find((item) => item.id === tuningId) ?? TUNING_PRESETS[0]!;
   const material = MATERIALS[0]!;
   const strings = [6, 5, 4, 3, 2, 1].map((id) => ({ id, note: '', frequency: 0, gaugeInches: gaugeFromField(root, id, system) }));
   return { scaleInches, material, strings: createStrings(strings.map((string) => string.gaugeInches), tuning), system, scaleId, tuningId, materialId: 'steel', presetId: 'custom' };
 }
 
 function defaultState(system: MeasurementSystem): FormState {
-  const preset = GAUGE_PRESETS.find((item) => item.id === 'regular') ?? GAUGE_PRESETS[0];
-  return { scaleInches: 25.5, material: MATERIALS[0], strings: createStrings(preset.gauges, TUNING_PRESETS[0]), system, scaleId: 'fenderScale', tuningId: 'standard', materialId: 'steel', presetId: 'regular' };
+  const preset = GAUGE_PRESETS.find((item) => item.id === 'regular') ?? GAUGE_PRESETS[0]!;
+  return { scaleInches: 25.5, material: MATERIALS[0]!, strings: createStrings(preset.gauges, TUNING_PRESETS[0]!), system, scaleId: 'fenderScale', tuningId: 'standard', materialId: 'steel', presetId: 'regular' };
 }
 
 function setFormState(root: HTMLElement, state: FormState, system: MeasurementSystem): void {

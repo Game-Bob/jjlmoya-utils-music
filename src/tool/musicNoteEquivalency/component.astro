@@ -96,7 +96,7 @@ const t = (Astro.props.ui ?? {}) as MusicNoteEquivalencyUI;
     <div class="mne__info-card">
       <div class="mne__card-title">{t.techTitle ?? 'Technical Data & Waves'}</div>
       <div class="mne__visualizer-container">
-        <canvas id="mne-visualizer"></canvas>
+        <canvas id="mne-visualizer" width="600" height="100"></canvas>
       </div>
       <div class="mne__frequency-display">
         <span class="mne__freq-val" id="mne-val-frequency">0.00</span>
@@ -233,7 +233,7 @@ const t = (Astro.props.ui ?? {}) as MusicNoteEquivalencyUI;
     if (!els.canvas || !analyser || !dataArray) return;
     const ctx = els.canvas.getContext('2d');
     if (!ctx) return;
-    const width = (els.canvas.width = els.canvas['client' + 'Width']);
+    const width = els.canvas.width;
     const height = (els.canvas.height = 100);
     if (animationId) cancelAnimationFrame(animationId);
     animationId = requestAnimationFrame(drawVisualizer);
@@ -277,6 +277,7 @@ const t = (Astro.props.ui ?? {}) as MusicNoteEquivalencyUI;
     ansi: ds.copyLabelAnsi ?? 'Scientific Octave',
     url: ds.copyLabelUrl ?? 'URL',
   };
+  const copyDone = ds.copyDone ?? 'Copied!';
 
   function buildCopyText(data: Note): string {
     const freqText = els.valFrequency ? els.valFrequency.textContent : '';
@@ -292,7 +293,7 @@ const t = (Astro.props.ui ?? {}) as MusicNoteEquivalencyUI;
 
   function flashCopyBtn(btn: HTMLElement) {
     const originalText = btn.textContent ?? '';
-    btn.textContent = ds.copyDone ?? 'Copied!';
+    btn.textContent = copyDone;
     setTimeout(() => {
       btn.textContent = originalText;
     }, 2000);

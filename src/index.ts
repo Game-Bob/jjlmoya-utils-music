@@ -23,4 +23,9 @@ export { PHASE_DISTANCE_TOOL } from './tool/phaseDistance';
 export { FREQUENCY_NOTE_CONVERTER_TOOL } from './tool/frequencyNoteConverter';
 export { AUDIO_STORAGE_CALCULATOR_TOOL } from './tool/audioStorageCalculator';
 export { MUSIC_NOTE_EQUIVALENCY_TOOL } from './tool/musicNoteEquivalency';
-
+export { MP3_A_OGG_TOOL } from './tool/mp3AOgg';
+export { WAV_A_OGG_TOOL } from './tool/wavAOgg';
+export { OGG_A_MP3_TOOL } from './tool/oggAMp3';
+export { OGG_A_WAV_TOOL } from './tool/oggAWav';
+export { MP3_A_WAV_TOOL } from './tool/mp3AWav';
+export { WAV_A_MP3_TOOL } from './tool/wavAMp3';

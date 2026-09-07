@@ -9,7 +9,7 @@ interface Props {
 const { ui } = Astro.props;
 ---
 
-<div class="gst-tool" data-gst-tool>
+<div class="gst-tool" data-gst-tool data-faq-title={ui.faqTitle} data-bibliography-title={ui.bibliographyTitle}>
   <div class="gst-form" data-gst-form></div>
   <div class="gst-output" data-gst-output></div>
 </div>

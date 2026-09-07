@@ -15,4 +15,11 @@ import { musicNoteEquivalency } from './tool/musicNoteEquivalency/entry';
 import { phaseDistance } from './tool/phaseDistance/entry';
 import { guitarStringTensionCalculator } from './tool/guitarStringTensionCalculator/entry';
 import { setlistRuntimeCalculator } from './tool/setlistRuntimeCalculator/entry';
-export const ALL_ENTRIES = [audioStorageCalculator, bpmCalculator, frequencyNoteConverter, metronome, musicNoteEquivalency, phaseDistance, guitarStringTensionCalculator, setlistRuntimeCalculator];
+import { mp3AOgg } from './tool/mp3AOgg/entry';
+import { wavAOgg } from './tool/wavAOgg/entry';
+import { oggAMp3 } from './tool/oggAMp3/entry';
+import { oggAWav } from './tool/oggAWav/entry';
+import { mp3AWav } from './tool/mp3AWav/entry';
+import { wavAMp3 } from './tool/wavAMp3/entry';
+
+export const ALL_ENTRIES = [audioStorageCalculator, bpmCalculator, frequencyNoteConverter, metronome, musicNoteEquivalency, phaseDistance, guitarStringTensionCalculator, setlistRuntimeCalculator, mp3AOgg, wavAOgg, oggAMp3, oggAWav, mp3AWav, wavAMp3];

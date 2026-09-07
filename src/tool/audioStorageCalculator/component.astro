@@ -183,6 +183,9 @@ const t = (ui ?? {}) as AudioStorageCalculatorUI;
   const COPY_DONE = ds.copyDone ?? 'Summary Copied!';
   const SUMMARY_SPACE = ds.summarySpace ?? 'The {t} recording at {bits}-bit/{hz} in {channels} mode will take approximately {result}.';
   const SUMMARY_TIME = ds.summaryTime ?? 'With {space} GB available, you can record up to {result} of audio at {bits}-bit/{hz} {channels}.';
+  const TIME_TOKEN = '{time}';
+  const SPACE_TOKEN = '{gb}';
+  const ESTIMATED_SUFFIX = ' (est.)';
 
   let calculationMode = 'space';
 
@@ -220,7 +223,7 @@ const t = (ui ?? {}) as AudioStorageCalculatorUI;
       const totalSeconds = h * 3600 + m * 60 + s;
       const totalBytes = bytesPerSecond * totalSeconds;
       resPrimary.textContent = formatSize(totalBytes);
-      resSecondary.textContent = LABEL_DURATION_SET.replace('{time}', formatTime(totalSeconds));
+      resSecondary.textContent = LABEL_DURATION_SET.replace(TIME_TOKEN, formatTime(totalSeconds));
       updateComparison(totalBytes);
       updateBars(totalBytes);
     } else {
@@ -228,7 +231,7 @@ const t = (ui ?? {}) as AudioStorageCalculatorUI;
       const availableBytes = availableGb * 1024 * 1024 * 1024;
       const totalSeconds = availableBytes / bytesPerSecond;
       resPrimary.textContent = formatTime(totalSeconds);
-      resSecondary.textContent = LABEL_RECORDING_POSSIBLE.replace('{gb}', String(availableGb));
+      resSecondary.textContent = LABEL_RECORDING_POSSIBLE.replace(SPACE_TOKEN, String(availableGb));
       updateComparison(availableBytes);
       updateBars(availableBytes);
     }
@@ -240,7 +243,7 @@ const t = (ui ?? {}) as AudioStorageCalculatorUI;
     const mp3HiEl = document.getElementById('comp-mp3-320');
     const mp3LoEl = document.getElementById('comp-mp3-128');
     if (wavEl) wavEl.textContent = formatSize(wavBytes);
-    if (flacEl) flacEl.textContent = formatSize(wavBytes * 0.55) + ' (est.)';
+    if (flacEl) flacEl.textContent = `${formatSize(wavBytes * 0.55)}${ESTIMATED_SUFFIX}`;
 
     const hz = getSelectVal('hz-select');
     const bits = getSelectVal('bits-select');

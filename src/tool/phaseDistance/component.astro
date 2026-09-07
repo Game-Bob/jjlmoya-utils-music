@@ -127,7 +127,7 @@ const t = (ui ?? {}) as PhaseDistanceUI;
 
 
 
-<script define:vars={{
+<script is:inline define:vars={{
   statusInPhase: t.statusInPhase,
   statusInPhaseDesc: t.statusInPhaseDesc,
   statusCritical: t.statusCritical,
@@ -135,6 +135,7 @@ const t = (ui ?? {}) as PhaseDistanceUI;
   statusOffAxis: t.statusOffAxis,
   statusOffAxisDesc: t.statusOffAxisDesc,
   textNone: t.textNone,
+  autoText: t.btnAuto,
   chartTitle: t.chartTitle,
   promptSoundSpeed: t.promptSoundSpeed,
   copyFeedback: t.copyFeedback,
@@ -167,6 +168,10 @@ const t = (ui ?? {}) as PhaseDistanceUI;
   let isInverted = false;
   let isManualV = false;
   let manualV = 343;
+  const unitFeet = 'ft';
+  const unitMeters = 'm';
+  const unitSpeed = 'm/s';
+  const unitFrequency = 'Hz';
 
   function computeSoundSpeed(temp) {
     return isManualV ? manualV : 331.3 + 0.606 * temp;
@@ -184,11 +189,19 @@ const t = (ui ?? {}) as PhaseDistanceUI;
   }
 
   function updateDistDisplay(deltaD, unit) {
-    if (unit === 'imperial') {
-      el.diffDist.textContent = `${(deltaD / 0.3048).toFixed(3)} ft`;
-    } else {
-      el.diffDist.textContent = `${deltaD.toFixed(3)} m`;
-    }
+    el.diffDist.textContent = formatDistance(deltaD, unit);
+  }
+
+  function formatDistance(deltaD, unit) {
+    return unit === 'imperial' ? `${(deltaD / 0.3048).toFixed(3)} ${unitFeet}` : `${deltaD.toFixed(3)} ${unitMeters}`;
+  }
+
+  function formatSpeed(speed) {
+    return `${speed.toFixed(1)} ${unitSpeed}`;
+  }
+
+  function formatFrequency(frequency) {
+    return `${Math.round(frequency)} ${unitFrequency}`;
   }
 
   function updateStatus(dt) {
@@ -286,13 +299,13 @@ const t = (ui ?? {}) as PhaseDistanceUI;
 
     el.delayMs.textContent = (deltaT * 1000).toFixed(3);
     el.delaySamples.textContent = Math.round(samples).toString();
-    el.vSound.textContent = `${v.toFixed(1)} m/s`;
+    el.vSound.textContent = formatSpeed(v);
     el.gainVal.textContent = `${Math.round(gain * 100)}%`;
     updateDistDisplay(deltaD, unit);
 
     let f1 = 0;
     if (deltaT > 0) { f1 = isInverted ? 1 / deltaT : 1 / (2 * deltaT); }
-    el.nullFreq.textContent = f1 === 0 ? textNone : `${Math.round(f1)} Hz`;
+    el.nullFreq.textContent = f1 === 0 ? textNone : formatFrequency(f1);
 
     updateStatus(deltaT);
     drawCombFilter(deltaT, gain);
@@ -316,10 +329,10 @@ const t = (ui ?? {}) as PhaseDistanceUI;
     if (isManualV) {
       const val = prompt(promptSoundSpeed, '343');
       if (val) manualV = parseFloat(val);
-      el.vToggle.textContent = `${manualV} m/s`;
+      el.vToggle.textContent = formatSpeed(manualV);
       el.vToggle.style.backgroundColor = '#ff4d00';
     } else {
-      el.vToggle.textContent = 'Auto';
+      el.vToggle.textContent = autoText;
       el.vToggle.style.backgroundColor = '';
     }
     calculate();

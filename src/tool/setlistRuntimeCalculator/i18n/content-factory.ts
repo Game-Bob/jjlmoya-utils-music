@@ -10,7 +10,7 @@ interface LocaleCopy {
   slug: string;
   title: string;
   description: string;
-  ui: Partial<SetlistRuntimeCalculatorUI>;
+  ui: SetlistRuntimeCalculatorUI;
 }
 
 const copy: Record<LocaleKey, LocaleCopy> = {
@@ -145,7 +145,7 @@ const copy: Record<LocaleKey, LocaleCopy> = {
 };
 
 function getLocaleText(localized: LocaleCopy): string {
-  return `${localized.description} ${Object.values(localized.ui).join(' ')} ${Object.values(localized.ui).join(' ')}`;
+  return `${localized.description} ${Object.values(localized.ui).join(' ')}`;
 }
 
 function createLocaleFaq(localized: LocaleCopy, text: string, locale: LocaleKey) {

@@ -248,7 +248,7 @@ const noteOptions = (t.noteOptions ?? 'C,C#,D,D#,E,F,F#,G,G#,A,A#,B').split('|')
   function midiToHz(midi: number): number { return referenceA4 * Math.pow(2, (midi - 69) / 12); }
   function midiToNoteName(midi: number): string {
     const idx = ((Math.round(midi) % 12) + 12) % 12;
-    return NOTE_NAMES[idx] + (Math.floor(Math.round(midi) / 12) - 1);
+    return `${NOTE_NAMES[idx] ?? ''}${Math.floor(Math.round(midi) / 12) - 1}`;
   }
   function noteIndexAndOctaveToMidi(noteIndex: number, octave: number): number {
     return (octave + 1) * 12 + noteIndex;

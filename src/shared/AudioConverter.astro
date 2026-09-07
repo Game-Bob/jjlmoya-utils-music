@@ -1,0 +1,499 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface AudioConverterUI {
+  [key: string]: string;
+  dragText: string;
+  convertText: string;
+  selectFiles: string;
+  processedFiles: string;
+  downloadAll: string;
+  pending: string;
+  loadingEngine: string;
+  converting: string;
+  ready: string;
+  error: string;
+  tooLarge: string;
+  download: string;
+  preview?: string;
+  privacyNote: string;
+  faqTitle?: string;
+  bibliographyTitle?: string;
+}
+
+interface Props {
+  from: 'mp3' | 'ogg' | 'wav';
+  to: 'mp3' | 'ogg' | 'wav';
+  ui: AudioConverterUI;
+}
+
+const { from, to, ui } = Astro.props;
+const acceptInput = `.${from},audio/${from === 'mp3' ? 'mpeg' : from}`;
+---
+
+<style>
+  .audio-converter-dashboard {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .audio-drop-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3.5rem 2rem;
+    border: 2px dashed var(--border-base);
+    border-radius: 20px;
+    background: var(--bg-surface);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+
+  .audio-drop-zone:hover,
+  .audio-drop-zone.dragover {
+    border-color: var(--accent);
+    background: var(--bg-muted);
+  }
+
+  .audio-drop-zone.dragover {
+    transform: scale(1.01);
+  }
+
+  .audio-upload-icon {
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    place-items: center;
+    border-radius: 1.5rem;
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-size: 2.4rem;
+  }
+
+  .audio-upload-text,
+  .audio-upload-subtext,
+  .audio-privacy {
+    margin: 0;
+    text-align: center;
+  }
+
+  .audio-upload-text {
+    color: var(--text-base);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .audio-upload-subtext,
+  .audio-privacy {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .audio-privacy {
+    max-width: 34rem;
+    font-size: 0.8rem;
+  }
+
+  .audio-upload-btn,
+  .audio-download-all,
+  .audio-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--text-on-primary);
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .audio-upload-btn {
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.75rem;
+  }
+
+  .audio-download-all {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .audio-download {
+    width: 2.15rem;
+    height: 2.15rem;
+    flex: 0 0 auto;
+  }
+
+  .audio-upload-btn:hover,
+  .audio-download-all:hover,
+  .audio-download:hover {
+    opacity: 0.78;
+  }
+
+  .audio-file-list {
+    overflow: hidden;
+    border: 1px solid var(--border-base);
+    border-radius: 16px;
+    background: var(--bg-surface);
+  }
+
+  .audio-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    border-bottom: 1px solid var(--border-base);
+  }
+
+  .audio-list-title {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .audio-items {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .audio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--border-base);
+  }
+
+  .audio-item:last-child {
+    border-bottom: 0;
+  }
+
+  .audio-item-icon {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 0.75rem;
+    background: var(--bg-muted);
+    color: var(--accent);
+    font-size: 1.3rem;
+  }
+
+  .audio-item-main {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .audio-item-name {
+    display: block;
+    overflow: hidden;
+    color: var(--text-base);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .audio-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+
+  .audio-preview {
+    display: block;
+    width: min(100%, 18rem);
+    height: 2rem;
+    margin-top: 0.4rem;
+  }
+
+  .audio-item-status {
+    display: flex;
+    min-width: 7rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-align: right;
+  }
+
+  .audio-progress {
+    width: 7rem;
+    height: 0.3rem;
+    appearance: none;
+    border: 0;
+    border-radius: 1rem;
+    background: var(--bg-muted);
+  }
+
+  .audio-progress::-webkit-progress-bar {
+    border-radius: 1rem;
+    background: var(--bg-muted);
+  }
+
+  .audio-progress::-webkit-progress-value {
+    border-radius: 1rem;
+    background: var(--accent);
+  }
+
+  .audio-progress::-moz-progress-bar {
+    border-radius: 1rem;
+    background: var(--accent);
+  }
+
+  .audio-item[data-state='completed'] .audio-item-status {
+    color: var(--color-success);
+  }
+
+  .audio-item[data-state='error'] .audio-item-status {
+    color: var(--color-error);
+  }
+
+  .audio-item[data-state='completed'] .audio-progress,
+  .audio-item[data-state='error'] .audio-progress {
+    display: none;
+  }
+
+  .audio-hidden {
+    display: none;
+  }
+
+  @media (width <= 640px) {
+    .audio-drop-zone {
+      padding: 2.5rem 1rem;
+    }
+
+    .audio-item-status {
+      min-width: 5rem;
+    }
+
+    .audio-progress {
+      width: 5rem;
+    }
+
+    .audio-list-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="audio-converter-dashboard" data-from={from} data-to={to} data-target-mime={`audio/${to === 'mp3' ? 'mpeg' : to}`} data-ui={JSON.stringify(ui)}>
+  <section class="audio-drop-zone" id="audio-drop-zone" tabindex="0" role="button" aria-label={ui.selectFiles}>
+    <span class="audio-upload-icon" aria-hidden="true"><Icon name="mdi:music-box-multiple" /></span>
+    <p class="audio-upload-text">{ui.dragText}</p>
+    <p class="audio-upload-subtext">{ui.convertText}</p>
+    <p class="audio-privacy">{ui.privacyNote}</p>
+    <button class="audio-upload-btn" type="button">{ui.selectFiles}</button>
+    <input id="audio-input" type="file" accept={acceptInput} multiple class="audio-hidden" />
+  </section>
+
+  <section class="audio-file-list audio-hidden" id="audio-file-list" aria-live="polite">
+    <div class="audio-list-header">
+      <h2 class="audio-list-title">{ui.processedFiles}</h2>
+      <button class="audio-download-all audio-hidden" id="audio-download-all" type="button">{ui.downloadAll}</button>
+    </div>
+    <ul class="audio-items" id="audio-items"></ul>
+  </section>
+</div>
+
+<template id="audio-item-template">
+  <li class="audio-item" data-state="pending">
+    <span class="audio-item-icon" aria-hidden="true"><Icon name="mdi:music-note" /></span>
+    <span class="audio-item-main">
+      <span class="audio-item-name"></span>
+      <span class="audio-item-meta"><span class="audio-item-size"></span><span aria-hidden="true">→</span><span class="audio-item-target"></span></span>
+      <audio class="audio-preview audio-hidden" controls preload="none" aria-label={ui.preview || 'Preview conversion'}></audio>
+    </span>
+    <span class="audio-item-status">
+      <span class="audio-status-text"></span>
+      <progress class="audio-progress" max="1" value="0"></progress>
+    </span>
+    <a class="audio-download audio-hidden" href="#" download aria-label={ui.download}><Icon name="mdi:download" size={18} /></a>
+  </li>
+</template>
+
+<script>
+  import { FFmpeg } from '@ffmpeg/ffmpeg';
+  import { fetchFile, toBlobURL } from '@ffmpeg/util';
+  import JSZip from 'jszip';
+  import { formatBytes, generateId } from './logic/audio-converter';
+  import type { AudioItem } from './logic/audio-converter';
+
+  const dashboard = document.querySelector<HTMLElement>('.audio-converter-dashboard');
+  const dropZone = document.getElementById('audio-drop-zone');
+  const input = document.getElementById('audio-input') as HTMLInputElement | null;
+  const list = document.getElementById('audio-file-list');
+  const items = document.getElementById('audio-items');
+  const template = document.getElementById('audio-item-template') as HTMLTemplateElement | null;
+  const zipButton = document.getElementById('audio-download-all');
+  const from = dashboard?.dataset.from ?? 'mp3';
+  const to = dashboard?.dataset.to ?? 'ogg';
+  const targetMime = dashboard?.dataset.targetMime ?? `audio/${to === 'mp3' ? 'mpeg' : to}`;
+  const ui = JSON.parse(dashboard?.dataset.ui ?? '{}') as Record<string, string>;
+  const ffmpeg = new FFmpeg();
+  const queue = new Map<string, AudioItem>();
+  const MAX_FILE_SIZE = 100 * 1024 * 1024;
+  let loadPromise: Promise<void> | null = null;
+  let activeRow: HTMLElement | null = null;
+  let lastFfmpegLog = '';
+
+  const statusText = (row: HTMLElement, text: string, state: string, value = 0) => {
+    row.dataset.state = state;
+    const status = row.querySelector<HTMLElement>('.audio-status-text');
+    const progressBar = row.querySelector<HTMLProgressElement>('.audio-progress');
+    if (status) status.textContent = text;
+    if (progressBar) progressBar.value = value;
+  };
+
+  const loadEngine = async (setStatus: (text: string) => void) => {
+    setStatus(ui.loadingEngine || 'Loading audio engine…');
+    const baseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm';
+    await ffmpeg.load({
+      coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+      wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+    });
+  };
+
+  const ensureLoaded = async (setStatus: (text: string) => void) => {
+    if (ffmpeg.loaded) return;
+    loadPromise ??= loadEngine(setStatus).catch((error) => { loadPromise = null; throw error; });
+    await loadPromise;
+  };
+
+  const codecArguments = () => {
+    if (to === 'mp3') return ['-c:a', 'libmp3lame', '-b:a', '192k'];
+    if (to === 'ogg') return ['-c:a', 'libvorbis', '-q:a', '5'];
+    return ['-c:a', 'pcm_s16le'];
+  };
+
+  ffmpeg.on('progress', ({ progress: value }) => {
+    const safeValue = Number.isFinite(value) ? Math.max(0, Math.min(1, value)) : 0;
+    if (activeRow) statusText(activeRow, `${Math.round(safeValue * 100)}%`, 'processing', safeValue);
+  });
+
+  ffmpeg.on('log', ({ message }) => {
+    if (/error|invalid|unknown|failed|unable|not found/iu.test(message)) lastFfmpegLog = message.trim();
+  });
+
+  const showCompleted = (item: AudioItem, row: HTMLElement) => {
+    statusText(row, ui.ready || 'Ready', 'completed', 1);
+    const download = row.querySelector<HTMLAnchorElement>('.audio-download');
+    if (download) {
+      download.href = item.outputUrl;
+      download.download = `${item.baseName}.${to}`;
+      download.classList.remove('audio-hidden');
+    }
+    const preview = row.querySelector<HTMLAudioElement>('.audio-preview');
+    if (preview) {
+      preview.src = item.outputUrl;
+      preview.classList.remove('audio-hidden');
+    }
+    const size = row.querySelector<HTMLElement>('.audio-item-size');
+    if (size) size.textContent = `${formatBytes(item.file.size)} → ${formatBytes(item.outputSize)}`;
+  };
+
+  const convert = async (item: AudioItem, row: HTMLElement) => {
+    const inputName = `${item.id}.${from}`, outputName = `${item.id}.${to}`;
+    activeRow = row;
+    try {
+      await ensureLoaded((text) => statusText(row, text, 'processing'));
+      statusText(row, ui.converting || 'Converting…', 'processing', 0);
+      await ffmpeg.writeFile(inputName, await fetchFile(item.file));
+      lastFfmpegLog = '';
+      const exitCode = await ffmpeg.exec(['-i', inputName, '-map', '0:a:0', '-vn', '-sn', '-dn', '-map_metadata', '0', ...codecArguments(), '-f', to, outputName]);
+      if (exitCode !== 0) throw new Error('FFmpeg conversion failed');
+      const data = await ffmpeg.readFile(outputName);
+      const bytes = typeof data === 'string' ? new TextEncoder().encode(data) : data;
+      item.output = new Blob([bytes.buffer as ArrayBuffer], { type: targetMime });
+      item.outputUrl = URL.createObjectURL(item.output);
+      item.outputSize = item.output.size;
+      showCompleted(item, row);
+    } finally {
+      await ffmpeg.deleteFile(inputName).catch(() => undefined);
+      await ffmpeg.deleteFile(outputName).catch(() => undefined);
+      activeRow = null;
+    }
+  };
+
+  const conversionErrorText = (error: unknown) => {
+    const detail = lastFfmpegLog || (error instanceof Error ? error.message : '');
+    console.error('Audio conversion failed', error, detail);
+    return detail ? `${ui.error || 'Conversion error'}: ${detail}` : (ui.error || 'Conversion error');
+  };
+
+  const renderItem = (item: AudioItem) => {
+    const row = template?.content.cloneNode(true) as DocumentFragment | undefined;
+    if (!row) return null;
+    const element = row.querySelector<HTMLElement>('.audio-item');
+    if (!element) return null;
+    element.dataset.id = item.id;
+    element.querySelector<HTMLElement>('.audio-item-name')!.textContent = item.file.name;
+    element.querySelector<HTMLElement>('.audio-item-size')!.textContent = formatBytes(item.file.size);
+    element.querySelector<HTMLElement>('.audio-item-target')!.textContent = to.toUpperCase();
+    element.querySelector<HTMLElement>('.audio-status-text')!.textContent = '…';
+    items?.prepend(row);
+    return element;
+  };
+
+  const processItem = async (item: AudioItem, row: HTMLElement) => {
+    if (item.file.size > MAX_FILE_SIZE) {
+      statusText(row, ui.tooLarge || 'File is too large', 'error');
+      return;
+    }
+    try {
+      await convert(item, row);
+    } catch (error) {
+      statusText(row, conversionErrorText(error), 'error');
+    }
+  };
+
+  const handleFiles = async (selected: FileList | File[]) => {
+    if (!selected.length) return;
+    list?.classList.remove('audio-hidden');
+    const pending = Array.from(selected).map((file) => {
+      const item: AudioItem = { id: generateId(), file, baseName: file.name.replace(/\.[^.]+$/u, '') || 'audio', output: null, outputUrl: '', outputSize: 0 };
+      queue.set(item.id, item);
+      const row = renderItem(item);
+      return row ? { item, row } : null;
+    }).filter((value): value is { item: AudioItem; row: HTMLElement } => value !== null);
+    for (const { item, row } of pending) await processItem(item, row);
+    if ([...queue.values()].some((item) => item.output)) zipButton?.classList.remove('audio-hidden');
+  };
+
+  dropZone?.addEventListener('click', () => input?.click());
+  dropZone?.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') input?.click(); });
+  dropZone?.addEventListener('dragover', (event) => { event.preventDefault(); dropZone.classList.add('dragover'); });
+  dropZone?.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+  dropZone?.addEventListener('drop', (event) => { event.preventDefault(); dropZone.classList.remove('dragover'); if (event.dataTransfer?.files) void handleFiles(event.dataTransfer.files); });
+  input?.addEventListener('change', () => { if (input.files) void handleFiles(input.files); input.value = ''; });
+  zipButton?.addEventListener('click', async () => {
+    const zip = new JSZip();
+    queue.forEach((item) => { if (item.output) zip.file(`${item.baseName}.${to}`, item.output); });
+    const blob = await zip.generateAsync({ type: 'blob' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `audio_${from}_a_${to}.zip`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  });
+</script>

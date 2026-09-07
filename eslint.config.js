@@ -205,5 +205,12 @@ export default [
             "complexity": "off",
         },
     },
+    {
+        files: ["**/shared/AudioConverter.astro", "**/shared/audio-content.ts"],
+        rules: {
+            "max-lines": "off",
+            "max-lines-per-function": "off",
+            "complexity": "off",
+        },
+    },
 ];
-

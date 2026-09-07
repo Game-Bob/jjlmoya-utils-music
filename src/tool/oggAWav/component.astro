@@ -1,0 +1,7 @@
+---
+import AudioConverter from '../../shared/AudioConverter.astro';
+import type { AudioConverterUI } from '../../shared/AudioConverter.astro';
+interface Props { ui: AudioConverterUI }
+const { ui } = Astro.props;
+---
+<AudioConverter from="ogg" to="wav" {ui} />

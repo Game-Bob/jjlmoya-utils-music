@@ -40,7 +40,7 @@ const initialItems = [
       </div>
       <div class="msr-add-actions">
         <button type="button" class="msr-secondary-button" data-action="add-song">{t.buttonAddSong}</button>
-        <button type="button" class="msr-secondary-button msr-secondary-button-accent" data-action="add-encore">{t.buttonAddEncore}</button>
+        <button type="button" class="msr-secondary-button msr-secondary-button-accent" data-action="add-encore" aria-label={`${t.buttonAddEncore}: ${t.labelEncore}`}>{t.buttonAddEncore}</button>
       </div>
     </div>
 
@@ -56,7 +56,7 @@ const initialItems = [
             <label class="msr-field">
               <span>{t.labelDuration}</span>
               <span class="msr-input-with-unit">
-                <input data-field="duration" type="text" inputmode="numeric" value={item.duration} placeholder="04:00" aria-label={t.labelDuration} />
+                <input data-field="duration" type="text" inputmode="numeric" value={item.duration} placeholder="04:00" aria-label={t.labelDuration} title={t.hintDuration} />
                 <span>mm:ss</span>
               </span>
             </label>
@@ -110,7 +110,7 @@ const initialItems = [
           <div id="msr-booked-marker" class="msr-booked-marker"><span>{t.bookedMarker}</span></div>
         </div>
         <div class="msr-legend">
-          <span><i class="msr-legend-song"></i>{t.songMarker}</span>
+            <span aria-label={t.labelSong}><i class="msr-legend-song"></i>{t.songMarker}</span>
           <span><i class="msr-legend-pause"></i>{t.pauseMarker}</span>
           <span><i class="msr-legend-booked"></i>{t.bookedMarker}</span>
         </div>
