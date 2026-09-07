@@ -1,545 +1,545 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T20:53:27.720Z",
+  "generatedAt": "2026-09-07T06:38:30.853Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/audio-speicher-rechner/": {
-      "hash": "727659c869c43b90cea48fa47be071b85483ad3b62ed747881ce4718f1500058",
+      "hash": "7bb006cd074f6a27eeb2e6ba8789883fa5a7272b2bc4389d7b01f0b27e78bf00",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/audio-speicher-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/bpm-zu-ms-rechner/": {
-      "hash": "36c3ecdeeefb1ac1a402d8431d8aff8715cfc4613ba897dc213e4a2641cbe326",
+      "hash": "12e27f9a71567e206c326d02cdb689ec27e6bea07aafd4fc9597b5d7bccdba47",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/bpm-zu-ms-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/frequenz-zu-note-konverter/": {
-      "hash": "da41deb2eb5adec897637413474be33d5f0be0df705638fe0b5078ce3ca6e7dc",
+      "hash": "28039485f34d1e9278a5bd00ddea1227cffb0363788bd1f9e56f87d31d601749",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/frequenz-zu-note-konverter/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/gitarren-saitenspannung-rechner/": {
-      "hash": "2c0b0dd1272ad0e06c1c46397f0feec97f15da7c231f99e63eb91efe6288550d",
+      "hash": "7a84463d508533a85ad791837b5e7372646046bc42efd2247b60f910d47e5c79",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/gitarren-saitenspannung-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/": {
-      "hash": "1ef002c8213b5aad15cf3c80b09de2d0a86eacc5558752b89120f8dfa0ea686a",
+      "hash": "fd6e948e926aaad59363ef2c6373bcab6c30df0e03d58534198ceb2f1d58529f",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/metronom/": {
-      "hash": "cb1e9096bd2c5355c192ed88da5fe609e126824a4fccdbc3e809bacea3f3c9cf",
+      "hash": "9ed8a7a2aec0aecd58277a565deb5ca66641fc49ee84e48cf7d9cc3e3e65c7c3",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/metronom/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/notenbezeichnungen-vergleich/": {
-      "hash": "b7af364fff31d02e8503043348fb7490ead2d89f3a1ee2a98a105432decb6599",
+      "hash": "34c000c81c35e53a9ea1e03c26d4658e048b04953219b368dc4a709952533aa7",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/notenbezeichnungen-vergleich/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/phasendistanz-rechner/": {
-      "hash": "3f55486349e6134f1c270e50757cd573c54df5388aba5201f06403750a161da8",
+      "hash": "f82d6747c78320e2b63c7a6d4ceb021873c89f23d785436988639ae4fa2fb903",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/phasendistanz-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/musikwerkzeuge/rechner-setlist-laufzeit-konzert/": {
-      "hash": "2407bee488c4a2232470b57436d06db9a7342055d5bb0351dcafa3c88eb8d4cc",
+      "hash": "8784626c3e8e6ebcdfa93999703186a8706bd355ab853dcf032a29fe592ec297",
       "route": "/de/werkzeuge/kategorien/musikwerkzeuge/rechner-setlist-laufzeit-konzert/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "71c7b677e75a4609b4ec83ab4793810956a7718f1b57f73c96f145f363806699",
+      "hash": "45dff406da4618e26b1001d5bf6782817cfbd1ec35c9ab916097e3d6a499390e",
       "route": "/en/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "86d0cc8cf42a51da057afc3de748ad7b26fbe293ad2858271b16cfd3bca2083e",
+      "hash": "0613b9ee083a9ee7ddb86b1497dd2d79ed09a437c7cf6a33c99427db125a7dbd",
       "route": "/en/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "5599bbd10aedf4780e1642e71bce0e7439301714e565999fc85579fe17da990b",
+      "hash": "81e615e4743dee4bfef2800c0730cea8fd15ebc587502d5370c483eb4abba46b",
       "route": "/en/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "1a692eee185b612e3fe2544c7d7c27c1cb43a6121772bac57003723e979efea8",
+      "hash": "6ff9efe624a6a92ed7d225dc4e9a534be8a1df3ae41d5071bfaa749b20570dd4",
       "route": "/en/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/": {
-      "hash": "3f335d5addd650f9c9a0840565b847228b81ae0954c066de20bc19d709b68135",
+      "hash": "7df6d306e4d5a3f3695c3bfa27f444a0c1045a3144d8f4182938940602db5fda",
       "route": "/en/utilities/categories/music/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/metronome/": {
-      "hash": "8a1960452d0ddf60fc39a1bde9452b12abc35352020eb350369da9ee532b7f1b",
+      "hash": "41267c56dea88d537d0a204c0d42bb492c869ea15ba1d813a1c70c54b3f4e389",
       "route": "/en/utilities/categories/music/metronome/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/music-note-equivalency/": {
-      "hash": "a8dc0ca0eecc9430b4c049c33ce36ba7b4349769e2241fd5c132d9dbf00cfe3d",
+      "hash": "74bc866f08b33f9f9c9ac32fdf53eed0d398e3c8f0bb335d5fb6984a388f47eb",
       "route": "/en/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "c7dd04b8c3588e8fb02596ae9821526aef80309435562067f26e3e6bd28134e4",
+      "hash": "0f8423a9b691419bf4cd9f71642b411872f840f3e95c695f1b732c9cd884359d",
       "route": "/en/utilities/categories/music/music-setlist-runtime-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "8d50a5c60bb7e3b49f8c854d20548f08d15f7c80778f8731fc2ce974507f734f",
+      "hash": "ce17fa3180bbc3964c244a87359f4dcef433537a3eaf9969b1b41c5be4f7c2c3",
       "route": "/en/utilities/categories/music/phase-distance-calculator/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-bpm-millisecondes/": {
-      "hash": "743a7131738efcc7143c7796a33cae5061c14af6e265beb22184c085d84c7675",
+      "hash": "6d73f7177994c476e8984b818bd5f14229448daa26eabe64432ff335cf58d960",
       "route": "/fr/utilitaires/categories/musique/calculateur-bpm-millisecondes/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-distance-phase/": {
-      "hash": "442feb4510377cdb5c20794754a123bf82595991f510b07420bedc36a3ef8195",
+      "hash": "1d5917d03156e0a0892622cbe575817822e2c4defa34bb48009a1bf8009ef56f",
       "route": "/fr/utilitaires/categories/musique/calculateur-distance-phase/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-duree-setlist-concert/": {
-      "hash": "7bc489d33ec0b41d01f04b3b21583a4a35b2d864676a4356e987ae1dcd5dc211",
+      "hash": "42d68ddb565495a2eaa7b21eb7a71743ffb2626faeef652412d7e1d6f1ab478c",
       "route": "/fr/utilitaires/categories/musique/calculateur-duree-setlist-concert/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-stockage-audio-numerique/": {
-      "hash": "2a84390f09c4ad80073f7d4d59615f39cd4fa57d69b2f1bd4098627d660b3e00",
+      "hash": "68543ae1776eac85ea53651bedfb6d2fa284d99fb4855c316466b5ec3f1a3322",
       "route": "/fr/utilitaires/categories/musique/calculateur-stockage-audio-numerique/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/calculateur-tension-cordes-guitare/": {
-      "hash": "78107f9c7a072530170b9833db79eec838b727c6e4d280a232a3e5c88ae19aa8",
+      "hash": "cf0c0e46f7d75a7b903134760a0821ae2c698d4f757e80f0a07d04989da8a2e2",
       "route": "/fr/utilitaires/categories/musique/calculateur-tension-cordes-guitare/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/convertisseur-frequence-note-musicale/": {
-      "hash": "22d2eb16efad399f258f9cd1da39296c37fee6902958a752ca67683a14b72431",
+      "hash": "9ca470c9310cb46ce4c3ba20130044fd3016b3b9937d1d198d273b4d24157aa6",
       "route": "/fr/utilitaires/categories/musique/convertisseur-frequence-note-musicale/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/equivalence-notes-musicales/": {
-      "hash": "9db47aebe198d9d4ccdde14f37612f9b6973c885fba60e1238c0f94d540d9afb",
+      "hash": "a3e785ee8e9a33701f1498175da803e1a9a6b752c6a00ee3d792e1c668c8ddbb",
       "route": "/fr/utilitaires/categories/musique/equivalence-notes-musicales/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/": {
-      "hash": "4f36c1d58a9c434876902ca6a32bc1ed3f371feba0bda005e815ba2f55d2334e",
+      "hash": "65323c1460337729525cc94baffaf89da33ce223eb3af8ef7993c09c089159e2",
       "route": "/fr/utilitaires/categories/musique/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/musique/le-metronome/": {
-      "hash": "0537aeec3c8a7da482c0e1ef4e94b2a4217cd11979be6a04f544ef90c182c82d",
+      "hash": "ee2960208dad4e179b568cd6f2d88bab2d2d955bec2e8dd557aae8f94abd0428",
       "route": "/fr/utilitaires/categories/musique/le-metronome/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/": {
-      "hash": "19005a852829aa8d1f2b2e289ec84c6be67a6d4a5a8d5402987d1df8bf78c758",
+      "hash": "94daf62825e1d80127c3c96bbdc04772f2de8c4a1035427b6e6a367baf0d48ba",
       "route": "/id/utilitas/kategori/musik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-bpm-ke-milidetik/": {
-      "hash": "b21a3b0c65223a07fbaa1c86a26594ff6c5acb3a1f3a44ceece3a0692715237e",
+      "hash": "a7bee00f5efab9459dd2f62cba10e98fc05674d7e6c645d8216bfdba38bc1e83",
       "route": "/id/utilitas/kategori/musik/kalkulator-bpm-ke-milidetik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-durasi-setlist-konser/": {
-      "hash": "c103a2ffcb6113c5bb862c1eac4194ff3a9d55d9844a6650307f6521a7497923",
+      "hash": "0517d31c78855caa336395743995730c1b79b9ec541f1998305015dda11cf4a1",
       "route": "/id/utilitas/kategori/musik/kalkulator-durasi-setlist-konser/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-jarak-fase/": {
-      "hash": "b20ed2dfe18d50a30a4c5a9461a23da2092227954a74c0141e62773bbabe55b8",
+      "hash": "64de1b7eff1681b66c93ce510b9559efb0ecfc6a71241b9a4ca19ce7f2fa5b30",
       "route": "/id/utilitas/kategori/musik/kalkulator-jarak-fase/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-penyimpanan-audio/": {
-      "hash": "758aae98d591dff1ac52d4747c30ab8fa48dbfb149554a7cc75bf21e11900f22",
+      "hash": "96f55e8d99f249bf3092c66bb15458e9a4904e7d2abfba6a996b4a3423568d71",
       "route": "/id/utilitas/kategori/musik/kalkulator-penyimpanan-audio/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kalkulator-tegangan-senar-gitar/": {
-      "hash": "e77f9c78275eef14a65b88ab87985b967e79b99a94499774f3f0ad3718925f1c",
+      "hash": "ca450a0fb614b6b5102c271f1c0b19595fef7bb1e331a50fc50e4f7e65f45b68",
       "route": "/id/utilitas/kategori/musik/kalkulator-tegangan-senar-gitar/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/kesetaraan-not-musik/": {
-      "hash": "28f26e530e83ee28a8c477137e84122d777fc967577e0ebf31a4955eb35e90db",
+      "hash": "888818dfcb6bc16c3e63d55e2210d8d01704575ebc31bb272d8e55d675c20ce3",
       "route": "/id/utilitas/kategori/musik/kesetaraan-not-musik/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/konverter-frekuensi-ke-nota/": {
-      "hash": "bfc0d16eb701f3c8adccd0b51fd6ef7b7b8c56d1e157a01fb00a7ce2e2a70344",
+      "hash": "3b7987c7020ad765f85ddc139d55d8ac29977b0ea852c99fd3811818ccae238a",
       "route": "/id/utilitas/kategori/musik/konverter-frekuensi-ke-nota/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/musik/metronom-online-latihan/": {
-      "hash": "ffe0231e1449492ce2a7b73590efd5d34a359e04bee1fe1db2a1fed041565e7c",
+      "hash": "7a9dc7e1b1dc08a99de7721122e3eb47b55a782a8946c6562b65c4a1693f5b57",
       "route": "/id/utilitas/kategori/musik/metronom-online-latihan/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-bpm-millisecondi/": {
-      "hash": "dec2234199d62989bcec10f334f77b1a6ea643df547c2281ab10f6359a2ea8c0",
+      "hash": "1d68416feacc7b97162206880906da4954893d9320e0509710bd7878ce0b20b2",
       "route": "/it/utilita/categorie/musica-online/calcolatore-bpm-millisecondi/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-distanza-fase/": {
-      "hash": "eeec12a82d26b8c7144c09ed1ee743ae92c1953eddcdb227602c5d0a9d7e1005",
+      "hash": "81281dbe2ad050c3c49cd46da1f3d4459aeb26e7a9518af9ad59e807d46d1f4d",
       "route": "/it/utilita/categorie/musica-online/calcolatore-distanza-fase/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-durata-scaletta-concerto/": {
-      "hash": "183608ff9d8e8d74ae1d964fc4f004ed3f10b39424004b0326a6c296b94cd13f",
+      "hash": "4abca2378b94da21fae052f3739049eb3fc36b69359d108d64bc630145147492",
       "route": "/it/utilita/categorie/musica-online/calcolatore-durata-scaletta-concerto/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-spazio-audio/": {
-      "hash": "10331dca9482b579f8a03c535e12612a1b8a9fcb56df2fc44a4e0551edc951b8",
+      "hash": "d09c58ebe5dd4a4c0f8943708828011d72063bcffcf4c1c12147c5f9d5336e85",
       "route": "/it/utilita/categorie/musica-online/calcolatore-spazio-audio/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/calcolatore-tensione-corde-chitarra/": {
-      "hash": "a023aa332689bd29373be70c1279e021bed188cd779b369665772914ee71ef2d",
+      "hash": "09310058c42b892c1eb88d73ac49b6def1d831ad187f9d67cedb3944b2175b01",
       "route": "/it/utilita/categorie/musica-online/calcolatore-tensione-corde-chitarra/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/convertitore-frequenza-nota/": {
-      "hash": "ea49cbabf399bfe5f8bb69d743adfc3430683edb1c8d788a55321d0fb02a5789",
+      "hash": "1a1b1aa44cd486b41c93b1fe89a28f7581a465982489b3ea9c563793a63bb93c",
       "route": "/it/utilita/categorie/musica-online/convertitore-frequenza-nota/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/equivalenza-note-musicali/": {
-      "hash": "ec86bba12eb1ea86f70e92a83ca3b183f0ae7de2a4afbb8d115fe963497190d9",
+      "hash": "d34607a6e77f718788d76808f7913c07291ca64f62c970bd197e374260075db3",
       "route": "/it/utilita/categorie/musica-online/equivalenza-note-musicali/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/": {
-      "hash": "d58b80c3d8a8e9c999f7663c268cf22c451865dc797aa45717c85cb2e0b15e1d",
+      "hash": "f673dbd163bc106809f11fbcad574fca647ab4e76b0095e949a6cd008871d6d2",
       "route": "/it/utilita/categorie/musica-online/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/musica-online/metronomo-online-preciso/": {
-      "hash": "524997dbebcc4ea2efe128e3d635ef9281fa52d059b62da7c2d6325fbe5a9f12",
+      "hash": "1c940db6715bc823492326ebbb3fb42eb4e89aea9baff12a27e135dc401242fb",
       "route": "/it/utilita/categorie/musica-online/metronomo-online-preciso/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "408498d358f20a28a85fcee5e803332c78273e14a831e425082f803be172fdd3",
+      "hash": "dd8bc1ebd3d2d3896a04b7f2b732c0c52aba6a2a0e3f5750101bd7a166be4f90",
       "route": "/ja/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "9a240aee3b13c46eae0dd81781e571dab91c2d4cff3ee3178e52b9cde38b001e",
+      "hash": "2a79eadbc053bcb95489afbf980b8c50ccc99aacce4b5b8298701df3de5bd9a0",
       "route": "/ja/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "aabbdb3bf7dcbed619a93d1bf7c91c1092b1b354e514cb86e3555d6cfc7b17ce",
+      "hash": "6d9432c1cadf669dfc582525f15f67fd0d8e001ce2504763d7eb59509eae2ef4",
       "route": "/ja/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "e8314f812b7938ca5c3fddcbd25ab0acbc54d8a17eb7c84b256d45f99bef665b",
+      "hash": "150a1e04387d43e40933ed1ac01838c5403d201cbc3cef7ce18b42f02554a8c6",
       "route": "/ja/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/": {
-      "hash": "eb401b00bb13d6c4e9b6353bbde714d7e6753ac72bd50b5d962d7e414db2373d",
+      "hash": "5f29b316bb766be747ceda121e682a604a57d6f42513e64af77910941e24a2d9",
       "route": "/ja/utilities/categories/music/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/metronome/": {
-      "hash": "ea788679260d095644e8857b5cbb877b7ef24384535d924241f04f7af8b85c88",
+      "hash": "4a6f2fa32b5b6f3e08dac8fd0b869abb8cb215996028c953ee886e0bbd017231",
       "route": "/ja/utilities/categories/music/metronome/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/music-note-equivalency/": {
-      "hash": "c262b07d70b10b9ce79fb7b1d522dc04bdc26ec581cb326eba3ffa7f9f75a24a",
+      "hash": "776819214ed9a4fa5cc1068ed2b5b37d182663bb4f84e46e6a7c65db2424c0b3",
       "route": "/ja/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "598ec6ac37c831e061f535440699573b8159480dfea05df27a66bddb99bd17a6",
+      "hash": "e7fcd6e5c8fdc93a7bff59d2de0c2182e14d8a2308331112d81ad9d130569cb7",
       "route": "/ja/utilities/categories/music/music-setlist-runtime-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "e495fa993d17918989522229aa4a8e9ce3b1c50c86682f0635fbc53f1ee54b79",
+      "hash": "5baf083775b5a10ff930085fe1cc767d3b4b23917d848ac7901a5f403c22a5fb",
       "route": "/ja/utilities/categories/music/phase-distance-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "c9e7fc652be298245746abed5c65fcaf8a8842ee675a9ef283a729ae6a3617f1",
+      "hash": "f0117a0bbf6e0df4537e829755a0889d55437a8d7a10996fc69a426f8f04ca5e",
       "route": "/ko/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "c415bcabb5c8e4c00fba3db9f4e0b66492ec97e95d511696b8a8ca9044a8fbd3",
+      "hash": "ecc157a367ff205c05981f4f9beed83cced4a9dd32e39915da5b9e78ab84f73f",
       "route": "/ko/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "354998e485d73c8ca77d3c20c050dbce2d2ab3fcfbde580fdeb1d6c27a3064c8",
+      "hash": "193b201297110ead24f93d6aa0ec1303975fbae9d7536af049a7c8caa7402a5c",
       "route": "/ko/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "f198c5449e4747a1b5bc5bfcd2e4e2d2f258bdf57a20ee346ac91c8602d9210f",
+      "hash": "0570ef5bc9bb3855c5badd871f0f49cfec815eda7da12ad25cf95340f25cadb1",
       "route": "/ko/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/": {
-      "hash": "8adac285c1494e9952aa5c46770e690fd044502fab0c22d9025db45b4d209884",
+      "hash": "a481a6de86083288a33ac296ddb848854feeb08a5d635fa8867ce81436cbd6f6",
       "route": "/ko/utilities/categories/music/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/metronome/": {
-      "hash": "a1102be1719029828d85654fbb7b76b88c1a1cfb3b017a5f8b9161e006074c6b",
+      "hash": "b72a876bec45a2cc1111bc4478a5dfb6e844f5e0ec5fbbb3e1e30ed585b36ba5",
       "route": "/ko/utilities/categories/music/metronome/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/music-note-equivalency/": {
-      "hash": "5b9c3bd46bea208218e0bb3609c9308d5dfbcece2c4a0e74bbb5a516b4252d73",
+      "hash": "2091eb34b9ca8b43dc8c1042745bfbb5b83757dbfb5c9e4dd0ada0a06c14a05b",
       "route": "/ko/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "90372ae0ce03d15240d42b97d1a4782a78f67fb9dd54f4665d910f10f55558e5",
+      "hash": "f427827443df17c8df3d2368ab9a0a5d63b697e71fa7888b27a6d59acb764646",
       "route": "/ko/utilities/categories/music/music-setlist-runtime-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "c4e45c9e38a2731482a26b5c007db87dc9492d9856192d49aff3b2e290b6fcd8",
+      "hash": "034fa0e080cf02b8d6e513757ebd6926a8febdf16616f5fbb162c2ea3ad80f4f",
       "route": "/ko/utilities/categories/music/phase-distance-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/audio-opslag-calculator/": {
-      "hash": "70c8ad1b2ef5b8260a08483c0606bfd92159677434da56169db6f7613fdda0fd",
+      "hash": "2cb041841e43babf3ab5adff7a9672c88b40224826d0abbd40f340deaa0b92a9",
       "route": "/nl/hulpmiddelen/categorieen/muziek/audio-opslag-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/bpm-naar-ms-calculator/": {
-      "hash": "6b1c190f17f4d5b38949cca9a30ff8b7a7b8428e6f45b090b8389513f1c7f8a2",
+      "hash": "bda234903b74c067bafdf8dfaed8309250935b49a69599feb134ee5f79ab24e2",
       "route": "/nl/hulpmiddelen/categorieen/muziek/bpm-naar-ms-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/fase-afstand-calculator/": {
-      "hash": "117416a4858193c6a9e0f93809a68bca530c043032ac12fac9548e2574f6141a",
+      "hash": "a7251f60019a0e2ffaf203f26e943d33940a3ecc97ed04c4961e865c1a629bbb",
       "route": "/nl/hulpmiddelen/categorieen/muziek/fase-afstand-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/frequentie-naar-noot-converter/": {
-      "hash": "767fd9da42029214a541493054edba598602505a350155c69a471dd156863d0d",
+      "hash": "532a4667cd2c6ec496f1aa1b16c4165198dcac7afa2c8d40e1bbdbcaf1fda791",
       "route": "/nl/hulpmiddelen/categorieen/muziek/frequentie-naar-noot-converter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/gitaarsnaarspanning-calculator/": {
-      "hash": "90094974c6f9960894b44153a6dffcdbd789ca6f1c95543303e8dd6977f5c490",
+      "hash": "5381a89acba9d77b8f4108eb8d5a6440b36aa3dd356efc9348dea48b6501799a",
       "route": "/nl/hulpmiddelen/categorieen/muziek/gitaarsnaarspanning-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/": {
-      "hash": "07321711a74a4e96925747324579fb03f78c77754b477ad881dbc96ecfc4c817",
+      "hash": "f1286fbc09a20f2acecece6e81ed4cc2997ec15e2dc8b185fbf81bd048500790",
       "route": "/nl/hulpmiddelen/categorieen/muziek/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/metronoom/": {
-      "hash": "5c83d099322f441c68d42c6b6df38456438ce1b48af55d538b7d513ac7d5be8f",
+      "hash": "d607895b97675a9502a9e2772651b1e76ed2db5bef60779b4cc3fe9ba5413322",
       "route": "/nl/hulpmiddelen/categorieen/muziek/metronoom/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/muzieknoot-equivalentie/": {
-      "hash": "6c647edaf2d4b17789f502ee7c24b15cf882ca845f1dbc461194402f30d76f50",
+      "hash": "5223db164226214abc1a7aec63cb5f7190fc2bf8654fa4bf29e1f01545bad570",
       "route": "/nl/hulpmiddelen/categorieen/muziek/muzieknoot-equivalentie/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/muziek/rekenhulp-speeltijd-concertsetlist/": {
-      "hash": "59fa865b47f537fe8fb1293d0c979b29855dd1be451fc4f6cf110844a03e738a",
+      "hash": "4d0d5836c66c7e5e1b170a669f4ba16872537bd983359f5a07ad609456ac916b",
       "route": "/nl/hulpmiddelen/categorieen/muziek/rekenhulp-speeltijd-concertsetlist/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/": {
-      "hash": "f301b4cc1d7c3c95be03db3133cde8f72be3584a5c428e3781b436361f17aed7",
+      "hash": "7f80e088a1e35071c769c479e4675d977e06aac497fbe0f7b9a85e3c79e1907e",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-bpm-na-milisekundy/": {
-      "hash": "336cd98068906627d92c62871bc1effaddeec5284f0d421443e794c1a0e9280c",
+      "hash": "59682969b0390d53c961cda91c33e32e62793bd73e925b7ea4fbb846a2d0d8cc",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-bpm-na-milisekundy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-czasu-setlisty-koncertowej/": {
-      "hash": "7d5e0bd148c526342910b2d89ca441640e27230e89a9f267bf858af2b7b67e9b",
+      "hash": "53bd502c3247d0b35c8a1295e7a019fc7c4dd5afa35ea32437e4bb6357a2425b",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-czasu-setlisty-koncertowej/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-naciagu-strun-gitarowych/": {
-      "hash": "6215986aaba06314586069d05ac7b0fe409ac910997434928c50d592a79f26a7",
+      "hash": "595c1fa5cfd4e27d75e90de0ca2f0daae914a18e6fa7be1262f36b61e90956c1",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-naciagu-strun-gitarowych/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-pamieci-audio/": {
-      "hash": "b92bb1477f1d050a8e4ec353bd10950cc6eabb62841474337243d4f1476bd48f",
+      "hash": "118eec637cfb062ca603927d220d503435c9b324a1e636fec22eee06210fc05b",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-pamieci-audio/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-rozstaw-fazy/": {
-      "hash": "6ac6696e61f828cef9acdb3e50f59163aa6b0d061ce92e9aecddab50fb0d698a",
+      "hash": "7762a122e24c9eb8ff0fac018f4acadcec685403573de7f7208337e0f9f22743",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/kalkulator-rozstaw-fazy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-czestotliwosci-na-nuty/": {
-      "hash": "7cb3003d706669f48394ea79867386d884e02ca62611644103c13e7209ef8f44",
+      "hash": "be1b15729458a95284bea470790820e667a5360b755d0eecc769f9eb37650760",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/konwerter-czestotliwosci-na-nuty/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/metronom-online-cwiczenia/": {
-      "hash": "02804cc432933a37a85c1ba9f1816e763eff2d05949ce8b078a970ad4034998b",
+      "hash": "95018e4cbefabaf94a014edb64d894f203b210843c245d3ff1c584ad41ebf205",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/metronom-online-cwiczenia/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/narzedzia-muzyczne/odpowiedniki-nut-muzycznych/": {
-      "hash": "b2d0b38c9171cf0f79930103a78a08b385aca30a3eec7e6d165095611ca39efc",
+      "hash": "2372e8e5e487433e7e97e0f1f929d75f8610ff33460072206d142273e222b7db",
       "route": "/pl/narzedzia/kategorie/narzedzia-muzyczne/odpowiedniki-nut-muzycznych/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-armazenamento-audio/": {
-      "hash": "10851ea09ab373579fc5bfee4a99b1bf56802ea05a8b22d985ac44b6a09b9835",
+      "hash": "fce9fb9de0cca2e7518872741b7c33d12234bc3e1815eff43d870afd69adc44a",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-armazenamento-audio/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-bpm-para-milissegundos/": {
-      "hash": "9b373ee56de718d8a518e50234a17622327bfb0c2a111b1d28b7df4e65e9563f",
+      "hash": "616733ba6af389fa7b2a44971b04121b40a8eecf259e40c39be3e58f857bb216",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-bpm-para-milissegundos/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-distancia-de-fase/": {
-      "hash": "7613818f5f5f3fcc84da8bf5f61d46f43a5416d94631264cd6b1534b4f7d1e9c",
+      "hash": "fd4c2e2f5c6d2551ab7abfebe4f5aad9e93084ffec4765ad51f2cb27218e3d28",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-distancia-de-fase/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-duracao-setlist-concerto/": {
-      "hash": "a168350c5d4997c8c6357db444740d96c161469c72c4780a33cde28f19a266c0",
+      "hash": "7c85010507c8e38408b2b4f461aafa182bead7038f59c840ce4dce673a0ed73d",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-duracao-setlist-concerto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/calculadora-tensao-cordas-guitarra/": {
-      "hash": "a4e8bf68e61a33eaa85fef89b5f0a345bcf8caa4586a62bf1258c6c3e2119179",
+      "hash": "faf5212fd0c4c696b3fc845aed93c8e0fd30d2abb6c7141f822449fb7c7e3df4",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/calculadora-tensao-cordas-guitarra/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/conversor-frequencia-para-nota/": {
-      "hash": "b625b8577ed0330d3d56911d617dd5e06a274a64a2fb92a4c92e700b5b3171cd",
+      "hash": "12d9008a6fe30ee0c97f6c4e6d9782098d8f980e6fd74943b460477c32413ff9",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/conversor-frequencia-para-nota/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/equivalencia-notas-musicais/": {
-      "hash": "9ea6da7d8931d577bfc8ae1a48925e73dc892e199cc40497ea6215c99d43921e",
+      "hash": "b8606c45d878be297e0fe780fbc446dd5c6b5502402a734abeeeffa1d35b3a66",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/equivalencia-notas-musicais/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/": {
-      "hash": "207db65a31f590e51cdaecc624a629ca64c0da8f376ee145d18c1a4404ffb85d",
+      "hash": "275b29490c4810773973c34298c96f67dcfb4ffce52c83b59f10723516deab52",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/ferramentas-musicais/metronomo-online-pratica/": {
-      "hash": "940eb871b7cff6231f9b110b50b2210b75dc3f7b358ba14fa56438945c3f532c",
+      "hash": "04ab5c8afb5bc2b99887dc223df630f2faf47ed3327a6b85578941d8569178d7",
       "route": "/pt/utilidades/categorias/ferramentas-musicais/metronomo-online-pratica/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/ecvivalentnost-muzykalnyh-not/": {
-      "hash": "d4e12623b560e626fa5e336d4f00f58a34a795c7b9b43b6b58d29a8baa005097",
+      "hash": "ffc2a91e5756bc4fd220db5b68804cfcdafa35c78adea22dc8fef98528f570c3",
       "route": "/ru/instrumenty/kategorii/muzyka/ecvivalentnost-muzykalnyh-not/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/": {
-      "hash": "7d39f251fc6462cc7d15a26b8638558d1053977ccea9162bc61189a65a2a5ed4",
+      "hash": "f423ae044137fb3da17637b59b8f6695538f63acfc3297a7a096f5054acbcfff",
       "route": "/ru/instrumenty/kategorii/muzyka/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulator-dlitelnosti-koncertnogo-setlista/": {
-      "hash": "6e8202205455a35e9bf85d6042dc324a76822f4fd54f6b909d4755e0951765d3",
+      "hash": "c0a7fb6bfbc09ccbb5bc1be639d7e49f0ed8e09ea71ccc9f0f422ec321d31e78",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulator-dlitelnosti-koncertnogo-setlista/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-bpm-v-millisekundakh/": {
-      "hash": "e153a3e9b06085de5a1ac5070ea9f7ce7d13a4741913a930d294ad3c404cea5c",
+      "hash": "2d4746726b62e52d59ebef7c3a167b0f5e4b2ee2c8fce1824222adb6590f2960",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-bpm-v-millisekundakh/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-fazovogo-rasstoyaniya/": {
-      "hash": "7ea1f83f617fea67a61689b3929b967ba18bcae161ee1a20ca7ebd4c35996557",
+      "hash": "c3b7192db4e5005df638934582f955be2c7607d9deae123aef6f15daa8b9d394",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-fazovogo-rasstoyaniya/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-natyazheniya-gitarnykh-strun/": {
-      "hash": "8ae3b96e025a47e4896db02018cbfc73bc64c5bf6e36ea9de3e233f7406eb5b8",
+      "hash": "a1022b81b654f2d42a0b2bb3f707d2dcbd2b3ecd96b2e1eefe5c63a1d6a3d1da",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-natyazheniya-gitarnykh-strun/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/kalkulyator-pamyati-audio/": {
-      "hash": "f936e983caf6cbba855155d3fd090b20fc8c80a210da0928aad6d8194bf80831",
+      "hash": "426acd0ca5dabf8dfb083944e0c0e46f5f5574b5df551bf3f62d343a79ccaeed",
       "route": "/ru/instrumenty/kategorii/muzyka/kalkulyator-pamyati-audio/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/konverter-chastoty-v-noty/": {
-      "hash": "df883a1fddf38886cd5e9e36f0e5d7a18c8e06660386e8f9a419b26bc8bd408a",
+      "hash": "a08d8f352718e542b0df3657185ab6b4eef8a45e2bfbb3bcd851d7c5ecde3835",
       "route": "/ru/instrumenty/kategorii/muzyka/konverter-chastoty-v-noty/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/muzyka/metronom-online-uprajneniya/": {
-      "hash": "ee13863b3cc4be078b0a429d6d56a4ff89d59c7af5f0083a22a335349189137b",
+      "hash": "6116af69aec4c11dc60d49afd4a34962d34e1de0025f28b555332f00d5240f89",
       "route": "/ru/instrumenty/kategorii/muzyka/metronom-online-uprajneniya/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/bpm-till-ms-kalkylator/": {
-      "hash": "e9a74c4e917ee62eb4b9b6fe0a9f10bfd79cc3ccbbfeff9663c160b5c76bff77",
+      "hash": "622295f0f7308be3399e56f6c79fdd08e03bab3ab4e2ae82d9d288fd6a1649d5",
       "route": "/sv/verktyg/kategorier/musikverktyg/bpm-till-ms-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/fasavstands-raknare/": {
-      "hash": "321b9cd8f0025de51d7ff566a7c0af617d688bd3e33dd44cb91ae994d8be4dac",
+      "hash": "adcb0e9aa6ef691190e347029de5ae7ff6f910cf0092ade13840d76c547ebedf",
       "route": "/sv/verktyg/kategorier/musikverktyg/fasavstands-raknare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/frekvens-till-not-konverterare/": {
-      "hash": "2713a4c841102788cfd5d426078f1ca1e83edc45bad61d2ca624fc3950bc5c1a",
+      "hash": "33f35ce4803c68155156f3709c26d464c71f0597f894e3a5400353ddae36092f",
       "route": "/sv/verktyg/kategorier/musikverktyg/frekvens-till-not-konverterare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/": {
-      "hash": "47029527796651e00e19b98b2b66ab52f3bdac7bc7b3ab046aada3e9fc75cd08",
+      "hash": "521cfc895e0d61c73292af2d9e1ff407e8f3097909ce940425f8ddb7857fb3ce",
       "route": "/sv/verktyg/kategorier/musikverktyg/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/kalkylator-gitarrstrangars-spanning/": {
-      "hash": "ca1c622e5b8a22d83242c900292e75525dd798ae7012a54ccc81889ab692e01d",
+      "hash": "ee97110e862584bb22ce8f2908526e3d45d26513732941973c7bf27af78145f6",
       "route": "/sv/verktyg/kategorier/musikverktyg/kalkylator-gitarrstrangars-spanning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/kalkylator-konsertens-setlisttid/": {
-      "hash": "a686638556a2d3fbc72dc7209d20bf54fcf8b7c6ae0f60c3409ddb9f8000a8e8",
+      "hash": "cf55f96044cde09c9bd022dcddae49f351433c1e6e78528c51c958df4c47fbf7",
       "route": "/sv/verktyg/kategorier/musikverktyg/kalkylator-konsertens-setlisttid/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/ljudlagringskalkylator/": {
-      "hash": "b10d2d342e4b6316d8001b482c14eb2c93b603cdaefbaf710cdbd1d00b794d51",
+      "hash": "c8587fc68fecdf0e90ef733fe9f2369a3a368d338c1c4ecbc3021fee03818f88",
       "route": "/sv/verktyg/kategorier/musikverktyg/ljudlagringskalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/metronom-online-ovning/": {
-      "hash": "0223f82cc4f17967bb9de47f65de4cafa7d36fc49313718e2d0f7dfd47af73a9",
+      "hash": "f2a48fffd08fbeb05a1389851d210d871dccd7100505d25254c80eb918432b27",
       "route": "/sv/verktyg/kategorier/musikverktyg/metronom-online-ovning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/musikverktyg/noternas-motsvarigheter/": {
-      "hash": "98f4efc242fb9c19c808b8d6cc70151d5d3a6524b1a08ecbc7d201f7ec8441f3",
+      "hash": "d9007bb08b6bf46981edad3be60def6b8e39edd4378913be441eb8c3149b66dd",
       "route": "/sv/verktyg/kategorier/musikverktyg/noternas-motsvarigheter/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/bpm-ms-hesaplayici/": {
-      "hash": "ffa79d696bdb5e882f4e072a7a4e0119a88dccfb8ea3b911a50837ae598f1b13",
+      "hash": "d6d148f3897f162b98a006b770ee27792c5a4a008127e13e9de48c80dbb87c5f",
       "route": "/tr/araclar/kategoriler/muzik/bpm-ms-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/faz-mesafesi-hesaplayicisi/": {
-      "hash": "4c7f69147ae3dfc7a1efe41f1b802d699305b5c0436c44bf129bb9bf95958264",
+      "hash": "cd0085c1189af0c1a507a1d12621ea3604e3e191cea61b22ea4642b7a56db644",
       "route": "/tr/araclar/kategoriler/muzik/faz-mesafesi-hesaplayicisi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/frekans-nota-donusturucu/": {
-      "hash": "f9ad550e1fd0f404c0d801bf970934cf72f384eb0d7f94a3862730eb827322f9",
+      "hash": "49dbf360b81f125985ed8ec6c0da813e8b8a5202d7a704c51b8192cd45fb67ad",
       "route": "/tr/araclar/kategoriler/muzik/frekans-nota-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/gitar-tel-gerilimi-hesaplayici/": {
-      "hash": "a9ebd01ec6b7cb5a415f3f8c0b40c9f2e9420e8ec9b53350615045f7f4c73e7f",
+      "hash": "fecca129942ac13b6fc15da06253918238a8eab7b77a598ebcebf7a8e70c819b",
       "route": "/tr/araclar/kategoriler/muzik/gitar-tel-gerilimi-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/": {
-      "hash": "d5f14e2f785bca6581574c4362a5843545716e5a61e684f73de06001deed002f",
+      "hash": "4003a515836d28d7de4bdc95b647cb322648b1755b5f0ba798e0f0cd0a2d338f",
       "route": "/tr/araclar/kategoriler/muzik/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/konser-setlistesi-sure-hesaplayici/": {
-      "hash": "c939364b093d7ab953457f7be72d77e8a2397ed136a1b815b8e256cfb3b7b337",
+      "hash": "97d5a9dfb63a1d17b97093068ffca166eca450f3455037d52123714aa46e40ed",
       "route": "/tr/araclar/kategoriler/muzik/konser-setlistesi-sure-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/metronom-online-egzersiz/": {
-      "hash": "6c5161eb83f8f82f3ca0c43a2fcc5bdf275266f370b679fcb64daf7dd22e74cb",
+      "hash": "15272175306596ca7c976cb69ef6242377ae7b9c0e74820c3b40805e3969ca37",
       "route": "/tr/araclar/kategoriler/muzik/metronom-online-egzersiz/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/muzik-notasi-esdegerligi/": {
-      "hash": "5085ad7d5a7f9d2835e9c8e694622c2a116610f58a557cab4c75859c114f91a3",
+      "hash": "061279479f2686e55f39a3af3f421a0e0d852772cc1d86e8dd119367e606d00c",
       "route": "/tr/araclar/kategoriler/muzik/muzik-notasi-esdegerligi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/muzik/ses-depolama-hesaplayici/": {
-      "hash": "b4ee335dc363528bf325117b1bd0af0dcd53cf43efe23364fa5964792495dd4c",
+      "hash": "96313fa8df23f037b666d7859cd93071513921ecb88ab142fd61417f724fee08",
       "route": "/tr/araclar/kategoriler/muzik/ses-depolama-hesaplayici/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-almacenamiento-audio-digital/": {
-      "hash": "5a4459ac282329731bb1d8066ba2f65c850427f7628f070ad0d06adfa0580d73",
+      "hash": "310a883d54c59e9a74a4824d9deeba84e9e541f67b333b0a244e75cbd856698e",
       "route": "/utilidades/calculadora-almacenamiento-audio-digital/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-bpm-milisegundos/": {
-      "hash": "e9d9e2de36adf0c9d2e25b68dfca7134453979e14482fab60f37599c375a3e33",
+      "hash": "ffdd7cf70b74cfc9a948f912092bc854f90bfe0a62086eebbed7beb635929029",
       "route": "/utilidades/calculadora-bpm-milisegundos/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-distancia-fase/": {
-      "hash": "b4e1df7c99020579e1df6ff286cd66d6ae540a3870fbd9d07280edde4947d9bb",
+      "hash": "8dc3771b84d3a5a9da6643a1700855e620a2157e9f8afd82e4343305fb411890",
       "route": "/utilidades/calculadora-distancia-fase/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-duracion-repertorio-concierto/": {
-      "hash": "1a32bd6c56a62a62117c7e68eb90c1bfbb5e4042f3024943e502aa0e3dedbeaa",
+      "hash": "4e588f1f8d80f5c617cc218ab9cfde78d1987aa14f01db0ae71e95ebb92edbd8",
       "route": "/utilidades/calculadora-duracion-repertorio-concierto/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-tension-cuerdas-guitarra/": {
-      "hash": "7bd6291bd0350eca63bb1118b7b65477d2e5affbc6e4996a6410a5d35139afdf",
+      "hash": "b015b254995b6f0e68b91be5b019d5bf791b1c41d73b776b9c2a647e2d5432c0",
       "route": "/utilidades/calculadora-tension-cuerdas-guitarra/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/musica/": {
-      "hash": "402398d722db7e53b9daa2751b403bde2183ce1407158db7600d1365b9ff8ea8",
+      "hash": "3557446069a3eafefc1fa21582e9c4d56b166dc03233961d1bcd74d86f9a293b",
       "route": "/utilidades/categorias/musica/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-frecuencia-nota-musical/": {
-      "hash": "aa9ad398b615f3ca2c1c810c12a0f7e311771f12be2e02051fe5bd7813d09fe4",
+      "hash": "081ef8f03ccb86f7ec9aa7c01cd9c25f7a6b40d95f0cebeef94326905080e2ce",
       "route": "/utilidades/conversor-frecuencia-nota-musical/"
     },
     "https://www.jjlmoya.es/utilidades/equivalencia-notas-musicales/": {
-      "hash": "a8a20878c0c15afa317c11ae7d4a3a3185b39f2ed80bb1fada4df316ff561623",
+      "hash": "8cce9183d4af5a8a1aa08465c7fbda45ae3978406072ded2d3e88d5e9346d225",
       "route": "/utilidades/equivalencia-notas-musicales/"
     },
     "https://www.jjlmoya.es/utilidades/metronomo/": {
-      "hash": "4e302e032cd5beaf354b387e4161b3003284f74fb1482851e63d0f5d6346b8a4",
+      "hash": "e4a7f11a06d37cd49a24db94f8cb90c4fba86b16c0816cf038fb008a80389a3a",
       "route": "/utilidades/metronomo/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/audio-storage-calculator/": {
-      "hash": "4377c7e0d9dbbe429f2b8036b125ed1be5a9850aa9a4aae6a1846c01b77a4634",
+      "hash": "9008df570694a428e9204388e066b55ce38e10f0729db171950da50096e9246f",
       "route": "/zh/utilities/categories/music/audio-storage-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/bpm-to-ms-calculator/": {
-      "hash": "4fb44097c7dadbb17f232c047362e899f8f34e988c1418c109d17bce8058711a",
+      "hash": "cb357197e0caa9459e6a3182a509b0a24400022eaf3255fb406bfb13df7fd54e",
       "route": "/zh/utilities/categories/music/bpm-to-ms-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/frequency-to-note-converter/": {
-      "hash": "bb101333f6caf3c6bff5ece0cc8a3beadb373396c45689267ed593fa6afc8d4d",
+      "hash": "ceb8695bfec5d9dbf90f27426db0ad5398b9e42f20597f594b42050fe3c41b3f",
       "route": "/zh/utilities/categories/music/frequency-to-note-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/guitar-string-tension-calculator/": {
-      "hash": "c86ee8eba2af58de63bb52744d196bd4d2b83f5639702f5f835f73da1baed878",
+      "hash": "ef2ca2632fdf4b538b4b9ed3c5de643965145660748ea871072a351a80cd9121",
       "route": "/zh/utilities/categories/music/guitar-string-tension-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/": {
-      "hash": "1c42cb6373b18f627b12421752b0cf22c387b0db2369396590ed44438f601ca0",
+      "hash": "b9024878c2683189128c3abb58a799cedcbd7fefa400070c4c7596c5966c8830",
       "route": "/zh/utilities/categories/music/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/metronome/": {
-      "hash": "8a40807225d794b700281dc7ce7b0d8b12045e4b3cfb63f5118a0463eb2398c9",
+      "hash": "c2644be737f93c576db3628f4d33a209e2e6f617318f06e81aa3df3b01cd282b",
       "route": "/zh/utilities/categories/music/metronome/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/music-note-equivalency/": {
-      "hash": "5a81e3967ef253c45ec30dda3d8e1d24186449243a7f6dff1d5a42a9763ab213",
+      "hash": "fe00a7f3ced515985c6498534fdc2e167c1c6f28dcf124c5a90eb3ff69039dc8",
       "route": "/zh/utilities/categories/music/music-note-equivalency/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/music-setlist-runtime-calculator/": {
-      "hash": "5948da6b35fcc7ff9211b1f3588af0a1a6b3baa933bc500786d439730858a23a",
+      "hash": "5dd271bd30fd95319fcb910426eea79a9ac802a39c6cf3ca6af68e13764de47b",
       "route": "/zh/utilities/categories/music/music-setlist-runtime-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/music/phase-distance-calculator/": {
-      "hash": "086634188c805031ee72d882152ce32063c0827a632392869a037cabd9dda315",
+      "hash": "66dbebfb164d142c3901a37c84fb827eb01836b9243e5ee1a9e96a0d1072785e",
       "route": "/zh/utilities/categories/music/phase-distance-calculator/"
     }
   }
